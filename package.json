@@ -1,0 +1,18 @@
+{
+  "name": "vueformulate.com",
+  "version": "0.1.0",
+  "description": "Documentation website for vue-formulate.",
+  "keywords": [
+    "vue",
+    "form",
+    "forms",
+    "validation",
+    "vuex",
+    "validate"
+  ],
+  "author": "Justin Schroeder <justin@wearebraid.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^0.10.0"
+  }
+}
