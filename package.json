@@ -1,18 +1,15 @@
 {
-  "name": "vueformulate.com",
-  "version": "0.1.0",
-  "description": "Documentation website for vue-formulate.",
-  "keywords": [
-    "vue",
-    "form",
-    "forms",
-    "validation",
-    "vuex",
-    "validate"
-  ],
-  "author": "Justin Schroeder <justin@wearebraid.com>",
-  "license": "MIT",
   "devDependencies": {
-    "vuepress": "^0.10.0"
+    "node-sass": "^4.12.0",
+    "sass-loader": "^8.0.0",
+    "vuepress": "^1.1.0"
+  },
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "dependencies": {
+    "is-plain-object": "^3.0.0",
+    "nanoid": "^2.1.2"
   }
 }
