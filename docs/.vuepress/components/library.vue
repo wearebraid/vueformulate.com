@@ -4,10 +4,10 @@
       label="Text input"
       type="text"
       help="This is what help text looks like on a text field."
-      placeholder="Jon Doe"
+      :placeholder="placeholder"
+      :data-has-placeholder="placeholder"
       v-model="textInput"
     />
-    {{ textInput }}
     <FormulateInput
       label="Textarea"
       type="textarea"
@@ -15,19 +15,17 @@
       placeholder="I saw a chicken cross the..."
       v-model="textareaInput"
     />
-    {{ textareaInput }}
     <FormulateInput
       label="Checkbox"
       type="checkbox"
       help="This is what help text looks like on a single checkbox"
       v-model="singleCheckbox"
     />
-    {{ singleCheckbox }}
     <FormulateInput
       label="Checkbox with multiple options"
       type="checkbox"
       help="This is what help text looks like for a group of checkboxes"
-      :options="{first: 'I like veggies', second: 'I like meat', third: 'I like fruit'}"
+      :options="{foo: 'Foo', bar: 'Bar', fooey: 'Fooey'}"
       v-model="checkboxInput"
     />
     {{ checkboxInput }}
@@ -38,16 +36,14 @@
       :options="{water: 'Water', tea: 'Tea'}"
       v-model="radioInput"
     />
-    {{ radioInput }}
     <FormulateInput
       label="What is your favorite ice cream?"
       type="select"
       help="This is what help text looks like on a select list"
       placeholder="Select an flavor"
-      :options="{chocolate: 'Chocolate', straberry: 'Strawberry', vanilla: 'Vanilla'}"
+      :options="selectOptions"
       v-model="selectInput"
     />
-    {{ selectInput }}
   </p>
 </template>
 
@@ -57,10 +53,13 @@ export default {
     return {
       textInput: 'initial',
       selectInput: '',
-      checkboxInput: '',
+      checkboxInput: [],
       radioInput: '',
       singleCheckbox: false,
-      textareaInput: ''
+      textareaInput: '',
+      simple: '',
+      placeholder: false,
+      selectOptions: {chocolate: 'Chocolate', strawberry: 'Strawberry', vanilla: 'Vanilla'}
     }
   }
 }
