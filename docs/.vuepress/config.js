@@ -1,30 +1,56 @@
 module.exports = {
   title: 'Vue Formulate',
   themeConfig: {
-    sidebar: [
-      {
-        title: 'Guide',
-        path: '/guide/',
-        collapsable: false,
-        sidebarDepth: 2
-      },
-      {
-        title: 'Inputs',
-        path: '/inputs/',
-        collapsable: false,
-        sidebarDepth: 2
-      }
-    ],
-    displayAllHeaders: true,
+    sidebar: {
+      '/guide': [
+        {
+          title: 'Guide',
+          collapsable: false,
+          children: [
+            {
+              title: 'Installation',
+              path: '/guide/installation',
+              collapsable: true
+            },
+            {
+              title: 'Introduction',
+              path: '/guide/',
+              collapsable: true
+            },
+            {
+              title: 'Validation',
+              path: '/guide/validation',
+              collapsable: true
+            }
+          ]
+        },
+        {
+          title: 'Inputs',
+          collapsable: false,
+          children: [
+            '/guide/inputs/text',
+            '/guide/inputs/box',
+            '/guide/inputs/file',
+            '/guide/inputs/select',
+            '/guide/inputs/sliders',
+            '/guide/inputs/textarea'
+          ]
+        },
+        {
+          title: 'Theme',
+          collapsable: false,
+          children: []
+        }
+      ]
+    },
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Guide', link: '/guide/' },
+      { text: 'Guide', link: '/guide' },
+      { text: 'Inputs', link: '/inputs' },
+      { text: 'Theme Builder', link: '/theme-builder' },
       { text: 'Github', link: 'https://github.com/wearebraid/vue-formulate' }
     ],
     searchPlaceholder: 'Search...',
     smoothScroll: true
   }
-  // configureWebpack: (config, isServer) => {
-  //   config.resolve.symlinks = false
-  // }
 }

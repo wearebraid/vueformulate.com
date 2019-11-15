@@ -1,11 +1,16 @@
 <template>
   <FormulateInput
-    type="text"
+    type="textarea"
   />
 </template>
 
 <script>
 export default {
-  name: 'demo-1-inputs'
+}
+</script>
+
+<script>
+export default {
+  name: 'demo-2-inputs'
 }
 </script>

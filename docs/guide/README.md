@@ -1,13 +1,9 @@
----
-title: Introduction
----
+# Introduction
 
-## Introduction
-
-VueFormulate is to be the easiest way to build forms using [Vue](https://vuejs.org/),
-but that doesn't mean you have to sacrifice power. Web based forms seem easy to
-build at first blush, but as any front end engineer knows they can be get
-complicated and are always tedious.
+VueFormulate aims to be the easiest way to build forms using [Vue](https://vuejs.org/),
+but that doesn't mean you have to sacrifice power. Web forms seem easy to
+build at first blush, but as any engineer knows they can be get complicated and
+tedious to implement well.
 
 Consider some of the things a single input "field" needs to account for: Markup
 for each type (text, textarea, select etc), a label, an initial value when
@@ -17,102 +13,85 @@ from front end validation or the backend, data bindings (v-model or events), and
 more. Vue Formulate is built to increase developer happiness by making all of
 these features as easy as possible.
 
-## Installation
-
-First add Vue Formulate to your project by using `npm` or `yarn`.
-
-### NPM
-```sh
-npm install vue-formulate --save
-```
-
-### Yarn
-
-```sh
-yarn add vue-formulate
-```
-
-### Direct download
-
-Or if you don’t have a build process on your application you can download
-the repository and manually link to the minified version:
-
-
-
-```html
-<script src="/vue-formulate/dist/formulate.min.js"></script>
-```
-
-::: warning
-While you can use Vue Formulate via direct download, it is not recommended and
-the rest of the documentation will assume you’re in a context that supports
-ES2015.
-:::
-
-### Add to Vue
-
-Once Vue Formulate has been downloaded you need to install it with Vue.
-
-```js
-import Vue from 'vue'
-import VueFormulate from 'vue-formulate'
-
-Vue.use(VueFormualte)
-```
-
-If you need custom configuration options, you can pass a second argument with
-an object of [configuration options](/configuration).
-
-```js
-Vue.use(VueFormualte, {
-  vuex: true,
-  vuexNamespace: 'forms',
-  theme: 'snow'
-})
-```
-
-## How it works
-
-Once Vue Formualte is installed, you can start composing your forms, but first
-let’s take a look at how Vue Formulate works.
-
-### The `<FormulateInput>` component
+## Input elements
 
 Every type of input in Vue Formulate is an instance of the `FormulateInput`
 component. This component is used whether you need a text input, password,
-select list, checkbox, or date picker — this makes it much easier to remember.
+select list, checkbox, or date picker, etc — this makes it easy to remember.
 
-In fact the simplest implementation of Vue Formulate is just out putting a
+### Input types
+
+The simplest implementation of Vue Formulate is just out putting a
 single `FormulateInput`:
+
+```vue
+<FormulateInput type="text" />
+```
+Outputs:
+
+<demo-1-inputs />
+
+Familiar right? This is essentially equivalent to the native HTML:
+
+```html
+<input type="text">
+```
+
+**All formulate inputs have this same syntax.** Just swap out the `type` and
+you get the desired element, even if the html structure differs. For example
+a `textarea` in HTML is not an `<input>` element, but in Vue Formulate you
+only need to remember to change the `type`.
+
+```vue
+<FormulateInput type="textarea" />
+```
+
+Outputs:
+
+<demo-2-inputs />
+
+### Input features
+
+When building an actual form however, there are typically lots of additional
+elements and features surrounding an `<input>` in order to make a delightful
+experience. Often a `<div>` wrapper, a `<label>`, perhaps a `<small>` for help
+text, maybe another `<div>` for validation messages.
+
+With Vue Formulate, inputs include all of these features:
 
 ```vue
 <FormulateInput
   type="text"
-/>
-<FormulateInput
-  type="textarea"
-/>
-<FormulateInput
-  type="select"
-  :options="{value1: 'First Option', value2: 'Second Option'}"
+  label="Your name"
+  help="What is your full name?"
+  placeholder="Enter your full name"
+  validation="required"
+  error="My custom error message"
+  error-behavior="live"
 />
 ```
+Outputs:
 
-<demo-1-inputs />
+<demo-3-inputs />
 
-So creating inputs of any variety is as simple as choosing the value of the
-`type` prop. 
+## Input props 
 
-::: danger
-[TK] Add examples of labels, placeholders, and help text.
+::: tip Note
+Some `FormulateInput` types have additional props specific to that type. Please
+reference the input library for the type you're implementing.
 :::
 
-### Data bindings
-
-Vue Formulate offers three mechanisms for binding the state of your forms:
-
-1. `v-model` on a `FormualteInput`
-2. `v-model` on a `FormulateForm`
-3. Using [vuex](https://vuex.vuejs.org/installation.html)
-
-
+Prop              | Description
+------------------|-------------------------------------------------------------
+`type`            | *Required.* The type of input element. [See the input library](/guide/inputs) for a full range of options.
+`label`           | A descriptive label for the input element.
+`label‑position`  | Most input elements place the label before the input by default. The `box` [classification](/guide/inputs/box) places labels after by default, but either can be overridden with this prop.
+`name`            | Adds a name attribute, and when used with `<FormulateForm>` this is the key of the field. If no name is defined a random hash will be assigned
+`help`            | Help text to be displayed with the input.
+`placeholder`     | The placeholder attribute of the element (if applicable)
+`validation`      | A `string` or `array` of validation rules. See [input validation](/inputs/validation)
+`validation‑name` | The name to use in validation error messages. By default this uses the `name` prop, then the `label` prop.
+`error`           | A custom error message to show on an element (validation errors are generated on their own)
+`errors`          | An array of custom error messages to show on an element.
+`error‑behavior`  | By default, error messages are only shown when the `blur` event fires on an input, or a `<FormulateForm>` element is submitted with errors. This behavior can be changed to `live` which will display all error messages for the input immediately.
+`show‑errors`     | When `true` this forces an element to show it’s errors regardless of the state of the `error-behavior`
