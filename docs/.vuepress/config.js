@@ -2,7 +2,7 @@ module.exports = {
   title: 'Vue Formulate',
   themeConfig: {
     sidebar: {
-      '/guide': [
+      '/guide/': [
         {
           title: 'Guide',
           collapsable: false,
@@ -15,6 +15,11 @@ module.exports = {
             {
               title: 'Introduction',
               path: '/guide/',
+              collapsable: true
+            },
+            {
+              title: 'Configuration',
+              path: '/guide/configuration',
               collapsable: true
             },
             {
@@ -45,9 +50,9 @@ module.exports = {
     },
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Guide', link: '/guide' },
-      { text: 'Inputs', link: '/inputs' },
-      { text: 'Theme Builder', link: '/theme-builder' },
+      { text: 'Guide', link: '/guide/' },
+      { text: 'Inputs', link: '/guide/inputs/text' },
+      { text: 'Theme Builder', link: '/theme-builder/' },
       { text: 'Github', link: 'https://github.com/wearebraid/vue-formulate' }
     ],
     searchPlaceholder: 'Search...',

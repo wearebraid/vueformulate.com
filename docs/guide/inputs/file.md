@@ -29,7 +29,7 @@ properly. An `uploader` must be defined before `file` inputs are supported.
 The easiest configuration is to provide an instance of [axios](https://github.com/axios/axios).
 
 ```js
-import VueFormulate from 'vue-formualte'
+import VueFormulate from 'vue-Formulate'
 import axios from 'axios'
 
 const axiosInstance = axios.create({
@@ -56,7 +56,7 @@ The `uploader` function must always return a `Promise`. `async`
 functions are a good option for doing this automatically.
 
 ```js
-import VueFormulate from 'vue-formualte'
+import VueFormulate from 'vue-Formulate'
 
 Vue.use(VueFormulate, {
   uploader: async function (file, progress, error, options) {
