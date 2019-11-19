@@ -1,9 +1,8 @@
 # Validation
-
-Front end validation is incredibly important to providing a good user experience
-to end users, but it’s too often skipped due to the pain of configuring it.
-Vue formulate attempts to reduce the friction to the point where it's so simple
-to add there's really no excuse.
+Front-end validation is incredibly important to providing a good user experience
+to your users, but it’s often skipped due to the pain involved in configuring it.
+Vue formulate reduces the friction of front-end validation to the point where it's
+so simple to set up that there's really no good excuse not to.
 
 ```vue
 <FormulateInput
@@ -18,10 +17,9 @@ to add there's really no excuse.
 <demo-1-validation />
 
 ## Available rules
-
-Vue formulate ships with a library of frequently used validation rules, and if
-you don’t find one that meets your exact requirement you can always add a
-own [custom rule](#custom-rules).
+Vue formulate ships with a library of frequently used validation rules. If
+you don’t find one that meets your exact requirement you can always add your
+own [custom rule](#custom-rules) to suit your needs.
 
 - [accepted](#accepted)
 - [after](#after)
@@ -42,7 +40,6 @@ own [custom rule](#custom-rules).
 - [url](#url)
 
 ### Accepted
-
 The value must be `yes`, `on`, `1` or `true`. Useful for box inputs, often where
 you need to validate if someone has accepted terms.
 
@@ -57,7 +54,6 @@ you need to validate if someone has accepted terms.
 <demo-validation-accepted />
 
 ### After
-
 Checks if a date comes after a another date. If no date argument is provided
 the current time will be used. The value must be a `Date` object or a string
 that can be evaluated by `Date.parse`.
@@ -74,7 +70,6 @@ that can be evaluated by `Date.parse`.
 <demo-validation-after />
 
 ### Alpha
-
 Checks if a value is only alphabetical characters. There are two character sets
 `latin` and `default`. Latin characters are strictly `[a-zA-Z]` while the
 `default` set includes most accented characters as well like: `ä`, `ù`, or `ś`.
@@ -90,7 +85,6 @@ Checks if a value is only alphabetical characters. There are two character sets
 <demo-validation-alpha />
 
 ### Alphanumeric
-
 Checks if a value is only made of alphabetical characters or numeric digits.
 For the alphabetical portion you can pass `default` or `latin` - see
 [alpha](#alpha)) above.
@@ -106,7 +100,6 @@ For the alphabetical portion you can pass `default` or `latin` - see
 <demo-validation-alphanumeric />
 
 ### Before
-
 Checks if a date comes before a another date. If no date argument is provided
 the current time will be used. The value must be a `Date` object or a string
 that can be evaluated by `Date.parse`.
@@ -123,7 +116,6 @@ that can be evaluated by `Date.parse`.
 <demo-validation-before />
 
 ### Between
-
 Checks if a number or string length is between a minimum or maximum. Both the
 maximum and minimum are exclusive. If the value being validated is a string
 the string’s length is used for comparison. If a number is used, the numeric
@@ -147,10 +139,10 @@ the [before](#before) and [after](#after) validation rules together.
 />
 {{ age }}
 ```
+
 <demo-validation-between />
 
 ### Date
-
 Checks if the input is a valid date according to `Date.parse()` or if a format
 argument is provided it will validate according to the given format. Format
 variables are:
@@ -164,6 +156,11 @@ Variable  | Valid values
 `YY`      | Two digit year
 `YYYY`    | Four digit year
 
+::: warning
+Heads up! This validation rule will validate that your requested format is followed
+but does not validate if a date actually exists (eg 02/31/2008).
+:::
+
 ```vue
 <FormulateInput
   type="text"
@@ -175,7 +172,6 @@ Variable  | Valid values
 <demo-validation-date />
 
 ### Email
-
 Checks if the input is a valid email address format.
 
 ```vue
@@ -189,7 +185,6 @@ Checks if the input is a valid email address format.
 <demo-validation-email />
 
 ### In
-
 Checks if the input is included in an array of options.
 
 ```vue
@@ -206,7 +201,6 @@ Checks if the input is included in an array of options.
 <demo-validation-in />
 
 ### Matches
-
 Checks if the input matches a particular value or pattern. If you pass multiple
 arguments, it checks each until a match is found.
 
@@ -234,7 +228,6 @@ When matching against a regular expression you have to use the alternative
 <demo-validation-matches />
 
 ### Max
-
 Checks the value of a `Number`, or length of a `String` or `Array` is less than
 a maximum length or value. The maximum value/length defaults to `10`.
 
@@ -268,18 +261,18 @@ argument of either `length` or `value`.
   error-behavior="live"
 />
 ```
-<demo-validation-max-2 />
 
 ::: tip Note
 When evaluating an `Array` the 2nd argument (length/value) is ignored.
 :::
 
+<demo-validation-max-2 />
 
 ### Mime
-
 Checks if the type of file selected is an allowed value. This validator uses the
 file’s extension to determine the [mime type](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types).
-Back end validation of the file’s content is still strongly encouraged. 
+Back-end validation of the file’s content is still strongly encouraged as front-end
+validation can be bypassed by savvy users.
 
 ```vue
 <FormulateInput
