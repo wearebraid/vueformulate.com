@@ -1,8 +1,9 @@
 <template>
 <FormulateInput
   type="file"
-  label="Upload a document"
-  help="Select a PDF to upload a document"
+  label="Select your documents to upload"
+  name="documents"
+  help="Select one or more PDFs to upload"
   validation="mime:application/pdf"
   multiple
 />

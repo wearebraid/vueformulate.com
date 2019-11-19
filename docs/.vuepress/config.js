@@ -45,8 +45,8 @@ module.exports = {
     },
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Guide', link: '/guide' },
-      { text: 'Inputs', link: '/inputs' },
+      { text: 'Guide', link: '/guide/' },
+      { text: 'Inputs', link: '/guide/inputs/text/' },
       { text: 'Theme Builder', link: '/theme-builder' },
       { text: 'Github', link: 'https://github.com/wearebraid/vue-formulate' }
     ],

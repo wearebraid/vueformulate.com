@@ -12,10 +12,12 @@ following classification specific props:
 
 Prop                | Description
 --------------------|-------------------------------------------------------------
-`immediate‑upload`  | Immediately upload a selected or dropped image. Defaults to `true`.
-`show‑image`        | For an image `type`, show a preview of the image.
+`upload‑behavior`   | `live` or `delayed` - Determines when the file is uploaded. Defaults to `live`, which uploads the file as soon as it is selected.
+`image‑behavior`    | `preview` or `file` - For an input type `image`, the default is `preview` where a thumbnail of the image is shown.
 `upload‑url`        | URL to perform a post request to, overrides the configured default.
-`uploader`          | Expects a `function` or axios instance to perform upload. Overrides configured axios instance if defined.
+`uploader`          | `function` or [axios instance](https://github.com/axios/axios) - Mechanism used to perform upload. Defaults to the a the [globally configured](#uploader) instance.
+`prevent‑window‑drops` | `true` by default, this prevents the browser from navigating to a file when the user misses the dropzone.
+`accept`            | This is [standard HTML](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#attr-accept), but helpful when trying to upload files of a certain type.
 
 
 ## Uploader
@@ -29,7 +31,7 @@ properly. An `uploader` must be defined before `file` inputs are supported.
 The easiest configuration is to provide an instance of [axios](https://github.com/axios/axios).
 
 ```js
-import VueFormulate from 'vue-formualte'
+import VueFormulate from 'vue-formulate'
 import axios from 'axios'
 
 const axiosInstance = axios.create({
@@ -56,7 +58,7 @@ The `uploader` function must always return a `Promise`. `async`
 functions are a good option for doing this automatically.
 
 ```js
-import VueFormulate from 'vue-formualte'
+import VueFormulate from 'vue-formulate'
 
 Vue.use(VueFormulate, {
   uploader: async function (file, progress, error, options) {
@@ -68,7 +70,7 @@ Vue.use(VueFormulate, {
         body: formData
       })
       progress(100) // (native fetch doesn’t support progress updates)
-      return await response.json()
+      return await result.json()
     } catch (err) {
       error('Unable to upload file')
     }
@@ -97,16 +99,37 @@ export default {
 </script>
 ```
 
+::: warning
+By default Vue Formulate uses a fake uploader function that advances the progress
+bar, but actually performs no requests. This is helpful for scaffolding and
+theming but must be replaced for actual uploads to work.
+:::
+
 ## File
 
 ```vue
 <FormulateInput
   type="file"
-  label="Upload a document"
-  help="Select a PDF to upload a document"
+  name="file"
+  label="Select your documents to upload"
+  help="Select one or more PDFs to upload"
   validation="mime:application/pdf"
+  multiple
 />
 ```
 <demo-file />
 
 ## Image
+
+```vue
+<FormulateInput
+  type="image"
+  name="headshot"
+  label="Select an image to upload"
+  help="Select a png, jpg or gif to upload."
+  validation="mime:image/jpeg,image/png,image/gif"
+/>
+```
+
+<demo-image />
+

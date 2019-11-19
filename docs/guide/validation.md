@@ -96,7 +96,7 @@ For the alphabetical portion you can pass `default` or `latin` - see
 [alpha](#alpha)) above.
 
 ```vue
-<VueFormualte
+<FormulateInput
   type="text"
   label="Enter your desired username"
   name="username"
@@ -282,7 +282,7 @@ file’s extension to determine the [mime type](https://developer.mozilla.org/en
 Back end validation of the file’s content is still strongly encouraged. 
 
 ```vue
-<FormualteInput
+<FormulateInput
   type="file"
   name="image"
   label="Please select an image"
@@ -290,3 +290,8 @@ Back end validation of the file’s content is still strongly encouraged.
 />
 ```
 <demo-validation-mime />
+
+::: tip Note
+When validating a field with the `multiple` attribute selected, validation will
+fail if any of the selected files are not the proper mime.
+:::

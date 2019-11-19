@@ -36,17 +36,12 @@ Once Vue Formulate has been downloaded you need to install it with Vue.
 import Vue from 'vue'
 import VueFormulate from 'vue-formulate'
 
-Vue.use(VueFormualte)
+Vue.use(VueFormulate)
 ```
 
 If you need custom configuration options, you can pass a second argument with
 an object of [configuration options](/configuration).
 
 ```js
-Vue.use(VueFormualte, {
-  rules: {},
-  validationMessages: {
-    required: ({ name }) => `${name} is required`
-  }
-})
+Vue.use(VueFormulate, options)
 ```
