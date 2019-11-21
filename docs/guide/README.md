@@ -1,11 +1,10 @@
 # Introduction
 
-Vue Formulate aims to be the easiest way to build forms using [Vue](https://vuejs.org/).
-Like Vue itself, with Vue Formulate "easy" doesn't mean that you have to sacrifice power.
-Web forms commonly appear deceptively simple to build at first blush, but experienced
-engineers are familiar with how they can quickly grow in complexity and become difficult
-to implement well. Raise your hand if web forms are your favorite part of a project.
-Anyone...? Bueller?
+Vue Formulate aims to be the easiest way to build forms using [Vue](https://vuejs.org/)
+while maintaining tremendous power. Web forms appear deceptively simple to build,
+but experienced engineers are familiar with how they can quickly grow in
+complexity and become difficult to implement well. Raise your hand if web forms
+are your favorite part of a project. Anyone...? Bueller?
 
 What's behind this? Consider some of the things a single input "field" needs to
 account for:
@@ -23,9 +22,11 @@ an existing piece of content)
 
 Vue Formulate is built to increase developer happiness by anticipating all of
 these needs and exposing a clean API and sensible defaults that make implementing
-these features as easy as possible.
+these features as easy as possible. In fact, there are only 2 components that
+need to be learned to create nearly any type of form: `FormulateInput` and
+`FormulateForm`.
 
-## Input elements
+## Inputs
 Every type of input in Vue Formulate is an instance of the `FormulateInput`
 component. This component is used whether you need a text input, password,
 select list, checkbox, or date picker, etc — it doesn't get much easier
@@ -113,3 +114,8 @@ Prop              | Description
 `errors`          | An array of custom error messages to show on an element.
 `error‑behavior`  | By default, error messages are only shown when the `blur` event fires on an input, or a `<FormulateForm>` element is submitted with errors. This behavior can be changed to `live` which will display all error messages for the input immediately as a user interacts with element. This is useful in the case of inputs such as range sliders where you may want validation feedback to be immediate.
 `show‑errors`     | When `true` this forces an element to show it’s errors regardless of the state of the `error-behavior`
+
+
+## Forms
+
+- TK -

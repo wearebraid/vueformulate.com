@@ -5,6 +5,37 @@ The file [classification](/inputs/) is given to the following types:
 - [file](#file)
 - [image](#image)
 
+Because file inputs require server interaction they require more configuration
+than other `FormulateInput` types.
+
+## File
+
+```vue
+<FormulateInput
+  type="file"
+  name="file"
+  label="Select your documents to upload"
+  help="Select one or more PDFs to upload"
+  validation="mime:application/pdf"
+  multiple
+/>
+```
+<demo-file />
+
+## Image
+
+```vue
+<FormulateInput
+  type="image"
+  name="headshot"
+  label="Select an image to upload"
+  help="Select a png, jpg or gif to upload."
+  validation="mime:image/jpeg,image/png,image/gif"
+/>
+```
+
+<demo-image />
+
 ## Props
 File inputs use the [default props](/guide/#input-props), as well as the
 following classification specific props:
@@ -105,31 +136,120 @@ bar, but actually performs no requests. This is helpful for scaffolding and
 theming but must be replaced for actual uploads to work.
 :::
 
-## File
+## Getting results
+
+When files are added to a file `type` in Vue Formulate the value is automatically
+transformed into an instance of `FileUpload`, a helper class to wrap the [FileList](https://developer.mozilla.org/en-US/docs/Web/API/FileList)
+object. Vue Formulate recommends that all files are uploaded via their own
+endpoint with the final url of the file being the stored value.
+
+### Upload results with `FormulateForm`
+
+When submitting a `FormulateForm` instance will upload your files and
+return the string path returned by your sever.
 
 ```vue
-<FormulateInput
-  type="file"
-  name="file"
-  label="Select your documents to upload"
-  help="Select one or more PDFs to upload"
-  validation="mime:application/pdf"
-  multiple
-/>
-```
-<demo-file />
+<template>
+  <FormulateForm
+    @submit="sendData"
+  >
+    <FormualteInput
+      type="text"
+      name="name"
+      label="Your name"
+    />
+    <FormulateInput
+      type="image"
+      name="avatar"
+      upload-url="/your/upload/directory"
+      label="Your avatar"
+    />
+    <FormulateInput
+      type="submit"
+      label="Save profile"
+    />
+  </FormulateForm>
+</template>
 
-## Image
+<script>
+export default {
+  methods: {
+    async sendData (form) {
+      try {
+        if (!await form.hasValidationErrors()) {
+          await this.$axios.put('/profile', await form.json())
+          alert('Profile saved!")
+        }
+      } catch (err) {
+        alert('There was an error saving your profile')
+      }
+    }
+  }
+}
+</script>
+```
+
+Notice the `await form.json()` in the above submission handler. When awaiting
+the response of a form submission, Vue Formulate will upload any `FormUpload`
+instances (file values) in the form via the specified `uploader` before
+resolving. If we were to output the resolved promise returned by `await form.json()`
+above the output would be simple json:
+
+```json
+// console.log(await form.json())
+{
+  "name": "Jon Doe",
+  "avatar": "/your/upload/directory/avatar.jpg"
+}
+```
+
+### Upload results with `v-model` on `FormulateInput`
+
+If your use case doesn’t call for a full form, you can directly bind to the
+`FormulateInput` and upload the file manually:
 
 ```vue
-<FormulateInput
-  type="image"
-  name="headshot"
-  label="Select an image to upload"
-  help="Select a png, jpg or gif to upload."
-  validation="mime:image/jpeg,image/png,image/gif"
-/>
+<template>
+  <div>
+    <FormulateInput
+      type="file"
+      name="document"
+      upload-behavior="delayed"
+      v-model="document"
+    />
+    <a
+      @click.prevent="uploadFile"
+    >
+      Upload the file
+    </a>
+  </div>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      document: false
+    }
+  },
+  methods: {
+    async uploadFile () {
+      if (this.document) {
+        try {
+          const path = await this.document.upload()
+        } catch (err) {
+          alert('Error uploading')
+          console.error(err)
+        }
+      }
+    }
+  }
+}
+</script>
 ```
 
-<demo-image />
-
+::: tip Note
+If the file has already been uploaded (like when using the default
+`upload‑behavior` of `live`) the `FileUpload.upload()` method will not cause a
+duplicate upload, but rather return the resolved path.
+:::
