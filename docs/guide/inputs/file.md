@@ -130,6 +130,18 @@ export default {
 </script>
 ```
 
+The result of from the server should be a simple json object in the format:
+
+```json
+{
+  "url": "/absolute/path/to/filename.png"
+}
+```
+
+While the result can certainly include more details than the `url` it is the only
+required value. It can be a fully qualified URL, or a path. If it's an `image` it
+should work as the `src` attribute for an `<img>` tag.
+
 ::: warning
 By default Vue Formulate uses a fake uploader function that advances the progress
 bar, but actually performs no requests. This is helpful for scaffolding and

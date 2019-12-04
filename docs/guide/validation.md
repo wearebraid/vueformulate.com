@@ -227,6 +227,19 @@ When matching against a regular expression you have to use the alternative
 ```
 <demo-validation-matches />
 
+```vue
+<FormulateInput
+  type="text"
+  name="language"
+  placeholder="node, php, java..."
+  label="What is your favorite server side language?"
+  validation="matches:node,php,java"
+  error-behavior="live"
+  v-model="color"
+/>
+```
+<demo-validation-matches-2 />
+
 ### Max
 Checks the value of a `Number`, or length of a `String` or `Array` is less than
 a maximum length or value. The maximum value/length defaults to `10`.
@@ -288,3 +301,84 @@ validation can be bypassed by savvy users.
 When validating a field with the `multiple` attribute selected, validation will
 fail if any of the selected files are not the proper mime.
 :::
+
+### Min
+Checks the value of a `Number`, or length of a `String` or `Array` is more than
+a maximum length or value. The minimum value/length defaults to `1`.
+
+You can force the validator to evaluate length or value by passing a second
+argument of either `length` or `value`.
+
+```vue
+<FormulateInput
+  type="text"
+  name="code"
+  label="Enter your SSN"
+  validation="min:9,length"
+  validation-name="Social security code"
+  error-behavior="live"
+/>
+```
+<demo-validation-min />
+
+### Not
+Checks to ensure the input data does not match a set of predefined values.
+
+```vue
+<FormulateInput
+  type="text"
+  name="framework"
+  label="What is your favorite javascript framework?"
+  validation="not:jquery,ember,mootools"
+  error-behavior="live"
+/>
+```
+<demo-validation-not />
+
+### Number
+Checks if the input is a valid number as evaluated by `isNaN()`.
+
+```vue
+<FormulateInput
+  type="text"
+  name="age"
+  label="How old are you?"
+  validation="number"
+  error-behavior="live"
+/>
+```
+<demo-validation-number />
+
+### Required
+Checks if the input is empty.
+
+```vue
+<FormulateInput
+  type="text"
+  name="city"
+  label="What city do you live in?"
+  validation="required"
+  error-behavior="live"
+/>
+```
+<demo-validation-required />
+
+::: warning Important
+By default fields are not required meaning that all validation rules will all
+pass with an empty value unless they include the `required` rule.
+:::
+
+### Url
+Checks if the input value is appears to be a properly formatted url including
+the protocol. This does not check if the URL is actually resolves.
+
+```vue
+<FormulateInput
+  type="url"
+  name="url"
+  label="What is your website?"
+  validation="url"
+  error-behavior="live"
+/>
+```
+<demo-validation-url />
