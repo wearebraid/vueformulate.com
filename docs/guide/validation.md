@@ -382,3 +382,8 @@ the protocol. This does not check if the URL is actually resolves.
 />
 ```
 <demo-validation-url />
+
+## Custom validation messages
+
+
+## Custom validation rules

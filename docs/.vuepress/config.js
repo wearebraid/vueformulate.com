@@ -1,5 +1,6 @@
 module.exports = {
   title: 'Vue Formulate',
+  port: 8123,
   themeConfig: {
     sidebar: {
       '/guide/': [
@@ -13,18 +14,28 @@ module.exports = {
               collapsable: true
             },
             {
-              title: 'Introduction',
+              title: 'Getting Started',
               path: '/guide/',
-              collapsable: true
-            },
-            {
-              title: 'Configuration',
-              path: '/guide/configuration',
               collapsable: true
             },
             {
               title: 'Validation',
               path: '/guide/validation',
+              collapsable: true
+            },
+            {
+              title: 'Custom Inputs',
+              path: '/guide/custom-inputs',
+              collapsable: true
+            },
+            {
+              title: 'Plugins',
+              path: '/guide/plugins',
+              collapsable: true
+            },
+            {
+              title: 'Theming',
+              path: '/guide/theming',
               collapsable: true
             }
           ]
@@ -35,6 +46,7 @@ module.exports = {
           children: [
             '/guide/inputs/text',
             '/guide/inputs/box',
+            '/guide/inputs/button',
             '/guide/inputs/file',
             '/guide/inputs/select',
             '/guide/inputs/sliders',
