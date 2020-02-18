@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[8],{224:function(t,e,n){"use strict";n.r(e);var u={name:"demo-1-inputs"},s=n(9),a=Object(s.a)(u,(function(){var t=this.$createElement;return(this._self._c||t)("FormulateInput",{attrs:{type:"text"}})}),[],!1,null,null,null);e.default=a.exports}}]);

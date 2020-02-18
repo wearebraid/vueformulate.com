@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[24],{240:function(t,e,a){"use strict";a.r(e);var n={},l=a(9),r=Object(l.a)(n,(function(){var t=this.$createElement;return(this._self._c||t)("FormulateInput",{attrs:{type:"text",name:"date",label:"Enter your birthday",placeholder:"mm/dd/yyyy",validation:"date:MM/DD/YYYY"}})}),[],!1,null,null,null);e.default=r.exports}}]);

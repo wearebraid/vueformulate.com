@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Installation</title>
+    <meta name="description" content="">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.6114eb0d.css" as="style"><link rel="preload" href="/assets/js/app.dc1a3416.js" as="script"><link rel="preload" href="/assets/js/2.f1107a43.js" as="script"><link rel="preload" href="/assets/js/17.c0c9e2c2.js" as="script"><link rel="prefetch" href="/assets/js/10.348bd7f9.js"><link rel="prefetch" href="/assets/js/11.453206d8.js"><link rel="prefetch" href="/assets/js/12.567d055b.js"><link rel="prefetch" href="/assets/js/13.baa4c151.js"><link rel="prefetch" href="/assets/js/14.878428f1.js"><link rel="prefetch" href="/assets/js/15.8fb1ad3a.js"><link rel="prefetch" href="/assets/js/16.3b2476dd.js"><link rel="prefetch" href="/assets/js/18.60b3d718.js"><link rel="prefetch" href="/assets/js/19.201d6e33.js"><link rel="prefetch" href="/assets/js/20.4b15c6fa.js"><link rel="prefetch" href="/assets/js/21.65905fe2.js"><link rel="prefetch" href="/assets/js/3.ebb7334b.js"><link rel="prefetch" href="/assets/js/4.59116900.js"><link rel="prefetch" href="/assets/js/5.a05d81a7.js"><link rel="prefetch" href="/assets/js/6.337664ee.js"><link rel="prefetch" href="/assets/js/7.5aeefc72.js"><link rel="prefetch" href="/assets/js/8.e757498b.js"><link rel="prefetch" href="/assets/js/9.6e2e7e6e.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.6114eb0d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="installation"><a href="#installation" class="header-anchor">#</a> Installation</h1> <p>The preferred way to use Vue Formulate is to install via your preferred JavaScript
+package manager.</p> <h2 id="npm"><a href="#npm" class="header-anchor">#</a> NPM</h2> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token function">npm</span> <span class="token function">install</span> vue-formulate --save
+</code></pre></div><h2 id="yarn"><a href="#yarn" class="header-anchor">#</a> Yarn</h2> <div class="language-sh extra-class"><pre class="language-sh"><code><span class="token function">yarn</span> <span class="token function">add</span> vue-formulate
+</code></pre></div><h2 id="direct-download"><a href="#direct-download" class="header-anchor">#</a> Direct download</h2> <p>Alternatively, if you don’t have a build process on your application you can
+download the repository and manually link to the minified version:</p> <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>/vue-formulate/dist/formulate.min.js<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><div class="custom-block warning"><p class="custom-block-title">WARNING</p> <p>While you can use Vue Formulate via direct download, it is not recommended.
+The remainder of the documentation assumes that you are developing in a context
+that supports ES2015. In the event you do not have a build process that provides
+backwards support you will need to modify the syntax of the documentation to suit
+the specifics of your environment.</p></div> <h2 id="add-to-vue"><a href="#add-to-vue" class="header-anchor">#</a> Add to Vue</h2> <p>Once Vue Formulate has been downloaded you need to install it with Vue.</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span>
+<span class="token keyword">import</span> VueFormulate <span class="token keyword">from</span> <span class="token string">'vue-formulate'</span>
+
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>VueFormulate<span class="token punctuation">)</span>
+</code></pre></div><p>If you need custom configuration options, you can pass a second argument with
+an object of <a href="/guide/configuration/">configuration options</a>.</p> <div class="language-js extra-class"><pre class="language-js"><code>Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>VueFormulate<span class="token punctuation">,</span> options<span class="token punctuation">)</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.dc1a3416.js" defer></script><script src="/assets/js/2.f1107a43.js" defer></script><script src="/assets/js/17.c0c9e2c2.js" defer></script>
+  </body>
+</html>
