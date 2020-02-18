@@ -9,7 +9,11 @@
   ],
   "env": {
     "USERNAME": "braid",
-    "PASSWORD": "braid",
-    "NPM_TOKEN": "@npm-token"
+    "PASSWORD": "braid"
+  },
+  "build": {
+    "env": {
+      "NPM_TOKEN": "@npm-token"
+    }
   }
 }

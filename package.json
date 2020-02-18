@@ -12,7 +12,7 @@
   "scripts": {
     "dev": "vuepress dev docs",
     "build:original": "vuepress build docs",
-    "build": "rm -rf public && vuepress build && mv docs/.vuepress/dist public"
+    "build": "rm -rf public && vuepress build docs && mv docs/.vuepress/dist public"
   },
   "dependencies": {
     "@braid/vue-formulate": "^2.0.0-alpha.1",
