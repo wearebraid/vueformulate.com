@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "name": "vuepress-now-auth",
+  "builds": [
+    { "src": "index.js", "use": "@now/node" }
+  ],
+  "routes": [
+    { "src": "/.*", "dest": "index.js" }
+  ],
+  "env": {
+    "USERNAME": "braid",
+    "PASSWORD": "braid",
+    "NPM_TOKEN": "@npm-token"
+  }
+}

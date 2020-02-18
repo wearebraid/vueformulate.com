@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[33],{250:function(e,t,n){"use strict";n.r(t);var a={},r=n(9),l=Object(r.a)(a,(function(){var e=this.$createElement;return(this._self._c||e)("FormulateInput",{attrs:{type:"text",name:"age",label:"How old are you?",validation:"number","error-behavior":"live"}})}),[],!1,null,null,null);t.default=l.exports}}]);

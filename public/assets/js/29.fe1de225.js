@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[29],{246:function(e,t,n){"use strict";n.r(t);var a={},o=n(9),l=Object(o.a)(a,(function(){var e=this.$createElement;return(this._self._c||e)("FormulateInput",{attrs:{type:"text",name:"coupon",label:"Enter a coupon code",validation:"max:5,length","error-behavior":"live"}})}),[],!1,null,null,null);t.default=l.exports}}]);

@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[18],{234:function(e,t,n){"use strict";n.r(t);var a={},c=n(9),l=Object(c.a)(a,(function(){var e=this.$createElement;return(this._self._c||e)("FormulateInput",{attrs:{type:"checkbox",label:"I accept the terms of service?",name:"terms",validation:"accepted"}})}),[],!1,null,null,null);t.default=l.exports}}]);

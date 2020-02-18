@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[11],{225:function(t,e,n){"use strict";n.r(e);var a={name:"demo-2-inputs"},u=n(9),r=Object(u.a)(a,(function(){var t=this.$createElement;return(this._self._c||t)("FormulateInput",{attrs:{type:"textarea"}})}),[],!1,null,null,null);e.default=r.exports}}]);

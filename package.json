@@ -1,4 +1,9 @@
 {
+  "name": "vueformulate.com",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:wearebraid/vueformulate.com.git"
+  },
   "devDependencies": {
     "node-sass": "^4.13.0",
     "sass-loader": "^8.0.0",
@@ -6,13 +11,16 @@
   },
   "scripts": {
     "dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "build:original": "vuepress build docs",
+    "build": "rm -rf public && vuepress build && mv docs/.vuepress/dist public"
   },
   "dependencies": {
+    "@braid/vue-formulate": "^2.0.0-alpha.1",
     "axios": "^0.19.0",
     "clone-deep": "^4.0.1",
     "is-plain-object": "^3.0.0",
     "is-url": "^1.2.4",
-    "nanoid": "^2.1.6"
+    "nanoid": "^2.1.6",
+    "static-auth": "^1.1.1"
   }
 }
