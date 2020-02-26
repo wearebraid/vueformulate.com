@@ -190,12 +190,6 @@ In addition to binding values to individual `FormulateInput` fields, you can
 also collect all the values from a collection of inputs by wrapping them in
 a `FormulateForm` and placing a `v-model` on that element.
 
-:::tip Read more...
-That’s not all folks...the `FormulateForm` element has a number of other really
-valuable features like form submission, group validation, and file uploads.
-
-[Read more on the `FormulateForm` page](/guide/forms)
-:::
 
 ```vue
 <FormulateForm
@@ -214,3 +208,10 @@ valuable features like form submission, group validation, and file uploads.
 ```
 
 <demo-form />
+
+:::tip Read more...
+That’s not all folks...the `FormulateForm` element has a number of other really
+valuable features like form submission, group validation, and file uploads.
+
+[Read more on the `FormulateForm` page](/guide/forms)
+:::
