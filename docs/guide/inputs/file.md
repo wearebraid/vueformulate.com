@@ -157,15 +157,17 @@ endpoint with the final url of the file being the stored value.
 
 ### Upload results with `FormulateForm`
 
-When submitting a `FormulateForm` instance will upload your files and
-return the string path returned by your sever.
+When using a `FormulateForm` a successful submission will perform an upload on
+any files in your form which have not already been uploaded
+(using `upload‑behavior` set to `live`) will upload your files and return the
+string path returned by your sever.
 
 ```vue
 <template>
   <FormulateForm
     @submit="sendData"
   >
-    <FormualteInput
+    <FormulateInput
       type="text"
       name="name"
       label="Your name"
@@ -175,6 +177,7 @@ return the string path returned by your sever.
       name="avatar"
       upload-url="/your/upload/directory"
       label="Your avatar"
+      upload-behavior="delayed"
     />
     <FormulateInput
       type="submit"
@@ -186,29 +189,28 @@ return the string path returned by your sever.
 <script>
 export default {
   methods: {
-    async sendData (form) {
-      try {
-        if (!await form.hasValidationErrors()) {
-          await this.$axios.put('/profile', await form.json())
-          alert('Profile saved!")
-        }
-      } catch (err) {
-        alert('There was an error saving your profile')
-      }
+    async sendData (data) {
+      await this.$axios.put('/profile', data)
     }
   }
 }
 </script>
 ```
 
-Notice the `await form.json()` in the above submission handler. When awaiting
-the response of a form submission, Vue Formulate will upload any `FormUpload`
-instances (file values) in the form via the specified `uploader` before
-resolving. If we were to output the resolved promise returned by `await form.json()`
-above the output would be simple json:
+The `submit` handler above will be called only after Vue Formulate has uploaded
+any `FormUpload` instances (file values) in the form data. Here's an example of
+the above code:
+
+<demo-file-form />
+
+::: tip Note
+If you prefer to handle the form submission manually you can listen to the
+`submit-raw` event on `FormulateForm` which returns an instance of
+`FormSubmission`, read more about [FormulateForm](/guide/#forms).
+:::
 
 ```json
-// console.log(await form.json())
+// console.log(await form.values())
 {
   "name": "Jon Doe",
   "avatar": "/your/upload/directory/avatar.jpg"

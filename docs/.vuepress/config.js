@@ -6,6 +6,7 @@ module.exports = {
       '/guide/': [
         {
           title: 'Guide',
+          path: '/guide',
           collapsable: false,
           children: [
             {
@@ -43,14 +44,34 @@ module.exports = {
         {
           title: 'Inputs',
           collapsable: false,
+          path: '/guide/inputs',
           children: [
-            '/guide/inputs/text',
-            '/guide/inputs/box',
-            '/guide/inputs/button',
-            '/guide/inputs/file',
-            '/guide/inputs/select',
-            '/guide/inputs/sliders',
-            '/guide/inputs/textarea'
+            {
+              title: 'Configuration',
+              collapsable: true,
+              path: '/guide/inputs/',
+            },
+            ...[
+              '/guide/inputs/text',
+              '/guide/inputs/box',
+              '/guide/inputs/button',
+              '/guide/inputs/file',
+              '/guide/inputs/select',
+              '/guide/inputs/sliders',
+              '/guide/inputs/textarea'
+            ]
+          ]
+        },
+        {
+          title: 'Forms',
+          collapsable: false,
+          path: '/guide/forms',
+          children: [
+            {
+              title: 'Configuration',
+              collapsable: true,
+              path: '/guide/forms/',
+            }
           ]
         },
         {
@@ -63,7 +84,6 @@ module.exports = {
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Guide', link: '/guide/' },
-      { text: 'Inputs', link: '/guide/inputs/text/' },
       { text: 'Theme Builder', link: '/theme-builder/' },
       { text: 'Github', link: 'https://github.com/wearebraid/vue-formulate' }
     ],

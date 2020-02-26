@@ -27,6 +27,7 @@ own [custom rule](#custom-rules) to suit your needs.
 - [alphanumeric](#alphanumeric)
 - [before](#before)
 - [between](#between)
+- [confirm](#confirm)
 - [date](#date)
 - [email](#email)
 - [in](#in)
@@ -139,8 +140,55 @@ the [before](#before) and [after](#after) validation rules together.
 />
 {{ age }}
 ```
-
 <demo-validation-between />
+
+### Confirm
+
+Checks if the field value matches the value of another field. Mostly used for
+hidden fields - like password confirmations. By default a `confirm` rule will
+look for other fields in the same `FormulateForm` with the suffix `_confirm`.
+
+:::tip Note
+This rule only works inside the context of a `<FormulateForm>`.
+:::
+
+```vue
+<template>
+  <FormulateForm
+    @submit="submit"
+  >
+    <FormulateInput
+      label="New password"
+      type="password"
+      name="password"
+      validation="required"
+    />
+    <FormulateInput
+      label="Confirm password"
+      type="password"
+      name="password_confirm"
+      validation="required|confirm"
+      validation-name="Password confirmation"
+    />
+    <FormulateInput
+      type="submit"
+      label="Change password"
+    />
+  </FormulateForm>
+</template>
+
+<script>
+export default {
+  methods: {
+    submit () {
+      alert('passed validation')
+    }
+  }
+}
+</script>
+```
+
+<demo-validation-confirm />
 
 ### Date
 Checks if the input is a valid date according to `Date.parse()` or if a format

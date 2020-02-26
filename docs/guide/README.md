@@ -34,7 +34,7 @@ this package does not aim to do:
   1. This is not a form _layout_ tool. Want inputs next to each other? Cool!
     Just wrap some inputs in a `<div>` and sprinkle on the `flexbox`. This
     package assumes you'll still be responsible for form layout.
-  2. This package is BYOB — bring your own backend. Vue Formualte doesn't care
+  2. This package is BYOB — bring your own backend. Vue Formulate doesn't care
     a lick about the backend you choose (the closest it gets to caring is when
     using [file inputs](/inputs/files))
 
@@ -170,76 +170,32 @@ Certain types of inputs set an `array` of values on their model.
 ```
 **Output:**
 
+
 <demo-3-binding />
 
-### Setting an initial value
 
-Sometimes it's helpful to set the initial value of a field without binding a
-model. This can be done with the `value` prop, no `v-model` necessary:
+:::tip Read more...
+Model binding isn't all you can do with a `FormulateInput` element! Read more
+about field:
 
-```vue
-<FormulateInput
-  type="text"
-  value="One time initial value"
-/>
-```
-**Output:**
-<demo-1-initial />
-
-::: tip
-Note: When using `v-model` and `value` on the same `<FormulateInput>` the
-initial value will use the `v-model` value over the `value`.
+- [Validation](/guide/validation)
+- [Custom inputs](/guide/custom-inputs)
+- [Options](/guide/inputs#input-options)
+- [And more...](/guide/inputs)
 :::
 
-## Input features
+### Form binding
 
-When building a real-world forms there are typically a variety of input element
-types and extra features surrounding an `<input>` in order to create a delightful
-experience. Often a `<div>` wrapper, a `<label>`, perhaps a `<small>` for help
-text, maybe event a `<ul>` for validation messages.
+In addition to binding values to individual `FormulateInput` fields, you can
+also collect all the values from a collection of inputs by wrapping them in
+a `FormulateForm` and placing a `v-model` on that element.
 
-With Vue Formulate, `FormulateInput` components provide all of these features:
+:::tip Read more...
+That’s not all folks...the `FormulateForm` element has a number of other really
+valuable features like form submission, group validation, and file uploads.
 
-```vue
-<FormulateInput
-  type="text"
-  label="Your name"
-  help="What is your full name?"
-  placeholder="Enter your full name"
-  validation="required"
-  error="My custom error message"
-  error-behavior="live"
-/>
-```
-**Output:**
-
-<demo-3-inputs />
-
-::: tip Note
-Some `FormulateInput` types have props that are specific to their type. Please
-reference the input library for the type you're implementing to see all available
-props.
+[Read more on the `FormulateForm` page](/guide/forms)
 :::
-
-Prop              | Description
-------------------|-------------------------------------------------------------
-`type`            | *Required.* The type of input element. [See the input library](/guide/inputs/text) for a full range of options.
-`label`           | A descriptive label for the input element.
-`label‑position`  | Most input elements place the label before the input by default. The `box` [classification](/guide/inputs/box) places labels after by default, but either can be overridden with this prop.
-`name`            | Adds a name attribute, and when used with `<FormulateForm>` this is the key of the field. If no name is defined a random hash will be assigned
-`help`            | Help text to be displayed with the input.
-`placeholder`     | The placeholder attribute of the element (if applicable)
-`value`           | An initial unbound value (use when `v-model` or form binding is not good option)
-`validation`      | A `string` or `array` of validation rules. See [input validation](/guide/validation)
-`validation‑name` | The name to use in validation error messages. By default this uses the `name` prop if available and falls back to the `label` prop. It can be explicitly overridden here if needed.
-`error`           | A custom error message to be manually shown on an element (validation errors are generated on their own). This error will always be visible (if you want to remove it, use a dynamic prop).
-`errors`          | An array of custom error messages to show on an element (see above).
-`error‑behavior`  | By default, error messages are only shown when the `blur` event fires on an input, or a `<FormulateForm>` element is submitted with errors. This behavior can be changed to `live` which will display all error messages for the input immediately as a user interacts with element. This is useful in the case of inputs such as range sliders where you may want validation feedback to be immediate.
-`show‑errors`     | When `true` this forces an element to show it’s errors regardless of the state of the `error-behavior`
-
-## Forms
-
-- More TK -
 
 ```vue
 <FormulateForm
