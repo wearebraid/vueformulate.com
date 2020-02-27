@@ -47,3 +47,21 @@ You may also use the default slot to pass more complex content into the button.
 ::: warning Important
 There is no model binding or label element for button input types.
 :::
+
+## Submit
+
+Submit elements have the same syntax as buttons, but they are able to submit
+forms (including `FormulateForm` wrappers).
+
+```vue
+<FormulateForm
+  @submit="showAlert"
+>
+  <FormulateInput
+    type="submit"
+    name="Submit this form!"
+  />
+</FormulateForm>
+```
+
+<demo-input-submit />

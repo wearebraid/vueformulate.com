@@ -431,7 +431,169 @@ the protocol. This does not check if the URL is actually resolves.
 ```
 <demo-validation-url />
 
-## Custom validation messages
+## Customize validation messages
 
+There are a number of ways to customize your validation message. The most basic
+of which is to use the `validation-name` prop — allowing you to change the name
+of the field as used in the pre-defined validation messages.
+
+If you need to be more specific you have two options:
+
+- Override a rule’s message function on an individual `FormulateInput`
+- Globally override a validation rule’s message function
+
+### Custom field-level messages
+
+#### Using strings
+To override a validation message on a single `FormualteInput`, add the
+`validation-messages` prop with an object of rule names and a corresponding
+message.
+
+```vue
+<FormulateInput
+  type="select"
+  label="What nationality’s food is the best?"
+  name="food"
+  :options="{
+    french: 'French',
+    italian: 'Italian',
+    german: 'German',
+    indian: 'Indian'
+  }"
+  placeholder="Select a food type"
+  validation="required|in:italian,indian"
+  error-behavior="live"
+  :validation-messages="{
+    required: 'Please pick your favorite food',
+    in: 'Oh, that food isn’t very good...'
+  }"
+/>
+```
+
+<demo-custom-validation-field />
+
+#### Using functions
+
+If you need more power for your validation rules, you can use a function instead
+of a string. The function is passed a context object.
+
+#### Validation message context object:
+
+Property   | Description
+-----------|----------------------------------------
+args       | An array of arguments from rule definition. For example `['italian', 'indian']` in the rule definition `in:italian,indian`
+name       | The name of the field (cascades to `validation-name || name || label`)
+value      | The current value of the field
+formValues | If inside the context of a `FormulateForm` this object will contain the values of the other fields (by name)
+
+Let’s re-write the above example using a function instead of a string.
+
+```vue
+<FormualteForm
+  ...
+  :validation-messages="{
+    required: 'Please pick your favorite food',
+    in: ({ value }) => `Oh, ${value} food isn’t very good...`
+  }"
+/>
+```
+
+<demo-custom-validation-field-2 />
+
+### Globally add/edit validation rule message
+
+If there are validation rule messages you'd like to override across your entire
+project, you can define those message rules when registering Vue Formulate under
+the language key you'd like to override.
+
+```js
+import Vue from 'vue'
+import VueFormulate from '@braid/vue-formulate'
+
+Vue.use(VueFormulate, {
+  locales: {
+    en: {
+      required ({ name }) {
+        return `Please fill out the ${name} field.`
+      }
+    }
+  }
+})
+```
+
+:::tip About localization
+Currently Vue Formulate only supports the english language, but that’s only
+because the maintainers only speak english. If you’re able translate to another
+language, please [submit a pull request](https://github.com/wearebraid/vue-formulate)!
+:::
 
 ## Custom validation rules
+
+Like with validation messages, rules can be added globally or per-field. Rules
+are just simple functions that are passed a context object and rule arguments
+and expected to return or resolve a `boolean`.
+
+#### Validation Rule Context Object:
+
+Property      | Description
+--------------|-----------------
+value         | The value of the field
+getFormValues | When the input is in the context of a `FormulateForm` you can retrieve an object of form values by using this function
+name          | The name of the field being evaluated
+
+In addition to the context object, any rule arguments are passed as additional
+arguments. For example:
+
+```vue
+// Given this validation string
+<FormulateInput
+  validation="myRule:first,second,third"
+/>
+```
+```js
+// A rule named "myRule" will be called with the following:
+function myRule (context, ...args) {
+  // args now contains an array ['first', 'second', 'third']
+}
+```
+
+### Field-level custom validation rules
+
+```vue
+<FormulateInput
+  validation="required|foobar"
+  :validation-rules="{
+    foobar: ({ value }) => ['foo', 'bar'].includes(value)
+  }"
+  :validation-messages="{
+    foobar: 'The value must be foo or bar'
+  }"
+/>
+```
+
+<demo-custom-validation />
+
+:::tip Asynchronous validation
+Asynchronous validation rules are completely valid, but [keep in mind](/guide/forms/#submitting-forms)
+that forms will wait to trigger their `@submit` handler until all validation
+rules have resolved `true`, so try to keep them as snappy as possible.
+
+Internally, Vue Formulate does not debounce validation rules, so if you need to
+perform an expensive asynchronous validation (like an http request) it is
+recommended that you debounce your validation rule.
+:::
+
+### Global custom validation rules
+
+Global validation rules can be added when Vue Formulate is registered with Vue.
+
+```js
+import Vue from 'vue'
+import VueFormulate from '@braid/vue-formulate'
+
+Vue.use(VueFormulate, {
+  rules: {
+    foobar: ({ value }) => ['foo', 'bar'].includes(value)
+  }
+})
+```

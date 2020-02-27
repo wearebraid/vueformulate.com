@@ -4,12 +4,12 @@ package manager.
 
 ## NPM
 ```sh
-npm install vue-formulate --save
+npm install @braid/vue-formulate
 ```
 
 ## Yarn
 ```sh
-yarn add vue-formulate
+yarn add @braid/vue-formulate
 ```
 
 ## Direct download
@@ -33,13 +33,13 @@ Once Vue Formulate has been downloaded you need to install it with Vue.
 
 ```js
 import Vue from 'vue'
-import VueFormulate from 'vue-formulate'
+import VueFormulate from '@braid/vue-formulate'
 
 Vue.use(VueFormulate)
 ```
 
 If you need custom configuration options, you can pass a second argument with
-an object of [configuration options](/guide/configuration/).
+an object of configuration options.
 
 ```js
 Vue.use(VueFormulate, options)
