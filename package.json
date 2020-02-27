@@ -10,7 +10,7 @@
     "now-build": "rm -rf public && vuepress build docs && mv docs/.vuepress/dist public"
   },
   "dependencies": {
-    "@braid/vue-formulate": "2.0.0-alpha.3",
+    "@braid/vue-formulate": "2.0.0-alpha.4",
     "axios": "^0.19.2",
     "static-auth": "^1.1.1"
   },

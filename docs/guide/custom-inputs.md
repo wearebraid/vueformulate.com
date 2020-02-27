@@ -154,9 +154,9 @@ to keep things consistent for theme authors._
 
 ## Registering an input
 
-Once your classification is written, you need to let Vue Formulate know there
-is a new `type` of input and it should your new classification. You do this by
-extending the `library` global option.
+Once your input component is written, you need to let Vue Formulate know there
+is a new `type` of input and it has a custom component (and/or `classification`).
+You do this by extending the `library` global option.
 
 ```js
 import Vue from 'vue'

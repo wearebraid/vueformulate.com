@@ -73,21 +73,16 @@ module.exports = {
               path: '/guide/forms/',
             }
           ]
-        },
-        {
-          title: 'Theme',
-          collapsable: false,
-          children: []
         }
       ]
     },
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Guide', link: '/guide/' },
-      { text: 'Theme Builder', link: '/theme-builder/' },
       { text: 'Github', link: 'https://github.com/wearebraid/vue-formulate' }
     ],
     searchPlaceholder: 'Search...',
-    smoothScroll: true
+    smoothScroll: true,
+    logo: '/assets/img/logo.png',
   }
 }

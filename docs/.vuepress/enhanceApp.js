@@ -4,19 +4,12 @@
  */
 import VueFormulate from '@braid/vue-formulate'
 import pageComponents from '@internal/page-components'
-import MyFormulateAutocomplete from './components/MyFormulateAutocomplete'
+import Autocomplete from './Autocomplete'
 import '../../node_modules/@braid/vue-formulate/themes/snow/snow.scss'
 
 export default ({ Vue }) => {
-  Vue.use(MyFormulateAutocomplete)
-
   Vue.use(VueFormulate, {
-    library: {
-      autocomplete: {
-        classification: 'text',
-        component: 'MyFormulateAutocomplete'
-      }
-    }
+    plugins: [ Autocomplete ]
   })
   for (const [name, component] of Object.entries(pageComponents)) {
     Vue.component(name, component)

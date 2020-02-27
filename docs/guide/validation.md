@@ -1,7 +1,7 @@
 # Validation
 Front-end validation is incredibly important to providing a good user experience
 to your users, but it’s often skipped due to the pain involved in configuring it.
-Vue formulate reduces the friction of front-end validation to the point where it's
+Vue Formulate reduces the friction of front-end validation to the point where it's
 so simple to set up that there's really no good excuse not to.
 
 ```vue
@@ -16,10 +16,32 @@ so simple to set up that there's really no good excuse not to.
 
 <demo-1-validation />
 
+:::tip Note
+By default, validation error messages are not 3wshown until the user’s focus
+leaves (technically a `blur` event) the current field. You can change this
+behavior by setting the `error-behavior` prop to `live`
+:::
+
+#### Syntax
+
+Declaring what validation rules apply to your field is as easy as adding a
+`validation` prop to your `FormulateInput` field. Rules can either be a series
+of pipe (`|`) separated strings `required|max:10|min:5` or arrays:
+
+```vue
+<FormulateInput
+  :validation="[
+    ['required'],
+    ['max', 10],
+    ['min', 5]
+  ]"
+/>
+```
+
 ## Available rules
-Vue formulate ships with a library of frequently used validation rules. If
+Vue Formulate ships with a library of frequently used validation rules. If
 you don’t find one that meets your exact requirement you can always add your
-own [custom rule](#custom-rules) to suit your needs.
+own [custom rule](#custom-validation-rules) to suit your needs.
 
 - [accepted](#accepted)
 - [after](#after)
