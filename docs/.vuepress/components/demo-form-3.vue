@@ -7,6 +7,7 @@
       name="name"
       help="Please enter your name"
       validation="required"
+      autocomplete="new-password"
     />
     <FormulateInput
       type="submit"

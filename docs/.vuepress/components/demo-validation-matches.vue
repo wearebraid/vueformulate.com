@@ -9,6 +9,7 @@
       :validation="[['matches', /^#[a-fA-F0-9]{6}$/]]"
       error-behavior="live"
       v-model="color"
+      autocomplete="new-password"
     />
     <FormulateInput
       type="color"

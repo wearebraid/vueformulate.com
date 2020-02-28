@@ -5,6 +5,7 @@
     label="How old are you?"
     validation="number"
     error-behavior="live"
+    autocomplete="new-password"
   />
 </template>
 

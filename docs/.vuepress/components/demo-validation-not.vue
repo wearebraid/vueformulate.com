@@ -5,6 +5,7 @@
     label="What is your favorite javascript framework?"
     validation="not:jquery,ember,mootools"
     error-behavior="live"
+    autocomplete="new-password"
   />
 </template>
 

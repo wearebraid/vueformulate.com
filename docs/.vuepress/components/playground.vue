@@ -10,6 +10,7 @@
         label="What is first your name?"
         help="What is your first name?"
         v-model="inputValue"
+        autocomplete="new-password"
       />
       <button
         @click="formValues.first_name = 'set from button'"
@@ -25,6 +26,7 @@
         label="Last Name?"
         help="This is help text"
         name="last_name"
+        autocomplete="new-password"
       />
     </FormulateForm>
     {{ formValues }}

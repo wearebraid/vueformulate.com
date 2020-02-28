@@ -12,6 +12,7 @@
         name="text"
         v-model="textInput"
         :formulate-value="textInput"
+        autocomplete="new-password"
       />
       <button @click.prevent="textInput = 'Set by button'">Set via v-model</button>
       <button @click.prevent="formValues.text = 'Set by form'">Set via form value</button>
@@ -21,6 +22,7 @@
         help="This is what help text looks like on a textarea"
         :debug="true"
         placeholder="I saw a chicken cross the..."
+        autocomplete="new-password"
       />
       <FormulateInput
         label="Checkbox"

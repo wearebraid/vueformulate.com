@@ -2,6 +2,7 @@
   <FormulateInput
     type="text"
     v-model="myModel"
+    autocomplete="new-password"
   />
 </template>
 

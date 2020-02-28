@@ -4,6 +4,7 @@
     label="Enter your desired username"
     name="username"
     validation="alphanumeric"
+    autocomplete="new-password"
   />
 </template>
 

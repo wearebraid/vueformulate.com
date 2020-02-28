@@ -6,11 +6,13 @@
       type="text"
       name="name"
       label="Your name"
+      autocomplete="new-password"
     />
     <FormulateInput
       type="email"
       name="email"
       label="Your email"
+      autocomplete="new-password"
     />
     <FormulateInput
       type="submit"

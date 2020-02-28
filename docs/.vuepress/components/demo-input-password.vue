@@ -8,5 +8,6 @@
     validation="required|min:10,length"
     validation-name="Password"
     error-behavior="live"
+    autocomplete="new-password"
   />
 </template>

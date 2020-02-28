@@ -5,5 +5,6 @@
     help="Note: We're fresh out of strawberries and bananas."
     name="flavor"
     validation="required|not:strawberry,banana"
+    autocomplete="new-password"
   />
 </template>

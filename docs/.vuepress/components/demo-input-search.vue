@@ -5,5 +5,6 @@
     label="Sample search input"
     placeholder="Sample search placeholder"
     help="Sample search help text"
+    autocomplete="new-password"
   />
 </template>

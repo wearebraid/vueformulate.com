@@ -5,10 +5,12 @@
     <FormulateInput
       label="Username"
       name="username"
+      autocomplete="new-password"
     />
     <FormulateInput
       label="Email"
       name="email"
+      autocomplete="new-password"
     />
   </FormulateForm>
 </template>
