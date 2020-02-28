@@ -93,5 +93,13 @@ module.exports = {
     editLinks: true,
     editLinkText: 'Help improve this page!'
   },
+  plugins: [
+    [
+      '@vuepress/google-analytics',
+      {
+        'ga': 'UA-107296601-3' // UA-00000000-0
+      }
+    ]
+  ],
   dest: 'public'
 }
