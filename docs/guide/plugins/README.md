@@ -8,7 +8,7 @@ instance and can extend it. This is most helpful if you want to codify your own
 
 :::tip Please share!
 Vue Formulate is brand new, so if you publish a custom input plugin on npm or
-github and want to share it, submit a [pull request](https://github.com/wearebraid/vueformulate.com/blob/master/docs/guide/plugins.md)
+GitHub and want to share it, submit a [pull request](https://github.com/wearebraid/vueformulate.com/blob/master/docs/guide/plugins.md)
 or [file an issue](https://github.com/wearebraid/vueformulate.com/issues/new)
 on the documentation repository and we'll list it on this page.
 :::
@@ -72,7 +72,7 @@ export default function (formulateInstance) {
 ```
 
 :::tip Note
-In the above code we use Vue Formulate to register our component by adding it to
+In the above code, we use Vue Formulate to register our component by adding it to
 the `components` object. This is a convenience, but you are not required to
 register the component with Vue Formulate as long as it’s been globally
 registered.
@@ -90,5 +90,5 @@ Vue.use(VueFormualte, {
 
 ```
 
-Of course the above code could also be packaged up into a tidy `npm` package
+Of course, the above code could also be bundled up into a tidy `npm` package
 and published for public consumption.
