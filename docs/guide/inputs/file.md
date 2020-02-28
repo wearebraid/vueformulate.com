@@ -8,6 +8,12 @@ The file [classification](/inputs/) is given to the following types:
 Because file inputs require server interaction they require more configuration
 than other `FormulateInput` types.
 
+:::danger Warning — wet paint
+File uploads are still under active development and the details of this api may
+still be subject to change. This warning will be removed as soon as the API has
+been solidified.
+:::
+
 ## File
 
 ```vue
@@ -152,8 +158,7 @@ theming but must be replaced for actual uploads to work.
 
 When files are added to a file `type` in Vue Formulate the value is automatically
 transformed into an instance of `FileUpload`, a helper class to wrap the [FileList](https://developer.mozilla.org/en-US/docs/Web/API/FileList)
-object. Vue Formulate recommends that all files are uploaded via their own
-endpoint with the final url of the file being the stored value.
+object. It is recommended that the backend have common url where files can uploaded.
 
 ### Upload results with `FormulateForm`
 
