@@ -10,12 +10,12 @@ module.exports = {
       '/guide/': [
         {
           title: 'Guide',
-          path: '/guide',
+          path: '/guide/',
           collapsable: false,
           children: [
             {
               title: 'Installation',
-              path: '/guide/installation',
+              path: '/guide/installation/',
               collapsable: true
             },
             {
@@ -25,22 +25,22 @@ module.exports = {
             },
             {
               title: 'Validation',
-              path: '/guide/validation',
+              path: '/guide/validation/',
               collapsable: true
             },
             {
               title: 'Custom Inputs',
-              path: '/guide/custom-inputs',
+              path: '/guide/custom-inputs/',
               collapsable: true
             },
             {
               title: 'Plugins',
-              path: '/guide/plugins',
+              path: '/guide/plugins/',
               collapsable: true
             },
             {
               title: 'Theming',
-              path: '/guide/theming',
+              path: '/guide/theming/',
               collapsable: true
             }
           ]
@@ -48,7 +48,7 @@ module.exports = {
         {
           title: 'Inputs',
           collapsable: false,
-          path: '/guide/inputs',
+          path: '/guide/inputs/',
           children: [
             {
               title: 'Configuration',
@@ -56,13 +56,13 @@ module.exports = {
               path: '/guide/inputs/',
             },
             ...[
-              '/guide/inputs/text',
-              '/guide/inputs/box',
-              '/guide/inputs/button',
-              '/guide/inputs/file',
-              '/guide/inputs/select',
-              '/guide/inputs/sliders',
-              '/guide/inputs/textarea'
+              '/guide/inputs/text/',
+              '/guide/inputs/box/',
+              '/guide/inputs/button/',
+              '/guide/inputs/file/',
+              '/guide/inputs/select/',
+              '/guide/inputs/sliders/',
+              '/guide/inputs/textarea/'
             ]
           ]
         },
@@ -72,7 +72,7 @@ module.exports = {
           path: '/guide/forms',
           children: [
             {
-              title: 'Configuration',
+              title: 'Using forms',
               collapsable: true,
               path: '/guide/forms/',
             }

@@ -155,13 +155,10 @@ Certain types of inputs set an `array` of values on their model.
 
 
 :::tip Read more...
-Model binding isn't all you can do with a `FormulateInput` element! Read more
-about:
+Model binding isn't all you can do with a `FormulateInput` element! There are
+lots of additional configuration options.
 
-- [Validation](/guide/validation)
-- [Custom inputs](/guide/custom-inputs)
-- [Options](/guide/inputs#input-options)
-- [And more...](/guide/inputs)
+Read more on the [inputs page →](/guide/inputs)
 :::
 
 ### Form binding
@@ -190,10 +187,10 @@ a `FormulateForm` and placing a `v-model` on that element.
 <demo-form />
 
 :::tip Read more...
-That’s not all folks...the `FormulateForm` element several other really
+That’s not all folks...the `FormulateForm` element has several other really
 valuable features like form submission, group validation, and file uploads.
 
-[Read more on the `FormulateForm` page](/guide/forms)
+Read more about [using forms →](/guide/forms)
 :::
 
 
@@ -207,4 +204,4 @@ this package does not aim to do:
     package assumes you'll still be responsible for form layout.
   2. This package is BYOB — bring your own backend. Vue Formulate doesn't care
     a lick about the backend you choose (the closest it gets to caring is when
-    using [file inputs](/inputs/files))
+    using [file inputs](/guide/inputs/file))

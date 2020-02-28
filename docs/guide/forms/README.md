@@ -200,6 +200,25 @@ export default {
 
 <demo-form-3 />
 
+Notice how the above form does not trigger the alert dialog until the fields it
+contain pass validation. Neat-o.
+
+:::tip Note
+Because validation rules are asynchronous, and [file uploads](/guide/inputs/file),
+will wait to resolve the `@submit` event is also asynchronous relative to when
+the form was actually submitted.
+:::
+
+## Advanced uses
+
+There are times where you may not want to opt-in to the default behavior of the
+`@submit` event, and would rather be notified synchronously on every attempt to
+submit a form. For these edge cases you can bind to the `@submit-raw` event.
+
+This event is triggered on all submission attempts, and it’s up to you to
+determine how you want to handle it. The payload of the event is a 
+[`FormSubmission` instance](https://github.com/wearebraid/vue-formulate/blob/master/src/FormSubmission.js).
+
 ## Generating Forms
 
 Because Vue Formulate uses a single input component, you can easily generate

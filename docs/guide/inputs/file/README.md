@@ -1,6 +1,6 @@
 # File
 
-The file [classification](/inputs/) is given to the following types:
+The file [classification](/guide/custom-inputs.html#custom-types) is given to the following types:
 
 - [file](#file)
 - [image](#image)
