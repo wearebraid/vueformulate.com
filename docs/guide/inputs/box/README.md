@@ -23,7 +23,7 @@ With a single checkbox, the value of the result is a `boolean`.
 
 :::tip Tip
 Notice that the labels of `box` types come after the input element. You can
-change this behavior adding `label-position="before"` as a prop.
+change this behavior by adding `label-position="before"` as a prop.
 :::
 
 ### Multiple checkbox options
