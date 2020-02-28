@@ -7,7 +7,7 @@ the functionality you need — you can create your own input types.
 ## Structure of an input
 
 Before diving right into code, let’s take a high level look at how a
-`FormualteInput` component is structured:
+`FormulateInput` component is structured:
 
 ![FormulateInput internal structure](./structure.png)
 

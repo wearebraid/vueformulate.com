@@ -1,5 +1,9 @@
 module.exports = {
   title: 'Vue Formulate',
+  description: 'The easiest way to build forms with Vue.',
+  head: [
+    ['link', { rel: "apple-touch-icon", sizes: "180x180", href: "/assets/favicons/apple-touch-icon.png"}],
+  ],
   port: 8123,
   themeConfig: {
     sidebar: {
@@ -78,11 +82,15 @@ module.exports = {
     },
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Guide', link: '/guide/' },
-      { text: 'Github', link: 'https://github.com/wearebraid/vue-formulate' }
+      { text: 'Guide', link: '/guide/' }
     ],
     searchPlaceholder: 'Search...',
     smoothScroll: true,
     logo: '/assets/img/logo.png',
+    repo: 'wearebraid/vue-formulate',
+    docsRepo: 'wearebraid/vueformulate.com',
+    docsDir: 'docs',
+    editLinks: true,
+    editLinkText: 'Help improve this page!'
   }
 }

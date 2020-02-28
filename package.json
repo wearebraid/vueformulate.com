@@ -4,6 +4,8 @@
     "type": "git",
     "url": "git@github.com:wearebraid/vueformulate.com.git"
   },
+  "author": "Justin Schroeder <justin@wearebraid.com>",
+  "license": "MIT",
   "scripts": {
     "dev": "npx vuepress dev docs",
     "build:original": "vuepress build docs",
