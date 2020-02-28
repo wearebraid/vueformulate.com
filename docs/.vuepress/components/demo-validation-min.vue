@@ -6,7 +6,7 @@
     validation="min:9,length"
     validation-name="Social security code"
     error-behavior="live"
-    autocomplete="new-password"
+    autocomplete="no"
   />
 </template>
 

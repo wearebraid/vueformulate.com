@@ -4,7 +4,7 @@
     label="Enter your desired username"
     name="username"
     validation="alpha:latin"
-    autocomplete="new-password"
+    autocomplete="no"
   />
 </template>
 

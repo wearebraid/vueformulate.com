@@ -4,7 +4,7 @@
       v-for="input in inputs"
       :key="input.name"
       v-bind="input"
-      autocomplete="new-password"
+      autocomplete="no"
     />
   </FormulateForm>
 </template>

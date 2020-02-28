@@ -3,6 +3,6 @@
     type="email"
     name="email"
     validation="required|email"
-    autocomplete="new-password"
+    autocomplete="no"
   />
 </template>

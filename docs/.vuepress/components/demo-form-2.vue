@@ -14,7 +14,7 @@
       label="Your name"
       placeholder="Your name"
       validation="required"
-      autocomplete="new-password"
+      autocomplete="no"
     />
     <FormulateInput
       name="email"
@@ -22,7 +22,7 @@
       label="Email address"
       placeholder="Email address"
       validation="required|email"
-      autocomplete="new-password"
+      autocomplete="no"
     />
     <div class="double-wide">
       <FormulateInput
@@ -31,7 +31,7 @@
         label="Password"
         placeholder="Your password"
         validation="required"
-        autocomplete="new-password"
+        autocomplete="no"
       />
       <FormulateInput
         name="password_confirm"
@@ -40,7 +40,7 @@
         placeholder="Confirm password"
         validation="required|confirm"
         validation-name="Confirmation"
-        autocomplete="new-password"
+        autocomplete="no"
       />
     </div>
     <FormulateInput

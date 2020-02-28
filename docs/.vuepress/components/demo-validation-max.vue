@@ -5,7 +5,7 @@
     label="Enter a coupon code"
     validation="max:5,length"
     error-behavior="live"
-    autocomplete="new-password"
+    autocomplete="no"
   />
 </template>
 

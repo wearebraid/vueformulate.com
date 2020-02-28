@@ -2,7 +2,7 @@
   <FormulateInput
     type="text"
     value="One time initial value"
-    autocomplete="new-password"
+    autocomplete="no"
   />
 </template>
 

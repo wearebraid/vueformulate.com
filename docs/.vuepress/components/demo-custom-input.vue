@@ -4,7 +4,7 @@
     name="user"
     label="Who is going to the party?"
     placeholder="Jane, Bob..."
-    autocomplete="new-password"
+    autocomplete="no"
     :options="[
       { value: 1, label: 'Jon Doe'},
       { value: 2, label: 'Jane Roe'},

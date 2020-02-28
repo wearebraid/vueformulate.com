@@ -5,7 +5,7 @@
       type="radio"
       :options="types"
       v-model="type"
-      autocomplete="new-password"
+      autocomplete="no"
     />
     <FormulateInput
       label="Favorite B10 football team?"
@@ -16,7 +16,7 @@
       error-behavior="live"
       validation="required|matches:nebraska"
       validation-name="Team name"
-      autocomplete="new-password"
+      autocomplete="no"
     />
   </div>
 </template>

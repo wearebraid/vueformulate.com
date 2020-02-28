@@ -1,7 +1,7 @@
 <template>
   <FormulateInput
     type="textarea"
-    autocomplete="new-password"
+    autocomplete="no"
   />
 </template>
 

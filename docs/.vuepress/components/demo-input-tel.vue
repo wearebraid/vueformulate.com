@@ -6,6 +6,6 @@
     placeholder="Sample tel placeholder"
     help="Sample tel help text"
     validation="required"
-    autocomplete="new-password"
+    autocomplete="no"
   />
 </template>

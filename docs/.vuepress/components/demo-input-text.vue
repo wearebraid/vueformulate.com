@@ -7,6 +7,6 @@
     help="Sample help text"
     validation="required"
     error-behavior="live"
-    autocomplete="new-password"
+    autocomplete="no"
   />
 </template>

@@ -9,7 +9,7 @@
         type="text"
         name="name"
         label="Your name"
-        autocomplete="new-password"
+        autocomplete="no"
       />
       <FormulateInput
         type="image"

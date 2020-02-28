@@ -7,7 +7,7 @@
       type="password"
       name="password"
       validation="required"
-      autocomplete="new-password"
+      autocomplete="no"
     />
     <FormulateInput
       label="Confirm password"
@@ -15,7 +15,7 @@
       name="password_confirm"
       validation="required|confirm"
       validation-name="Password confirmation"
-      autocomplete="new-password"
+      autocomplete="no"
     />
     <FormulateInput
       type="submit"

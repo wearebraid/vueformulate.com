@@ -5,7 +5,7 @@
     label="Enter your birthday"
     placeholder="mm/dd/yyyy"
     validation="date:MM/DD/YYYY"
-    autocomplete="new-password"
+    autocomplete="no"
   />
 </template>
 

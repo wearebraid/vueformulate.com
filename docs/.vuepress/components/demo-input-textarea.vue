@@ -7,7 +7,7 @@
     validation-name="tweet"
     :help="`Keep it under 50 characters. ${50 - value.length} left.`"
     error-behavior="live"
-    autocomplete="new-password"
+    autocomplete="no"
   />
 </template>
 

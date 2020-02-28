@@ -4,7 +4,7 @@
     name="email"
     label="Enter your email"
     validation="email"
-    autocomplete="new-password"
+    autocomplete="no"
   />
 </template>
 

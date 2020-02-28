@@ -6,7 +6,7 @@
         label="Which animals make good pets?"
         v-model="pets"
         :options="{dog: 'Dogs', alligators: 'Alligators', cat: 'Cats'}"
-        autocomplete="new-password"
+        autocomplete="no"
       />
     </div>
     <code
