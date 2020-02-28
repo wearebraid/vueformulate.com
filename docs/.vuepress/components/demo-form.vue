@@ -8,6 +8,13 @@
         :name="`name`"
         label="What is your name?"
         validation="required"
+        autocomplete="no"
+      />
+      <FormulateInput
+        :name="`age`"
+        label="How old are you?"
+        validation="required|number|max:120"
+        autocomplete="no"
       />
       <FormulateInput
         type="submit"

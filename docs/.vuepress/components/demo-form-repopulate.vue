@@ -6,11 +6,13 @@
       type="text"
       name="name"
       label="Your name"
+      autocomplete="no"
     />
     <FormulateInput
       type="email"
       name="email"
       label="Your email"
+      autocomplete="no"
     />
     <FormulateInput
       type="submit"

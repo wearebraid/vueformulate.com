@@ -9,5 +9,6 @@
     min="0"
     max="100"
     error-behavior="live"
+    autocomplete="no"
   />
 </template>

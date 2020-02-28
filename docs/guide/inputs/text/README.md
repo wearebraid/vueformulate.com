@@ -113,7 +113,7 @@ on a type-by-type basis.
 
 While technically Vue Formulate does support hidden input fields, the use case
 is pretty minimal since you can easily inject your own "hidden" values into
-submitted data with your a [form submission](/forms).
+submitted data with your a [form submission](/guide/forms).
 
 ## Month
 
@@ -232,7 +232,7 @@ validation rule.
 
 :::warning Warning
 Please note that the week HTML input element has particularly poor support
-at the moment due to lack of iOS support.
+at the moment due to the lack of iOS support.
 :::
 
 
@@ -253,5 +253,5 @@ at the moment due to lack of iOS support.
 
 :::warning Warning
 Please note that the datetime-local HTML input element has questionable support
-at the moment due to lack of Firefox support.
+at the moment due to the lack of Firefox support.
 :::
