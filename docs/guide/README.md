@@ -1,16 +1,18 @@
 # Introduction
 
 Vue Formulate is the easiest way to build forms using [Vue](https://vuejs.org/).
-Forms are surprisingly tedious to create — Vue Formulate is built to increase
-developer happiness by anticipating pain points and exposing a clean APIs with
-sensible defaults that make implementing common features as easy as possible.
-In fact, there are only 2 components that need to be learned to create nearly
-any type of form: `FormulateInput` and `FormulateForm`.
+
+Although forms are required in almost every project developers encounter they are
+surprisingly tedious to create. Vue Formulate is built to increase developer happiness
+by anticipating pain points and exposing clean APIs — with sensible defaults — that
+make implementing common features effortless. In fact, **there are only 2
+components that need to be learned** to create nearly any type of form: `FormulateInput`
+and `FormulateForm`.
 
 ✓ Create any input element with a single component<br>
 ✓ Supports Vue `v-model` [binding](#model-binding)<br>
 ✓ [Re-populate an entire form](/guide/forms/#setting-initial-values) from a single object<br>
-✓ [Generate a form](/guide/forms/#generating-forms) using json<br>
+✓ [Generate a form](/guide/forms/#generating-forms) using JSON<br>
 ✓ Easy to add field labels<br>
 ✓ Easy to add help text<br>
 ✓ Easy to add [form validation](/guide/validation)<br>
@@ -25,7 +27,7 @@ select list, checkbox, or date picker. It doesn't get much easier
 to remember than that.
 
 ### A simple example
-The simplest implementation of Vue Formulate is just outputting a
+The simplest implementation of Vue Formulate is outputting a
 single `FormulateInput` with no additional configuration:
 
 ```vue
@@ -43,7 +45,7 @@ Familiar right? This is essentially equivalent to the native HTML:
 
 ### Outputting different input types
 **All Vue Formulate inputs share this same syntax.** Swap out the value of `type`
-to get the desired element, even if the internal html structure differs. For example
+to get the desired element, even if the internal HTML structure differs. For example
 a `<textarea>` is a completely different element than `<input>` in HTML, but in
 Vue Formulate you only need to remember to change the `type`.
 
@@ -63,15 +65,17 @@ remember a variety of component names to handle different input types.
 
 ## Validation
 
-Adding input and form validation is a core feature. Fortunately it’s easy to add.
+Input and form validation are a core feature and easy to add.
 
 ```vue
-<FormulateField
+<FormulateInput
   type="email"
   name="email"
   validation="required|email"
 />
 ```
+
+<demo-2-validation />
 
 Read more about on the [validation documentation page](/guide/validation).
 
