@@ -1,8 +1,8 @@
 # Validation
 Front-end form validation is integral to providing a good user experience,
 but it’s often skipped due to the pain involved in configuring it.
-Vue Formulate reduces the friction of front-end validation to the point where it's
-so simple to set up that there's really no good excuse not use it.
+Vue Formulate vastly reduces the friction of front-end validation so
+there's no good excuse not to use it.
 
 ```vue
 <FormulateInput
@@ -22,12 +22,20 @@ leaves (technically a `blur` event) the current field. You can change this
 behavior by setting the `error-behavior` prop on `FormulateInput` to `live`
 :::
 
-#### Syntax
+### Validation Syntax
 
 Declaring what validation rules apply to your field is as easy as adding a
-`validation` prop to your `FormulateInput` field. Rules can either be a series
-of pipe (`|`) separated strings `required|max:10|min:5` or arrays:
+`validation` prop to your `FormulateInput` field. Rules can be declared
+shorthand using a series of pipe (`|`) separated strings or using an array syntax.
 
+#### Pipe-separated string syntax
+```vue
+<FormulateInput
+  :validation="required|max:10|min:5"
+/>
+```
+
+#### Array syntax
 ```vue
 <FormulateInput
   :validation="[
