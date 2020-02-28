@@ -154,3 +154,67 @@ export default {
 **Outputs:**
 
 <demo-form-3 />
+
+## Generating Forms
+
+Because Vue Formulate uses a single input component, you can easily generate
+an entire form from a JSON string.
+
+```js
+[
+  {
+    type: 'text',
+    name: 'name',
+    label: 'What is your name?',
+    placeholder: 'Your name...',
+    validation: 'required'
+  },
+  {
+    type: 'text',
+    name: 'address',
+    label: 'What is your street address?',
+    placeholder: 'Your name...',
+    help: 'Where would you like your product shipped?',
+    validation: 'required'
+  },
+  {
+    type: 'radio',
+    name: 'method',
+    label: 'What shipping method would you like?',
+    options: [
+      { value: 'fedex_overnight', id: 'fedex_overnight', label: 'FedEx overnight' },
+      { value: 'fedex_ground', id: 'fedex_ground', label: 'FedEx ground' },
+      { value: 'usps', id: 'usps', label: 'US Postal Service' }
+    ],
+    value: 'fedex_ground',
+    'validation-name': 'Shipping method',
+    validation: 'required'
+  },
+  {
+    name: 'submit',
+    type: 'submit',
+    label: 'Submit order'
+  }
+]
+```
+
+The above JSON can then be fed into a `<FormulateInput>` using a `v-for` and
+`v-bind` to generate a form.
+
+```vue
+<FormulateForm>
+  <FormulateInput
+    v-for="input in inputs"
+    :key="input.name"
+    v-bind="input"
+  />
+</FormulateForm>
+```
+
+**Outputs**
+
+<demo-generated />
+
+:::warning Warning
+When generating forms with `options` each option must include it’s own `id`.
+:::

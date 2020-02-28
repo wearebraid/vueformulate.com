@@ -511,7 +511,7 @@ formValues | If inside the context of a `FormulateForm` this object will contain
 Let’s re-write the above example using a function instead of a string.
 
 ```vue
-<FormualteForm
+<FormulateForm
   ...
   :validation-messages="{
     required: 'Please pick your favorite food',
