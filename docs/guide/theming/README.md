@@ -5,11 +5,11 @@ your form inputs, but has been intentionally designed to be easy to write
 styles for.
 
 ## Default theme
-By default the package contains the scss and compiled css for a single theme
+By default, the package contains the SCSS and compiled CSS for a single theme
 (named "snow"). It’s the one you see on this documentation site. You can import
-the scss directly into your own scss, or just use the minified css directly.
+the SCSS directly into your own SCSS, or just use the minified CSS directly.
 
-#### Import the scss
+#### Import the SCSS
 
 ```scss
 // scss/main.scss
@@ -25,18 +25,18 @@ and inclusion.
 
 ## Creating your own theme
 
-Consistent markup and like-field grouping with classifications greatly helps
-keep the necessary css to a minimum. The package includes a boilerplate scss
+Consistent markup and like-field grouping with classifications help considerably
+with keeping the necessary CSS to a minimum. The package includes a boilerplate SCSS
 file.
 
-[Download a scss boilerplate](https://github.com/wearebraid/vue-formulate-next/tree/master/themes/boilerplate/boilerplate.scss)
+[Download a SCSS boilerplate](https://github.com/wearebraid/vue-formulate-next/tree/master/themes/boilerplate/boilerplate.scss)
 
 #### Sample markup
 
 ```html
 <!-- Outer Wrapper -->
 <div class="formulate-input"  data-classification="text" data-type="text" data-has-errors="true" data-is-showing-errors="true">
-  
+
   <!-- Outer Wrapper -->
   <div class="formulate-input-wrapper">
     <!-- Label -->
@@ -64,7 +64,7 @@ file.
 </div>
 ```
 
-Once the above output has been themed the styles will largely transfer too all
+Once the above output has been themed styles will largely transfer too all
 formulate inputs. The only variance is some classifications use
 different internal inputs.
 
