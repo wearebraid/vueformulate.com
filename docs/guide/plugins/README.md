@@ -2,9 +2,9 @@
 
 Plugins are just simple functions that are given access to the Vue Formulate
 instance and can extend it. This is most helpful if you want to codify your own
-[custom validation rules](/guide/validation.html#custom-validation-rules),
-[messages](/guide/validation.html#customize-validation-messages) or
-[inputs](/guide/custom-inputs.html#structure-of-an-input).
+[custom validation rules](/guide/validation/#custom-validation-rules),
+[messages](/guide/validation/#customize-validation-messages) or
+[inputs](/guide/custom-inputs/#structure-of-an-input).
 
 :::tip Please share!
 Vue Formulate is brand new, so if you publish a custom input plugin on npm or
@@ -50,7 +50,7 @@ to overwrite and add any configuration options.
 
 A common use case for a plugin is to re-use custom inputs, so as an example lets
 create a plugin that exposes the autocomplete input from the [custom inputs
-documentation page](/guide/custom-inputs.html#custom-types).
+documentation page](/guide/custom-inputs/#custom-types).
 
 ```js
 // file: Autocomplete.js

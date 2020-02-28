@@ -83,7 +83,7 @@ Read more about on the [validation documentation page](/guide/validation).
 
 Vue Formulate uses model binding (`v-model`) to read/write values in and out of
 inputs. You can bind data on a `<FormulateInput>`, `<FormulateForm>`, or both (read
-the [forms](#forms) documentation for information on form binding).
+the [forms](/guide/forms) documentation for information on form binding).
 
 
 ```vue
