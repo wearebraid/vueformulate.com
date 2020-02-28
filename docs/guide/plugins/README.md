@@ -34,7 +34,7 @@ function myFirstPlugin (instance) {
   })
 }
 
-Vue.use(VueFormualte, {
+Vue.use(VueFormulate, {
   plugins: [ myFirstPlugin ]
 })
 
@@ -84,7 +84,7 @@ import Vue from 'vue'
 import VueFormulate from '@braid/vue-formulate'
 import Autocomplete from './Autocomplete'
 
-Vue.use(VueFormualte, {
+Vue.use(VueFormulate, {
   plugins: [ Autocomplete ]
 })
 
