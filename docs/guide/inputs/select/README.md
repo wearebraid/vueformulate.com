@@ -20,5 +20,5 @@ The select [classification](/inputs/) is only given to:
 
 :::tip Note
 Native select elements don’t have placeholders, but that prop is available
-and will inject a non-selectable option item as the initial selected value.
+and will inject a non-selectable option item as the initially selected value.
 :::
