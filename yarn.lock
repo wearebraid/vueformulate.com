@@ -768,10 +768,10 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@braid/vue-formulate@2.0.0-alpha.4":
-  version "2.0.0-alpha.4"
-  resolved "https://registry.yarnpkg.com/@braid/vue-formulate/-/vue-formulate-2.0.0-alpha.4.tgz#b87e5c1f96442e00da3cb0d0061a0eaf16ed1c39"
-  integrity sha512-BqV2ILiR4vVAGiow/RTB36eEKaMN86400ar+uab4B5eHAnl2qVSTfd6zYYt3hZbAx1wKMRRcM5giU2mWB0HNHg==
+"@braid/vue-formulate@2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@braid/vue-formulate/-/vue-formulate-2.0.1.tgz#aead68d102d424b1d87d258fec3363d563174e87"
+  integrity sha512-yfLfKRvaviv9nD5EyDHuaOOVKcsJNEklFq/zWQRftPpDNbdN9DMqDnsb6R6X4r1GwEKWLXjaG73Scz8vG9SwWw==
   dependencies:
     clone-deep "^4.0.1"
     is-plain-object "^3.0.0"
@@ -1577,13 +1577,6 @@ base@^0.11.1:
     isobject "^3.0.1"
     mixin-deep "^1.2.0"
     pascalcase "^0.1.1"
-
-basic-auth@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/basic-auth/-/basic-auth-2.0.1.tgz#b998279bf47ce38344b4f3cf916d4679bbf51e3a"
-  integrity sha512-NF+epuEdnUYVlGuhaxbbq+dvJttwLnGY+YixlXlME5KpQ5W3CnXA5cVTneY3SPbPDRkcjMbifrwmFYcClgOZeg==
-  dependencies:
-    safe-buffer "5.1.2"
 
 batch@0.6.1:
   version "0.6.1"
@@ -6841,7 +6834,7 @@ serve-index@^1.9.1:
     mime-types "~2.1.17"
     parseurl "~1.3.2"
 
-serve-static@1.14.1, serve-static@^1.14.1:
+serve-static@1.14.1:
   version "1.14.1"
   resolved "https://registry.yarnpkg.com/serve-static/-/serve-static-1.14.1.tgz#666e636dc4f010f7ef29970a88a674320898b2f9"
   integrity sha512-JMrvUwE54emCYWlTI+hGrGv5I8dEwmco/00EvkzIIsR7MqrHonbD9pO2MOfFnpFntl7ecpZs+3mW+XbQZu9QCg==
@@ -7140,14 +7133,6 @@ stack-utils@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/stack-utils/-/stack-utils-1.0.2.tgz#33eba3897788558bebfc2db059dc158ec36cebb8"
   integrity sha512-MTX+MeG5U994cazkjd/9KNAapsHnibjMLnfXodlkXw76JEea0UiNzrqidzo1emMwk7w5Qhc9jd4Bn9TBb1MFwA==
-
-static-auth@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/static-auth/-/static-auth-1.1.1.tgz#68133d54e62969c6f40aa9a2d15d4eb61f6be244"
-  integrity sha512-8CeqISLoRRNLccpYmQal71hWb3rlbRO8uKTCAljGmnjyFBAr84aOSWMUVEkRdbTFqyJrZa3Mgs+Ww3vuIUmG+g==
-  dependencies:
-    basic-auth "^2.0.1"
-    serve-static "^1.14.1"
 
 static-extend@^0.1.1:
   version "0.1.2"
