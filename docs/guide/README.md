@@ -61,6 +61,19 @@ pass the appropriate `type` to generate the input type that you need. No need to
 remember a variety of component names to handle different input types.
 :::
 
+## Validation
+
+Adding input and form validation is a core feature. Fortunately it’s easy to add.
+
+```vue
+<FormulateField
+  type="email"
+  name="email"
+  validation="required|email"
+/>
+```
+
+Read more about on the [validation documentation page](/guide/validation).
 
 ## Model binding
 
@@ -160,7 +173,7 @@ about:
 
 - [Validation](/guide/validation)
 - [Custom inputs](/guide/custom-inputs)
-- [Options](/guide/inputs#input-options)
+- [Options](/guide/inputs/#input-options)
 - [And more...](/guide/inputs)
 :::
 
