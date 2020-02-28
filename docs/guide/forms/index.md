@@ -7,7 +7,9 @@ component.
 
 The `FormulateForm` will actively collect all the values from the
 `FormulateInput` fields it is wrapping, and use the `name` prop of each as the
-property name in the object. Let’s make a registration form as an example:
+property name in the object. You can read and write to form values using
+`v-model` just as you would on an input. Let’s make a registration form as an
+example:
 
 <demo-form-2 />
 
@@ -109,9 +111,52 @@ export default {
 ```
 :::
 
+## Setting initial values
+
+To re-populate an entire form of data, you can simply set the `v-model`
+attribute of the form. This makes it trivial to create update forms.
+
+```vue
+<template>
+  <FormulateForm
+    v-model="formValues"
+  >
+    <FormulateInput
+      type="text"
+      name="name"
+      label="Your name"
+    />
+    <FormulateInput
+      type="email"
+      name="email"
+      label="Your email"
+    />
+    <FormulateInput
+      type="submit"
+      label="Save account"
+    />
+  </FormulateForm>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      formValues: {
+        name: 'Jenny Taylor',
+        email: 'jenny.taylor@example.com'
+      }
+    }
+  }
+}
+</script>
+```
+
+<demo-form-repopulate />
+
 ## Submitting forms
 
-While it’s easy to use `v-bind` to get and set form values the `@submit` event
+While it’s easy to use `v-model` to get and set form values the `@submit` event
 is the preferred way to retrieve the final values from a form for processing or
 submitting to a backend. There are a number of reasons for this:
 

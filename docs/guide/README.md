@@ -1,42 +1,22 @@
 # Introduction
 
-Vue Formulate aims to be the easiest way to build forms using [Vue](https://vuejs.org/)
-while maintaining tremendous power. Web forms appear deceptively simple to build,
-but experienced engineers are familiar with how they can quickly grow in
-complexity and become difficult to implement well. Raise your hand if web forms
-are your favorite part of a project. Anyone...? Bueller?
+Vue Formulate is the easiest way to build forms using [Vue](https://vuejs.org/).
+Forms are surprisingly tedious to build — Vue Formulate is built to increase
+developer happiness by anticipating pain points and exposing a clean APIs with
+sensible defaults that make implementing common features as easy as possible.
+In fact, there are only 2 components that need to be learned to create nearly
+any type of form: `FormulateInput` and `FormulateForm`.
 
-What's behind this? Consider some of the things a single input "field" needs to
-account for:
-
-- Markup for each input type (text, textarea, select etc)
-- A label
-- An initial value when empty
-- An initial state when pre-populated (such as in the case of an edit form for
-an existing piece of content)
-- Help text
-- Field validation (required, valid email, password confirmation etc)
-- Error messages from front-end validation or the back-end
-- Data bindings (v-model or events)
-- and more...
-
-Vue Formulate is built to increase developer happiness by anticipating all of
-these needs and exposing a clean API and sensible defaults that make implementing
-these features as easy as possible. In fact, there are only 2 components that
-need to be learned to create nearly any type of form: `FormulateInput` and
-`FormulateForm`.
-
-### What it's not
-
-While Vue Formulate is a powerful tool for building forms there are some things
-this package does not aim to do:
-
-  1. This is not a form _layout_ tool. Want inputs next to each other? Cool!
-    Just wrap some inputs in a `<div>` and sprinkle on the `flexbox`. This
-    package assumes you'll still be responsible for form layout.
-  2. This package is BYOB — bring your own backend. Vue Formulate doesn't care
-    a lick about the backend you choose (the closest it gets to caring is when
-    using [file inputs](/inputs/files))
+✓ Create any input element with a single component<br>
+✓ Supports Vue `v-model` [binding](#model-binding)<br>
+✓ [Re-populate an entire form](/guide/forms/#setting-initial-values) from a single object<br>
+✓ [Generate a form](/guide/forms/#generating-forms) using json<br>
+✓ Easy to add field labels<br>
+✓ Easy to add help text<br>
+✓ Easy to add [form validation](/guide/validation)<br>
+✓ Easy to add [custom validation](/guide/validation/#custom-validation-rules) rules<br>
+✓ Easy to modify [validation messages](/guide/validation/#customize-validation-messages)<br>
+✓ Easy to add [custom inputs](/guide/custom-inputs)
 
 ## Inputs
 Every type of input in Vue Formulate is an instance of the `FormulateInput`
@@ -215,3 +195,16 @@ valuable features like form submission, group validation, and file uploads.
 
 [Read more on the `FormulateForm` page](/guide/forms)
 :::
+
+
+### What it isn’t
+
+While Vue Formulate is a powerful tool for building forms there are some things
+this package does not aim to do:
+
+  1. This is not a form _layout_ tool. Want inputs next to each other? Cool!
+    Just wrap some inputs in a `<div>` and sprinkle on the `flexbox`. This
+    package assumes you'll still be responsible for form layout.
+  2. This package is BYOB — bring your own backend. Vue Formulate doesn't care
+    a lick about the backend you choose (the closest it gets to caring is when
+    using [file inputs](/inputs/files))

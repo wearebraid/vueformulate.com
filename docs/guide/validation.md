@@ -467,7 +467,7 @@ If you need to be more specific you have two options:
 ### Custom field-level messages
 
 #### Using strings
-To override a validation message on a single `FormualteInput`, add the
+To override a validation message on a single `FormulateInput`, add the
 `validation-messages` prop with an object of rule names and a corresponding
 message.
 

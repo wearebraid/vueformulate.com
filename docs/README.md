@@ -14,3 +14,5 @@ features:
   details: Vue Formulate has simple semantic classes that make styling inputs a breeze, or choose one of our pre-baked themes.
 footer: MIT Licensed | Written by Braid LLC
 ---
+
+## Something else should go on here
