@@ -15,4 +15,3 @@ features:
 footer: MIT Licensed | Written by Braid LLC
 ---
 
-## Something else should go on here
