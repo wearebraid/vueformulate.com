@@ -11,6 +11,12 @@
         autocomplete="no"
       />
       <FormulateInput
+        :name="`age`"
+        label="How old are you?"
+        validation="required|number|max:120"
+        autocomplete="no"
+      />
+      <FormulateInput
         type="submit"
         label="Sign up"
       />
