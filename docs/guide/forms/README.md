@@ -1,7 +1,7 @@
 # Forms
 
-While you’re free to use `FormulateInput` elements as stand alone elements, it’s
-often useful to group them together into more traditional forms. Doing this is
+While you’re free to use `FormulateInput` elements as stand-alone elements, it’s
+often useful to group them into more traditional forms. Doing this is
 as simple as wrapping your `FormulateInput` fields in a `FormulateForm`
 component.
 
@@ -156,12 +156,12 @@ export default {
 
 ## Submitting forms
 
-While it’s easy to use `v-model` to get and set form values the `@submit` event
+While it’s easy to use `v-model` to get and set form values, the `@submit` event
 is the preferred way to retrieve the final values from a form for processing or
 submitting to a backend. There are a number of reasons for this:
 
 - The `@submit` event will not fire until all validation rules (including async validation rules) are passing.
-- Data emitted in the `@submit` event is deeply cloned and can be safely mutated without side effect.
+- Data emitted in the `@submit` event is deeply cloned and can be safely mutated without side effects.
 - The `@submit` event ensures all form uploads are finished before completing.
 
 You can listen for the `@submit` event just as you would on a standard `<form>`
@@ -201,22 +201,22 @@ export default {
 <demo-form-3 />
 
 Notice how the above form does not trigger the alert dialog until the fields it
-contain pass validation. Neat-o.
+contains pass validation. Neat-o.
 
 :::tip Note
 Because validation rules are asynchronous, and [file uploads](/guide/inputs/file),
 will wait to resolve the `@submit` event is also asynchronous relative to when
-the form was actually submitted.
+the form was submitted.
 :::
 
 ## Advanced uses
 
 There are times where you may not want to opt-in to the default behavior of the
 `@submit` event, and would rather be notified synchronously on every attempt to
-submit a form. For these edge cases you can bind to the `@submit-raw` event.
+submit a form. For these edge cases, you can bind to the `@submit-raw` event.
 
 This event is triggered on all submission attempts, and it’s up to you to
-determine how you want to handle it. The payload of the event is a 
+determine how you want to handle it. The payload of the event is a
 [`FormSubmission` instance](https://github.com/wearebraid/vue-formulate/blob/master/src/FormSubmission.js).
 
 ## Generating Forms
