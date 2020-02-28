@@ -163,9 +163,9 @@ object. It is recommended that the backend have a common URL where files can be 
 ### Upload results with `FormulateForm`
 
 When using a `FormulateForm` a successful submission will perform an upload on
-any files in your form which have not already been uploaded
-(using `upload‑behavior` set to `live`). The resulting upload will return the
-string path returned by your server.
+all files in your form which have not already been uploaded
+(`upload‑behavior` can be set to `live` or `delayed`). The resulting upload will return the
+string path provided by your server.
 
 ```vue
 <template>
