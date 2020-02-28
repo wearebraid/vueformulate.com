@@ -11,6 +11,7 @@
     :validation-messages="{
       foobar: 'The value must be foo or bar'
     }"
+    autocomplete="no"
   />
 </template>
 

@@ -2,6 +2,7 @@
   <FormulateInput
     type="text"
     value="One time initial value"
+    autocomplete="no"
   />
 </template>
 

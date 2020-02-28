@@ -8,6 +8,7 @@
       validation="required"
       error="My custom error message"
       error-behavior="live"
+      autocomplete="no"
     />
   </div>
 </template>

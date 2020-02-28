@@ -4,6 +4,7 @@
       type="text"
       label="What is your name?"
       v-model="value"
+      autocomplete="no"
     />
     <strong>Hello <em>{{ value }}</em>!</strong>
   </div>

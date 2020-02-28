@@ -211,7 +211,7 @@ Read more about [using forms →](/guide/forms)
 :::
 
 
-### What it isn’t
+### What Vue Formulate isn’t
 
 While Vue Formulate is a powerful tool for building forms there are some things
 this package does not aim to do:

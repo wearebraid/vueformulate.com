@@ -8,6 +8,7 @@
         :name="`name`"
         label="What is your name?"
         validation="required"
+        autocomplete="no"
       />
       <FormulateInput
         type="submit"

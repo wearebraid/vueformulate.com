@@ -1,6 +1,7 @@
 <template>
   <FormulateInput
     type="text"
+    autocomplete="no"
   />
 </template>
 

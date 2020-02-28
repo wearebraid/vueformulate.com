@@ -7,6 +7,7 @@
       validation-name="car brand"
       error-behavior="live"
       v-model="brand"
+      autocomplete="no"
     />
     <FormulateInput
       type="radio"
@@ -14,6 +15,7 @@
       error-behavior="live"
       validation="in:Toyota,Honda"
       :options="{Toyota: 'I like Toyota', Honda: 'I like Honda' }"
+      autocomplete="no"
     />
   </div>
 </template>
