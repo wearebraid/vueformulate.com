@@ -11,7 +11,7 @@ features:
 - title: Single element inputs
   details: With Vue Formulate you don't need to remember the names of a dozen components — all form elements are created with a single component. Easy!
 - title: Bring your own styles
-  details: Vue Formulate has simple semantic classes that make styling inputs a breeze. Roll your own styles or choose one of our pre-baked themes.
+  details: Vue Formulate has simple semantic classes that make styling inputs a snap. Roll your own styles or choose one of our pre-baked themes.
 footer: MIT Licensed | Written by Braid LLC
 ---
 
