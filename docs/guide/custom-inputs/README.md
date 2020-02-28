@@ -1,12 +1,12 @@
 # Custom inputs
 
-If the input type you're looking for is not part of the built in fields (mostly
+If the input type you're looking for is not part of the built-in fields (mostly
 HTML5 input types), and you haven't found a [plugin](/guide/plugins) that adds
-the functionality you need — you can create your own input types.
+the functionality you need — you can create input types of your own.
 
 ## Structure of an input
 
-Before diving right into code, let’s take a high level look at how a
+Before diving into code, let’s take a high-level look at how a
 `FormulateInput` component is structured:
 
 ![FormulateInput internal structure](./structure.png)
@@ -30,15 +30,15 @@ for new inputs that look like this:
 />
 ```
 
-To do this, we need to write a custom component to handle the "autocomplete"
-input logic. Each `type` is designated a component and a classification. Both
+To do this, we need to write a custom component that handles the "autocomplete"
+input logic. Each `type` is designated as a component and a classification. Both
 components and classifications can be shared across multiple `types`.
 
 #### What is a classification?
 
 A classification is just a helpful way to group logic and styling rules around
 similar input types, but just because you create a new input `type` doesn’t
-necessarily mean you would create a new grouping classification. In fact
+necessarily mean you would create a new grouping classification. In fact,
 our example autocomplete would fit well under the `text` classification.
 
 #### What is an input component?
@@ -46,7 +46,7 @@ our example autocomplete would fit well under the `text` classification.
 The input component, on the other hand, is a Vue component, that is passed a
 [`context` prop](#context) and is responsible for the input’s logic
 and presentation. This component can be used for entirely new input systems,
-business logic, or custom ui.
+business logic, or custom UI.
 
 If you want field validation, form aggregation, hydration and the other
 benefits of Vue Formulate there is only one requirement: the value of the field
