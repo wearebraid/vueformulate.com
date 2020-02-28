@@ -113,7 +113,7 @@ on a type-by-type basis.
 
 While technically Vue Formulate does support hidden input fields, the use case
 is pretty minimal since you can easily inject your own "hidden" values into
-submitted data with your a [form submission](/forms).
+submitted data with your a [form submission](/guide/forms).
 
 ## Month
 
