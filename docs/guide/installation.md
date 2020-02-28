@@ -1,5 +1,5 @@
 # Installation
-The preferred way to use Vue Formulate is to install via your preferred JavaScript
+The preferred way to use Vue Formulate is to install via your favorite JavaScript
 package manager.
 
 ## NPM
@@ -13,7 +13,7 @@ yarn add @braid/vue-formulate
 ```
 
 ## Direct download
-Alternatively, if you don’t have a build process on your application you can
+Alternatively, if your project doesn't have a build process, you can
 download the repository and manually link to the minified version:
 
 ```html
@@ -24,7 +24,7 @@ download the repository and manually link to the minified version:
 While you can use Vue Formulate via direct download, it is not recommended.
 The remainder of the documentation assumes that you are developing in a context
 that supports ES2015. In the event you do not have a build process that provides
-backwards support you will need to modify the syntax of the documentation to suit
+backward support, you will need to modify the syntax of the documentation to suit
 the specifics of your environment.
 :::
 

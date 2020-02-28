@@ -21,7 +21,7 @@ any type of form: `FormulateInput` and `FormulateForm`.
 ## Inputs
 Every type of input in Vue Formulate is an instance of the `FormulateInput`
 component. This component is used whether you need a text input, password,
-select list, checkbox, or date picker, etc — it doesn't get much easier
+select list, checkbox, or date picker. It doesn't get much easier
 to remember than that.
 
 ### A simple example
@@ -58,14 +58,14 @@ Vue Formulate you only need to remember to change the `type`.
 ::: tip
 With Vue Formulate you only need to use the supplied `FormulateInput` element and
 pass the appropriate `type` to generate the input type that you need. No need to
-remember a variety of component names in order to handle different input types.
+remember a variety of component names to handle different input types.
 :::
 
 
 ## Model binding
 
 Vue Formulate uses model binding (`v-model`) to read/write values in and out of
-inputs. You can bind data on a `<FormulteInput>`, `<FormulateForm>`, or both (read
+inputs. You can bind data on a `<FormulateInput>`, `<FormulateForm>`, or both (read
 the [forms](#forms) documentation for information on form binding).
 
 
@@ -98,8 +98,8 @@ export default {
 
 ### Double binding
 
-Of course, because the input's value is bound to the model you can bind the
-model to multiple inputs, and even trigger validation errors on those other
+Because the input's value is bound to the model you can bind the
+model to multiple inputs, even triggering validation errors on those other
 elements.
 
 ```vue
@@ -156,7 +156,7 @@ Certain types of inputs set an `array` of values on their model.
 
 :::tip Read more...
 Model binding isn't all you can do with a `FormulateInput` element! Read more
-about field:
+about:
 
 - [Validation](/guide/validation)
 - [Custom inputs](/guide/custom-inputs)
@@ -190,7 +190,7 @@ a `FormulateForm` and placing a `v-model` on that element.
 <demo-form />
 
 :::tip Read more...
-That’s not all folks...the `FormulateForm` element has a number of other really
+That’s not all folks...the `FormulateForm` element several other really
 valuable features like form submission, group validation, and file uploads.
 
 [Read more on the `FormulateForm` page](/guide/forms)
