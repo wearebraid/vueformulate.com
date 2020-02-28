@@ -8,8 +8,14 @@ actionLink: /guide/
 features:
 - title: Developer happiness
   details: Forms are everywhere, yet surprisingly tedious to author — well, not anymore. Vue Formulate provides a powerful and flexible API to developers that makes complex form creation a breeze.
-- title: Single element inputs
+- title: A single input element
   details: With Vue Formulate you don't need to remember the names of a dozen components — all form elements are created with a single component. Easy!
+- title: Built-in validation
+  details: Ridiculously easy validation out-of-the-box to handle 95% of use-cases. Help text, validation rules, and validation messages are simple props. Need more? You can add custom validations too.
+- title: Plugin system
+  details: Extend Vue Formulate's functionality or reuse custom inputs, validation rules, and messages across projects by tapping into the plugin system. Make your plugin open source to share with others!
+- title: Generate forms
+  details: Generate an entire form from a JSON string. Because Vue Formulate uses a single input component, you can easily loop through an array and dynamically generate a form.
 - title: Bring your own styles
   details: Vue Formulate has simple semantic classes that make styling inputs a snap. Roll your own styles or choose one of our pre-baked themes.
 footer: MIT Licensed | Written by Braid LLC

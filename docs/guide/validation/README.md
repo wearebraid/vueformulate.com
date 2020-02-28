@@ -28,7 +28,7 @@ Declaring what validation rules apply to your field is as easy as adding a
 `validation` prop to your `FormulateInput` field. Rules can be declared
 shorthand using a series of pipe (`|`) separated strings or using an array syntax.
 
-#### Pipe-separated string syntax
+#### Pipe-separated string syntax (preferred)
 ```vue
 <FormulateInput
   :validation="required|max:10|min:5"
