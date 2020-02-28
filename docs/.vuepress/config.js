@@ -92,5 +92,6 @@ module.exports = {
     docsDir: 'docs',
     editLinks: true,
     editLinkText: 'Help improve this page!'
-  }
+  },
+  dest: 'public'
 }
