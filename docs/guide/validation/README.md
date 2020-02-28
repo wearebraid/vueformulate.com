@@ -1,8 +1,8 @@
 # Validation
-Front-end validation is incredibly important to provide a good user experience,
+Front-end form validation is integral to providing a good user experience,
 but it’s often skipped due to the pain involved in configuring it.
 Vue Formulate reduces the friction of front-end validation to the point where it's
-so simple to set up that there's really no good excuse not to.
+so simple to set up that there's really no good excuse not use it.
 
 ```vue
 <FormulateInput
@@ -19,7 +19,7 @@ so simple to set up that there's really no good excuse not to.
 :::tip Note
 By default, validation error messages are not shown until the user’s focus
 leaves (technically a `blur` event) the current field. You can change this
-behavior by setting the `error-behavior` prop to `live`
+behavior by setting the `error-behavior` prop on `FormulateInput` to `live`
 :::
 
 #### Syntax
@@ -37,6 +37,9 @@ of pipe (`|`) separated strings `required|max:10|min:5` or arrays:
   ]"
 />
 ```
+
+For the purposes of this documentation pipe-separated strings will be the preferred
+method of setting validation rules for fields.
 
 ## Available rules
 Vue Formulate ships with a library of frequently used validation rules. If
@@ -82,14 +85,25 @@ the current time will be used. The value must be a `Date` object or a string
 that can be evaluated by `Date.parse`.
 [Read more about `Date.parse()` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse)
 
+<!--
 ```vue
 <FormulateInput
   type="date"
   label="Select a time after the new year."
   name="date"
-  validation="after:01/01/2020"
+  validation="after:01/01/2021"
 />
 ```
+-->
+
+<div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>FormulateInput</span>
+  <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>date<span class="token punctuation">"</span></span>
+  <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Select a time after the new year.<span class="token punctuation">"</span></span>
+  <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>date<span class="token punctuation">"</span></span>
+  <span class="token attr-name">validation</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>after:01/01/{{ ((new Date()).getFullYear() + 1) }}<span class="token punctuation">"</span></span>
+<span class="token punctuation">/&gt;</span></span>
+</code></pre></div>
+
 <demo-validation-after />
 
 ### Alpha
@@ -128,6 +142,7 @@ the current time will be used. The value must be a `Date` object or a string
 that can be evaluated by `Date.parse`.
 [Read more about `Date.parse()` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse)
 
+<!--
 ```vue
 <FormulateInput
   type="date"
@@ -136,6 +151,16 @@ that can be evaluated by `Date.parse`.
   validation="before:01/01/2020"
 />
 ```
+-->
+
+<div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>FormulateInput</span>
+  <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>date<span class="token punctuation">"</span></span>
+  <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Select a time before the new year.<span class="token punctuation">"</span></span>
+  <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>date<span class="token punctuation">"</span></span>
+  <span class="token attr-name">validation</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>before:01/01/{{ ((new Date()).getFullYear() + 1) }}<span class="token punctuation">"</span></span>
+<span class="token punctuation">/&gt;</span></span>
+</code></pre></div>
+
 <demo-validation-before />
 
 ### Between
@@ -311,10 +336,10 @@ When matching against a regular expression you have to use the alternative
 <demo-validation-matches-2 />
 
 ### Max
-Checks the value of a `Number`, or length of a `String` or `Array` is less than
+Checks that the value of a `Number`, or length of a `String` or `Array` is less than
 a maximum length or value. The maximum value/length defaults to `10`.
 
-You can force the validator to evaluate length or value by passing a second
+You can force the validator to evaluate either length or value by passing a second
 argument of either `length` or `value`.
 
 ```vue
@@ -327,6 +352,10 @@ argument of either `length` or `value`.
 />
 ```
 <demo-validation-max />
+
+::: tip Note
+When evaluating an `Array` the second argument (length/value) is ignored.
+:::
 
 ```vue
 <FormulateInput
@@ -344,10 +373,6 @@ argument of either `length` or `value`.
   error-behavior="live"
 />
 ```
-
-::: tip Note
-When evaluating an `Array` the second argument (length/value) is ignored.
-:::
 
 <demo-validation-max-2 />
 
