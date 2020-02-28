@@ -1,7 +1,7 @@
 # Inputs
 
-Inputs are the base element of Vue Formulate, and using them is very easy,
-simply declare use the `<FormulateInput />` component tag to declare any
+Inputs are the base element of Vue Formulate and using them is very easy. To begin,
+simply use the `<FormulateInput />` component tag to declare any
 type of input field and you get validation, model binding, file uploads, and
 a plugin system to boot. Here's an example of changing the input type itself:
 
@@ -56,7 +56,7 @@ on how to bind models to `FormulateInput` fields.
 
 ## Setting an initial value
 
-There are actually 3 ways to set the initial value of a field:
+There are three ways to set the initial value of a field:
 
 - Using `v-model`
 - Using the `value` prop
@@ -111,7 +111,7 @@ initial value will use the `v-model` value over the `value`.
 
 Frequently, it’s important to set the initial value for a whole collection of
 field elements, like on an update form. You can easily do this by allowing
-a wrapping `FormulateForm` to set the value of it's fields:
+a wrapping `FormulateForm` to set the value of its fields:
 
 ```vue
 <template>
@@ -147,8 +147,8 @@ export default {
 
 ## All Options
 
-Each `FormulateInput` can take be customized by slapping a few props on it. This
-list contains all of the available universal options:
+Each `FormulateInput` can be customized by adding a few props on it. The
+list below contains all of the available universal options:
 
 ::: tip Note
 Some `FormulateInput` types have props that are specific to their type. Please
@@ -164,10 +164,10 @@ Prop              | Description
 `name`            | Adds a name attribute, and when used with `<FormulateForm>` this is the key of the field. If no name is defined a random hash will be assigned
 `help`            | Help text to be displayed with the input.
 `placeholder`     | The placeholder attribute of the element (if applicable)
-`value`           | An initial unbound value (use when `v-model` or form binding is not good option)
+`value`           | An initial unbound value (use when `v-model` or form binding is not a good option)
 `validation`      | A `string` or `array` of validation rules. See [input validation](/guide/validation)
-`validation‑name` | The name to use in validation error messages. By default this uses the `name` prop if available and falls back to the `label` prop. It can be explicitly overridden here if needed.
+`validation‑name` | The name to use in validation error messages. By default, this uses the `name` prop if available and falls back to the `label` prop. It can be explicitly overridden here if needed.
 `error`           | A custom error message to be manually shown on an element (validation errors are generated on their own). This error will always be visible (if you want to remove it, use a dynamic prop).
 `errors`          | An array of custom error messages to show on an element (see above).
-`error‑behavior`  | By default, error messages are only shown when the `blur` event fires on an input, or a `<FormulateForm>` element is submitted with errors. This behavior can be changed to `live` which will display all error messages for the input immediately as a user interacts with element. This is useful in the case of inputs such as range sliders where you may want validation feedback to be immediate.
+`error‑behavior`  | By default, error messages are only shown when the `blur` event fires on an input, or a `<FormulateForm>` element is submitted with errors. This behavior can be changed to `live` which will display all error messages for the input immediately as a user interacts with an element. This is useful in the case of inputs such as range sliders where you may want validation feedback to be immediate.
 `show‑errors`     | When `true` this forces an element to show it’s errors regardless of the state of the `error-behavior`
