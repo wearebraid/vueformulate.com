@@ -1,6 +1,6 @@
 # Validation
-Front-end validation is incredibly important to providing a good user experience
-to your users, but it’s often skipped due to the pain involved in configuring it.
+Front-end validation is incredibly important to provide a good user experience,
+but it’s often skipped due to the pain involved in configuring it.
 Vue Formulate reduces the friction of front-end validation to the point where it's
 so simple to set up that there's really no good excuse not to.
 
@@ -17,7 +17,7 @@ so simple to set up that there's really no good excuse not to.
 <demo-1-validation />
 
 :::tip Note
-By default, validation error messages are not 3wshown until the user’s focus
+By default, validation error messages are not shown until the user’s focus
 leaves (technically a `blur` event) the current field. You can change this
 behavior by setting the `error-behavior` prop to `live`
 :::
@@ -77,7 +77,7 @@ you need to validate if someone has accepted terms.
 <demo-validation-accepted />
 
 ### After
-Checks if a date comes after a another date. If no date argument is provided
+Checks if a date comes after another date. If no date argument is provided
 the current time will be used. The value must be a `Date` object or a string
 that can be evaluated by `Date.parse`.
 [Read more about `Date.parse()` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse)
@@ -123,7 +123,7 @@ For the alphabetical portion you can pass `default` or `latin` - see
 <demo-validation-alphanumeric />
 
 ### Before
-Checks if a date comes before a another date. If no date argument is provided
+Checks if a date comes before another date. If no date argument is provided
 the current time will be used. The value must be a `Date` object or a string
 that can be evaluated by `Date.parse`.
 [Read more about `Date.parse()` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse)
@@ -167,7 +167,7 @@ the [before](#before) and [after](#after) validation rules together.
 ### Confirm
 
 Checks if the field value matches the value of another field. Mostly used for
-hidden fields - like password confirmations. By default a `confirm` rule will
+hidden fields - like password confirmations. By default, a `confirm` rule will
 look for other fields in the same `FormulateForm` with the suffix `_confirm`.
 
 :::tip Note
@@ -213,22 +213,22 @@ export default {
 <demo-validation-confirm />
 
 ### Date
-Checks if the input is a valid date according to `Date.parse()` or if a format
-argument is provided it will validate according to the given format. Format
+Checks if the input is a valid date according to `Date.parse()`, or if a format
+argument is provided, it will validate according to the given format. Format
 variables are:
 
 Variable  | Valid values
 ----------|---------------------------------
-`MM`      | Two digit month representation (01-12)
-`M`       | Single digit month representation (1-12) leading zero allowed
-`DD`      | Two digit day of the month (01-31)
-`D`       | Single digit day of the month (1-31), leading zero allowed
-`YY`      | Two digit year
-`YYYY`    | Four digit year
+`MM`      | Two-digit month representation (01-12)
+`M`       | Single-digit month representation (1-12) leading zero allowed
+`DD`      | Two-digit day of the month (01-31)
+`D`       | Single-digit day of the month (1-31), leading zero allowed
+`YY`      | Two-digit year
+`YYYY`    | Four-digit year
 
 ::: warning
 Heads up! This validation rule will validate that your requested format is followed
-but does not validate if a date actually exists (eg 02/31/2008).
+but does not validate if a date exists (eg 02/31/2008).
 :::
 
 ```vue
@@ -346,7 +346,7 @@ argument of either `length` or `value`.
 ```
 
 ::: tip Note
-When evaluating an `Array` the 2nd argument (length/value) is ignored.
+When evaluating an `Array` the second argument (length/value) is ignored.
 :::
 
 <demo-validation-max-2 />
@@ -434,13 +434,13 @@ Checks if the input is empty.
 <demo-validation-required />
 
 ::: warning Important
-By default fields are not required meaning that all validation rules will all
+By default, fields are not required, meaning that all validation rules will
 pass with an empty value unless they include the `required` rule.
 :::
 
 ### Url
-Checks if the input value is appears to be a properly formatted url including
-the protocol. This does not check if the URL is actually resolves.
+Checks if the input value appears to be a properly formatted URL including
+the protocol. This does not check if the URL actually resolves.
 
 ```vue
 <FormulateInput
@@ -455,7 +455,7 @@ the protocol. This does not check if the URL is actually resolves.
 
 ## Customize validation messages
 
-There are a number of ways to customize your validation message. The most basic
+There are several ways to customize your validation message. The most basic
 of which is to use the `validation-name` prop — allowing you to change the name
 of the field as used in the pre-defined validation messages.
 
@@ -544,8 +544,8 @@ Vue.use(VueFormulate, {
 ```
 
 :::tip About localization
-Currently Vue Formulate only supports the english language, but that’s only
-because the maintainers only speak english. If you’re able translate to another
+Currently, Vue Formulate only supports the English language, but that’s only
+because the maintainers only speak English. If you’re able to translate to another
 language, please [submit a pull request](https://github.com/wearebraid/vue-formulate)!
 :::
 
