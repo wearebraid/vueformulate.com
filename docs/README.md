@@ -45,7 +45,10 @@ footer: MIT Licensed | Written by Braid LLC
 />
 
 <h4>Well-considered file uploading</h4>
-<p>Handle complex upload requirements in your apps</p>
+<p>
+  Handle complex upload requirements in your apps<br>
+  (this demo does not actually upload your images)
+</p>
 <FormulateInput
   type="image"
   label="Gallery Images"
