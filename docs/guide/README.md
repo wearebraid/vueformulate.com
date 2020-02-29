@@ -195,9 +195,9 @@ a `FormulateForm` and placing a `v-model` on that element.
     validation="required"
   />
   <FormulateInput
-    name="`age`"
+    name="age"
     label="How old are you?"
-    validation="required|number"
+    validation="required|number|max:120"
   />
   <FormulateInput
     type="submit"
