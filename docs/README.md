@@ -47,10 +47,10 @@ footer: MIT Licensed | Written by Braid LLC
 <h4>Well-considered file uploading</h4>
 <p>Handle complex upload requirements in your apps</p>
 <FormulateInput
-  type="file"
-  label="Select your documents to upload"
-  help="Select one or more PDFs to upload"
-  validation="mime:application/pdf"
+  type="image"
+  label="Gallery Images"
+  help="Select jpg image(s) to upload."
+  validation="mime:image/jpeg"
   multiple
 />
 ```
