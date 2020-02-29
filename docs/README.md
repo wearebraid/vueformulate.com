@@ -23,7 +23,7 @@ footer: MIT Licensed | Written by Braid LLC
 ---
 
 ```html live
-<h4>Complex validation made easy.</h4>
+<h4>Complex validation made easy</h4>
 <p>Includes 18 rules w/ support for defining your own</p>
 <FormulateInput
   type="email"
@@ -33,7 +33,7 @@ footer: MIT Licensed | Written by Braid LLC
 />
 
 <h4>Single-element inputs provide flexibility</h4>
-<p>Change the "type" to "checkbox" or "select".</p>
+<p>Change the "type" to "checkbox" or "select"</p>
 <FormulateInput
   type="radio"
   label="What do you think of Vue Formulate?"
