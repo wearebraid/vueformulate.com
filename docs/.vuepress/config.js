@@ -94,6 +94,7 @@ module.exports = {
     editLinkText: 'Help improve this page!'
   },
   plugins: [
+    ['live'],
     [
       '@vuepress/google-analytics',
       {

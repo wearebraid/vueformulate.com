@@ -1,4 +1,5 @@
 ---
+layout: HomeLayout
 home: true
 heroImage: /logo.svg
 heroText: Vue Formulate
@@ -21,3 +22,58 @@ features:
 footer: MIT Licensed | Written by Braid LLC
 ---
 
+```vue live
+<template>
+  <div class="formulate-playground">
+    <h2>Live Vue Formulate Demo</h2>
+    <p>Edit the code to modify the form</p>
+    <FormulateForm
+      v-model="AllFormValues"
+      class="demo-form"
+      @submit="handleSubmission"
+    >
+      <FormulateInput
+        label="My First Vue Formulate Input"
+        placeholder="Type your text here..."
+        name="firstInput"
+      />
+      <FormulateInput
+        name="email"
+        type="email"
+        label="What is your email?"
+        validation="required|email"
+        help="We wont’t sell it...for cheap."
+        placeholder="jon@example.com"
+      />
+      <!-- Try changing the "type" to radio or select -->
+      <FormulateInput
+        name="opinion"
+        type="checkbox"
+        label="What do you think of Vue Formulate?"
+        :options="{
+          good: 'It’s good',
+          great: 'It’s great',
+          install: 'I’m installing it now.'
+        }"
+        validation="required"
+      />
+      <FormulateInput
+        type="submit"
+        label="Save feedback"
+      />
+    </FormulateForm>
+
+    <pre v-text="AllFormValues">
+  </div>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      AllFormValues: {}
+    }
+  }
+}
+</script>
+```
