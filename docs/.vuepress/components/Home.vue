@@ -119,11 +119,26 @@ export default {
       &:hover
         background-color lighten($accentColor, 10%)
   .preview-code
+    .token.class-name
+      color inherit
     .preview
       background-color #fff
       text-align left
       pre
         color: #ccc;
+      h4
+        display inline-block
+        color: #3eaf7c
+        margin-top: 4em
+        margin-bottom 0
+
+        &:first-child
+          margin-top 0
+
+        & + p
+          font-size 0.9rem
+          margin-top 0
+          color: #687288
   .theme-default-content
     margin-top 5em
   .features
