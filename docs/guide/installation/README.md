@@ -20,12 +20,17 @@ download the repository and manually link to the minified version:
 <script src="/vue-formulate/dist/formulate.min.js"></script>
 ```
 
-::: warning
-While you can use Vue Formulate via direct download, it is not recommended.
-The remainder of the documentation assumes that you are developing in a context
-that supports ES2015. In the event you do not have a build process that provides
-backward support, you will need to modify the syntax of the documentation to suit
-the specifics of your environment.
+## CDN
+
+Similar to a direct download, you can load Vue Formulate directly off of a
+CDN like [JSDeliver](https://www.jsdelivr.com/package/npm/@braid/vue-formulate?path=dist).
+
+:::tip Note
+Due to DOM limitations, when mounting Vue Formulate in DOM templates
+(outside of single-file components) all the component names will need to be
+[lower-cased, hyphen separated and with a closing tag](https://vuejs.org/v2/style-guide/#Component-name-casing-in-templates-strongly-recommended).
+
+`<FormulateInput />` ⭢ `<formulate-input></formulate-input>`
 :::
 
 ## Add to Vue
@@ -37,6 +42,20 @@ import VueFormulate from '@braid/vue-formulate'
 
 Vue.use(VueFormulate)
 ```
+
+::: warning
+When loading Vue Formulate from the minified version or using a commonJS module
+environment (think `require()`) it may be necessary to use `VueFormulate.default`
+when registering with Vue:
+
+```js
+const VueFormulate = require('@braid/vue-formulate')
+Vue.use(VueFormulate.default)
+```
+:::
+
+
+## Configuration options
 
 If you need custom configuration options, you can pass a second argument with
 an object of configuration options.
