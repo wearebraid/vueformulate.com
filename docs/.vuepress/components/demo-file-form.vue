@@ -32,19 +32,21 @@
 </template>
 
 <script>
-import { FileUpload } from '@braid/vue-formulate'
-
 export default {
   data () {
     return {
-      formValues: {}
+      formValues: {},
+      submittedValues: false
     }
   },
   computed: {
     values () {
+      if (this.submittedValues) {
+        return this.submittedValues
+      }
       const values = {}
       for (const key in this.formValues) {
-        if (typeof this.formValues[key] === 'object' && this.formValues[key] instanceof FileUpload) {
+        if (typeof this.formValues[key] === 'object') {
           values[key] = this.formValues[key].toString()
         } else {
           values[key] = this.formValues[key]
@@ -55,6 +57,7 @@ export default {
   },
   methods: {
     sendData (data) {
+      this.submittedValues = data
     }
   }
 }

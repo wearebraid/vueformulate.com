@@ -154,6 +154,25 @@ export default {
 
 <demo-form-repopulate />
 
+#### Setting initial values without model binding
+
+In the above example, `formValues` is `v-modeled` meaning it is bi-directionally
+bound to the form values — if you change the values of that object, the form
+fields will update and if you type into one of the text fields the object will
+update.
+
+Occasionally you may prefer to set the initial state with an object but not have
+that object be manipulated when someone uses the form. To do this use the
+`values` prop.
+
+```vue
+  <FormulateForm
+    :values="formValues"
+  >
+    ...
+  </FormulateForm>
+```
+
 ## Submitting forms
 
 While it’s easy to use `v-model` to get and set form values, the `@submit` event

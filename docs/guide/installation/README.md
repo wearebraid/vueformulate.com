@@ -19,12 +19,6 @@ download the repository and manually link to the minified version:
 ```html
 <script src="/vue-formulate/dist/formulate.min.js"></script>
 ```
-
-## CDN
-
-Similar to a direct download, you can load Vue Formulate directly off of a
-CDN like [JSDeliver](https://www.jsdelivr.com/package/npm/@braid/vue-formulate?path=dist).
-
 :::tip Note
 Due to DOM limitations, when mounting Vue Formulate in DOM templates
 (outside of single-file components) all the component names will need to be
@@ -32,6 +26,12 @@ Due to DOM limitations, when mounting Vue Formulate in DOM templates
 
 `<FormulateInput />` ⭢ `<formulate-input></formulate-input>`
 :::
+
+## CDN
+
+Similar to a direct download, you can load Vue Formulate directly off of a
+CDN like [JSDeliver](https://www.jsdelivr.com/package/npm/@braid/vue-formulate?path=dist).
+
 
 ## Add to Vue
 Once Vue Formulate has been downloaded you need to install it with Vue.

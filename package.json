@@ -11,7 +11,7 @@
     "build": "vuepress build docs"
   },
   "dependencies": {
-    "@braid/vue-formulate": "2.0.3",
+    "@braid/vue-formulate": "2.0.4",
     "axios": "^0.19.2"
   },
   "devDependencies": {

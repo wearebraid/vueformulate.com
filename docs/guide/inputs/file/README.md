@@ -195,6 +195,8 @@ string path provided by your server.
 export default {
   methods: {
     async sendData (data) {
+      // (in the demo we show the data object at this point)
+      // Send data to your server
       await this.$axios.put('/profile', data)
     }
   }

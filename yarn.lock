@@ -768,10 +768,10 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@braid/vue-formulate@2.0.3":
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/@braid/vue-formulate/-/vue-formulate-2.0.3.tgz#e85bf166217ce4ad2aa9c9cc0b8892b5f2692695"
-  integrity sha512-eJKqLtucG+76SpVOXmWbGewggrscFv3HwdypRsmaRwSOPOyUYg+Z9T7Nz0Y3DoCxZRTSNyBZSI7LIJkr8yaNTw==
+"@braid/vue-formulate@2.0.4":
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/@braid/vue-formulate/-/vue-formulate-2.0.4.tgz#3e85006504b64c4322cc0701925c97a8f9ecacfb"
+  integrity sha512-qHie39wM7d3IDRXvpy+23uTw1DG9FSBzQB+Bn+233BFv2oe+P1157znCi28h4wEI94g4FHt3pyRjcICvpqRHYQ==
   dependencies:
     is-plain-object "^3.0.0"
     is-url "^1.2.4"
