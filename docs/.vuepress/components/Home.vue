@@ -51,11 +51,8 @@
       </div>
     </div>
 
-    <div
-      v-if="data.footer"
-      class="footer"
-    >
-      {{ data.footer }}
+    <div class="footer">
+      MIT Licensed | Written by <a href="https://www.wearebraid.com/">Braid LLC</a>
     </div>
   </main>
 </template>

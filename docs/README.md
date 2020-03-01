@@ -19,7 +19,6 @@ features:
   details: Generate an entire form from a JSON string. Because Vue Formulate uses a single input component, you can easily loop through an array and dynamically generate a form.
 - title: 🎨 Bring your own styles
   details: Vue Formulate has simple semantic classes that make styling inputs a snap. Roll your own styles or choose one of our pre-baked themes.
-footer: MIT Licensed | Written by Braid LLC
 ---
 
 
