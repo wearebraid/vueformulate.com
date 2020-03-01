@@ -152,7 +152,7 @@ submitted data with your a [form submission](/guide/forms).
 <demo-input-password />
 
 :::tip Tip
-Password inputs work well when paired with a `FormulateForm` and the [confirm](/guide/validation/confirm)
+Password inputs work well when paired with a `FormulateForm` and the [confirm](/guide/validation/#confirm)
 validation rule.
 :::
 
