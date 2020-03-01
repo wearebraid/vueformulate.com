@@ -22,18 +22,23 @@ features:
 footer: MIT Licensed | Written by Braid LLC
 ---
 
+
+### Complex Validation made simple
+Vue Formulate includes 18 rules w/ support for defining your own
 ```html live
-<h4>Complex validation made easy</h4>
-<p>Includes 18 rules w/ support for defining your own</p>
 <FormulateInput
   type="email"
   label="What is your email?"
   validation="required|email"
   placeholder="jon@example.com"
 />
+```
 
-<h4>Single-element inputs provide flexibility</h4>
-<p>Change the "type" to "checkbox" or "select"</p>
+
+### Single-element inputs provide flexibility
+Try Changing the input type to "checkbox" or "select"
+
+```html live
 <FormulateInput
   type="radio"
   label="What do you think of Vue Formulate?"
@@ -43,12 +48,11 @@ footer: MIT Licensed | Written by Braid LLC
     install: 'I’m installing it now.'
   }"
 />
+```
 
-<h4>Well-considered file uploading</h4>
-<p>
-  Handle complex upload requirements in your apps<br>
-  (this demo does not actually upload your images)
-</p>
+### Well-considered file uploading
+Handle complex upload requirements in your apps (this demo does not actually upload your images).
+```html live
 <FormulateInput
   type="image"
   label="Gallery Images"

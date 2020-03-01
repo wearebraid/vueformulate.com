@@ -118,27 +118,21 @@ export default {
       border-bottom 1px solid darken($accentColor, 10%)
       &:hover
         background-color lighten($accentColor, 10%)
+  h3
+    color #3eaf7c
+    margin-bottom 0
+    & + p
+      margin-top 0.25em
+      color #687288
   .preview-code
+    margin-bottom 4em
+    &:last-child
+      margin-bottom 0
     .token.class-name
       color inherit
     .preview
       background-color #fff
       text-align left
-      pre
-        color: #ccc;
-      h4
-        display inline-block
-        color: #3eaf7c
-        margin-top: 4em
-        margin-bottom 0
-
-        &:first-child
-          margin-top 0
-
-        & + p
-          font-size 0.9rem
-          margin-top 0
-          color: #687288
   .theme-default-content
     margin-top 5em
   .features
