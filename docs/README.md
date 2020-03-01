@@ -76,7 +76,7 @@ Effortlessly ensure all fields have validated and model field values to a single
       name="flavor"
       type="checkbox"
       label="Which ice cream do you like?"
-      validation="required|min:1,length"
+      validation="required|min:1"
       :options="{ vanilla: 'Vanilla', chocolate: 'Chocolate', strawberry: 'Strawberry'}"
     />
     <FormulateInput type="submit" />
