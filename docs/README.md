@@ -61,3 +61,33 @@ Handle complex upload requirements in your apps (this demo does not actually upl
   multiple
 />
 ```
+
+### FormulateForm elements allow for easy value grouping
+Effortlessly ensure all fields have validated and model field values to a single object
+```vue live
+<template>
+  <FormulateForm v-model="values">
+    <FormulateInput
+      name="name"
+      label="What is your email?"
+      validation="required|email"
+      placeholder="jon@example.com"
+    />
+    <FormulateInput
+      name="flavor"
+      type="checkbox"
+      label="Which ice cream do you like?"
+      validation="required|min:1,length"
+      :options="{ vanilla: 'Vanilla', chocolate: 'Chocolate', strawberry: 'Strawberry'}"
+    />
+    <FormulateInput type="submit" />
+    <pre>{{ values }}</pre>
+  </FormulateForm>
+</template>
+
+<script>
+export default {
+  data () { return { values: {} } }
+}
+</script>
+```

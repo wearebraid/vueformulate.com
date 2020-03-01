@@ -133,6 +133,8 @@ export default {
     .preview
       background-color #fff
       text-align left
+      pre
+        background-color #d6dce6
   .theme-default-content
     margin-top 5em
   .features
