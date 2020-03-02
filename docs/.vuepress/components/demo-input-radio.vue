@@ -3,9 +3,9 @@
     <div class="pane">
       <FormulateInput
         v-model="value"
-        :options="{first: 'First', second: 'Second', third: 'Third', fourth: 'Fourth'}"
         type="radio"
         label="Label for radio items"
+        :options="{first: 'First', second: 'Second', third: 'Third', fourth: 'Fourth'}"
       />
     </div>
     <code class="pane code">value: {{ value }}</code>

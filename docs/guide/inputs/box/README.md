@@ -5,6 +5,16 @@ The box [classification](/inputs/) is given to the following types:
 - [checkbox](#checkbox)
 - [radio](#radio)
 
+:::tip Note
+Just like a native checkbox or radio, the `box` classification uses the `checked`
+prop instead of `value` to set it’s initial state.
+
+The exception to this rule is when the `options` prop is specified causing it to
+act more like a select list. In this case, use `value` to set the initial state.
+
+You can also use `v-model` in either case.
+:::
+
 ## Checkbox
 
 ### Single checkbox
