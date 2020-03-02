@@ -22,8 +22,8 @@ features:
 ---
 
 
-### Complex Validation made simple
-Vue Formulate includes 18 rules w/ support for defining your own
+### Form validation
+Vue Formulate includes [18 rules](/guide/validation/) and support for defining your own.
 ```html live
 <FormulateInput
   type="email"
@@ -34,8 +34,8 @@ Vue Formulate includes 18 rules w/ support for defining your own
 ```
 
 
-### Single-element inputs provide flexibility
-Try Changing the input type to "checkbox" or "select"
+### Single-element inputs
+Try Changing the input type to "checkbox" or "select".
 
 ```html live
 <FormulateInput
@@ -50,19 +50,19 @@ Try Changing the input type to "checkbox" or "select"
 ```
 
 ### Well-considered file uploading
-Handle complex upload requirements in your apps (this demo does not actually upload your images).
+File uploads done well, right out of the box.
 ```html live
 <FormulateInput
   type="image"
   label="Gallery Images"
-  help="Select jpg image(s) to upload."
-  validation="mime:image/jpeg"
+  validation="mime:image/jpeg,image/jpg,image/png"
+  help="Don’t worry — our demo doesn't upload your image"
   multiple
 />
 ```
 
-### FormulateForm elements allow for easy value grouping
-Effortlessly ensure all fields have validated and model field values to a single object
+### Model your entire form with one object
+Effortlessly ensure all fields have validated and `v-model` field values to a single object.
 ```vue live
 <template>
   <FormulateForm v-model="values">
