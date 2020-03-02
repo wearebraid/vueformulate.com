@@ -104,7 +104,8 @@ model. This can be done with the `value` prop, no `v-model` necessary:
 
 ::: tip
 Note: When using `v-model` and `value` on the same `<FormulateInput>` the
-initial value will use the `v-model` value over the `value`.
+initial value will use the `value` over the `v-model`, updating the `v-model`
+to match.
 :::
 
 ### Initial value with `FormulateForm`
