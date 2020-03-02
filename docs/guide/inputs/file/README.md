@@ -8,12 +8,6 @@ The file [classification](/guide/custom-inputs.html#custom-types) is given to th
 Because file inputs require server interaction they require more configuration
 then other `FormulateInput` types.
 
-:::danger Warning — wet paint
-File uploads are still under active development and the details of this API may
-still be subject to change. This warning will be removed as soon as the API has
-been solidified.
-:::
-
 ## File
 
 ```vue
