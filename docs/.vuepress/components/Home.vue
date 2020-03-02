@@ -121,7 +121,7 @@ export default {
 </script>
 
 <style lang="stylus">
-.home
+#app .home
   padding $navbarHeight 2rem 0
   max-width $homePageWidth
   margin 0px auto
@@ -138,8 +138,7 @@ export default {
       width: 100%
       max-width: 130px
       display block
-      margin-right 5em
-      margin-top 0.5em
+      margin 0.5em 5em 0 0
     .hero-meta
       margin 0
     h1
@@ -215,7 +214,7 @@ export default {
     color lighten($textColor, 25%)
 
 @media (max-width: 419px)
-  .home
+  #app .home
     .preview-code
       border 1px solid #ccc
       border-radius: 5px
@@ -229,7 +228,7 @@ export default {
         overflow auto
 
 @media (max-width: 568px)
-  .home
+  #app .home
     header.hero
       padding 3em 0 2em 0
     .hero
@@ -251,7 +250,7 @@ export default {
         overflow auto
 
 @media (max-width: $MQMobile)
-  .home
+  #app .home
     .features
       flex-direction column
     .feature
@@ -259,7 +258,7 @@ export default {
       padding 0 2.5rem
 
 @media (max-width: $MQMobileNarrow)
-  .home
+  #app .home
     padding-left 1.5rem
     padding-right 1.5rem
     .hero
