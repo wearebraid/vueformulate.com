@@ -35,7 +35,7 @@ Vue Formulate includes [18 rules](/guide/validation/) and support for defining y
 
 
 ### Single-element inputs
-Try Changing the input type to "checkbox" or "select".
+Try changing `type="radio"` to `checkbox` or `select` in this demo.
 
 ```html live
 <FormulateInput
