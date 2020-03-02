@@ -82,7 +82,8 @@ module.exports = {
     },
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Guide', link: '/guide/' }
+      { text: 'Guide', link: '/guide/' },
+      { text: 'Changelog', link: '/changelog/' }
     ],
     searchPlaceholder: 'Search...',
     smoothScroll: true,
