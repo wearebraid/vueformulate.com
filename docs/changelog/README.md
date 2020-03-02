@@ -4,6 +4,10 @@ sidebar: auto
 
 # Changelog
 
+## v2.1.1 - March 1, 2020
+
+- Patches incorrect class name on `input` classifications.
+
 ## v2.1.0 - March 1, 2020
 
 - Patched issue that caused `FormulateForm` to not properly hydrate a `box` classification when used with `:options`.
