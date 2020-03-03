@@ -211,10 +211,11 @@ If you prefer to handle the form submission manually you can listen to the
 :::
 
 ```json
-// console.log(await form.values())
 {
   "name": "Jon Doe",
-  "avatar": "/your/upload/directory/avatar.jpg"
+  "avatar": {
+    "url": "/your/upload/directory/avatar.jpg"
+  }
 }
 ```
 
