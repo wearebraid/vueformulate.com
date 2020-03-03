@@ -8,7 +8,7 @@ instance and can extend it. This is most helpful if you want to codify your own
 
 :::tip Please share!
 Vue Formulate is brand new, so if you publish a custom input plugin on npm or
-GitHub and want to share it, submit a [pull request](https://github.com/wearebraid/vueformulate.com/blob/master/docs/guide/plugins.md)
+GitHub and want to share it, submit a [pull request](https://github.com/wearebraid/vueformulate.com/edit/master/docs/guide/plugins/README.md)
 or [file an issue](https://github.com/wearebraid/vueformulate.com/issues/new)
 on the documentation repository and we'll list it on this page.
 :::
