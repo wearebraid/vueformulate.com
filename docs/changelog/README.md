@@ -4,6 +4,11 @@ sidebar: auto
 
 # Changelog
 
+## Upcoming Release
+Currently these upcoming features are being targeted at the [2.2.0 release](https://github.com/wearebraid/vue-formulate/tree/release/2.2.0).
+
+* Added support for startsWith and endsWith field validation.
+
 ## v2.1.1 - March 1, 2020
 
 - Patches incorrect class name on `input` classifications.
