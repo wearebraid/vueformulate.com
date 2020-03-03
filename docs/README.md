@@ -29,6 +29,10 @@ Vue Formulate includes [20 rules](/guide/validation/) and support for defining y
   type="email"
   label="What is your school email address?"
   validation="required|email|ends_with:.edu"
+  validation-name="School email"
+  :validation-messages="{
+    ends_with: 'Your email address must end in .edu'
+  }"
   placeholder="user@university.edu"
 />
 ```
@@ -67,7 +71,8 @@ Effortlessly ensure all fields have validated and `v-model` field values to a si
 <template>
   <FormulateForm v-model="values">
     <FormulateInput
-      name="name"
+      type="email"
+      name="email"
       label="What is your email?"
       validation="required|email"
       placeholder="jon@example.com"
