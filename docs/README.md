@@ -27,6 +27,7 @@ Vue Formulate includes [18 rules](/guide/validation/) and support for defining y
 ```html live
 <FormulateInput
   type="email"
+  name="email"
   label="What is your email?"
   validation="required|email"
   placeholder="jon@example.com"
