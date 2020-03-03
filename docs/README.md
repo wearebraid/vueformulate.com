@@ -23,13 +23,13 @@ features:
 # Live Code Examples
 
 ### Form validation
-Vue Formulate includes [18 rules](/guide/validation/) and support for defining your own.
+Vue Formulate includes [20 rules](/guide/validation/) and support for defining your own.
 ```html live
 <FormulateInput
   type="email"
-  label="What is your email?"
-  validation="required|email"
-  placeholder="jon@example.com"
+  label="What is your school email address?"
+  validation="required|email|ends_with:.edu"
+  placeholder="user@university.edu"
 />
 ```
 
@@ -75,9 +75,9 @@ Effortlessly ensure all fields have validated and `v-model` field values to a si
     <FormulateInput
       name="flavor"
       type="checkbox"
-      label="Which ice cream do you like?"
+      label="Which flavor ice cream do you like?"
       validation="required|min:1"
-      :options="{ vanilla: 'Vanilla', chocolate: 'Chocolate', strawberry: 'Strawberry'}"
+      :options="{ vanilla: 'Vanilla', chocolate: 'Chocolate', strawberry: 'Strawberry', pineapple: 'Pineapple'}"
     />
     <FormulateInput type="submit" />
     <pre>{{ values }}</pre>
