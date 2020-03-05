@@ -135,7 +135,7 @@ The result from the server should be a simple JSON array of objects in the forma
 }]
 ```
 
-While each result can certainly include more details than the `url` property it
+While each result can certainly include more details than the `url` property, it
 is the only required value. It can be a fully qualified URL or a path. If it's
 an `image` it should work as the `src` attribute for an `<img>` tag.
 
@@ -159,7 +159,7 @@ object. It is recommended that the backend have a common URL where files can be 
 ## Setting initial values
 
 Setting the initial value of a form that contains an uploaded file is as simple
-as passing it back the array of objects containing urls. This will populate the
+as giving it an array of objects containing urls. This will populate the
 form element, and return the same url in the payload, but wont re-upload.
 
 ```vue

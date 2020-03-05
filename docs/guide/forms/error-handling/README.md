@@ -205,7 +205,7 @@ export default {
 ```
 
 Woof, that `catch` statement — what a mess, and we only handled a few of the
-possible scenarios. This type of code is often extracted off to a helper
+possible scenarios. This type of code is often abstracted away to a helper
 function in a `libs` directory somewhere, but it still needs to set some local
 component variables (on our case `inputErrors` and `formErrors`) in order to
 give proper feedback to the user.
@@ -251,7 +251,7 @@ Cleaner, but lets go through it. There are a few important things to notice:
 #### The `errorHandler` function
 
 So where did all that handler code go? Probably extracted to a helper file like
-`libs/utils` — thats up to you, but formulate wants to know how to access it.
+`libs/utils` — thats up to you, but Formulate wants to know how to access it.
 When registering Vue Formulate, let it know where your error handler is.
 
 ```js
@@ -273,13 +273,13 @@ then calls the `yourErrorHandler` and expects an object response with two proper
 }
 ```
 
-The `handle` method then works up some black magic, and sets those values on
+The `handle` method then sets those values on
 your form and form inputs. This means we can have a single function for handling
 all our form errors, and a one liner to set the errors. We don't even need local
 data properties.
 
 Out of the box the `errorHandler` function just returns the error `(err) => err`
-so we can actually use it to set form errors as an example:
+so we can actually use it to directly set form errors within our component. Here's an example:
 
 ```vue
 <template>
@@ -321,4 +321,3 @@ export default {
 ```
 
 <demo-errors-6 />
-
