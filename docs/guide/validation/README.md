@@ -612,7 +612,7 @@ function myRule (context, ...args) {
 }
 ```
 
-:::warning Validation Rule Names
+:::tip Validation Rule Names
 When using custom rules in your `<template>` tags you can use `snake_case` or `camelCase` for your rule names.
 Internally, Vue Formulate will coerce `snake_case` validation rule names into `camelCase` validation function names.
 Please ensure that your custom validation rule functions are written as `myCustomRule` not `my_custom_rule`
