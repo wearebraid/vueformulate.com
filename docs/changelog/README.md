@@ -7,8 +7,10 @@ sidebar: auto
 ## Upcoming Release
 Currently these upcoming features are being targeted at the [2.2.0 release](https://github.com/wearebraid/vue-formulate/tree/release/2.2.0).
 
-* Added support for startsWith and endsWith field validation.
-* Fixes bug that caused validation rules to not be displayed on blur for the box classification.
+- Added support for startsWith and endsWith field validation.
+- Fixes bug that caused validation rules to not be displayed on blur for the box classification.
+- Improves the localization architecture so contributors can add languages
+without adding to the package size.
 
 ## v2.1.1 - March 1, 2020
 
