@@ -1,9 +1,9 @@
 # Error handling
 
-Vue Formulate provides some great [validation](/guide/validation), but of course,
-it's not wise to rely solely on front end validation, but it can be pretty
-tedious to get error messages from your backend into to the relevant fields of a
-form. Let’s do better!
+Although Vue Formulate provides some great [validation](/guide/validation),
+it's not wise to rely solely on front end validation. It can be tedious to
+get error messages from your backend into to the relevant inputs of a
+form. Vue formulate provides an easy way to place both form-level and input-level errors into your form.
 
 ## Manual error handling
 
@@ -19,7 +19,8 @@ there are `error` and `errors` props available on all input elements.
 ```
 <demo-errors-1 />
 
-These props ignore the `error-behavior` of the element and are displayed no
+These `error` props override the `error-behavior` prop (which surfaces errors
+real-time via `live` or on `blur`) of the element and are displayed no
 matter what. You could certainly handle all your backend errors this way but it
 would still be overly verbose.
 
@@ -50,7 +51,7 @@ in a form.
 <demo-errors-2 />
 
 As you can see in the example, the `FormulateForm` takes an object passed
-via the `errors` props and locates fields in the form that have a matching
+via the `errors` prop and locates fields in the form that have a matching
 `name`. You can define a single error string, or an array of error strings to
 display.
 
@@ -74,9 +75,9 @@ the values will both be shown, and any duplicates removed.
 
 ## Form errors <Badge text="2.2.0" />
 
-Occasionally, form errors are not related directly to an `FormulateInput`.
+Occasionally, form errors are not related directly to a `FormulateInput`.
 Perhaps the server is responding with a `500` status code. The `form-errors`
-prop is design for just such an occasion.
+prop is designed for just such an occasion.
 
 ```vue
 <FormulateForm
@@ -92,7 +93,7 @@ prop is design for just such an occasion.
     name="city"
     label="City"
   />
-  <FormualteForm
+  <FormulateForm
     type="submit"
     label="Submit Order"
   />
@@ -103,7 +104,7 @@ prop is design for just such an occasion.
 By default these errors are shown at the top of the form, however often it makes
 more sense to move these errors somewhere closer to the submit action of your
 form. You can do this by adding a `<FormulateErrors />` component anywhere
-inside the `<FormualteForm>` element.
+inside the `<FormulateForm>` element.
 
 ```vue
 <FormulateForm
@@ -153,15 +154,12 @@ simple login form:
     <FormulateInput
       type="email"
       name="email"
-      label="Email address"
       validation="required|email"
-      placeholder="you@example.com"
     />
     <FormulateInput
       type="password"
       name="password"
       validation="required"
-      label="Your password"
     />
     <FormulateErrors />
     <FormulateInput
@@ -207,13 +205,13 @@ export default {
 Woof, that `catch` statement — what a mess, and we only handled a few of the
 possible scenarios. This type of code is often abstracted away to a helper
 function in a `libs` directory somewhere, but it still needs to set some local
-component variables (on our case `inputErrors` and `formErrors`) in order to
+component variables (on our case `formErrors` and `inputErrors`) in order to
 give proper feedback to the user.
 
 #### Named forms
 
 Vue Formulate simplifies the error handling by introducing the concept of named
-forms, and an error handler function.
+forms and an error handler function.
 
 ```vue
 <template>
@@ -243,9 +241,9 @@ export default {
 ```
 Cleaner, but lets go through it. There are a few important things to notice:
 
-  - The form no longer has `:errors` and `:form-errors` props.
-  - The form now has a `name` prop
-  - The script no longer needs `inputErrors` and `formErrors` data properties.
+  - The form no longer has `:form-errors` and `:errors` props.
+  - The form now has a `name` prop.
+  - The script no longer needs `formErrors` and `inputErrors` data properties.
   - All our error handling logic is replaced with `this.$formulate.handle(err, 'login')`
 
 #### The `errorHandler` function
