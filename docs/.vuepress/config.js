@@ -75,6 +75,11 @@ module.exports = ctx => ({
               title: 'Using forms',
               collapsable: true,
               path: '/guide/forms/',
+            },
+            {
+              title: 'Error handling',
+              collapsable: true,
+              path: '/guide/forms/error-handling/',
             }
           ]
         }
