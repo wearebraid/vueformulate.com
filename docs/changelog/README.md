@@ -9,6 +9,8 @@ Currently these upcoming features are being targeted at the [2.2.0 release](http
 
 * Added support for startsWith and endsWith field validation.
 * Fixes bug that caused validation rules to not be displayed on blur for the box classification.
+* Localization support.
+* Form errors support.
 
 ## v2.1.1 - March 1, 2020
 
