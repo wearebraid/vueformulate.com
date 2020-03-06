@@ -24,7 +24,7 @@ real-time via `live` or on `blur`) of the element and are displayed no
 matter what. You could certainly handle all your backend errors this way but it
 would still be overly verbose.
 
-## Form input errors <Badge text="2.2.0" />
+## Form input errors <Badge text="2.2.0+" />
 
 `FormulateForm` has a mechanism for setting errors for every `FormulateInput`
 in a form.
@@ -73,7 +73,7 @@ the values will both be shown, and any duplicates removed.
 ```
 <demo-errors-3 />
 
-## Form errors <Badge text="2.2.0" />
+## Form errors <Badge text="2.2.0+" />
 
 Occasionally, form errors are not related directly to a `FormulateInput`.
 Perhaps the server is responding with a `500` status code. The `form-errors`
@@ -137,7 +137,7 @@ This automatically removes the form errors from the top and locates them whereve
 that `<FormulateErrors />` is placed. You can even multiple `<FormulateErrors />`
 if you'd like the form errors to appear in multiple locations.
 
-## Error handling <Badge text="2.2.0" />
+## Error handling <Badge text="2.2.0+" />
 
 Now that we've covered how we display errors on forms, lets talk about how we
 can actually handle those errors in a more graceful way. Lets work through a
