@@ -1,0 +1,67 @@
+# Contributing
+
+## Feature requests
+
+Do you have a great idea for how to make this project better? First consider if
+the feature you’d like to add would be applicable to the majority of users of
+this project. If so, please [submit an issue on Github](https://github.com/wearebraid/vue-formulate/issues).
+
+## Bug reports
+
+Bug reports are very welcome, first check on [Github](https://github.com/wearebraid/vue-formulate/issues)
+to see if the bug has already been reported. If not, please create a new issue.
+The more detail you can give to describe the issue the better. Screenshots,
+steps to reproduce, and CodePen examples are greatly appreciated, but not
+required to submit.
+
+
+## Pull requests
+
+Pull requests to address bug fixes or feature requests are greatly appreciated.
+If you're looking to add support for a new language or modify the available
+languages, please [read the Internationalization](#Internationalization) section
+below. Other core feature pull requests should be made to the primary repository.
+
+## Documentation
+
+Find a typo in our documentation, or do you have a better way of explaining a
+concept — awesome! The documentation lives in a [separate repository](https://github.com/wearebraid/vueformulate.com)
+
+#### For small changes
+
+At the bottom of every page on this site there is a link to help us improve that
+specific page. For any small typos or other corrections, please let us know.
+
+#### New pages
+
+For any significant changes to the documentation you’re best off forking the
+documentation to your own machine and editing it there. When you're don submit
+a pull request.
+
+#### Language support
+
+We’re looking for people to translate these documentation pages! It’s no small
+task and would require a higher level of coordination, but if you are a native
+speaker with a good grasp of technical english and are willing to contribute
+your time to translate this documentation, please [get in touch](justin@wearebraid.com)!
+
+## Internationalization
+
+All of the locales for Vue Formulate (2.2.0 and later) are stored in the
+`@braid/vue-formulate-i18n` package which can be found on [Github here](https://github.com/wearebraid/vue-formulate-i18n).
+This is a separate repository to allow for better tree-shaking and bundler
+support without needing to include all the locales in the core package.
+
+#### New locales
+
+Adding additional translations of Vue Formualte (currently this is
+only validation messages) is a high priority. When contributing a new language,
+please base your translation off the english locale as it will be the most
+up-to-date.
+
+
+#### Grammar and Typos
+
+Updates to grammar and typos are more than welcome! The package maintainers are
+only fluent in English and Italian, so occasionally we may request outside
+reviewers to approve grammar changes in other languages before merging.
