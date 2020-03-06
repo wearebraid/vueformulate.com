@@ -35,7 +35,7 @@ specific page. For any small typos or other corrections, please let us know.
 #### New pages
 
 For any significant changes to the documentation you’re best off forking the
-documentation to your own machine and editing it there. When you're don submit
+documentation to your own machine and editing it there. When you're done submit
 a pull request.
 
 #### Language support
