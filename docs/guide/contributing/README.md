@@ -43,7 +43,7 @@ a pull request.
 We’re looking for people to translate these documentation pages! It’s no small
 task and would require a higher level of coordination, but if you are a native
 speaker with a good grasp of technical english and are willing to contribute
-your time to translate this documentation, please [get in touch](justin@wearebraid.com)!
+your time to translate this documentation, please [get in touch](mailto:hello@wearebraid.com)!
 
 ## Internationalization
 
@@ -55,10 +55,20 @@ support without needing to include all the locales in the core package.
 #### New locales
 
 Adding additional translations of Vue Formualte (currently this is
-only validation messages) is a high priority. When contributing a new language,
-please base your translation off the english locale as it will be the most
-up-to-date.
+only validation messages) is a great way to contribute! To create a new locale,
+fork the `@braid/vue-formulate-i18n` repository then follow these basic steps:
 
+1. Copy the `src/locales/en.js` > `src/locales/xx.js` (these should be the proper ISO 639-1 tag), and follow the instructions in that file.
+2. Copy the `tests/unit/en.js` > `tests/unit/xx.js` and follow the instructions in that file.
+3. Add your new locale to the `src/locales.js`.
+3. Run `npm install` and then `npm test` to ensure nothing broke.
+4. Push your fork back up and create a PR.
+
+We don’t speak your language, so feel free to change and modify the messages to
+be as human-friendly to your language and culture as possible. The structure,
+grammar, and placement of arguments is allowed to change for each locale. If you
+need to add some light weight helper functions to the `libs/formats.js` thats ok
+too.
 
 #### Grammar and Typos
 

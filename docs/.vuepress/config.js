@@ -44,6 +44,11 @@ module.exports = ctx => ({
               collapsable: true
             },
             {
+              title: 'Localization',
+              path: '/guide/localization/',
+              collapsable: true
+            },
+            {
               title: 'Contributing',
               path: '/guide/contributing/',
               collapsable: true
