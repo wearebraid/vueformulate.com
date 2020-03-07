@@ -776,9 +776,10 @@
     "@rollup/plugin-buble" "^0.21.1"
     "@rollup/plugin-commonjs" "^11.0.2"
 
-"@braid/vue-formulate@git+ssh://git@github.com/wearebraid/vue-formulate.git#feature/locales":
-  version "2.1.1"
-  resolved "git+ssh://git@github.com/wearebraid/vue-formulate.git#7b1546055f0b1c8c0f0ae4933e96d32e58a9dbd6"
+"@braid/vue-formulate@^2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@braid/vue-formulate/-/vue-formulate-2.2.0.tgz#4f872fa97f2599f2acf5b52cc901e73132699409"
+  integrity sha512-NtX2UuaXVQ5uKdA69nrrlYnNuZYBIJvMmlrpESMp3V8NNltXpADQBsqVOSKDjCO5dAimFc32bJa+0DzzJtVGWA==
   dependencies:
     "@braid/vue-formulate-i18n" "^1.0.3"
     is-plain-object "^3.0.0"
