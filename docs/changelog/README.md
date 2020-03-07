@@ -4,6 +4,13 @@ sidebar: auto
 
 # Changelog
 
+## v2.2.0 - March 7, 2020
+
+- Adds a suite of tooling for form errors and back end [error handling](/guide/forms/error-handling).
+- Improves the i18n architecture so contributors can add languages without adding to the package size.
+- Added support for startsWith and endsWith field validation.
+- Fixed a bug that caused validation rules to not be displayed on blur for the box classification.
+
 ## v2.1.1 - March 1, 2020
 
 - Patches incorrect class name on `input` classifications.

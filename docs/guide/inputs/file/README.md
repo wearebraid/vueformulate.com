@@ -5,9 +5,6 @@ The file [classification](/guide/custom-inputs.html#custom-types) is given to th
 - [file](#file)
 - [image](#image)
 
-Because file inputs require server interaction they require more configuration
-then other `FormulateInput` types.
-
 ## File
 
 ```vue
@@ -37,7 +34,7 @@ then other `FormulateInput` types.
 <demo-image />
 
 ## Props
-File inputs use the [default props](/guide/#input-props), as well as the
+File inputs use the [default props](/guide/inputs/#all-options), as well as the
 following classification specific props:
 
 
@@ -45,7 +42,7 @@ Prop                | Description
 --------------------|-------------------------------------------------------------
 `upload‑behavior`   | `live` or `delayed` - Determines when the file is uploaded. Defaults to `live`, which uploads the file as soon as it is selected.
 `image‑behavior`    | `preview` or `file` - For an input type `image`, the default is `preview` where a thumbnail of the image is shown.
-`upload‑url`        | URL to perform a post request which overrides the configured default.
+`upload‑url`        | URL to perform a POST request which overrides the configured default.
 `uploader`          | `function` or [axios instance](https://github.com/axios/axios) - Mechanism used to perform upload. Defaults to the [globally configured](#uploader) instance.
 `prevent‑window‑drops` | `true` by default, this prevents the browser from navigating to a file when the user misses the dropzone.
 `accept`            | This is [standard HTML](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#attr-accept), but helpful when trying to upload files of a certain type.
@@ -130,29 +127,67 @@ export default {
 </script>
 ```
 
-The result from the server should be a simple JSON object in the format:
+The result from the server should be a simple JSON array of objects in the format:
 
 ```json
-{
+[{
   "url": "/absolute/path/to/filename.png"
-}
+}]
 ```
 
-While the result can certainly include more details than the `url` it is the only
-required value. It can be a fully qualified URL or a path. If it's an `image` it
-should work as the `src` attribute for an `<img>` tag.
+While each result can certainly include more details than the `url` property, it
+is the only required value. It can be a fully qualified URL or a path. If it's
+an `image` it should work as the `src` attribute for an `<img>` tag.
 
-::: warning
-By default, Vue Formulate uses a fake uploader function that advances the progress
-bar but performs no requests. This is helpful for scaffolding and
-theming but must be replaced for actual uploads to work.
+:::tip Note
+If you prefer to use a different property than `url` you can change that by
+setting the `fileUrlKey` option when registering Vue Formulate.
 :::
+
+## A fake uploader
+
+Vue Formulate ships with a fake uploader function that advances the progress
+bar but performs no requests. This is helpful for scaffolding and theming, but
+it must be replaced for uploads to work.
 
 ## Getting results
 
 When files are added to a file `type` in Vue Formulate the value is automatically
 transformed into an instance of `FileUpload`, a helper class to wrap the [FileList](https://developer.mozilla.org/en-US/docs/Web/API/FileList)
 object. It is recommended that the backend have a common URL where files can be uploaded.
+
+## Setting initial values
+
+Setting the initial value of a form that contains an uploaded file is as simple
+as giving it an array of objects containing urls. This will populate the
+form element, and return the same url in the payload, but wont re-upload.
+
+```vue
+<FormulateInput
+  type="file"
+  :value="[{ url: '/path/to/document.pdf' }]"
+/>
+```
+
+<demo-input-hydration />
+
+#### Mime types
+
+When setting an initial file value, like the example above the file extension
+in the URL is used to re-create the mime type of the file. Vue Formulate
+contains a _very_ limited map of extensions to mimes (to keep the package size
+small). Typically this doesn't cause any issues, but if you are using the `mime`
+[validation rule](/guide/validation/#mime) and the file extension is not
+included in the map it may fail validation. You can easily add your own
+extensions/mime types to the Vue Formulate instance.
+
+```js
+Vue.use(VueFormulate, {
+  mimes: {
+    mp3: 'audio/mpeg'
+  }
+})
+```
 
 ### Upload results with `FormulateForm`
 
@@ -211,10 +246,11 @@ If you prefer to handle the form submission manually you can listen to the
 :::
 
 ```json
-// console.log(await form.values())
 {
   "name": "Jon Doe",
-  "avatar": "/your/upload/directory/avatar.jpg"
+  "avatar": {
+    "url": "/your/upload/directory/avatar.jpg"
+  }
 }
 ```
 

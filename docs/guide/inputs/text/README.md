@@ -74,6 +74,13 @@ on a type-by-type basis.
 
 <demo-input-number />
 
+:::tip Accessibility tip
+It [may be preferable](https://technology.blog.gov.uk/2020/02/24/why-the-gov-uk-design-system-team-changed-the-input-type-for-numbers/)
+to use a `text` input rather than a number input for accessibility reasons. You
+can use the `inputmode="numeric"` and `pattern="[0-9]*"` attributes to force a
+number keypad for mobile users.
+:::
+
 ## Color
 
 ```vue

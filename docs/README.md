@@ -28,11 +28,8 @@ Vue Formulate includes [20 rules](/guide/validation/) and support for defining y
 <FormulateInput
   type="email"
   label="What is your school email address?"
-  validation="required|email|ends_with:.edu"
+  validation="required|email|ends_with:university.edu"
   validation-name="School email"
-  :validation-messages="{
-    ends_with: 'Your email address must end in .edu'
-  }"
   placeholder="user@university.edu"
 />
 ```

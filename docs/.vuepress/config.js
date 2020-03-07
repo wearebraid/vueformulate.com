@@ -1,4 +1,4 @@
-module.exports = {
+module.exports = ctx => ({
   title: 'Vue Formulate',
   description: 'The easiest way to build forms with Vue.',
   head: [
@@ -42,6 +42,16 @@ module.exports = {
               title: 'Theming',
               path: '/guide/theming/',
               collapsable: true
+            },
+            {
+              title: 'Internationalization',
+              path: '/guide/internationalization/',
+              collapsable: true
+            },
+            {
+              title: 'Contributing',
+              path: '/guide/contributing/',
+              collapsable: true
             }
           ]
         },
@@ -75,6 +85,11 @@ module.exports = {
               title: 'Using forms',
               collapsable: true,
               path: '/guide/forms/',
+            },
+            {
+              title: 'Error handling',
+              collapsable: true,
+              path: '/guide/forms/error-handling/',
             }
           ]
         }
@@ -92,7 +107,11 @@ module.exports = {
     docsRepo: 'wearebraid/vueformulate.com',
     docsDir: 'docs',
     editLinks: true,
-    editLinkText: 'Help improve this page!'
+    editLinkText: 'Help improve this page!',
+    algolia: {
+      apiKey: 'efde7b14d4e236e6a1ea491545e42ea0',
+      indexName: 'vueformulate'
+    }
   },
   plugins: [
     ['live'],
@@ -104,4 +123,4 @@ module.exports = {
     ]
   ],
   dest: 'public'
-}
+})
