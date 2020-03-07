@@ -63,6 +63,7 @@ own [custom rule](#custom-validation-rules) to suit your needs.
 - [confirm](#confirm)
 - [date](#date)
 - [email](#email)
+- [ends_with](#ends-with)
 - [in](#in)
 - [matches](#matches)
 - [max](#max)
@@ -71,6 +72,7 @@ own [custom rule](#custom-validation-rules) to suit your needs.
 - [not](#not)
 - [number](#number)
 - [required](#required)
+- [starts_with](#starts-with)
 - [url](#url)
 
 ### Accepted
@@ -287,6 +289,20 @@ Checks if the input is a valid email address format.
 ```
 <demo-validation-email />
 
+### Ends With
+Checks if the input ends with one of the provided options
+
+```vue
+<FormulateInput
+  type="text"
+  name="rhymes"
+  label="What rhymes with toad?"
+  validation="ends_with:oad,ode"
+/>
+```
+
+<demo-validation-ends-with />
+
 ### In
 Checks if the input is included in an array of options.
 
@@ -470,6 +486,20 @@ Checks if the input is empty.
 By default, fields are not required, meaning that all validation rules will
 pass with an empty value unless they include the `required` rule.
 :::
+
+### Starts With
+Checks if the input starts with one of the provided options
+
+```vue
+<FormulateInput
+  type="text"
+  name="vowel"
+  label="What's your favorite hashtag on Twitter?"
+  validation="starts_with:#"
+/>
+```
+
+<demo-validation-starts-with />
 
 ### Url
 Checks if the input value appears to be a properly formatted URL including
