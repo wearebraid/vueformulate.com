@@ -54,7 +54,7 @@ support without needing to include all the locales in the core package.
 
 #### New locales
 
-Adding additional translations of Vue Formualte (currently this is
+Adding additional translations of Vue Formulate (currently this is
 only validation messages) is a great way to contribute! To create a new locale,
 fork the `@braid/vue-formulate-i18n` repository then follow these basic steps:
 

@@ -75,7 +75,7 @@ used to group styles. For example the `[data-classification="text"]` selector
 can be used to style all text-based inputs at the same time:
 
 ```scss
-.formualte-input {
+.formulate-input {
   [data-classification="text"] {
     input {
       // style all text-like inputs here
