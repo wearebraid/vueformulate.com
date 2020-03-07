@@ -1,12 +1,12 @@
-# Localization <Badge text="2.2.0+" />
+# Internationalization <Badge text="2.2.0+" />
 
 Vue Formulate ships with the english language validation messages pre-installed,
-but Vue community is great, and new translations continue to be submitted. These
-localizations are collected in the `@braid/vue-formulate-i18n` package.
+but the Vue community is great, and new translations continue to be submitted.
+These localizations are collected in the `@braid/vue-formulate-i18n` package.
 
 ## Supported languages
 
-Vue Formulate currently supports 3 languages.
+Vue Formulate currently supports 4 languages.
 
 - 🇩🇰 Denmark (da)
 - 🇺🇸 English (en)
@@ -50,7 +50,7 @@ Vue.use(VueFormulate,  {
 #### Explicitly setting the locale
 
 You can explicitly set the `locale` in the options where you install Vue. Doing
-these ensures this is the only locale that will be used on the site.
+this ensures this is the only locale that will be used on the site.
 
 ```js
 Vue.use(VueFormulate,  {

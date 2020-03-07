@@ -232,7 +232,7 @@ this package does not aim to do:
 
 ### Vuetify
 
-Vuetify is full UI framework while Vue Formulate if a focus tool for building
+Vuetify is full UI framework while Vue Formulate is a focused tool for building
 forms. Some people prefer not to use large UI frameworks, don’t have them on a
 pre-existing project, don’t want to learn a new framework, or just prefer
 writing their own narrowly scoped styles. Also we think composing forms in
@@ -240,11 +240,11 @@ Vue Formulate is second to none.
 
 ### vue-forms
 
-The `vue-forms` package is focused directly on form validation, while
+The `vue-forms` package is focused exclusively on form validation, while
 Vue Formulate takes a more holistic and opinionated approach to forms and ships
 with UI scaffolding, validation, and data modeling. We wanted to make form
 composition _a lot easier_ for developers while still increasing the overall
-quality.
+quality — try it out.
 
 ### Buefy
 
@@ -252,18 +252,18 @@ Similar to Vuetify, Beufy is a full UI framework. If you’re already using Bulm
 or you're looking for a comprehensive UI solution it’s a solid choice.
 Vue Formulate is happy to live in the context of any UI framework and still
 offers the benefits of slick form composition, validation, and error handling
-to name a few. Event still there are plenty of people who don’t need a full UI
-framework that would benefit from Vue Formulate’s focused implementation.
+to name a few. Even still there are plenty of people who don’t want or need a
+full UI framework that would benefit from Vue Formulate’s focused approach.
 
 ### Veelidate
 
-Veelidate is another great option for Vue form validation, but again, thats it’s
+Veelidate is another great option for Vue form validation, and thats it’s
 primary mission — validation. Vue Formulate is makes building high quality forms
 easier by including validation as a sub-feature of the field composition itself.
-Building forms with Vue Formulate is super easy and blazing fast — course you
-need the extra validation power, you still have it, you can write any [custom
+Building forms with Vue Formulate is super easy and blazing fast — of course if
+you need the extra validation power, you still have it. You can write any [custom
 validation logic](/guide/validation/#custom-validation-rules) you want, even on
-a single field.
+individual fields.
 
 ### vue-form-generator
 

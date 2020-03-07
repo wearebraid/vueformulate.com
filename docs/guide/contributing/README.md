@@ -2,7 +2,7 @@
 
 ## Feature requests
 
-Do you have a great idea for how to make this project better? First consider if
+Do you have a great idea for how to make this project better? First, consider if
 the feature you’d like to add would be applicable to the majority of users of
 this project. If so, please [submit an issue on Github](https://github.com/wearebraid/vue-formulate/issues).
 
@@ -24,18 +24,18 @@ below. Other core feature pull requests should be made to the primary repository
 
 ## Documentation
 
-Find a typo in our documentation, or do you have a better way of explaining a
-concept — awesome! The documentation lives in a [separate repository](https://github.com/wearebraid/vueformulate.com)
+Find a typo in our documentation? Or have a better way of explaining a
+concept? Awesome! The documentation lives in a [separate repository](https://github.com/wearebraid/vueformulate.com)
 
 #### For small changes
 
-At the bottom of every page on this site there is a link to help us improve that
-specific page. For any small typos or other corrections, please let us know.
+At the bottom of every page on this site there is a "Help improve this page!"
+link where you can submit small corrections.
 
 #### New pages
 
 For any significant changes to the documentation you’re best off forking the
-documentation to your own machine and editing it there. When you're done submit
+documentation to your own machine and editing it there. When you're done, submit
 a pull request.
 
 #### Language support
@@ -58,7 +58,8 @@ Adding additional translations of Vue Formualte (currently this is
 only validation messages) is a great way to contribute! To create a new locale,
 fork the `@braid/vue-formulate-i18n` repository then follow these basic steps:
 
-1. Copy the `src/locales/en.js` > `src/locales/xx.js` (these should be the proper ISO 639-1 tag), and follow the instructions in that file.
+1. Copy the `src/locales/en.js` > `src/locales/xx.js` (these should be named
+with the proper [ISO 639-1 tag](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)), and follow the instructions in that file.
 2. Copy the `tests/unit/en.js` > `tests/unit/xx.js` and follow the instructions in that file.
 3. Add your new locale to the `src/locales.js`.
 3. Run `npm install` and then `npm test` to ensure nothing broke.
@@ -67,8 +68,8 @@ fork the `@braid/vue-formulate-i18n` repository then follow these basic steps:
 We don’t speak your language, so feel free to change and modify the messages to
 be as human-friendly to your language and culture as possible. The structure,
 grammar, and placement of arguments is allowed to change for each locale. If you
-need to add some light weight helper functions to the `libs/formats.js` thats ok
-too.
+need to add some lightweight helper functions to the `libs/formats.js` file,
+thats ok too.
 
 #### Grammar and Typos
 

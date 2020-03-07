@@ -4,13 +4,12 @@ sidebar: auto
 
 # Changelog
 
-## Upcoming Release
-Currently these upcoming features are being targeted at the [2.2.0 release](https://github.com/wearebraid/vue-formulate/tree/release/2.2.0).
+## v2.2.0 - March 7, 2020
 
+- Adds a suite of tooling for form errors and back end [error handling](/guide/forms/error-handling).
+- Improves the i18n architecture so contributors can add languages without adding to the package size.
 - Added support for startsWith and endsWith field validation.
-- Fixes bug that caused validation rules to not be displayed on blur for the box classification.
-- Improves the localization architecture so contributors can add languages
-without adding to the package size.
+- Fixed a bug that caused validation rules to not be displayed on blur for the box classification.
 
 ## v2.1.1 - March 1, 2020
 

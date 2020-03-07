@@ -1,9 +1,10 @@
 # Error handling
 
-Although Vue Formulate provides some great [validation](/guide/validation),
-it's not wise to rely solely on front end validation. It can be tedious to
-get error messages from your backend into to the relevant inputs of a
-form. Vue formulate provides an easy way to place both form-level and input-level errors into your form.
+Although Vue Formulate provides great [validation](/guide/validation), it's not
+wise to rely solely on front end validation. It can be tedious to get error
+messages from your backend into to the relevant inputs of a form. Vue formulate
+provides an easy way to place both form-level and input-level errors into your
+form.
 
 ## Manual error handling
 
@@ -143,7 +144,7 @@ Now that we've covered how we display errors on forms, lets talk about how we
 can actually handle those errors in a more graceful way. Lets work through a
 simple login form:
 
-#### The problem, login form
+#### A problematic example
 ```vue
 <template>
   <FormulateForm
@@ -205,13 +206,13 @@ export default {
 Woof, that `catch` statement — what a mess, and we only handled a few of the
 possible scenarios. This type of code is often abstracted away to a helper
 function in a `libs` directory somewhere, but it still needs to set some local
-component variables (on our case `formErrors` and `inputErrors`) in order to
+component variables (in our case `formErrors` and `inputErrors`) in order to
 give proper feedback to the user.
 
 #### Named forms
 
-Vue Formulate simplifies the error handling by introducing the concept of named
-forms and an error handler function.
+Vue Formulate simplifies the error handling by introducing the concept of "named
+forms" and an error handler function.
 
 ```vue
 <template>
@@ -276,8 +277,9 @@ your form and form inputs. This means we can have a single function for handling
 all our form errors, and a one liner to set the errors. We don't even need local
 data properties.
 
-Out of the box the `errorHandler` function just returns the error `(err) => err`
-so we can actually use it to directly set form errors within our component. Here's an example:
+Out of the box the `errorHandler` function does nothing at all, so if we call
+`handle` with the `{ inputErrors: {}, formErrors: [] }` notation we can test the
+functionality. Here's an example:
 
 ```vue
 <template>
@@ -317,5 +319,10 @@ export default {
 }
 </script>
 ```
-
 <demo-errors-6 />
+
+:::tip errorHandler plugins
+Once you write your error handler function, you can easily encapsulate it in a
+plugin for easy re-use in the future. If you do that, consider sharing it and
+we’ll post it on the plugins page.
+:::
