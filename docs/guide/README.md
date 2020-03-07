@@ -218,12 +218,12 @@ Read more about [using forms →](/guide/forms)
 
 ## What it isn’t
 
-While Vue Formulate is a powerful tool for building forms there are some things
-this package does not aim to do:
+While Vue Formulate is a powerful tool for building, validating, and handling errors
+on forms — there are some things this package does not aim to do:
 
   1. This is not a UI framework or a _layout_ tool. Want inputs next to each
-    other? Cool! Just wrap some inputs in a `<div>` and sprinkle on the
-    `flexbox`. This package assumes you'll still be responsible for form layout.
+    other? Cool! Wap some inputs in a `<div>` and sprinkle on some `flexbox`.
+    This package assumes you'll still be responsible for your form layout.
   2. This package is BYOB — bring your own backend. Vue Formulate doesn't care
     a lick about the backend you choose (the closest it gets to caring is when
     using [file inputs](/guide/inputs/file))
@@ -238,14 +238,6 @@ pre-existing project, don’t want to learn a new framework, or just prefer
 writing their own narrowly scoped styles. Also, we think composing forms in
 Vue Formulate is second-to-none.
 
-### vue-forms
-
-The `vue-forms` package is focused exclusively on form validation, while
-Vue Formulate takes a more holistic and opinionated approach to forms and ships
-with UI scaffolding, validation, and data modeling. We wanted to make form
-composition _a lot easier_ for developers while still increasing the overall
-quality — try it out.
-
 ### Buefy
 
 Similar to Vuetify, Beufy is a full UI framework. If you’re already using Bulma
@@ -255,19 +247,33 @@ offers the benefits of slick form composition, validation, and error handling
 to name a few. Even still there are plenty of people who don’t want or need a
 full UI framework that would benefit from Vue Formulate’s focused approach.
 
+### vue-forms
+
+The `vue-forms` package is focused exclusively on form validation, while
+Vue Formulate takes a more holistic and opinionated approach to forms and ships
+with UI scaffolding, validation, and data modeling. We wanted to make form
+composition _a lot easier_ for developers while still increasing the overall
+quality — try it out.
+
 ### VeeValidate
 
 VeeValidate is another great option for Vue form validation, and thats it’s
-primary mission — validation. Vue Formulate is makes building high quality forms
+primary mission — validation. Vue Formulate makes building high quality forms
 easier by including validation as a sub-feature of the field composition itself.
 Building forms with Vue Formulate is super easy and blazing fast — of course if
 you need the extra validation power, you still have it. You can write any [custom
 validation logic](/guide/validation/#custom-validation-rules) you want, even on
 individual fields.
 
+### Vuelidate
+
+Yet another great option for form validation, but focused solely on validation.
+Vue Formulate provides additional scaffolding allowing developers to create complex
+forms with minimal friction with validation and error handling included.
+
 ### vue-form-generator
 
-This is a very cool project, and also a sub-feature of Vue Formulate. Since
-Vue Formulate uses only one element to create any input type, it means that
-form generation from a JSON string, or JavaScript module is as simple as using a
-`v-for` directive. [Checkout the documentation](/guide/forms/#generating-forms).
+Generating forms from JSON is great, and also a sub-feature of Vue Formulate. Since
+Vue Formulate uses a single element to create any input type form generation from
+a JSON string or JavaScript module is as simple as using a `v-for` directive.
+[Checkout the documentation](/guide/forms/#generating-forms).
