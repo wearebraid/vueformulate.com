@@ -40,10 +40,6 @@ You may also use the default slot to pass more complex content into the button.
 ```
 <demo-button-2 />
 
-```html
-
-```
-
 ::: warning Important
 There is no model binding or label element for button input types.
 :::

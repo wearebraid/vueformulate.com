@@ -63,6 +63,7 @@ own [custom rule](#custom-validation-rules) to suit your needs.
 - [confirm](#confirm)
 - [date](#date)
 - [email](#email)
+- [ends_with](#ends-with)
 - [in](#in)
 - [matches](#matches)
 - [max](#max)
@@ -71,6 +72,7 @@ own [custom rule](#custom-validation-rules) to suit your needs.
 - [not](#not)
 - [number](#number)
 - [required](#required)
+- [starts_with](#starts-with)
 - [url](#url)
 
 ### Accepted
@@ -287,6 +289,20 @@ Checks if the input is a valid email address format.
 ```
 <demo-validation-email />
 
+### Ends With
+Checks if the input ends with one of the provided options
+
+```vue
+<FormulateInput
+  type="text"
+  name="rhymes"
+  label="What rhymes with toad?"
+  validation="ends_with:oad,ode"
+/>
+```
+
+<demo-validation-ends-with />
+
 ### In
 Checks if the input is included in an array of options.
 
@@ -471,6 +487,20 @@ By default, fields are not required, meaning that all validation rules will
 pass with an empty value unless they include the `required` rule.
 :::
 
+### Starts With
+Checks if the input starts with one of the provided options
+
+```vue
+<FormulateInput
+  type="text"
+  name="vowel"
+  label="What's your favorite hashtag on Twitter?"
+  validation="starts_with:#"
+/>
+```
+
+<demo-validation-starts-with />
+
 ### Url
 Checks if the input value appears to be a properly formatted URL including
 the protocol. This does not check if the URL actually resolves.
@@ -611,6 +641,13 @@ function myRule (context, ...args) {
   // args now contains an array ['first', 'second', 'third']
 }
 ```
+
+:::tip Validation Rule Names
+When using custom rules in your `<template>` tags you can use `snake_case` or `camelCase` for your rule names.
+Internally, Vue Formulate will coerce `snake_case` validation rule names into `camelCase` validation function names.
+Please ensure that your custom validation rule functions are written as `myCustomRule` not `my_custom_rule`
+in your `.js` files.
+:::
 
 ### Field-level custom validation rules
 
