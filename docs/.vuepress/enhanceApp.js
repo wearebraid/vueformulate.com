@@ -9,7 +9,7 @@ import '../../node_modules/@braid/vue-formulate/themes/snow/snow.scss'
 
 export default ({ Vue }) => {
   Vue.use(VueFormulate, {
-    plugins: [ Autocomplete ]
+    plugins: [ Autocomplete ],
   })
   for (const [name, component] of Object.entries(pageComponents)) {
     Vue.component(name, component)

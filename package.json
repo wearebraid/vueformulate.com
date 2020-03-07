@@ -11,8 +11,7 @@
     "build": "vuepress build docs"
   },
   "dependencies": {
-    "@braid/vue-formulate": "2.1.1",
-    "@braid/vue-formulate-i18n": "^1.0.0",
+    "@braid/vue-formulate": "git+ssh://git@github.com/wearebraid/vue-formulate.git#feature/locales",
     "axios": "^0.19.2"
   },
   "devDependencies": {

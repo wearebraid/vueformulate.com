@@ -1,4 +1,4 @@
-# Localization <Badge text="2.2.0+" />
+# Internationalization <Badge text="2.2.0+" />
 
 Vue Formulate ships with the english language validation messages pre-installed,
 but the Vue community is great, and new translations continue to be submitted.
