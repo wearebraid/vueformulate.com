@@ -120,7 +120,14 @@ module.exports = ctx => ({
       {
         'ga': 'UA-107296601-3' // UA-00000000-0
       }
-    ]
+    ],
+    [ 'autometa', {
+      site: {
+        name   : 'Vue Formulate',
+        twitter: 'wearebraid',
+      },
+      canonical_base: 'https://vueformulate.com',
+    }]
   ],
   dest: 'public'
 })
