@@ -8,7 +8,7 @@ These localizations are collected in the `@braid/vue-formulate-i18n` package.
 
 Vue Formulate currently supports 4 languages.
 
-- 🇩🇰 Denmark (da)
+- 🇩🇰 Danish (da)
 - 🇺🇸 English (en)
 - 🇫🇷 French (fr)
 - 🇩🇪 German (de)
