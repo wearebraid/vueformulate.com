@@ -3,6 +3,7 @@ module.exports = ctx => ({
   description: 'The easiest way to build forms with Vue.',
   head: [
     ['link', { rel: "apple-touch-icon", sizes: "180x180", href: "/assets/favicons/apple-touch-icon.png"}],
+    ['meta', { name: 'twitter:image', content: 'https://assets.wearebraid.com/vue-formulate/logo.png' }],
   ],
   port: 8123,
   themeConfig: {
