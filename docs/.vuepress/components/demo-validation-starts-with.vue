@@ -1,7 +1,7 @@
 <template>
   <FormulateInput
     type="text"
-    name="vowel"
+    name="hashtag"
     label="What's your favorite hashtag on Twitter?"
     validation="starts_with:#"
     autocomplete="no"
