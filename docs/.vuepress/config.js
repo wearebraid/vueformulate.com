@@ -3,6 +3,7 @@ module.exports = ctx => ({
   description: 'The easiest way to build forms with Vue.',
   head: [
     ['link', { rel: "apple-touch-icon", sizes: "180x180", href: "/assets/favicons/apple-touch-icon.png"}],
+    ['meta', { name: 'twitter:image', content: 'http://assets.wearebraid.com/vue-formulate/logo-on-white.png' }],
   ],
   port: 8123,
   themeConfig: {
@@ -120,7 +121,14 @@ module.exports = ctx => ({
       {
         'ga': 'UA-107296601-3' // UA-00000000-0
       }
-    ]
+    ],
+    [ 'autometa', {
+      site: {
+        name   : 'Vue Formulate',
+        twitter: 'wearebraid',
+      },
+      canonical_base: 'https://vueformulate.com',
+    }]
   ],
   dest: 'public'
 })
