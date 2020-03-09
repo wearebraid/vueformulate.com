@@ -1,5 +1,30 @@
 # Contributing
 
+## Emotional Support 😉
+Vue Formulate is an open source effort and a way to give back to the
+Vue community. Vue Formulate will always be **free** and **open source**. If you want to
+support the project but don't have the time to contribute to the codebase — consider
+throwing us a github star, following the core maintainers on Twitter, or otherwise helping
+us build our platform to get the word out about Vue Formulate.
+
+<github-button
+  href="https://github.com/wearebraid/vue-formulate"
+  data-icon="octicon-star"
+  data-size="large"
+  data-show-count="true"
+  aria-label="Star wearebraid/vue-formulate on GitHub"
+>
+  <p>Star</p>
+</github-button>
+
+### Core Maintainers
+**Justin Schroeder** - [@jpschroeder](https://twitter.com/jpschroeder)<br>
+**Andrew Boyd** - [@boyd_dot_dev](https://twitter.com/boyd_dot_dev)
+
+### Contributors
+Want to contribute Vue Formulate? You can join the [list of users](https://github.com/wearebraid/vue-formulate/graphs/contributors)
+helping build Vue Formulate through in the following ways:
+
 ## Feature requests
 
 Do you have a great idea for how to make this project better? First, consider if
@@ -13,7 +38,6 @@ to see if the bug has already been reported. If not, please create a new issue.
 The more detail you can give to describe the issue the better. Screenshots,
 steps to reproduce, and CodePen examples are greatly appreciated, but not
 required to submit.
-
 
 ## Pull requests
 
