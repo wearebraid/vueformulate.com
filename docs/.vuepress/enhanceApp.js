@@ -5,6 +5,7 @@
 import VueFormulate from '@braid/vue-formulate'
 import pageComponents from '@internal/page-components'
 import Autocomplete from './Autocomplete'
+import GithubButton from 'vue-github-button'
 import '../../node_modules/@braid/vue-formulate/themes/snow/snow.scss'
 
 export default ({ Vue }) => {
@@ -14,4 +15,5 @@ export default ({ Vue }) => {
   for (const [name, component] of Object.entries(pageComponents)) {
     Vue.component(name, component)
   }
+  Vue.component('github-button', GithubButton)
 }
