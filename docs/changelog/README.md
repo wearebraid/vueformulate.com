@@ -4,6 +4,11 @@ sidebar: auto
 
 # Changelog
 
+## v.2.2.1 - March 9, 2020
+
+- Fixes styling issues with file uploads and long filenames.
+- Adds support for Portuguese locale
+
 ## v2.2.0 - March 7, 2020
 
 - Adds a suite of tooling for form errors and back end [error handling](/guide/forms/error-handling).
