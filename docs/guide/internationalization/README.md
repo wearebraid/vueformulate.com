@@ -6,16 +6,17 @@ These localizations are collected in the `@braid/vue-formulate-i18n` package.
 
 ## Supported languages
 
-Vue Formulate currently supports 4 languages.
+Vue Formulate currently supports these languages:
 
 - 🇩🇰 Danish (da)
+- 🇩🇪 German (de)
 - 🇺🇸 English (en)
 - 🇫🇷 French (fr)
-- 🇩🇪 German (de)
+- 🇧🇷 Portuguese (pt)
 
 ::: tip 💪 Add your language
-Vue Formulate needs your help! Help others who speak your language by
-[contributing a new locale](/guide/contributing/#internationalization)!
+Vue Formulate needs your help! Help others who speak your language or
+localization (`en-US`) by [contributing a new locale](/guide/contributing/#internationalization)!
 :::
 
 ## Registering a locale
