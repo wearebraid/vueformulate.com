@@ -22,6 +22,9 @@ us build our platform to get the word out about Vue Formulate.
 **Andrew Boyd** - [@boyd_dot_dev](https://twitter.com/boyd_dot_dev)
 
 ### Contributors
+
+![Vue Formulate Contributors](https://opencollective.com/vue-formulate/contributors.svg?width=750&button=false)
+
 Want to contribute Vue Formulate? You can join the [list of users](https://github.com/wearebraid/vue-formulate/graphs/contributors)
 helping build Vue Formulate through in the following ways:
 
