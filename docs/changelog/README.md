@@ -4,7 +4,12 @@ sidebar: auto
 
 # Changelog
 
-## v.2.2.1 - March 9, 2020
+## v2.2.2 - March 11, 2020
+
+- Adds support for Japanese locale.
+- Fixes French locale to include translations of all validation rules.
+
+## v2.2.1 - March 9, 2020
 
 - Fixes styling issues with file uploads and long filenames.
 - Adds support for Portuguese locale

@@ -204,6 +204,8 @@ the [before](#before) and [after](#after) validation rules together.
 Checks if the field value matches the value of another field. Mostly used for
 hidden fields - like password confirmations. By default, a `confirm` rule will
 look for other fields in the same `FormulateForm` with the suffix `_confirm`.
+If you’d like the rule to use a different field as the confirmation, simply pass
+the other field name as an argument `confirm:other_field`.
 
 :::tip Note
 This rule only works inside the context of a `<FormulateForm>`.
