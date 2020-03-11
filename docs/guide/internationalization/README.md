@@ -12,11 +12,14 @@ Vue Formulate currently supports these languages:
 - 🇩🇪 German (de)
 - 🇺🇸 English (en)
 - 🇫🇷 French (fr)
+- 🇯🇵 Japanese (ja)
 - 🇧🇷 Portuguese (pt)
+
+Thanks to all of the locale [contributors](/guide/contributing)!
 
 ::: tip 💪 Add your language
 Vue Formulate needs your help! Help others who speak your language or
-localization (`en-US`) by [contributing a new locale](/guide/contributing/#internationalization)!
+localization (`en-US`) by [contributing a new locale](/guide/contributing)!
 :::
 
 ## Registering a locale
