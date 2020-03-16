@@ -4,6 +4,11 @@ sidebar: auto
 
 # Changelog
 
+## v2.2.3 - March 16, 2020
+
+- Adds support for Italian locale.
+- Fixes a [small bug](https://github.com/wearebraid/vue-formulate/issues/35) with image previews on the `image` type.
+
 ## v2.2.2 - March 11, 2020
 
 - Adds support for Japanese locale.
