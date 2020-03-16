@@ -12,6 +12,7 @@ Vue Formulate currently supports these languages:
 - 🇩🇪 German (de)
 - 🇺🇸 English (en)
 - 🇫🇷 French (fr)
+- 🇮🇹 Italian (it)
 - 🇯🇵 Japanese (ja)
 - 🇧🇷 Portuguese (pt)
 
