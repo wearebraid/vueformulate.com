@@ -4,6 +4,10 @@ sidebar: auto
 
 # Changelog
 
+## v2.2.4 - March 18, 2020
+
+- Adds support for third argument on `between` validation rule with `length` and `value` as supported options.
+
 ## v2.2.3 - March 16, 2020
 
 - Adds support for Italian locale.

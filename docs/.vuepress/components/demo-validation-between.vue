@@ -1,26 +1,19 @@
 <template>
-  <div>
-    <FormulateInput
-      type="range"
-      min="5"
-      max="35"
-      name="Age"
-      label="How old are you?"
-      validation="between:10,18"
-      error-behavior="live"
-      v-model="age"
-    />
-    {{ age }}
-  </div>
+  <FormulateInput
+    type="range"
+    min="5"
+    max="35"
+    name="Age"
+    label="How old are you?"
+    validation="between:10,18,value"
+    :show-value="true"
+    :value="15"
+    error-behavior="live"
+  />
 </template>
 
 <script>
 export default {
-  data () {
-    return {
-      age: 15
-    }
-  }
 }
 </script>
 
