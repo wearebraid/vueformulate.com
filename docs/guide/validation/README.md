@@ -177,7 +177,8 @@ that can be evaluated by `Date.parse`.
 Checks if a number or string length is between a minimum or maximum. Both the
 maximum and minimum are exclusive. If the value being validated is a string
 the string’s length is used for comparison. If a number is used, the numeric
-value is used for comparison.
+value is used for comparison. In `v2.2.4+` you can force it to always check the
+numeric value or string length by setting an optional third argument to `value` or `length`.
 
 :::tip Tip
 If you’re wanting to find if a date is between two other dates consider using
@@ -191,13 +192,24 @@ the [before](#before) and [after](#after) validation rules together.
   max="35"
   name="Age"
   label="How old are you?"
-  validation="between:10,18"
+  validation="between:10,18,value"
+  :show-value="true"
+  :value="15"
   error-behavior="live"
-  v-model="age"
 />
-{{ age }}
 ```
 <demo-validation-between />
+
+```vue
+<FormulateInput
+  type="password"
+  name="password"
+  label="Pick a new password?"
+  validation="between:8,20,length"
+  error-behavior="live"
+/>
+```
+<demo-validation-between-length />
 
 ### Confirm
 
