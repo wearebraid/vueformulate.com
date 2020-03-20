@@ -32,7 +32,6 @@ Due to DOM limitations, when mounting Vue Formulate in DOM templates
 Similar to a direct download, you can load Vue Formulate directly off of a
 CDN like [JSDeliver](https://www.jsdelivr.com/package/npm/@braid/vue-formulate?path=dist).
 
-
 ## Add to Vue
 Once Vue Formulate has been downloaded you need to install it with Vue.
 
@@ -54,7 +53,6 @@ Vue.use(VueFormulate.default)
 ```
 :::
 
-
 ## Configuration options
 
 If you need custom configuration options, you can pass a second argument with
@@ -62,4 +60,15 @@ an object of configuration options.
 
 ```js
 Vue.use(VueFormulate, options)
+```
+
+## IE11 Support
+
+While Internet Explorer 11 is supported polyfills for ES2015 language features
+are not included in Vue Formulate. For those who do require IE11 support we
+recommend using [polyfill.io](https://polyfill.io/v3/) or similar service to shim
+ES2015 features.
+
+```html
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es2015"></script>
 ```

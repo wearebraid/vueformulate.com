@@ -4,6 +4,15 @@ sidebar: auto
 
 # Changelog
 
+## v2.2.5 - March 20, 2020
+
+- Adds basic support for IE11.
+
+:::warning Note
+While the core features of Vue Formulate now work on IE11, the default snow
+theme still needs a bit of work on more complex components like files.
+:::
+
 ## v2.2.4 - March 18, 2020
 
 - Adds support for third argument on `between` validation rule with `length` and `value` as supported options.

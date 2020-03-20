@@ -621,9 +621,8 @@ Vue.use(VueFormulate, {
 ```
 
 :::tip About localization
-Currently, Vue Formulate only supports the English language, but that’s only
-because the maintainers only speak English. If you’re able to translate to another
-language, please [submit a pull request](https://github.com/wearebraid/vue-formulate)!
+Vue Formulate is international! Check if your [language/locale is supported](/guide/internationalization),
+and if it isn’t, [consider contributing](/guide/contributing/).
 :::
 
 ## Custom validation rules
