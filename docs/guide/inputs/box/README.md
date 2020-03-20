@@ -75,7 +75,7 @@ The syntax for radio inputs is identical to checkboxes.
 <FormulateInput
   v-model="value"
   :options="{first: 'First', second: 'Second', third: 'Third', fourth: 'Fourth'}"
-  type="checkbox"
+  type="radio"
   label="This is a label for all the options"
 />
 ```
