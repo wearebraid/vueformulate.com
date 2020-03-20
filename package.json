@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "npx vuepress dev docs",
-    "build": "vuepress build docs"
+    "build": "NODE_ENV=production vuepress build docs"
   },
   "dependencies": {
     "@braid/vue-formulate": "^2.2.4",
