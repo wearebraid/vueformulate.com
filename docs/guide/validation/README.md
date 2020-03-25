@@ -24,9 +24,9 @@ behavior by setting the `error-behavior` prop on `FormulateInput` to `live`
 
 ### Validation Syntax
 
-Declaring what validation rules apply to your field is as easy as adding a
-`validation` prop to your `FormulateInput` field. Rules can be declared
-shorthand using a series of pipe (`|`) separated strings or using an array syntax.
+Declaring what validation rules is as easy as adding a `validation` prop to
+your `FormulateInput` field. Rules can be declared shorthand using a series of
+pipe (`|`) separated strings or using an array syntax. 
 
 #### Pipe-separated string syntax (preferred)
 ```vue
@@ -48,6 +48,12 @@ shorthand using a series of pipe (`|`) separated strings or using an array synta
 
 For the purposes of this documentation pipe-separated strings will be the preferred
 method of setting validation rules for fields.
+
+:::tip Note
+Sometimes it is necessary to use the array syntax, especially when dealing with
+data that needs to be escaped or doesn’t work well in string format (like when
+using regular expressions in the `matches` rule)
+:::
 
 ## Available rules
 Vue Formulate ships with a library of frequently used validation rules. If
@@ -703,3 +709,43 @@ Vue.use(VueFormulate, {
   }
 })
 ```
+
+## Validation event <Badge text="2.2.6+" />
+
+Occasionally it may be useful to know when the validation state of a field or
+form changes — for these instances, the `@validation` event can be used on both
+`FormulateInput` and `FormulateForm`. The event will fire every time there is a
+change in the validation state of a field.
+
+```vue
+<template>
+<FormulateInput
+  @validation="validation = $event"
+  name="breath"
+  label="How many minutes can you hold your breath?"
+  validation="required|number|between:1,10,value"
+/>
+{{ validation }}
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      validation: {}
+    }
+  }
+}
+</script>
+```
+
+<demo-validation-event />
+
+The payload of the validation event is an object with three properties, the
+field `name`, an array of `errors`, and a boolean `hasErrors`.
+
+:::warning Important
+The validation event does not fire when the _visibility_ of the
+validation errors change, instead `validation` events are fired even if the
+field errors are not currently visible due to the current `error-behavior`.
+:::

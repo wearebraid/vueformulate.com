@@ -148,8 +148,9 @@ export default {
 
 ## All Options
 
-Each `FormulateInput` can be customized by adding a few props on it. The
-list below contains all of the available universal options:
+### Props
+Each `FormulateInput` can be configured by declaring props. The list below
+contains all of the available universal options:
 
 ::: tip Note
 Some `FormulateInput` types have props that are specific to their type. Please
@@ -172,3 +173,13 @@ Prop              | Description
 `errors`          | An array of custom error messages to show on an element (see above).
 `error‑behavior`  | By default, error messages are only shown when the `blur` event fires on an input, or a `<FormulateForm>` element is submitted with errors. This behavior can be changed to `live` which will display all error messages for the input immediately as a user interacts with an element. This is useful in the case of inputs such as range sliders where you may want validation feedback to be immediate.
 `show‑errors`     | When `true` this forces an element to show it’s errors regardless of the state of the `error-behavior`
+
+### Events
+
+These events are emitted by every input type.
+
+Event               | Description
+--------------------|-------------------------------------------------------------
+`@input`            | Emitted every time the value of the field changes. Typically this is used implicitly by using `v-model`.
+`@validation`       | Emitted anytime the state of validation changes for an input, irregardless of the visibility of the errors (`v2.2.6+`). [More details](/guide/validation/#validation-event)
+`@error-visibility` | Emitted when the visibility of the errors changes, for example, on blur or submit (`v2.2.6+`).
