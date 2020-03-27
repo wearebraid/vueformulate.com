@@ -4,6 +4,10 @@ sidebar: auto
 
 # Changelog
 
+## v2.2.6 - March 20, 2020
+
+- Bumps `@braid/vue-formulate-i18n` to 1.3.3 which fixes some `devDependencies` that were in `dependencies`.
+
 ## v2.2.5 - March 20, 2020
 
 - Adds basic support for IE11.
