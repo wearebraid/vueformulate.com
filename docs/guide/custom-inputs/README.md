@@ -164,7 +164,7 @@ import VueFormulate from '@braid/vue-formulate'
 import MyFormulateAutocomplete from './MyFormulateAutocomplete'
 
 // register your component with Vue
-Vue.use('MyFormulateAutocomplete', MyFormulateAutocomplete)
+Vue.component('MyFormulateAutocomplete', MyFormulateAutocomplete)
 
 Vue.use(VueFormulate, {
   library: {
