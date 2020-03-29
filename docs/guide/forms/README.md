@@ -256,7 +256,7 @@ an entire form from a JSON string.
     type: 'text',
     name: 'address',
     label: 'What is your street address?',
-    placeholder: 'Your name...',
+    placeholder: 'Your address...',
     help: 'Where would you like your product shipped?',
     validation: 'required'
   },

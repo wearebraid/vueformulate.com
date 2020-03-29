@@ -1,8 +1,24 @@
-# Custom inputs
+# Custom input types
 
 If the input type you're looking for is not part of the built-in fields (mostly
 HTML5 input types), and you haven't found a [plugin](/guide/plugins) that adds
 the functionality you need — you can create input types of your own.
+
+### Preamble: Composition over scoped slots
+
+A core concept in Vue Formulate is the ability for developers to _compose_ their
+forms using a dead-simple API with a single component. True to that goal, when
+developing a custom input you want to maintain that same ease of composition
+by create your own `type` of `FormulateInput`, ensuring the way you build forms
+and fields stays consistent even when using custom inputs.
+
+This is notably different than many Vue libraries that make heavy use of scoped
+slots as the primary mechanism of extension. Vue Formulate has robust support
+for [scoped slots](/guide/inputs/scoped-slots/), but these should be used more
+for the occasional override rather than the customization of the entire utility.
+A tell-tale sign that you could implement this principle better is if you find
+yourself doing a lot of copy-paste of scoped slots, or wrapping `FormulateInput`
+in wrapper components.
 
 ## Structure of an input
 
@@ -164,7 +180,7 @@ import VueFormulate from '@braid/vue-formulate'
 import MyFormulateAutocomplete from './MyFormulateAutocomplete'
 
 // register your component with Vue
-Vue.use('MyFormulateAutocomplete', MyFormulateAutocomplete)
+Vue.component('MyFormulateAutocomplete', MyFormulateAutocomplete)
 
 Vue.use(VueFormulate, {
   library: {

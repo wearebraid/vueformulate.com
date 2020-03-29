@@ -4,11 +4,14 @@ sidebar: auto
 
 # Changelog
 
-## v2.2.6 - March 25, 2020
+## v2.3.0 - March 25, 2020
 
 - Fixes an issue that caused i18n support to fail when `$i18n.local` is a function.
 - Adds support for a new `validation` event on inputs and forms.
-- Some internals refactored to betters support coming scoped slot changes.
+
+## v2.2.6 - March 27, 2020
+
+- Bumps `@braid/vue-formulate-i18n` to 1.3.3 which fixes some `devDependencies` that were in `dependencies`.
 
 ## v2.2.5 - March 20, 2020
 
