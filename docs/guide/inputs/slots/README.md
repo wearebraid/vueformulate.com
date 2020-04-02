@@ -1,21 +1,19 @@
-# Scoped slots
+# Slots
 
 Sometimes it’s necessary to override the markup or structure of Vue Formulate’s
-inputs. [Scoped slots](https://vuejs.org/v2/guide/components-slots.html#Named-Slots)
-put this power in your hands.
+inputs. Vue Formulate has 3 mechanisms by which it customize an input:
 
-::: tip Note
-Vue Formulate recommends using scoped slots for occasional overrides, but not as
-the primary method for extending Vue Formulate. Read the [Preamble on custom
-input documentation](/guide/inputs/custom-inputs/) for more detail.
-:::
+  - Slot components
+  - Scoped slots
+  - Custom input types
 
 ## Context object
 
-All scoped slots are passed Vue Formulate’s internal context object. This gives
-every slot full awareness of nearly every aspect of the input, the input’s model
-and even other inputs in the same `FormulateForm` (if applicable). The following
-properties are part of the "public" api, and are safe to use in your scoped slot.
+All of 3 methods of creating and customizing inputs require an understanding of
+Vue Formulate’s internal `context` object. This gives a full awareness
+of nearly every aspect of the input, the input’s model and even other inputs in
+the same `FormulateForm` (if applicable). The following properties are part of
+the "public" api, and are safe to use.
 
 Property        | Description
 ----------------|---------------------------------------------------------------
@@ -47,11 +45,20 @@ Property        | Description
 `visibleValidationErrors` | `Array` of the current validation errors being displayed.
 
 
-
 ::: warning
 If you inspect the context object, you may find additional properties not listed
 in the table above. Using these is discouraged since they are not considered
 available for public consumption and may change between minor versions.
+:::
+
+## Scoped slots
+
+Scoped slots are a common
+
+::: tip Note
+Vue Formulate recommends using scoped slots for occasional overrides, but not as
+the primary method for extending Vue Formulate. Read the [Preamble on custom
+input documentation](/guide/inputs/custom-inputs/) for more detail.
 :::
 
 ## Available slots
@@ -95,3 +102,6 @@ available for public consumption and may change between minor versions.
   </FormulateInput>
 ```
 <demo-slots-help />
+
+
+## Slot components

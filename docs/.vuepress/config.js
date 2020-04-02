@@ -69,9 +69,9 @@ module.exports = ctx => ({
               path: '/guide/inputs/custom-inputs/',
             },
             {
-              title: 'Scoped slots',
+              title: 'Slots',
               collapsable: true,
-              path: '/guide/inputs/scoped-slots/',
+              path: '/guide/inputs/slots/',
             },
             {
               title: 'Types',

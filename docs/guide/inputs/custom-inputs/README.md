@@ -14,7 +14,7 @@ and fields stays consistent even when using custom inputs.
 
 This is notably different than many Vue libraries that make heavy use of scoped
 slots as the primary mechanism of extension. Vue Formulate has robust support
-for [scoped slots](/guide/inputs/scoped-slots/), but these should be used more
+for [scoped slots](/guide/inputs/slots/), but these should be used more
 for the occasional override rather than the customization of the entire utility.
 A tell-tale sign that you could implement this principle better is if you find
 yourself doing a lot of copy-paste of scoped slots, or wrapping `FormulateInput`
