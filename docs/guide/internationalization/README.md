@@ -8,6 +8,7 @@ These localizations are collected in the `@braid/vue-formulate-i18n` package.
 
 Vue Formulate currently supports these languages:
 
+- 🇪🇬 Arabic (ar)
 - 🇩🇰 Danish (da)
 - 🇩🇪 German (de)
 - 🇺🇸 English (en)
@@ -16,7 +17,10 @@ Vue Formulate currently supports these languages:
 - 🇯🇵 Japanese (ja)
 - 🇧🇷 Portuguese (pt)
 
-Thanks to all of the locale [contributors](/guide/contributing)!
+When using a right-to-left language like Arabic with the default [snow theme](/guide/theming/#default-theme)
+it may be necessary to modify the `direction` css property in your project.
+
+Thanks to all of the locale contributors!
 
 ::: tip 💪 Add your language
 Vue Formulate needs your help! Help others who speak your language or
@@ -37,7 +41,7 @@ Vue.use(VueFormulate,  {
 })
 ```
 
-If your site needs to have many languages, you can register them all at the same
+If your site needs to support many languages, you can register them all at the same
 time.
 
 ```js
