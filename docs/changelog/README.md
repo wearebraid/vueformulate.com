@@ -4,6 +4,15 @@ sidebar: auto
 
 # Changelog
 
+## v2.2.8 - April 13, 2020
+
+- Fixes a bug with `select` and `box` when `options` prop is an empty array.
+- Adds the form name as a second argument to the error handler.
+
+## v2.2.7 - April 6, 2020
+
+- Bumps `@braid/vue-formulate-i18n` adding Arabic support.
+
 ## v2.2.6 - March 27, 2020
 
 - Bumps `@braid/vue-formulate-i18n` to 1.3.3 which fixes some `devDependencies` that were in `dependencies`.
