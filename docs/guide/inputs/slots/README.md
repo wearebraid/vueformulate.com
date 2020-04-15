@@ -9,11 +9,10 @@ inputs. Vue Formulate has 3 mechanisms by which it customize an input:
 
 ## Context object
 
-All of 3 methods of creating and customizing inputs require an understanding of
-Vue Formulate’s internal `context` object. This gives a full awareness
-of nearly every aspect of the input, the input’s model and even other inputs in
-the same `FormulateForm` (if applicable). The following properties are part of
-the "public" api, and are safe to use.
+Fortunately, all 3 methods of creating and customizing inputs operate by using
+the same `context` object. This object has a full awareness of nearly every
+aspect of the input, the input’s model and even other inputs in the same
+`FormulateForm` (if applicable):
 
 Property        | Description
 ----------------|---------------------------------------------------------------
@@ -51,17 +50,11 @@ in the table above. Using these is discouraged since they are not considered
 available for public consumption and may change between minor versions.
 :::
 
-## Scoped slots
-
-Scoped slots are a common
-
-::: tip Note
-Vue Formulate recommends using scoped slots for occasional overrides, but not as
-the primary method for extending Vue Formulate. Read the [Preamble on custom
-input documentation](/guide/inputs/custom-inputs/) for more detail.
-:::
-
 ## Available slots
+
+There are several available slots exposed by Vue Formulate, and they can all be
+leveraged by using either [scoped slots](#scoped-slots) or [slot components](#slot-components).
+All slots are passed the `context` via scoped slot.
 
 ### Label
 
@@ -103,5 +96,16 @@ input documentation](/guide/inputs/custom-inputs/) for more detail.
 ```
 <demo-slots-help />
 
+
+## Scoped slots
+
+Scoped slots are a common pattern in Vue and are well supported in Vue Formulate
+as well. 
+
+::: tip Note
+Vue Formulate recommends using scoped slots for occasional overrides, but not as
+the primary method for extending Vue Formulate. Read the [Preamble on custom
+input documentation](/guide/inputs/custom-inputs/) for more detail.
+:::
 
 ## Slot components
