@@ -10,10 +10,10 @@ module.exports = ctx => ({
   port: 8123,
   themeConfig: {
     sidebar: {
-      '/guide/': [
+      '/guide': [
         {
           title: 'Guide',
-          path: '/guide/',
+          path: '/guide',
           collapsable: false,
           children: [
             {
@@ -56,7 +56,7 @@ module.exports = ctx => ({
         {
           title: 'Inputs',
           collapsable: false,
-          path: '/guide/inputs/',
+          path: '/guide/inputs',
           children: [
             {
               title: 'Configuration',

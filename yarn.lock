@@ -805,16 +805,16 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@braid/vue-formulate-i18n@^1.3.2":
+"@braid/vue-formulate-i18n@^1.4.0":
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/@braid/vue-formulate-i18n/-/vue-formulate-i18n-1.4.0.tgz#e83a21646afaad859939f41117269a7e70480d46"
   integrity sha512-US/CguORgMlT+fE+m/Cln8s/EkZB43IvTwOh077I7Tk7vLoZhs7G8+ATMd/Hf4ksLhCUIyxtdEpElbUgTTnjzg==
 
 "@braid/vue-formulate@git+https://github.com/wearebraid/vue-formulate.git#feature/scoped-slots":
-  version "2.2.5"
-  resolved "git+https://github.com/wearebraid/vue-formulate.git#1e52dcc213f9b1844e06101fb4a05c273533395b"
+  version "2.2.8"
+  resolved "git+https://github.com/wearebraid/vue-formulate.git#dfef74cd279d583d61a0c428d2dfeb44830d7da9"
   dependencies:
-    "@braid/vue-formulate-i18n" "^1.3.2"
+    "@braid/vue-formulate-i18n" "^1.4.0"
     is-plain-object "^3.0.0"
     is-url "^1.2.4"
     nanoid "^2.1.11"
