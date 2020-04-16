@@ -11,7 +11,7 @@
     "build": "NODE_ENV=production vuepress build docs"
   },
   "dependencies": {
-    "@braid/vue-formulate": "ssh://git@github.com:wearebraid/vue-formulate.git#feature/scoped-slots",
+    "@braid/vue-formulate": "git+https://github.com/wearebraid/vue-formulate.git#feature/scoped-slots",
     "axios": "^0.19.2",
     "v-tooltip": "^2.0.3",
     "vue-github-button": "^1.1.2",
