@@ -1,4 +1,4 @@
-# Slots
+# Slots <Badge text='2.3.0'/>
 
 Sometimes it’s necessary to override the markup or structure of Vue Formulate’s
 inputs. Vue Formulate has 3 mechanisms by which it customize an input:
@@ -20,6 +20,9 @@ Slot name      | Description
 `help`         | The help text value that appears after the element.
 `errors`       | The errors that are displayed for a given input. Defaults to a `FormulateErrors` component.
 `default`      | The `default` slot is already reserved for use as a pass-through on the `element` slot. Some input types leverage this, lik [buttons](/guide/inputs/types/button/).
+`grouping`     | The region of a `group` type that contains all the repeated fields.
+`repeatable`   | The region of a `group` type that contains each repeatable row.
+`addMore`      | The add more button on a repeatable `group` type.
 
 
 ### Label
@@ -76,6 +79,59 @@ input documentation](/guide/inputs/custom-inputs/) for more detail.
 
 ## Slot components
 
+Let’s say, on a given project, you wanted to change all labels to include a
+little tooltip next to the label value. You could certainly do that with scoped
+slots, but it would require a ton of copy and paste or wrapping every
+`FormulateInput` both bad options. Using “slot components” you can override the
+default value of any of the [available slots](#available-slots) with your own
+component.
+
+### Global slot components
+
+To replace the default value of every instance of an available slot, simply
+register your component with Vue Formulate using the `slotComponents` option:
+
+```js
+import Vue from 'vue'
+import VueFormulate from '@braid/vue-formulate'
+import MyLabel from './MyLabel.vue'
+
+// Register your component with vue
+Vue.component('MyLabel', MyLabel)
+
+// Let Vue Formulate know which slot you want to override
+Vue.use(VueFormulate, {
+  slotComponents: {
+    label: 'MyLabel'
+  }
+})
+```
+
+### Specific `type` slot components
+
+Sometimes it may be desirable to only customize the slot component for a
+specific input type.
+
+```js
+import Vue from 'vue'
+import VueFormulate from '@braid/vue-formulate'
+import MyFileUploadHelp from './MyFileUploadHelp.vue'
+
+// Register your component with vue
+Vue.component('MyFileUploadHelp', MyFileUploadHelp)
+
+// Let Vue Formulate know which slot you want to override for a given type
+Vue.use(VueFormulate, {
+  library: {
+    // the `type` of input you’re targeting.
+    file: {
+      slotComponents: {
+        help: 'MyFileUploadHelp'
+      }
+    }
+  }
+})
+```
 
 ## Context object
 
@@ -99,6 +155,7 @@ Property        | Description
 `imageBehavior` | The value of the `image-behavior` prop. Defaults to `preview`.
 `label`         | The value of the `label` prop.
 `labelPosition` | The position of the label, `before` or `after`. Default is `before` for all except `box` classified inputs. Can be overridden with `label-position` prop.
+`limit`         | For a `group` type, this is the is the maximum number of repeatable items allowed (default is `Infinity`).
 `model`         | The value of the current field, bound to a setter.
 `name`          | The name of the field, if none is set, it auto-generates a name.
 `options`       | The `options` prop converted to an array (when applicable).
