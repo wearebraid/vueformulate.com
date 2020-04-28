@@ -153,6 +153,7 @@ Property        | Description
 `getValidationErrors` | Function, returns a `Promise` that resolves to an array of validation error objects.
 `id`            | The id prop or an auto-generated id.
 `imageBehavior` | The value of the `image-behavior` prop. Defaults to `preview`.
+`isSubField`    | A function that returns a `boolean` indicating if it is a descendant of a `group` type.
 `label`         | The value of the `label` prop.
 `labelPosition` | The position of the label, `before` or `after`. Default is `before` for all except `box` classified inputs. Can be overridden with `label-position` prop.
 `limit`         | For a `group` type, this is the is the maximum number of repeatable items allowed (default is `Infinity`).
