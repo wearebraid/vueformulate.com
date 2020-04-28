@@ -4,6 +4,10 @@ sidebar: auto
 
 # Changelog
 
+## v2.2.9 - April 28, 2020
+
+- Fixes an issue that caused inputs to remain in the form even when they were removed (via `v-if`).
+
 ## v2.2.8 - April 13, 2020
 
 - Fixes a bug with `select` and `box` when `options` prop is an empty array.
