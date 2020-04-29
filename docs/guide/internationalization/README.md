@@ -10,6 +10,7 @@ Vue Formulate currently supports these languages:
 
 - 🇪🇬 Arabic (ar)
 - 🇩🇰 Danish (da)
+- 🇳🇱 Dutch (nl)
 - 🇩🇪 German (de)
 - 🇺🇸 English (en)
 - 🇫🇷 French (fr)

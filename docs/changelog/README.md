@@ -4,6 +4,10 @@ sidebar: auto
 
 # Changelog
 
+## v2.2.11 - April 29, 2020
+
+- Bumps `@braid/vue-formulate-i18n` to 1.5.0 which adds Dutch support.
+
 ## v2.2.10 - April 29, 2020
 
 - Removes node 11 as engine in `package.json` (should not have ever been there).
