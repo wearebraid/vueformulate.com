@@ -4,6 +4,10 @@ sidebar: auto
 
 # Changelog
 
+## v2.2.10 - April 29, 2020
+
+- Removes node 11 as engine in `package.json` (should not have ever been there).
+
 ## v2.2.9 - April 28, 2020
 
 - Fixes an issue that caused inputs to remain in the form even when they were removed (via `v-if`).
