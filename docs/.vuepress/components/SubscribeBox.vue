@@ -37,10 +37,12 @@
           key='email'
           class="updates-dropdown-section email"
         >
-          <p>Get email notifications whenever VueFormulate releases feature updates.</p>
+          <p>Get email notifications whenever Vue Formulate releases feature updates.</p>
           <!-- Begin Mailchimp Signup Form -->
           <div id="mc_embed_signup">
-            <form
+            <FormulateForm
+              @submit="handleSubmit"
+              ref="mailchimpForm"
               action="https://wearebraid.us16.list-manage.com/subscribe/post?u=97649538d11efe562355a58d0&amp;id=e5982191dd"
               method="post"
               id="mc-embedded-subscribe-form"
@@ -85,7 +87,7 @@
                   />
                 </div>
               </div>
-            </form>
+            </FormulateForm>
           </div>
           <!--End mc_embed_signup-->
         </div>
@@ -95,12 +97,33 @@
           key="twitter"
           class="updates-dropdown-section"
         >
-          <p>Follow VueFormulate on Twitter to stay up to date on the latest feature releases.</p>
-          <a
-            href="https://twitter.com/vueformulate?ref_src=twsrc%5Etfw"
-            class="twitter-follow-button"
-            data-show-count="false"
-          />
+          <p>Follow Vue Formulate and its authors on Twitter to stay up to date on the latest feature releases.</p>
+          <ul class="twitter-profiles">
+            <li class="twitter-profile">
+              <span>Vue Formulate - Official: </span>
+              <a
+                href="https://twitter.com/vueformulate?ref_src=twsrc%5Etfw"
+                class="twitter-follow-button"
+                data-show-count="false"
+              />
+            </li>
+            <li class="twitter-profile">
+              <span>Justin Schroeder - Core Author: </span>
+              <a
+                href="https://twitter.com/jpschroeder?ref_src=twsrc%5Etfw"
+                class="twitter-follow-button"
+                data-show-count="false"
+              />
+            </li>
+            <li class="twitter-profile">
+              <span>Andrew Boyd - Core Maintainer: </span>
+              <a
+                href="https://twitter.com/boyd_dot_dev?ref_src=twsrc%5Etfw"
+                class="twitter-follow-button"
+                data-show-count="false"
+              />
+            </li>
+          </ul>
           <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
 
@@ -109,7 +132,7 @@
           key="github"
           class="updates-dropdown-section"
         >
-          <p>Watch the VueFormulate Repo on Github to be the first to know about updates.</p>
+          <p>Watch the Vue Formulate Repo on Github to be the first to know about updates.</p>
           <!-- Place this tag where you want the button to render. -->
           <github-button
             href="https://github.com/wearebraid/vue-formulate/subscription"
@@ -132,6 +155,9 @@ export default {
   methods: {
     emitClose () {
       this.$emit('close')
+    },
+    handleSubmit (data) {
+      this.$refs.mailchimpForm.$el.submit()
     }
   }
 }
@@ -175,7 +201,7 @@ export default {
 
     &.updates-close {
       svg {
-        width: 16px;
+        width: 12px;
       }
     }
 
@@ -205,5 +231,17 @@ export default {
 
 .updates-dropdown-section {
   padding: 1em;
+}
+
+.twitter-profiles {
+  list-style-type: none;
+  padding-left: 0;
+
+  .twitter-profile {
+    span {
+      display: block;
+      font-weight: bold;
+    }
+  }
 }
 </style>
