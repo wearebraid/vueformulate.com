@@ -112,7 +112,7 @@
           <p>Watch the VueFormulate Repo on Github to be the first to know about updates.</p>
           <!-- Place this tag where you want the button to render. -->
           <github-button
-            href="https://github.com/wearebraid/vueformulate/subscription"
+            href="https://github.com/wearebraid/vue-formulate/subscription"
             data-icon="octicon-eye"
             aria-label="Watch wearebraid/vueformulate on GitHub"
           >Watch</github-button>
