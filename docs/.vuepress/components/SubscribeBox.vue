@@ -55,7 +55,7 @@
                   <FormulateInput
                     type="email"
                     validation="email|required"
-                    label="Email Adress"
+                    label="Email Address"
                     class="required email"
                     placeholder="Your email address..."
                     name="EMAIL"
