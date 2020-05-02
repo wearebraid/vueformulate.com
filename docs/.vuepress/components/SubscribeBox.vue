@@ -33,7 +33,7 @@
       </div>
       <div class="updates-dropdown-sections-container">
         <div
-          v-if="activeTab === 'email'"
+          v-show="activeTab === 'email'"
           key='email'
           class="updates-dropdown-section email"
         >
@@ -93,7 +93,7 @@
         </div>
 
         <div
-          v-if="activeTab === 'twitter'"
+          v-show="activeTab === 'twitter'"
           key="twitter"
           class="updates-dropdown-section"
         >
@@ -128,7 +128,7 @@
         </div>
 
         <div
-          v-if="activeTab === 'github'"
+          v-show="activeTab === 'github'"
           key="github"
           class="updates-dropdown-section"
         >
