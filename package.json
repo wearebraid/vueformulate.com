@@ -13,6 +13,7 @@
   "dependencies": {
     "@braid/vue-formulate": "^2.2.13",
     "axios": "^0.19.2",
+    "vue-clickaway": "^2.2.2",
     "vue-github-button": "^1.1.2",
     "vuepress-plugin-autometa": "^0.1.13"
   },
