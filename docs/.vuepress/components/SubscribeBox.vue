@@ -59,6 +59,7 @@
                     validation="email|required"
                     label="Email Address"
                     class="required email"
+                    validation-name="Email Address"
                     placeholder="Your email address..."
                     name="EMAIL"
                     id="mce-EMAIL"
