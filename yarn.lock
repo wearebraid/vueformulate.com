@@ -810,7 +810,7 @@
   resolved "https://registry.yarnpkg.com/@braid/vue-formulate-i18n/-/vue-formulate-i18n-1.5.0.tgz#fbe8fb2d73aed0216ecb2dd0a85a20198f09aa33"
   integrity sha512-UPWQSOKW82+oRycuZRsviM0sCmH1yTCa520B4YZVGFWpXsq/NXefgsazjMdP7RJlrb6cRRkcm/j2JoPuCkbUrQ==
 
-"@braid/vue-formulate@^2.2.10":
+"@braid/vue-formulate@^2.2.12":
   version "2.2.12"
   resolved "https://registry.yarnpkg.com/@braid/vue-formulate/-/vue-formulate-2.2.12.tgz#e28d3432dc856ae46cc57b41e666967516f388fb"
   integrity sha512-+1yCZOiu/wU9EmPfTImtKLZ6m0p1Tjt51xlDnqmuHEY9XwHIRH2F4m1JWrqpRS4TPm/P15IvcO+nCJlSwYeYuQ==
