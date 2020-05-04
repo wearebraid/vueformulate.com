@@ -173,7 +173,7 @@ export default {
 .subscribe-box {
   white-space: normal;
   background-color: #fff;
-  border: 1px solid #ddd;
+  border: 1px solid #dfe4ec;
   border-radius: 5px;
   overflow: hidden;
   color: #2c3e50;
@@ -182,17 +182,17 @@ export default {
 
 .updates-dropdown-nav {
   display: flex;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #dfe4ec;
 
   .update-tab {
     flex: 1;
     color: #000;
     padding: 0.5em 1em;
-    background-color: #eee;
+    background-color: #f0f4fa;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-right: 1px solid #ddd;
+    border-right: 1px solid #d8dee9;
     cursor: pointer;
 
     &:last-child {
@@ -206,16 +206,15 @@ export default {
     }
 
     &:hover {
-      background: #e5e5e5;
       svg path {
         fill: #3eaf7c;
       }
     }
 
     &[data-active="true"] {
-      background: #999;
+      background: #dfe4ee;
       svg path {
-        fill: #eee;
+        fill: #8d99ad;
       }
     }
 
@@ -223,7 +222,7 @@ export default {
       width: 22px;
 
       path {
-        fill: #999;
+        fill: #8d99ad;
       }
     }
   }

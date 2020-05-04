@@ -162,7 +162,7 @@ $accentColor: #3eaf7c;
   .subscribe-box-container {
     position: absolute;
     top: 100%;
-    right: 0;
+    right: -1em;
     max-width: 300px;
 
     @media (min-width: 720px) {
