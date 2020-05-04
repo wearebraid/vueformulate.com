@@ -5,6 +5,7 @@
     @touchstart="onTouchStart"
     @touchend="onTouchEnd"
   >
+    <h1>test</h1>
     <Navbar
       v-if="shouldShowNavbar"
       @toggle-sidebar="toggleSidebar"
@@ -27,16 +28,28 @@
       </template>
     </Sidebar>
 
-    <Home />
+    <Home v-if="$page.frontmatter.home" />
+
+    <Page
+      v-else
+      :sidebar-items="sidebarItems"
+    >
+      <template #top>
+        <slot name="page-top" />
+      </template>
+      <template #bottom>
+        <slot name="page-bottom" />
+      </template>
+    </Page>
   </div>
 </template>
 
 <script>
-import Home from './Home.vue'
-import Navbar from './Navbar.vue'
+import Home from '@theme/components/Home.vue'
+import Navbar from '../../components/Navbar.vue'
 import Page from '@theme/components/Page.vue'
 import Sidebar from '@theme/components/Sidebar.vue'
-import { resolveSidebarItems } from '@theme/util'
+import { resolveSidebarItems } from '../util'
 
 export default {
   name: 'Layout',

@@ -3,3 +3,4 @@ node_modules
 /public
 report.*.json
 .yarn-error.log
+.DS_Store
