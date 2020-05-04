@@ -4,6 +4,11 @@ sidebar: auto
 
 # Changelog
 
+## v2.2.12 - May 4, 2020
+
+- Allows `name` attribute to be passed through to internal input element.
+- Adds support for deterministic auto-generated ids for better SSR hydration.
+
 ## v2.2.11 - April 29, 2020
 
 - Bumps `@braid/vue-formulate-i18n` to 1.5.0 which adds Dutch support.
