@@ -4,6 +4,10 @@ sidebar: auto
 
 # Changelog
 
+## v2.2.13 - May 4, 2020
+
+- Small fix for sliders on Mozilla (Firefox) browsers.
+
 ## v2.2.12 - May 4, 2020
 
 - Allows `name` attribute to be passed through to internal input element.

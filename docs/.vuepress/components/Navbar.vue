@@ -91,7 +91,6 @@ export default {
       this.showSubscribeBox = !this.showSubscribeBox
     },
     closeSubscribeBox () {
-      console.log('close event')
       this.showSubscribeBox = false
     }
   },

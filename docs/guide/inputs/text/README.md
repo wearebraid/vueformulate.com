@@ -20,7 +20,7 @@ The text [classification](/inputs/) is given to the following types:
 ::: warning Important
 These inputs are all standard HTML inputs, and while we encourage their use for
 semantic and accessibility reasons, some of them are [not supported in](https://caniuse.com/#feat=input-datetime)
-all browsers. Consider using a polyfill, [plugin](/plugins), or [custom input](/custom-inputs)
+all browsers. Consider using a polyfill, [plugin](/guide/plugins/), or [custom input](/guide/custom-inputs/)
 on a type-by-type basis.
 :::
 
