@@ -19,7 +19,7 @@ us build our platform to get the word out about Vue Formulate.
 
 ### Core Maintainers
 **Justin Schroeder** - [@jpschroeder](https://twitter.com/jpschroeder)<br>
-**Andrew Boyd** - [@boyd_dot_dev](https://twitter.com/boyd_dot_dev)
+**Andrew Boyd** - [@BoydDotDev](https://twitter.com/BoydDotDev)
 
 ### Contributors
 
