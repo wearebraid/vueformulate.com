@@ -120,7 +120,15 @@ number keypad for mobile users.
 
 While technically Vue Formulate does support hidden input fields, the use case
 is pretty minimal since you can easily inject your own "hidden" values into
-submitted data with your a [form submission](/guide/forms).
+submitted data with a [form submission](/guide/forms).
+
+```vue
+<FormulateInput
+  type="hidden"
+  name="sample"
+  value="secret-code"
+/>
+```
 
 ## Month
 
