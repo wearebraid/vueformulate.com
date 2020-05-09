@@ -78,12 +78,13 @@ module.exports = ctx => ({
               collapsable: false,
               children: [
                 ...[
-                  '/guide/inputs/types/text/',
-                  '/guide/inputs/types/box/',
                   '/guide/inputs/types/button/',
+                  '/guide/inputs/types/box/',
                   '/guide/inputs/types/file/',
+                  '/guide/inputs/types/group/',
                   '/guide/inputs/types/select/',
                   '/guide/inputs/types/sliders/',
+                  '/guide/inputs/types/text/',
                   '/guide/inputs/types/textarea/'
                 ]
               ]

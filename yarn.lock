@@ -805,16 +805,17 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@braid/vue-formulate-i18n@^1.4.0":
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/@braid/vue-formulate-i18n/-/vue-formulate-i18n-1.4.0.tgz#e83a21646afaad859939f41117269a7e70480d46"
-  integrity sha512-US/CguORgMlT+fE+m/Cln8s/EkZB43IvTwOh077I7Tk7vLoZhs7G8+ATMd/Hf4ksLhCUIyxtdEpElbUgTTnjzg==
+"@braid/vue-formulate-i18n@^1.5.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@braid/vue-formulate-i18n/-/vue-formulate-i18n-1.5.0.tgz#fbe8fb2d73aed0216ecb2dd0a85a20198f09aa33"
+  integrity sha512-UPWQSOKW82+oRycuZRsviM0sCmH1yTCa520B4YZVGFWpXsq/NXefgsazjMdP7RJlrb6cRRkcm/j2JoPuCkbUrQ==
 
-"@braid/vue-formulate@git+https://github.com/wearebraid/vue-formulate.git#feature/scoped-slots":
-  version "2.2.8"
-  resolved "git+https://github.com/wearebraid/vue-formulate.git#dfef74cd279d583d61a0c428d2dfeb44830d7da9"
+"@braid/vue-formulate@^2.2.13":
+  version "2.2.13"
+  resolved "https://registry.yarnpkg.com/@braid/vue-formulate/-/vue-formulate-2.2.13.tgz#fcbbb336a0a87bed587e00f7ee4994c4b76ee578"
+  integrity sha512-ag9T8iFTMOvu1e/kJDuM0xWueUgC1KUsDAWz/MFu1UxHq2D+cxAeStB9knQK9ikaiUCuK7TJE+hjwxbSAs+SzA==
   dependencies:
-    "@braid/vue-formulate-i18n" "^1.4.0"
+    "@braid/vue-formulate-i18n" "^1.5.0"
     is-plain-object "^3.0.0"
     is-url "^1.2.4"
     nanoid "^2.1.11"
@@ -4885,7 +4886,7 @@ loglevel@^1.6.6:
   resolved "https://registry.yarnpkg.com/loglevel/-/loglevel-1.6.7.tgz#b3e034233188c68b889f5b862415306f565e2c56"
   integrity sha512-cY2eLFrQSAfVPhCgH1s7JI73tMbg9YC3v3+ZHVW67sBS7UxWzNEk/ZBbSfLykBWHp33dqqtOv82gjhKEi81T/A==
 
-loose-envify@^1.0.0:
+loose-envify@^1.0.0, loose-envify@^1.2.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.4.0.tgz#71ee51fa7be4caec1a63839f7e682d8132d30caf"
   integrity sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==
@@ -8022,6 +8023,13 @@ vm-browserify@^1.0.1:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
+
+vue-clickaway@^2.2.2:
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/vue-clickaway/-/vue-clickaway-2.2.2.tgz#cecf6839575e8b2afc5d3edb3efb616d293dbb44"
+  integrity sha512-25SpjXKetL06GLYoLoC8pqAV6Cur9cQ//2g35GRFBV4FgoljbZZjTINR8g2NuVXXDMLSUXaKx5dutgO4PaDE7A==
+  dependencies:
+    loose-envify "^1.2.0"
 
 vue-github-button@^1.1.2:
   version "1.1.2"

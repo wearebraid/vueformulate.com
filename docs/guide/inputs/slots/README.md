@@ -1,11 +1,11 @@
 # Slots <Badge text='2.3.0'/>
 
 Sometimes it’s necessary to override the markup or structure of Vue Formulate’s
-inputs. Vue Formulate has 3 mechanisms by which it customize an input:
+inputs. Vue Formulate has 3 mechanisms to customize an input:
 
-  - Slot components
-  - Scoped slots
-  - Custom input types
+  - [Slot components](#slot-components)
+  - [Scoped slots](#scoped-slots)
+  - [Custom input types](/guide/inputs/custom-inputs/)
 
 ## Available slots
 
@@ -16,7 +16,7 @@ All slots are passed the [context object](#context-object) via scoped slot.
 Slot name      | Description
 ---------------|----------------------------------------------------------------
 `label`        | The label value that will appear `before` or `after` the input element, default is a `<label>` element.
-`element`      | The primary element slot. The component rendered by default in this slot is determined by the plugin's `options.library` values.
+`element`      | The primary element slot. The component rendered by default in this slot is determined by the plugin's `options.library` values. _It is rare that you would use this slot — instead create a custom input._
 `help`         | The help text value that appears after the element.
 `errors`       | The errors that are displayed for a given input. Defaults to a `FormulateErrors` component.
 `default`      | The `default` slot is already reserved for use as a pass-through on the `element` slot. Some input types leverage this, lik [buttons](/guide/inputs/types/button/).
@@ -142,6 +142,7 @@ aspect of the input, the input’s model and even other inputs in the same
 
 Property        | Description
 ----------------|---------------------------------------------------------------
+`addLabel`      | The label to display inside "add more" button on `group` inputs.
 `attributes`    | An object of non-prop attributes passed to the input like `placeholder`
 `blurHandler`   | Function that must be called when an input blurs.
 `classification`| The classification of the input.
@@ -150,6 +151,7 @@ Property        | Description
 `hasLabel`      | `Boolean` indicating if the field has a label prop, `button` classification is always `false`.
 `hasValidationErrors` | Function, returns a `Promise` that resolves to a `Boolean`.
 `help`          | The `help` prop value (help text)
+`helpPosition`  | The position of the help text, `before` or `after` the element wrapper. Defaults to `before`.
 `getValidationErrors` | Function, returns a `Promise` that resolves to an array of validation error objects.
 `id`            | The id prop or an auto-generated id.
 `imageBehavior` | The value of the `image-behavior` prop. Defaults to `preview`.

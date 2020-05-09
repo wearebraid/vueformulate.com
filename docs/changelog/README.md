@@ -4,10 +4,35 @@ sidebar: auto
 
 # Changelog
 
-## v2.3.0 - March 25, 2020
+## v2.2.13 - May 4, 2020
 
-- Fixes an issue that caused i18n support to fail when `$i18n.local` is a function.
-- Adds support for a new `validation` event on inputs and forms.
+- Small fix for sliders on Mozilla (Firefox) browsers.
+
+## v2.2.12 - May 4, 2020
+
+- Allows `name` attribute to be passed through to internal input element.
+- Adds support for deterministic auto-generated ids for better SSR hydration.
+
+## v2.2.11 - April 29, 2020
+
+- Bumps `@braid/vue-formulate-i18n` to 1.5.0 which adds Dutch support.
+
+## v2.2.10 - April 29, 2020
+
+- Removes node 11 as engine in `package.json` (should not have ever been there).
+
+## v2.2.9 - April 28, 2020
+
+- Fixes an issue that caused inputs to remain in the form even when they were removed (via `v-if`).
+
+## v2.2.8 - April 13, 2020
+
+- Fixes a bug with `select` and `box` when `options` prop is an empty array.
+- Adds the form name as a second argument to the error handler.
+
+## v2.2.7 - April 6, 2020
+
+- Bumps `@braid/vue-formulate-i18n` adding Arabic support.
 
 ## v2.2.6 - March 27, 2020
 

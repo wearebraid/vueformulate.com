@@ -1,8 +1,8 @@
 # Select
 
-The select [classification](/inputs/) is only given to:
+The select [classification](/guide/inputs/custom-inputs/#what-is-a-classification) is only given to:
 
-- [select](#select)
+- [select](#select-2)
 
 ## Select
 
