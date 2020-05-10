@@ -19,13 +19,23 @@ Slot name      | Description
 `element`      | The primary element slot. The component rendered by default in this slot is determined by the plugin's `options.library` values. _It is rare that you would use this slot — instead create a custom input._
 `help`         | The help text value that appears after the element.
 `errors`       | The errors that are displayed for a given input. Defaults to a `FormulateErrors` component.
-`default`      | The `default` slot is already reserved for use as a pass-through on the `element` slot. Some input types leverage this, lik [buttons](/guide/inputs/types/button/).
-`grouping`     | The region of a `group` type that contains all the repeated fields.
-`repeatable`   | The region of a `group` type that contains each repeatable row.
-`addMore`      | The add more button on a repeatable `group` type.
+`default`      | The `default` slot is already reserved for use as a pass-through on the `element` slot. Some input types leverage this, like [buttons](/guide/inputs/types/button/) and [groups](/guide/inputs/types/group/).
+
+:::tip Addition slots
+Inputs can expose additional slots. The [group](/guide/inputs/types/group/) input
+type does this, refer to [that documentation](/guide/inputs/types/group/) page
+for more details.
+:::
 
 
-### Label
+## Scoped slots
+
+Scoped slots are a common pattern in Vue and are well supported in Vue Formulate
+as well. Vue Formulate recommends using scoped slots for occasional overrides,
+but not as the primary method for extending Vue Formulate. Read the
+[Preamble on custom input documentation](/guide/inputs/custom-inputs/) for more
+detail.
+
 
 ```vue
   <FormulateInput
@@ -48,47 +58,18 @@ Slot name      | Description
 ```
 <demo-slots-label />
 
-### Help text
-
-```vue
-  <FormulateInput
-    type="textarea"
-    label="Compose your email"
-    help="[f_name] = First Name<br>[l_name] = Last Name"
-    :value='"Dear [f_name],\nHow have you been doing?"'
-  >
-    <template #help="{ help }">
-      <!-- opt-into using HTML formatting -->
-      <small v-html="help" />
-    </template>
-  </FormulateInput>
-```
-<demo-slots-help />
-
-
-## Scoped slots
-
-Scoped slots are a common pattern in Vue and are well supported in Vue Formulate
-as well. 
-
-::: tip Note
-Vue Formulate recommends using scoped slots for occasional overrides, but not as
-the primary method for extending Vue Formulate. Read the [Preamble on custom
-input documentation](/guide/inputs/custom-inputs/) for more detail.
-:::
-
 ## Slot components
 
-Let’s say, on a given project, you wanted to change all labels to include a
-little tooltip next to the label value. You could certainly do that with scoped
-slots, but it would require a ton of copy and paste or wrapping every
+Let’s say, on a given project, you wanted to change all labels to include the
+little tooltip we used in the above example. You could certainly do that with
+scoped slots, but it would require a ton of copy and paste or wrapping every
 `FormulateInput` both bad options. Using “slot components” you can override the
 default value of any of the [available slots](#available-slots) with your own
 component.
 
 ### Global slot components
 
-To replace the default value of every instance of an available slot, simply
+To replace the default component placed in any available slot, simply
 register your component with Vue Formulate using the `slotComponents` option:
 
 ```js
@@ -96,12 +77,12 @@ import Vue from 'vue'
 import VueFormulate from '@braid/vue-formulate'
 import MyLabel from './MyLabel.vue'
 
-// Register your component with vue
+// Globally register your component with Vue.
 Vue.component('MyLabel', MyLabel)
 
-// Let Vue Formulate know which slot you want to override
 Vue.use(VueFormulate, {
   slotComponents: {
+    // Use the string name of the globally registered component.
     label: 'MyLabel'
   }
 })
