@@ -60,12 +60,13 @@ detail.
 
 ## Slot components
 
-Let’s say, on a given project, you wanted to change all labels to include the
-little tooltip we used in the above example. You could certainly do that with
-scoped slots, but it would require a ton of copy and paste or wrapping every
-`FormulateInput` both bad options. Using “slot components” you can override the
+Let’s say, on a given project, you wanted to change all labels to include the 
+tooltip we used in the above example. You could certainly do that with scoped
+slots, but it would require a ton of copy and paste or wrapping every
+`FormulateInput` both poor choices. Using “slot components” you can override the
 default value of any of the [available slots](#available-slots) with your own
-component.
+component. Slot components are passed the [context object](#context-object) as a
+prop.
 
 ### Global slot components
 
