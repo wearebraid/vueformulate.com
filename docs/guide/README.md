@@ -9,16 +9,21 @@ make implementing common features effortless. In fact, **there are only 2
 components that need to be learned** to create nearly any type of form: `FormulateInput`
 and `FormulateForm`.
 
+With Vue Formulate developers are empowered to:
+
 ✓ Create any input element with a single component<br>
-✓ Supports Vue `v-model` [binding](#model-binding)<br>
+✓ Use native `v-model` [binding](#model-binding) across all input types<br>
 ✓ [Re-populate an entire form](/guide/forms/#setting-initial-values) from a single object<br>
 ✓ [Generate a form](/guide/forms/#generating-forms) using JSON<br>
-✓ Easy to add field labels<br>
-✓ Easy to add help text<br>
-✓ Easy to add [form validation](/guide/validation)<br>
-✓ Easy to add [custom validation](/guide/validation/#custom-validation-rules) rules<br>
-✓ Easy to modify [validation messages](/guide/validation/#customize-validation-messages)<br>
-✓ Easy to add [custom inputs](/guide/custom-inputs)
+✓ Easily add field labels<br>
+✓ Easily add help text<br>
+✓ [Group fields](/guide/inputs/types/group/) into custom data structures<br>
+✓ [Repeat grouped fields](/guide/inputs/types/group/#repeatable-groups) for complex UIs<br>
+✓ Perform robust [form validation](/guide/validation)<br>
+✓ Crate [custom validation](/guide/validation/#custom-validation-rules) rules<br>
+✓ Modify default [validation messages](/guide/validation/#customize-validation-messages)<br>
+✓ Create and share [custom inputs](/guide/custom-inputs)<br>
+✓ Override default component templates with [scoped slots](/guide/inputs/slots)<br>
 
 ## Inputs
 Every type of input in Vue Formulate is an instance of the `FormulateInput`
