@@ -16,6 +16,7 @@ Vue Formulate currently supports these languages:
 - 🇫🇷 French (fr)
 - 🇮🇹 Italian (it)
 - 🇯🇵 Japanese (ja)
+- 🇰🇷 Korean (ko)
 - 🇧🇷 Portuguese (pt)
 
 When using a right-to-left language like Arabic with the default [snow theme](/guide/theming/#default-theme)

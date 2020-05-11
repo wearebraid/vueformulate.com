@@ -805,17 +805,16 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@braid/vue-formulate-i18n@^1.5.0":
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/@braid/vue-formulate-i18n/-/vue-formulate-i18n-1.5.0.tgz#fbe8fb2d73aed0216ecb2dd0a85a20198f09aa33"
-  integrity sha512-UPWQSOKW82+oRycuZRsviM0sCmH1yTCa520B4YZVGFWpXsq/NXefgsazjMdP7RJlrb6cRRkcm/j2JoPuCkbUrQ==
+"@braid/vue-formulate-i18n@^1.6.0":
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/@braid/vue-formulate-i18n/-/vue-formulate-i18n-1.6.0.tgz#7184be9a66c166a6d0f7d768af1d836b2d1ec537"
+  integrity sha512-qGw87DdOwtA9G8s79A6BTDK6syAdlbmDaloCk8JURTuIWQpGIcJUGPQ2vTIzY2D9XNX0ah7k1H51XeHdwNtYzA==
 
-"@braid/vue-formulate@^2.2.13":
-  version "2.2.13"
-  resolved "https://registry.yarnpkg.com/@braid/vue-formulate/-/vue-formulate-2.2.13.tgz#fcbbb336a0a87bed587e00f7ee4994c4b76ee578"
-  integrity sha512-ag9T8iFTMOvu1e/kJDuM0xWueUgC1KUsDAWz/MFu1UxHq2D+cxAeStB9knQK9ikaiUCuK7TJE+hjwxbSAs+SzA==
+"@braid/vue-formulate@ssh://git@github.com:wearebraid/vue-formulate#feature/grouping":
+  version "2.2.8"
+  resolved "ssh://git@github.com:wearebraid/vue-formulate#17dff062e7a8948dea9e29d3aa8e51eca541fb32"
   dependencies:
-    "@braid/vue-formulate-i18n" "^1.5.0"
+    "@braid/vue-formulate-i18n" "^1.6.0"
     is-plain-object "^3.0.0"
     is-url "^1.2.4"
     nanoid "^2.1.11"
