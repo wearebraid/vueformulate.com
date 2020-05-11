@@ -91,7 +91,7 @@
     </div>
 
     <div class="footer">
-      MIT Licensed | Written by <a href="https://www.wearebraid.com/">Braid LLC</a>
+      MIT Licensed | A product by <a href="https://www.wearebraid.com/">Braid</a>
     </div>
   </main>
 </template>
