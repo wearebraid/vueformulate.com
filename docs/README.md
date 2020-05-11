@@ -50,7 +50,7 @@ Try changing `type="radio"` to `checkbox` or `select` in this demo.
 />
 ```
 
-### Well-considered file uploading
+### Well-considered file inputs
 [File inputs](/guide/inputs/types/file/) done well, right out of the box.
 ```html live
 <FormulateInput
