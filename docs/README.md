@@ -87,7 +87,7 @@ single object — including [grouped](/guide/inputs/types/group/) and
     </FormulateInput>
 
     <FormulateInput name="deliveryMethod" type="radio" label="Delivery Method" validation="required" :options="{ local: 'Local Pick-up', delivery: 'Delivery (5-mile radius)' }" />
-    <FormulateInput name="orderNotes" type="textarea" label="Order Notes" help="Allergies? Delivery instructions? Don't need the spoons? Let us know!n" />
+    <FormulateInput name="orderNotes" type="textarea" label="Order Notes" help="Allergies? Delivery instructions? Don't need the spoons? Let us know!" />
     <FormulateInput type="submit" value="Place Group Order" />
     <pre>{{ values }}</pre>
   </FormulateForm>
