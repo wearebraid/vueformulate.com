@@ -69,6 +69,7 @@ export default {
 
 <style lang="scss" scoped>
 .sidebar {
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
 
@@ -89,10 +90,10 @@ export default {
   }
 
   .footer {
-    padding: 5em 2em 2em 2em;
+    padding: 5em 1em 2em 2em;
     margin-top: auto;
     width: 100%;
-    font-size: .85em;
+    font-size: .8em;
     color: #647d96;
   }
 }
