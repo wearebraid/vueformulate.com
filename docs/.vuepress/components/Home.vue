@@ -37,6 +37,15 @@
       </div>
     </header>
 
+    <div class="updates-section">
+      <div class="new-badge">
+        <span class="label">NEW</span>
+        <span class="text">
+          Introducing <NavLink :item="{link: '/guide/inputs/types/group/', text: 'groups'}" />, <NavLink :item="{link: '/guide/inputs/slots/', text: 'scoped slots'}" />, and <NavLink :item="{link: '/changelog/', text: 'more'}" />
+        </span>
+      </div>
+    </div>
+
     <div
       v-if="data.features && data.features.length"
       class="features"
@@ -119,6 +128,48 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.updates-section {
+  display: flex;
+}
+
+.new-badge {
+  border: 1px solid #dfe4ee;
+  background: #f6f9fd;
+  border-radius: 999em;
+  padding: 0.5em 1em 0.5em 1em;
+  margin-top: 1em;
+  margin-bottom: -2em;
+  font-size: 0.9em;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (min-width: 500px) {
+    padding: 0.5em 0.75em 0.5em 0.66em;
+  }
+
+  .label {
+    display: inline-block;
+    background: #41b883;
+    padding: 0.25em 0.5em;
+    border-radius: 999em;
+    color: #fff;
+    font-size: 0.85em;
+    margin-right: 0.5em;
+    font-weight: bold;
+
+    @media (min-width: 500px) {
+      padding: 0.33em 0.66em;
+      border: 1px solid #3eaf7c;
+    }
+  }
+
+  .nav-link {
+    display: inline-block;
+  }
+}
+</style>
 
 <style lang="stylus">
 #app .home

@@ -1,4 +1,8 @@
-# Slots <Badge text='2.3.0'/>
+---
+new: true
+---
+
+# Slots <Badge text='2.3.0+'/>
 
 Sometimes it’s necessary to override the markup or structure of Vue Formulate’s
 inputs. Vue Formulate has 3 mechanisms to customize an input:
