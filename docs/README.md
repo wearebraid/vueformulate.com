@@ -82,7 +82,7 @@ single object — including [grouped](/guide/inputs/types/group/) and
     >
       <div class="order">
         <FormulateInput name="flavor" type="select" label="Flavor" validation="required" :options="{ vanilla: 'Vanilla', chocolate: 'Chocolate', strawberry: 'Strawberry', pineapple: 'Pineapple'}" />
-        <FormulateInput name="Quantity" label="Quantity" type="number" min="1" validation="required|min:1" />
+        <FormulateInput name="quantity" label="Quantity" type="number" min="1" validation="required|min:1" />
       </div>
     </FormulateInput>
 
