@@ -90,13 +90,9 @@
       </div>
     </div>
 
-    <div class="footer">
-<<<<<<< HEAD
+    <footer class="footer">
       MIT Licensed | A product by <a href="https://www.wearebraid.com/">Braid</a>
-=======
-      MIT Licensed | A product by <a href="https://www.wearebraid.com/">Braid LLC</a>
->>>>>>> 76c42a9c246ca64acf2f517bae3e002eadefb98b
-    </div>
+    </footer>
   </main>
 </template>
 
