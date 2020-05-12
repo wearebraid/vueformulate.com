@@ -11,7 +11,7 @@
     <slot name="bottom" />
 
     <footer class="footer">
-      MIT Licensed | A product by <a href="https://www.wearebraid.com/">Braid</a>
+      MIT Licensed | A product by <a href="https://www.wearebraid.com/" target="_blank" rel="noopener">Braid</a>
     </footer>
   </aside>
 </template>
