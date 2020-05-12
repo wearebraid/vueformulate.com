@@ -93,6 +93,7 @@ single object — including [grouped](/guide/inputs/types/group/) and
   </FormulateForm>
 </template>
 
-<script>export default { data () { return { values: {} } }, methods: {submitHandler () { alert(`Thank you for your order!`) } } }</script>
-<style lang="scss" scoped>.order {display: flex;justify-content: space-between;}.order .formulate-input {width: 47.5%;margin-bottom: 0;} .formulate-form /deep/ .formulate-input-element--textarea {max-width: unset;}</style>
+<script>
+  export default { data () { return { values: {} } }, methods: {submitHandler () { alert(`Thank you for your order!`) } } }
+</script>
 ```
