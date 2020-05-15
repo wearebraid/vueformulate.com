@@ -1,4 +1,8 @@
-# Slots <Badge text='2.3.0'/>
+---
+new: true
+---
+
+# Slots <Badge text='2.3.0+'/>
 
 Sometimes it’s necessary to override the markup or structure of Vue Formulate’s
 inputs. Vue Formulate has 3 mechanisms to customize an input:
@@ -60,10 +64,10 @@ detail.
 
 ## Slot components
 
-Let’s say, on a given project, you wanted to change all labels to include the 
+Let’s say, on a given project, you wanted to change all labels to include the
 tooltip we used in the above example. You could certainly do that with scoped
 slots, but it would require a ton of copy and paste or wrapping every
-`FormulateInput` both poor choices. Using “slot components” you can override the
+`FormulateInput` —  both poor choices. Using “slot components” you can override the
 default value of any of the [available slots](#available-slots) with your own
 component. Slot components are passed the [context object](#context-object) as a
 prop.

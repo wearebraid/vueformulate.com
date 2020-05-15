@@ -9,6 +9,10 @@
       :items="items"
     />
     <slot name="bottom" />
+
+    <footer class="footer">
+      MIT Licensed | A product by <a href="https://www.wearebraid.com/" target="_blank" rel="noopener">Braid</a>
+    </footer>
   </aside>
 </template>
 
@@ -61,4 +65,36 @@ export default {
         top calc(1rem - 2px)
     & > .sidebar-links
       padding 1rem 0
+</style>
+
+<style lang="scss" scoped>
+.sidebar {
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+
+  & /deep/ .new-badge {
+    &::after {
+      display: inline-block;
+      content: 'NEW';
+      padding: 0.2em 0.5em;
+      margin-left: 0.66em;
+      line-height: 1;
+      color: #fff;
+      background: #41b883;
+      border: 1px solid #3eaf7c;
+      border-radius: 5px;
+      font-size: 0.7em;
+      font-weight: bold;
+    }
+  }
+
+  .footer {
+    padding: 5em 1em 2em 2em;
+    margin-top: auto;
+    width: 100%;
+    font-size: .8em;
+    color: #647d96;
+  }
+}
 </style>
