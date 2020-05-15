@@ -4,7 +4,7 @@ module.exports = ctx => ({
   head: [
     ['link', { rel: "apple-touch-icon", sizes: "180x180", href: "/assets/favicons/apple-touch-icon.png"}],
     ['meta', { name: 'twitter:image', content: 'http://assets.wearebraid.com/vue-formulate/logo-on-white.png' }],
-    ['meta', { name: 'description', content: 'The easiest way to build forms with Vue.' }],
+    ['meta', { name: 'description', content: 'The easiest way to build forms with Vue. Built-in validation, error handling, repeatable fields, form generation & more — make complex form creation a breeze.' }],
     ['script', { src: 'https://polyfill.io/v3/polyfill.min.js?features=es2015%2CFunction.name' }]
   ],
   port: 8123,
