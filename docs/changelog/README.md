@@ -4,6 +4,10 @@ sidebar: auto
 
 # Changelog
 
+## v2.3.0
+
+- Adds support simple regular expressions for the `matches` rule when using string validation syntax.
+
 ## v2.2.13 - May 4, 2020
 
 - Small fix for sliders on Mozilla (Firefox) browsers.

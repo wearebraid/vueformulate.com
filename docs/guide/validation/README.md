@@ -22,13 +22,18 @@ leaves (technically a `blur` event) the current field. You can change this
 behavior by setting the `error-behavior` prop on `FormulateInput` to `live`
 :::
 
-### Validation Syntax
+## Declaring rules
 
 Declaring what validation rules is as easy as adding a `validation` prop to
-your `FormulateInput` field. Rules can be declared shorthand using a series of
-pipe (`|`) separated strings or using an array syntax. 
+your `FormulateInput` field.
 
-#### Pipe-separated string syntax (preferred)
+
+#### String syntax
+The simplest way to declare which rules to use on a given input is by providing
+a string of rules separated by pipes (`|`). Some rules may accept arguments,
+these are defined after a colon `:`. You can use multiple arguments by comma
+separating them.
+
 ```vue
 <FormulateInput
   :validation="required|max:10|min:5"
@@ -36,6 +41,13 @@ pipe (`|`) separated strings or using an array syntax.
 ```
 
 #### Array syntax
+
+An alternative to the string syntax is providing an array of rules. Sometimes
+it’s necessary to use the array syntax in order to preserve typing or to escape
+certain characters, for example when using regular expressions with the
+[matches](#matches) rule. Each rule must be defined as an array with the rule
+name followed by any arguments.
+
 ```vue
 <FormulateInput
   :validation="[
@@ -50,10 +62,52 @@ For the purposes of this documentation pipe-separated strings will be the prefer
 method of setting validation rules for fields.
 
 :::tip Note
-Sometimes it is necessary to use the array syntax, especially when dealing with
-data that needs to be escaped or doesn’t work well in string format (like when
-using regular expressions in the `matches` rule)
+When using the array syntax, make sure your prop is bound with
+`v-bind:validation` or the shorthand `:validation`.
 :::
+
+### Stopping validation
+
+#### The `bail` rule
+
+To stop validation after encountering an error (to prevent showing a
+several messages) you can add the special rule: `bail`. When the validation
+parser encounters the `bail` rule, it will stop validating that input after
+encountering any failures in any subsequent rules.
+
+```vue
+<FormulateInput
+  label="How many tacos do you want?"
+  type="text"
+  validation="bail|required|number|between:1,10,value"
+  validation-name="Taco quantity"
+  error-behavior="live"
+/>
+```
+<demo-validation-bail />
+
+### Bail modifier
+
+Often it is desirable to only bail if a specific rule fails. For example, you
+may want to only show the `required` error message if a password field is empty,
+but when it has a value you would like to all the failing validation rules. To
+do this we can use the `^` modifier on the rule name.
+
+```vue
+<FormulateInput
+  label="Create a new password (with modifier)"
+  type="password"
+  name="password"
+  error-behavior="live"
+  validation="^required|min:4,length|matches:/[0-9]/"
+  :validation-messages="{
+    matches: 'Passwords require at least one number.'
+  }"
+/>
+```
+
+<demo-validation-modifier />
+
 
 ## Available rules
 Vue Formulate ships with a library of frequently used validation rules. If
@@ -343,10 +397,37 @@ Checks if the input is included in an array of options.
 Checks if the input matches a particular value or pattern. If you pass multiple
 arguments, it checks each until a match is found.
 
-::: warning
-When matching against a regular expression you have to use the alternative
-`array` style validation rule syntax `:validation="[['matches', /^(apple|banana)$/]]`
-:::
+```vue
+<FormulateInput
+  type="text"
+  name="language"
+  placeholder="node, php, java..."
+  label="What is your favorite server side language?"
+  validation="matches:node,php,java"
+  error-behavior="live"
+  v-model="color"
+/>
+```
+<demo-validation-matches-2 />
+
+Arguments can also be regular expressions. When using the string syntax, start
+and end your argument with a slash `/` (do not escape additional slashes).
+
+```vue
+<FormulateInput
+  type="password"
+  name="password"
+  label="Choose a new password"
+  validation="matches:/[0-9]/"
+  error-behavior="live"
+  :validation-messages="{ matches: 'Passwords must include a number.' }"
+/>
+```
+<demo-validation-matches-3 />
+
+When using the [string syntax](#string-syntax) you cannot escape characters used
+to define the validation rules themselves (`|,:`). To use these characters in
+your regular expressions you must use the alternative [array syntax](#array-syntax).
 
 ```vue
 <FormulateInput
@@ -365,19 +446,6 @@ When matching against a regular expression you have to use the alternative
 />
 ```
 <demo-validation-matches />
-
-```vue
-<FormulateInput
-  type="text"
-  name="language"
-  placeholder="node, php, java..."
-  label="What is your favorite server side language?"
-  validation="matches:node,php,java"
-  error-behavior="live"
-  v-model="color"
-/>
-```
-<demo-validation-matches-2 />
 
 ### Max
 Checks that the value of a `Number`, or length of a `String` or `Array` is less than
