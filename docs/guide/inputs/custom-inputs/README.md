@@ -25,7 +25,7 @@ in wrapper components.
 Before diving into code, let’s take a high-level look at how a
 `FormulateInput` component is structured:
 
-![FormulateInput internal structure](./structure.png)
+![FormulateInput internal structure](./structure.svg)
 
 ## Custom types
 
