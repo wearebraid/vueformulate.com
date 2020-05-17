@@ -28,7 +28,7 @@ Vue Formulate includes [20 rules](/guide/validation/) and support for defining y
 <FormulateInput
   type="email"
   label="What is your school email address?"
-  validation="required|email|ends_with:.edu"
+  validation="bail|required|email|ends_with:.edu"
   validation-name="School email"
   placeholder="user@university.edu"
 />
