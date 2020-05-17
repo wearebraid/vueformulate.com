@@ -11,7 +11,7 @@
     "build": "NODE_ENV=production vuepress build docs"
   },
   "dependencies": {
-    "@braid/vue-formulate": "https://github.com/wearebraid/vue-formulate#feature/grouping",
+    "@braid/vue-formulate": "https://github.com/wearebraid/vue-formulate#release/2.3.0",
     "axios": "^0.19.2",
     "v-tooltip": "^2.0.3",
     "vue-clickaway": "^2.2.2",
