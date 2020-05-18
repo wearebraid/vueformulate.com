@@ -5,7 +5,6 @@
     @touchstart="onTouchStart"
     @touchend="onTouchEnd"
   >
-    <h1>test</h1>
     <Navbar
       v-if="shouldShowNavbar"
       @toggle-sidebar="toggleSidebar"

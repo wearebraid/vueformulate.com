@@ -228,7 +228,7 @@ will wait to resolve the `@submit` event is also asynchronous relative to when
 the form was submitted.
 :::
 
-## Advanced uses
+### Advanced form submission
 
 There are times where you may not want to opt-in to the default behavior of the
 `@submit` event, and would rather be notified synchronously on every attempt to
@@ -237,6 +237,105 @@ submit a form. For these edge cases, you can bind to the `@submit-raw` event.
 This event is triggered on all submission attempts, and it’s up to you to
 determine how you want to handle it. The payload of the event is a
 [`FormSubmission` instance](https://github.com/wearebraid/vue-formulate/blob/master/src/FormSubmission.js).
+
+## Named forms
+
+Vue Formulate introduces the concept of "named forms" as a mechanism for
+_globally_ accessing and manipulating your forms through the `$formulate` plugin.
+To leverage named forms, simply supply a unique `name` prop to any
+`<FormulateForm>` component. The names should be unique among any currently
+mounted forms. After naming a form, you can easily call a number of named form
+methods.
+
+Method                         | Description
+-------------------------------|------------------------------------------------
+`handle(err, formName)`        | Used to set error messages on a form, typically from a backend server. Read more about [error handling](/guide/forms/error-handling/).
+`reset(formName, values)`      | Reset the form's values, validation messages, and error messages.
+`resetValidation(formName)`    | Reset all validation and error messages.
+`setValues(formName)`          | Set the value of the form's model (even if no `v-model` is defined).
+
+:::details View source code
+```vue
+<template>
+  <FormulateForm
+    name="login"
+    @submit="setSomeErrors"
+    v-model="formData"
+    class="login-form"
+  >
+    <h2 class="form-title">Login</h2>
+    <FormulateInput
+      name="email"
+      label="Email"
+      validation="required|email"
+    />
+    <FormulateInput
+      name="password"
+      label="Password"
+      validation="required"
+    />
+    <FormulateErrors />
+    <div class="actions">
+      <FormulateInput
+        type="submit"
+      />
+      <FormulateInput
+        type="button"
+        label="Reset"
+        data-ghost
+        @click="reset"
+      />
+    </div>
+    <code class="code code--block">{{ formData }}</code>
+  </FormulateForm>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      formData: {}
+    }
+  },
+  methods: {
+    setSomeErrors () {
+      // do some processing...
+      const errors = {
+        fieldErrors: { username: 'Sorry, no such username exists!' },
+        formErrors: ['Incorrect login, please try again.']
+      }
+      this.$formulate.handle(errors, 'login')
+    },
+    reset () {
+      this.$formulate.reset('login')
+    }
+  }
+}
+</script>
+
+<style>
+.actions {
+  display: flex;
+  margin-bottom: 1em;
+}
+.actions .formulate-input {
+  margin-right: 1em;
+  margin-bottom: 0;
+}
+.login-form {
+  padding: 2em;
+  border: 1px solid #a8a8a8;
+  border-radius: .5em;
+  max-width: 500px;
+  box-sizing: border-box;
+}
+.form-title {
+  margin-top: 0;
+}
+</style>
+```
+:::
+<demo-named-form />
 
 ## Generating Forms
 
@@ -298,6 +397,9 @@ The above JSON can then be fed into a `<FormulateInput>` using a `v-for` and
 
 <demo-generated />
 
-:::warning Warning
-When generating forms with `options` each option must include it’s own `id`.
+:::tip Note 
+Iterating over objects to produce a form is an actively supported feature — even
+encouraged in many cases — but keep in mind that some complex forms, like
+forms that include [`group`](/guide/inputs/types/group/#data-organization)
+fields, may require additional effort to iterate over.
 :::

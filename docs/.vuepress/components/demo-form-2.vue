@@ -48,8 +48,8 @@
       label="Register"
     />
     </div>
-    <pre
-      class="code"
+    <code
+      class="code code--block"
       v-text="formValues"
     />
   </FormulateForm>

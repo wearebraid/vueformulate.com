@@ -146,10 +146,9 @@ export default {
 **Output:**
 <demo-3-initial />
 
-## All Options
-
-Each `FormulateInput` can be customized by adding a few props on it. The
-list below contains all of the available universal options:
+## Props
+Each `FormulateInput` can be configured by declaring props. The list below
+contains all of the available universal options:
 
 ::: tip Note
 Some `FormulateInput` types have props that are specific to their type. Please
@@ -159,16 +158,33 @@ props.
 
 Prop              | Description
 ------------------|-------------------------------------------------------------
-`type`            | *Required.* The type of input element. [See the input library](/guide/inputs/text) for a full range of options.
+`error`           | A custom error message to be manually shown on an element (validation errors are generated on their own). This error will always be visible (if you want to remove it, use a dynamic prop).
+`errors`          | An array of custom error messages to show on an element (see above).
+`error‑behavior`  | Defines when error messages are shown. Can be `blur` (default), `submit`, or `live`. Anytime a `<FormulateForm>` element is submitted errors are also shown. `live` will always display all error messages for the input.
+`help`            | Help text to be displayed with the input.
+`help-position`   | The position of the help text `before` or `after` (default is `after`).
+`id`              | The id of the input (defaults to an auto-generated one)
 `label`           | A descriptive label for the input element.
 `label‑position`  | Most input elements place the label before the input by default. The `box` [classification](/guide/inputs/box) places labels after by default, but either can be overridden with this prop.
 `name`            | Adds a name attribute, and when used with `<FormulateForm>` this is the key of the field. If no name is defined a random hash will be assigned
-`help`            | Help text to be displayed with the input.
+`options`         | Array or object of options (`select` or `box` classifications)
 `placeholder`     | The placeholder attribute of the element (if applicable)
-`value`           | An initial unbound value (use when `v-model` or form binding is not a good option)
+`show‑errors`     | When `true` this forces an element to show it’s errors regardless of the state of the `error-behavior`.
+`type`            | *Required.* The type of input element. [See the input library](/guide/inputs/text) for a full range of options.
 `validation`      | A `string` or `array` of validation rules. See [input validation](/guide/validation)
 `validation‑name` | The name to use in validation error messages. By default, this uses the `name` prop if available and falls back to the `label` prop. It can be explicitly overridden here if needed.
-`error`           | A custom error message to be manually shown on an element (validation errors are generated on their own). This error will always be visible (if you want to remove it, use a dynamic prop).
-`errors`          | An array of custom error messages to show on an element (see above).
-`error‑behavior`  | By default, error messages are only shown when the `blur` event fires on an input, or a `<FormulateForm>` element is submitted with errors. This behavior can be changed to `live` which will display all error messages for the input immediately as a user interacts with an element. This is useful in the case of inputs such as range sliders where you may want validation feedback to be immediate.
-`show‑errors`     | When `true` this forces an element to show it’s errors regardless of the state of the `error-behavior`
+`validation‑messages` | See [custom validation messages](/guide/validation/#customize-validation-messages).
+`validation-rules` | See [custom validation rules](/guide/validation/#custom-validation-rules).
+`value`           | An initial unbound value (use when `v-model` or form binding is not a good option)
+`disableErrors`   | Will not show any error messages when set to true.
+
+
+## Events
+
+These events are emitted by every input type.
+
+Event               | Description
+--------------------|-------------------------------------------------------------
+`@input`            | Emitted every time the value of the field changes. Typically this is used implicitly by using `v-model`.
+`@validation`       | Emitted anytime the state of validation changes for an input, irregardless of the visibility of the errors (`v2.3+`). [More details](/guide/validation/#validation-event)
+`@error-visibility` | Emitted when the visibility of the errors changes, for example, on blur or submit (`v2.3+`).

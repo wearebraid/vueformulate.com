@@ -1,6 +1,6 @@
 # Button
 
-The button [classification](/inputs/) is given to the following types:
+The button [classification](/guide/inputs/custom-inputs/#what-is-a-classification) is given to the following types:
 
 - [button](#button)
 - [submit](#button)

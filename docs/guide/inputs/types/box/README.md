@@ -1,6 +1,6 @@
 # Box
 
-The box [classification](/inputs/) is given to the following types:
+The box [classification](/guide/inputs/custom-inputs/#what-is-a-classification) is given to the following types:
 
 - [checkbox](#checkbox)
 - [radio](#radio)

@@ -2,18 +2,19 @@ module.exports = ctx => ({
   title: 'Vue Formulate',
   description: 'The easiest way to build forms with Vue.',
   head: [
-    ['link', { rel: "apple-touch-icon", sizes: "180x180", href: "/assets/favicons/apple-touch-icon.png"}],
-    ['meta', { name: 'twitter:image', content: 'http://assets.wearebraid.com/vue-formulate/logo-on-white.png' }],
-    ['meta', { name: 'description', content: 'The easiest way to build forms with Vue.' }],
+    ['link', { rel: "apple-touch-icon", sizes: "180x180", href: "/assets/favicon/apple-touch-icon.png"}],
+    ['meta', { name: 'twitter:image', content: '/assets/img/logo-on-white.png' }],
+    ['meta', { name: 'og:image', content: '/assets/img/og.jpg' }],
+    ['meta', { name: 'description', content: 'The easiest way to build forms with Vue. Built-in validation, error handling, repeatable fields, form generation & more — make complex form creation a breeze.' }],
     ['script', { src: 'https://polyfill.io/v3/polyfill.min.js?features=es2015%2CFunction.name' }]
   ],
   port: 8123,
   themeConfig: {
     sidebar: {
-      '/guide/': [
+      '/guide': [
         {
           title: 'Guide',
-          path: '/guide/',
+          path: '/guide',
           collapsable: false,
           children: [
             {
@@ -29,11 +30,6 @@ module.exports = ctx => ({
             {
               title: 'Validation',
               path: '/guide/validation/',
-              collapsable: true
-            },
-            {
-              title: 'Custom Inputs',
-              path: '/guide/custom-inputs/',
               collapsable: true
             },
             {
@@ -61,22 +57,39 @@ module.exports = ctx => ({
         {
           title: 'Inputs',
           collapsable: false,
-          path: '/guide/inputs/',
+          path: '/guide/inputs',
           children: [
             {
               title: 'Configuration',
               collapsable: true,
               path: '/guide/inputs/',
             },
-            ...[
-              '/guide/inputs/text/',
-              '/guide/inputs/box/',
-              '/guide/inputs/button/',
-              '/guide/inputs/file/',
-              '/guide/inputs/select/',
-              '/guide/inputs/sliders/',
-              '/guide/inputs/textarea/'
-            ]
+            {
+              title: 'Custom input types',
+              collapsable: true,
+              path: '/guide/inputs/custom-inputs/',
+            },
+            {
+              title: 'Slots',
+              collapsable: true,
+              path: '/guide/inputs/slots/',
+            },
+            {
+              title: 'Types',
+              collapsable: false,
+              children: [
+                ...[
+                  '/guide/inputs/types/button/',
+                  '/guide/inputs/types/box/',
+                  '/guide/inputs/types/file/',
+                  '/guide/inputs/types/group/',
+                  '/guide/inputs/types/select/',
+                  '/guide/inputs/types/sliders/',
+                  '/guide/inputs/types/text/',
+                  '/guide/inputs/types/textarea/'
+                ]
+              ]
+            }
           ]
         },
         {

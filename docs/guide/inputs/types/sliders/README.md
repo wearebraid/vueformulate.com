@@ -1,6 +1,6 @@
 # Slider
 
-The sliders [classification](/inputs/) is given to the following types:
+The sliders [classification](/guide/inputs/custom-inputs/#what-is-a-classification) is given to the following types:
 
 - [range](#range)
 

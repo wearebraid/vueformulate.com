@@ -1,6 +1,6 @@
 # Textarea
 
-The textarea [classification](/inputs/) is only given to:
+The textarea [classification](/guide/inputs/custom-inputs/#what-is-a-classification) is only given to:
 
 - [textarea](#textarea)
 

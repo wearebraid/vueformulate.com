@@ -35,7 +35,7 @@
         class="subscribe-button"
         @click.prevent.stop="toggleShowSubscribeBox"
       >
-        <span class="label">Subscribe</span>
+        <span class="label">Get Updates!</span>
 
         <transition name="slide-in">
           <SubscribeBox

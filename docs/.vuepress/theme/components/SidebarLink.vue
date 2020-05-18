@@ -30,7 +30,14 @@ export default {
       : selfActive
     const link = item.type === 'external'
       ? renderExternal(h, item.path, item.title || item.path)
-      : renderLink(h, item.path, item.title || item.path, active)
+      : renderLink(
+          h,
+          item.path,
+          (item.title || item.path),
+          active,
+          item.level,
+          item
+        )
 
     const maxDepth = [
       $page.frontmatter.sidebarDepth,
@@ -54,7 +61,7 @@ export default {
   }
 }
 
-function renderLink (h, to, text, active, level) {
+function renderLink (h, to, text, active, level, item) {
   const component = {
     props: {
       to,
@@ -63,7 +70,8 @@ function renderLink (h, to, text, active, level) {
     },
     class: {
       active,
-      'sidebar-link': true
+      'sidebar-link': true,
+      'new-badge': item && item.frontmatter && item.frontmatter.new
     }
   }
 
@@ -81,7 +89,7 @@ function renderChildren (h, children, path, route, maxDepth, depth = 1) {
   return h('ul', { class: 'sidebar-sub-headers' }, children.map(c => {
     const active = isActive(route, path + '#' + c.slug)
     return h('li', { class: 'sidebar-sub-header' }, [
-      renderLink(h, path + '#' + c.slug, c.title, active, c.level - 1),
+      renderLink(h, path + '#' + c.slug, c.title , active, c.level - 1, c),
       renderChildren(h, c.children, path, route, maxDepth, depth + 1)
     ])
   }))

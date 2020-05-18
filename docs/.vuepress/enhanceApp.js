@@ -6,12 +6,17 @@ import VueFormulate from '@braid/vue-formulate'
 import pageComponents from '@internal/page-components'
 import Autocomplete from './Autocomplete'
 import GithubButton from 'vue-github-button'
+import VTooltip from 'v-tooltip'
 import '../../node_modules/@braid/vue-formulate/themes/snow/snow.scss'
 
 export default ({ Vue }) => {
+
   Vue.use(VueFormulate, {
     plugins: [ Autocomplete ]
   })
+
+  Vue.use(VTooltip)
+
   for (const [name, component] of Object.entries(pageComponents)) {
     Vue.component(name, component)
   }

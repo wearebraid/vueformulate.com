@@ -1,4 +1,4 @@
-# Internationalization <Badge text="2.2.0+" />
+# Internationalization
 
 Vue Formulate ships with the english language validation messages pre-installed,
 but the Vue community is great, and new translations continue to be submitted.
@@ -16,6 +16,7 @@ Vue Formulate currently supports these languages:
 - 🇫🇷 French (fr)
 - 🇮🇹 Italian (it)
 - 🇯🇵 Japanese (ja)
+- 🇰🇷 Korean (ko)
 - 🇧🇷 Portuguese (pt)
 
 When using a right-to-left language like Arabic with the default [snow theme](/guide/theming/#default-theme)

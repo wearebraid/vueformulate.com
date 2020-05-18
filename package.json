@@ -11,8 +11,9 @@
     "build": "NODE_ENV=production vuepress build docs"
   },
   "dependencies": {
-    "@braid/vue-formulate": "^2.2.13",
+    "@braid/vue-formulate": "^2.3.0",
     "axios": "^0.19.2",
+    "v-tooltip": "^2.0.3",
     "vue-clickaway": "^2.2.2",
     "vue-github-button": "^1.1.2",
     "vuepress-plugin-autometa": "^0.1.13"

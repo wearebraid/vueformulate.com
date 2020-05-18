@@ -4,6 +4,32 @@ sidebar: auto
 
 # Changelog
 
+## v2.3.0 — May 18, 2020
+
+Vue Formulate `2.3.0` is a significant update that re-structure several internal
+APIs and provides a slew of new features 🎉. There should be no breaking changes
+with `2.2.x`.
+
+- Adds [new input type](/guide/inputs/types/group/) `group`!
+  - Structure groups of data in you form model.
+  - Validate a set of fields as a single rule.
+  - Repeat groups of fields.
+- Improves accessibility by including `aria-describedby` attribute on inputs when help text is supplied.
+- Adds [new named form methods](/guide/forms/#named-forms) `reset`, `resetValidation`, `setValues`.
+- Adds support for [stopping validation](/guide/validation/#stopping-validation) rules when they fail.
+  - The new `bail` rule will stop validation if any rules fail after it.
+  - You can now apply a modifier `^` to any rule name `^required` to stop validation if that specific rule fails.
+- The `matches` rule now supports regular expressions when using string validation syntax (some caveats).
+- Fixes a bug where fields removed from a form did not take their data with them.
+- Adds a new `error-behavior` type `submit` to only show errors when a form is submitted.
+- Adds extensive support for [slots](/guide/inputs/slots/).
+  - Adds `label`, `help`, `default`, `element`, and `errors` slots to every input type.
+  - Adds the ability to override the default "slot components" for all available slots to make global changes.
+- Adds new `@validation` and `@error-visibility` events to inputs.
+- Adds new `@validation` event to forms.
+- Adds Korean language 🇰🇷.
+- Updates `vue-test-utils` to version 1, updating all deprecated tests methods.
+
 ## v2.2.13 - May 4, 2020
 
 - Small fix for sliders on Mozilla (Firefox) browsers.
