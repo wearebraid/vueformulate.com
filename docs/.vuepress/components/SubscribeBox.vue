@@ -68,6 +68,11 @@
                     id="mce-EMAIL"
                   />
                 </div>
+                <div class="mc-field-group input-group" style="display: none;">
+                  <ul>
+                    <li><input type="checkbox" checked value="1" name="group[7216][1]" id="mce-group[7216]-7216-0"><label for="mce-group[7216]-7216-0">Vue Formulate</label></li>
+                  </ul>
+                </div>
                 <div id="mce-responses" class="clear">
                   <div class="response" id="mce-error-response" style="display:none"></div>
                   <div class="response" id="mce-success-response" style="display:none"></div>
