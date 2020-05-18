@@ -3,6 +3,9 @@ sidebar: auto
 ---
 
 # Changelog
+## v2.3.1 — May 18, 2020
+
+- Fixes an issue that caused labels to occasionally disconnect from their `box` input when used in SSR in conjunction with a `group` input.
 
 ## v2.3.0 — May 18, 2020
 
