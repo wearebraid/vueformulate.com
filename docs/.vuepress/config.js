@@ -144,6 +144,10 @@ module.exports = ctx => ({
         twitter: 'wearebraid',
       },
       canonical_base: 'https://vueformulate.com',
+    }],
+    ['sitemap', {
+      hostname: 'https://vueformulate.com',
+      exclude: ['/404.html']
     }]
   ],
   dest: 'public'
