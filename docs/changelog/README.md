@@ -6,7 +6,7 @@ sidebar: auto
 
 ## v2.3.0 — May 18, 2020
 
-Vue Formulate `2.3.0` is a significant update that re-structure several internal
+Vue Formulate `2.3.0` is a significant update that re-structures several internal
 APIs and provides a slew of new features 🎉. There should be no breaking changes
 with `2.2.x`.
 
