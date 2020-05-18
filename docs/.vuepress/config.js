@@ -3,7 +3,7 @@ module.exports = ctx => ({
   description: 'The easiest way to build forms with Vue. Built-in validation, error handling, repeatable fields, form generation & more — make complex form creation a breeze.',
   head: [
     ['link', { rel: "apple-touch-icon", sizes: "180x180", href: "https://vueformulate.com/assets/favicon/apple-touch-icon.png"}],
-    ['meta', { name: 'twitter:image', content: 'https://vueformulate.com/assets/img/og.png' }],
+    ['meta', { name: 'twitter:image', content: 'https://vueformulate.com/assets/img/og.jpg' }],
     ['meta', { property: 'og:image', content: 'https://vueformulate.com/assets/img/og.jpg' }],
     ['meta', { property: 'og:description', content: 'The easiest way to build forms with Vue. Built-in validation, error handling, repeatable fields, form generation & more — make complex form creation a breeze.' }],
     ['meta', { name: 'description', content: 'The easiest way to build forms with Vue. Built-in validation, error handling, repeatable fields, form generation & more — make complex form creation a breeze.' }],
