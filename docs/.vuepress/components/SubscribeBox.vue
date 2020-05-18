@@ -122,7 +122,7 @@
             <li class="twitter-profile">
               <span>Andrew Boyd - Core Maintainer: </span>
               <a
-                href="https://twitter.com/boyd_dot_dev?ref_src=twsrc%5Etfw"
+                href="https://twitter.com/BoydDotDev?ref_src=twsrc%5Etfw"
                 class="twitter-follow-button"
                 data-show-count="false"
               />
