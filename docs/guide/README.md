@@ -20,7 +20,7 @@ With Vue Formulate developers are empowered to:
 ✓ [Group fields](/guide/inputs/types/group/) into custom data structures<br>
 ✓ [Repeat grouped fields](/guide/inputs/types/group/#repeatable-groups) for complex UIs<br>
 ✓ Perform robust [form validation](/guide/validation)<br>
-✓ Crate [custom validation](/guide/validation/#custom-validation-rules) rules<br>
+✓ Create [custom validation](/guide/validation/#custom-validation-rules) rules<br>
 ✓ Modify default [validation messages](/guide/validation/#customize-validation-messages)<br>
 ✓ Create and share [custom inputs](/guide/custom-inputs)<br>
 ✓ Override default component templates with [scoped slots](/guide/inputs/slots)<br>
