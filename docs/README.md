@@ -62,10 +62,57 @@ Try changing `type="radio"` to `checkbox` or `select` in this demo.
 />
 ```
 
-### Model your entire form with one object
-Effortlessly ensure all fields have validated and `v-model` field values to a
-single object — including [grouped](/guide/inputs/types/group/) and
-[repeatable](/guide/inputs/types/group/#repeatable-groups) items.
+### Model an entire form in one object
+Effortlessly ensure all fields have validated and even `v-model` field values
+to a single object.
+
+```vue live
+<template>
+  <FormulateForm
+    v-model="values"
+    @submit="handleLogin"
+  >
+    <h2>Login</h2>
+    <FormulateInput
+      type="text"
+      name="email"
+      label="Email address"
+      validation="required|email"
+    />
+    <FormulateInput
+      type="text"
+      name="password"
+      label="Password"
+      validation="required"
+    />
+    <FormulateInput
+      name="terms"
+      type="checkbox"
+      label="I accept, just dont make me read the terms."
+      validation="accepted"
+    />
+    <FormulateInput
+      type="submit"
+      label="Login"
+    />
+    <pre>{{ values }}</pre>
+  </FormulateForm>
+</template>
+
+<script>
+export default {
+  data () {
+    return { values: {}, handleLogin: () => alert('Logged in') }
+  }
+}
+</script>
+```
+
+
+### Quickly implement complex repeatable fields
+Add [grouped](/guide/inputs/types/group/) and [repeatable](/guide/inputs/types/group/#repeatable-groups)
+fields without the complexity.
+
 ```vue live
 <template>
   <!-- some code condensed for display reasons -->
