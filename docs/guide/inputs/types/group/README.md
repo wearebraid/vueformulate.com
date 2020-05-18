@@ -62,7 +62,8 @@ destructuring the array inside [a form](/guide/forms/) `submit` handler.
 
 By setting the `repeatable` prop to `true` anything inside our group becomes
 infinitely repeatable including non-formulate elements. An "add more" button is
-also added, along with a remove button for each item.
+also added, along with a remove button for each item.  A `repeatable` group can
+be further customized with special [props](#props) and [slots](#slots).
 
 ::: details View source code
 ```vue
@@ -179,9 +180,6 @@ code {
 :::
 
 <demo-group-repeatable />
-
-A `repeatable` group can be further customized with both [props](#props)
-and [slots](#slots).
 
 ### Validation
 
@@ -376,8 +374,8 @@ The group field has a few unique props:
 Prop           | Description
 ---------------|----------------------------------------------------------------
 `add-label`    | When repeatable, this is the label to display on the "+ Add" button (defaults to `label || name`).
-`repeatable`   | `Boolean` indicates if the field is repeatable.
 `limit`        | When repeatable, this is the maximum number of group items.
+`repeatable`   | `Boolean` indicates if the field is repeatable.
 
 ## Slots
 
@@ -385,7 +383,8 @@ The group field has several unique slots:
 
 Slot name      | Description
 ---------------|----------------------------------------------------------------
+`addmore`      | The add more button when `repeatable`.<br>_The context object in this slot includes an `addMore` function that should be called to add new items._
 `default`      | Anything in the default slot will be considered part of the group, and become `repeatable` if applicable. _The context object will additionally have an "index" property._
 `grouping`     | The primary repeatable area, responsible for rendering the inner content.
-`addmore`      | The add more button when `repeatable`.<br>_The context object in this slot includes an `addMore` function that should be called to add new items._
+`remove`       | The remove button when `repeatable`.<br>_The context object in this slot includes a `removeItem` function that should be called to remove that item._
 `repeatable`   | Responsible for rendering each row of fields.<br>_The context object in this slot includes a `removeItem` function that should be called to remove that item._

@@ -2,20 +2,20 @@
 
 The text [classification](/inputs/) is given to the following types:
 
-- [text](#text)
-- [email](#email)
-- [number](#number)
 - [color](#color)
 - [date](#date)
+- [datetime-local](#datetime-local)
+- [email](#email)
 - [hidden](#hidden)
 - [month](#month)
+- [number](#number)
 - [password](#password)
 - [search](#search)
 - [tel](#tel)
 - [time](#time)
+- [text](#text)
 - [url](#url)
 - [week](#week)
-- [datetime-local](#datetime-local)
 
 ::: warning Important
 These inputs are all standard HTML inputs, and while we encourage their use for
@@ -24,62 +24,6 @@ all browsers. Consider using a polyfill, [plugin](/guide/plugins/), or [custom i
 on a type-by-type basis.
 :::
 
-## Text
-
-```vue
-<FormulateInput
-  type="text"
-  name="sample"
-  label="Sample text input"
-  placeholder="Sample placeholder"
-  help="Sample help text"
-  validation="required"
-  error-behavior="live"
-/>
-```
-
-<demo-input-text />
-
-## Email
-
-```vue
-<FormulateInput
-  type="email"
-  name="sample"
-  label="Sample email input"
-  placeholder="Sample email placeholder"
-  help="Sample email help text"
-  validation="required|email"
-  error-behavior="live"
-/>
-```
-
-<demo-input-email />
-
-## Number
-
-```vue
-<FormulateInput
-  type="number"
-  name="sample"
-  label="Sample number input"
-  placeholder="Sample number placeholder"
-  help="Sample number help text"
-  validation="required|number|between:10,20"
-  min="0"
-  max="100"
-  error-behavior="live"
-/>
-```
-
-<demo-input-number />
-
-:::tip Accessibility tip
-It [may be preferable](https://technology.blog.gov.uk/2020/02/24/why-the-gov-uk-design-system-team-changed-the-input-type-for-numbers/)
-to use a `text` input rather than a number input for accessibility reasons. You
-can use the `inputmode="numeric"` and `pattern="[0-9]*"` attributes to force a
-number keypad for mobile users.
-:::
 
 ## Color
 
@@ -116,14 +60,50 @@ number keypad for mobile users.
 
 <demo-input-date />
 
+## Datetime-local
+
+```vue
+<FormulateInput
+  type="datetime-local"
+  name="sample"
+  label="Sample datetime-local input"
+  placeholder="Sample datetime-local placeholder"
+  help="Sample datetime-local help text"
+  validation="required"
+/>
+```
+
+<demo-input-datetime-local />
+
+:::warning Warning
+Please note that the datetime-local HTML input element has questionable support
+at the moment due to the lack of Firefox support.
+:::
+
+## Email
+
+```vue
+<FormulateInput
+  type="email"
+  name="sample"
+  label="Sample email input"
+  placeholder="Sample email placeholder"
+  help="Sample email help text"
+  validation="required|email"
+  error-behavior="live"
+/>
+```
+
+<demo-input-email />
+
 ## Hidden
 
 While technically Vue Formulate does support hidden input fields, the use case
 is pretty minimal since you can easily inject your own "hidden" values into
 submitted data with your a [form submission](/guide/forms).
 
-## Month
 
+## Month
 
 ```vue
 <FormulateInput
@@ -140,6 +120,31 @@ submitted data with your a [form submission](/guide/forms).
 ```
 
 <demo-input-month />
+
+## Number
+
+```vue
+<FormulateInput
+  type="number"
+  name="sample"
+  label="Sample number input"
+  placeholder="Sample number placeholder"
+  help="Sample number help text"
+  validation="required|number|between:10,20"
+  min="0"
+  max="100"
+  error-behavior="live"
+/>
+```
+
+<demo-input-number />
+
+:::tip Accessibility tip
+It [may be preferable](https://technology.blog.gov.uk/2020/02/24/why-the-gov-uk-design-system-team-changed-the-input-type-for-numbers/)
+to use a `text` input rather than a number input for accessibility reasons. You
+can use the `inputmode="numeric"` and `pattern="[0-9]*"` attributes to force a
+number keypad for mobile users.
+:::
 
 ## Password
 
@@ -207,6 +212,22 @@ validation rule.
 
 <demo-input-time />
 
+## Text
+
+```vue
+<FormulateInput
+  type="text"
+  name="sample"
+  label="Sample text input"
+  placeholder="Sample placeholder"
+  help="Sample help text"
+  validation="required"
+  error-behavior="live"
+/>
+```
+
+<demo-input-text />
+
 ## Url
 
 ```vue
@@ -242,23 +263,3 @@ Please note that the week HTML input element has particularly poor support
 at the moment due to the lack of iOS support.
 :::
 
-
-## Datetime-local
-
-```vue
-<FormulateInput
-  type="datetime-local"
-  name="sample"
-  label="Sample datetime-local input"
-  placeholder="Sample datetime-local placeholder"
-  help="Sample datetime-local help text"
-  validation="required"
-/>
-```
-
-<demo-input-datetime-local />
-
-:::warning Warning
-Please note that the datetime-local HTML input element has questionable support
-at the moment due to the lack of Firefox support.
-:::

@@ -9,16 +9,18 @@ the functionality you need — you can create input types of your own.
 A core concept in Vue Formulate is the ability for developers to _compose_ their
 forms using a dead-simple API with a single component. True to that goal, when
 developing a custom input you want to maintain that same ease of composition
-by create your own `type` of `FormulateInput`, ensuring the way you build forms
-and fields stays consistent even when using custom inputs.
+by create your own `type` of `FormulateInput`, ensuring the way forms and fields
+are created stays consistent even when using custom inputs.
 
 This is notably different than many Vue libraries that make heavy use of scoped
-slots as the primary mechanism of extension. Vue Formulate has robust support
-for [scoped slots](/guide/inputs/slots/), but these should be used more
+slots as the primary mechanism of extension. Vue Formulate also has robust
+support for [scoped slots](/guide/inputs/slots/), but these should be used more
 for the occasional override rather than the customization of the entire utility.
 A tell-tale sign that you could implement this principle better is if you find
 yourself doing a lot of copy-paste of scoped slots, or wrapping `FormulateInput`
-in wrapper components.
+in wrapper components. If these patterns are creeping into your code consider
+using [“Slot Components”](/guide/inputs/slots/#slot-components) or creating a
+custom inputs.
 
 ## Structure of an input
 

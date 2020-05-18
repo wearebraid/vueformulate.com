@@ -7,8 +7,8 @@ sidebar: auto
 ## v2.3.0
 
 Vue Formulate `2.3.0` is a significant update that re-structure several internal
-APIs and provides a slew of new features 🎉, but still maintains full
-compatibility with `2.2.x`.
+APIs and provides a slew of new features 🎉. There should be no breaking changes
+with `2.2.x`.
 
 - Adds [new input type](/guide/inputs/types/group/) `group`!
   - Structure groups of data in you form model.

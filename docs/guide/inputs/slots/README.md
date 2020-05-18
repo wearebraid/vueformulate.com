@@ -25,13 +25,13 @@ Slot name      | Description
 `errors`       | The errors that are displayed for a given input. Defaults to a `FormulateErrors` component.
 `default`      | The `default` slot is already reserved for use as a pass-through on the `element` slot. Some input types leverage this, like [buttons](/guide/inputs/types/button/) and [groups](/guide/inputs/types/group/).
 
-![FormulateInput internal structure](../custom-inputs/structure.svg)
-
 :::tip Addition slots
 Inputs can expose additional slots. The [group](/guide/inputs/types/group/) input
 type does this, refer to [that documentation](/guide/inputs/types/group/) page
 for more details.
 :::
+
+![FormulateInput internal structure](../custom-inputs/structure.svg)
 
 ## Scoped slots
 
