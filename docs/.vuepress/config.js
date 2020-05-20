@@ -140,10 +140,11 @@ module.exports = ctx => ({
     ],
     [ 'autometa', {
       site: {
-        name   : 'Vue Formulate',
+        name: 'Vue Formulate',
         twitter: 'wearebraid',
       },
       canonical_base: 'https://vueformulate.com',
+      image: false
     }],
     ['sitemap', {
       hostname: 'https://vueformulate.com',
