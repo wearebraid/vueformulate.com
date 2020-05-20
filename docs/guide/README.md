@@ -227,7 +227,7 @@ While Vue Formulate is a powerful tool for building, validating, and handling er
 on forms — there are some things this package does not aim to do:
 
   1. This is not a UI framework or a _layout_ tool. Want inputs next to each
-    other? Cool! Wap some inputs in a `<div>` and sprinkle on some `flexbox`.
+    other? Cool! Wrap some inputs in a `<div>` and sprinkle on some `flexbox`.
     This package assumes you'll still be responsible for your form layout.
   2. This package is BYOB — bring your own backend. Vue Formulate doesn't care
     a lick about the backend you choose (the closest it gets to caring is when
