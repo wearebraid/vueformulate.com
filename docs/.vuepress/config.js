@@ -1,12 +1,11 @@
+const description = 'The easiest way to build forms with Vue. Built-in validation, error handling, repeatable fields, form generation & more — make complex form creation a breeze.'
+const title = 'Vue Formulate'
+
 module.exports = ctx => ({
-  title: 'Vue Formulate',
-  description: 'The easiest way to build forms with Vue. Built-in validation, error handling, repeatable fields, form generation & more — make complex form creation a breeze.',
+  title,
+  description,
   head: [
     ['link', { rel: "apple-touch-icon", sizes: "180x180", href: "https://vueformulate.com/assets/favicon/apple-touch-icon.png"}],
-    ['meta', { name: 'twitter:image', content: 'https://vueformulate.com/assets/img/og.jpg' }],
-    ['meta', { property: 'og:image', content: 'https://vueformulate.com/assets/img/og.jpg' }],
-    ['meta', { property: 'og:description', content: 'The easiest way to build forms with Vue. Built-in validation, error handling, repeatable fields, form generation & more — make complex form creation a breeze.' }],
-    ['meta', { name: 'description', content: 'The easiest way to build forms with Vue. Built-in validation, error handling, repeatable fields, form generation & more — make complex form creation a breeze.' }],
     ['script', { src: 'https://polyfill.io/v3/polyfill.min.js?features=es2015%2CFunction.name' }]
   ],
   port: 8123,
@@ -138,17 +137,18 @@ module.exports = ctx => ({
         'ga': 'UA-107296601-3' // UA-00000000-0
       }
     ],
-    [ 'autometa', {
-      site: {
-        name: 'Vue Formulate',
-        twitter: 'wearebraid',
-      },
-      canonical_base: 'https://vueformulate.com',
-      image: false
-    }],
-    ['sitemap', {
-      hostname: 'https://vueformulate.com',
-      exclude: ['/404.html']
+    ['seo', {
+      title: $page => `${$page.title} — Vue Formulate`,
+      image: () => 'https://vueformulate.com/assets/img/og.jpg',
+      siteTitle: (_, $site) => $site.title,
+      description: $page => $page.frontmatter.description || description,
+      author: (_, $site) => $site.themeConfig.author,
+      tags: $page => $page.frontmatter.tags,
+      twitterCard: _ => 'summary_large_image',
+      type: () => 'article',
+      url: (_, $site, path) => ($site.themeConfig.domain || '') + path,
+      publishedAt: $page => $page.frontmatter.date && new Date($page.frontmatter.date),
+      modifiedAt: $page => $page.lastUpdated && new Date($page.lastUpdated),
     }]
   ],
   dest: 'public'
