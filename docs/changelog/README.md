@@ -3,6 +3,11 @@ sidebar: auto
 ---
 
 # Changelog
+
+## v2.3.2 - May 20, 2020
+
+- Adds support for Russian language 🇷🇺.
+
 ## v2.3.1 — May 18, 2020
 
 - Fixes an issue that caused labels to occasionally disconnect from their `box` input when used in SSR in conjunction with a `group` input.

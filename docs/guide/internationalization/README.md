@@ -18,6 +18,7 @@ Vue Formulate currently supports these languages:
 - 🇯🇵 Japanese (ja)
 - 🇰🇷 Korean (ko)
 - 🇧🇷 Portuguese (pt)
+- 🇷🇺 Russian (ru)
 
 When using a right-to-left language like Arabic with the default [snow theme](/guide/theming/#default-theme)
 it may be necessary to modify the `direction` css property in your project.
