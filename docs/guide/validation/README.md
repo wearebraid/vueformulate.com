@@ -84,7 +84,7 @@ encountering any failures in any subsequent rules.
 
 Often it is desirable to only bail if a specific rule fails. For example, you
 may want to only show the `required` error message if a password field is empty,
-but when it has a value you would like to all the failing validation rules. To
+but when it has a value you would like to show all the failing validation rules. To
 do this we can use the `^` modifier on the rule name.
 
 ```vue
