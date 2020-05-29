@@ -8,6 +8,13 @@ These localizations are collected in the `@braid/vue-formulate-i18n` package.
 
 Vue Formulate currently supports these languages:
 
+:::tip Locales
+The flags in the following list indicate the country of origin for that
+translation. Language locales are also supported, for example
+🇺🇸 `en-US` vs 🇬🇧 `en-GB`. If you’d like your locale represented, please submit
+a PR following the [contribution guide](/guide/contributing/#internationalization).
+:::
+
 - 🇪🇬 Arabic (ar)
 - 🇩🇰 Danish (da)
 - 🇳🇱 Dutch (nl)
@@ -19,6 +26,7 @@ Vue Formulate currently supports these languages:
 - 🇰🇷 Korean (ko)
 - 🇧🇷 Portuguese (pt)
 - 🇷🇺 Russian (ru)
+- 🇨🇺 Spanish (es)
 
 When using a right-to-left language like Arabic with the default [snow theme](/guide/theming/#default-theme)
 it may be necessary to modify the `direction` css property in your project.

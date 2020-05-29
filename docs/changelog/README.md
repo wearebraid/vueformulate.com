@@ -6,6 +6,10 @@ sidebar: auto
 
 ## v2.3.2 - May 20, 2020
 
+- Adds support for Spanish language 🇨🇺.
+
+## v2.3.2 - May 20, 2020
+
 - Adds support for Russian language 🇷🇺.
 
 ## v2.3.1 — May 18, 2020
