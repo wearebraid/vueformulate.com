@@ -4,7 +4,15 @@ sidebar: auto
 
 # Changelog
 
-## v2.3.2 - May 20, 2020
+## v2.3.5 - June 2, 2020
+
+- Adds `rootEmit` to the context object to allow custom inputs to trigger events.
+- Adds `data-has-value` attribute to root wrapper when inputs have values.
+- Adds `hasValue` attribute to the context object.
+- Fixes a css bug causing `box` inputs to have their internal box visible on super wide screens.
+- Adds polish diacritic characters to `alpha` and `alphanumeric` rules.
+
+## v2.3.3 - May 20, 2020
 
 - Adds support for Spanish language 🇨🇺.
 
