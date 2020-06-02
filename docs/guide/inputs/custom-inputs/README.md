@@ -63,7 +63,7 @@ our example autocomplete would fit well under the `text` classification.
 
 The input component, on the other hand, is a Vue component that is passed a
 [`context` object](/guide/inputs/#context-object) prop (the [context object](/guide/inputs/#context-object)
-is responsible nearly all of the component’s functionality — it’s a good
+is responsible for nearly all of the component’s functionality — it’s a good
 idea to familiarize yourself with it). This custom component can be used for
 entirely new input systems, business logic, or custom UI.
 
