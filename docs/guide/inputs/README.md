@@ -218,7 +218,7 @@ Property        | Description
 `model`         | The value of the current field, bound to a setter.
 `name`          | The name of the field, if none is set, it auto-generates a name.
 `options`       | The `options` prop converted to an array (when applicable).
-`performValidation` | Function that will run validation. this is executed on every input even already.
+`performValidation` | Function that will run validation. This is executed on every input automatically.
 `preventWindowDrops` | `true` by default, this prevents the browser from navigating to a file when the user misses the dropzone.
 `repeatable`    | `Boolean` indicating if a field is repeatable or not.
 `rootEmit`      | `Function` identical to `$emit`, but should be used in custom inputs and slots to emit events from the root `<FormulateInput>`.
