@@ -70,7 +70,7 @@ tooltip we used in the above example. You could certainly do that with scoped
 slots, but it would require a ton of copy and paste or wrapping every
 `FormulateInput` —  both poor choices. Using “slot components” you can override the
 default value of any of the [available slots](#available-slots) with your own
-component. Slot components are passed the [context object](#context-object) as a
+component. Slot components are passed the [context object](/guide/inputs/#context-object) as a
 prop.
 
 ### Global slot components
@@ -123,47 +123,6 @@ Vue.use(VueFormulate, {
 ## Context object
 
 All 3 methods of creating and customizing inputs operate by using
-the same `context` object. This object has a full awareness of nearly every
+[the same `context` object](/guide/inputs/#context-object). This object has a full awareness of nearly every
 aspect of the input, the input’s model and even other inputs in the same
-`FormulateForm` (if applicable):
-
-Property        | Description
-----------------|---------------------------------------------------------------
-`addLabel`      | The label to display inside "add more" button on `group` inputs.
-`attributes`    | An object of non-prop attributes passed to the input like `placeholder`
-`blurHandler`   | Function that must be called when an input blurs.
-`classification`| The classification of the input.
-`disableErrors` | `Boolean` indicating if errors should be _displayed_ for this field (defaults to `false`).
-`errors`        | Errors set via the form [error handling](/guide/forms/error-handling/) or directly on the input itself via `error` or `errors` props. Does not include validation errors.
-`hasLabel`      | `Boolean` indicating if the field has a label prop, `button` classification is always `false`.
-`hasValidationErrors` | Function, returns a `Promise` that resolves to a `Boolean`.
-`help`          | The `help` prop value (help text)
-`helpPosition`  | The position of the help text, `before` or `after` the element wrapper. Defaults to `before`.
-`getValidationErrors` | Function, returns a `Promise` that resolves to an array of validation error objects.
-`id`            | The id prop or an auto-generated id.
-`imageBehavior` | The value of the `image-behavior` prop. Defaults to `preview`.
-`isSubField`    | A function that returns a `boolean` indicating if it is a descendant of a `group` type.
-`label`         | The value of the `label` prop.
-`labelPosition` | The position of the label, `before` or `after`. Default is `before` for all except `box` classified inputs. Can be overridden with `label-position` prop.
-`limit`         | For a `group` type, this is the is the maximum number of repeatable items allowed (default is `Infinity`).
-`model`         | The value of the current field, bound to a setter.
-`name`          | The name of the field, if none is set, it auto-generates a name.
-`options`       | The `options` prop converted to an array (when applicable).
-`performValidation` | Function that will run validation. this is executed on every input even already.
-`preventWindowDrops` | `true` by default, this prevents the browser from navigating to a file when the user misses the dropzone.
-`setErrors`     | Function to set (or clear) the current `errors` (not validation errors).
-`showValidationErrors` | `Boolean`, true if the validation errors should be displayed.
-`type`          | The type of input.
-`uploadBehavior` | The `upload-behavior` prop, `live` or `delayed`.
-`uploader`      | [Uploader function](/guide/inputs/types/file/#uploader). `uploader` prop, `axios`, or `uploader` defined when initializing.
-`uploadUrl`     | The `upload-url` prop, or the `uploadUrl` defined when initializing.
-`validationErrors` | An `array` of the current validation errors irregardless of their visibility.
-`value`         | The `value` prop, not the current value of the field. This is the exact value passed into the `value` prop, usually used to set the initial value of the field.
-`visibleValidationErrors` | `Array` of the current validation errors being displayed.
-
-
-::: warning
-If you inspect the context object, you may find additional properties not listed
-in the table above. Using these is discouraged since they are not considered
-available for public consumption and may change between minor versions.
-:::
+`FormulateForm` (if applicable). [View the context object →](/guide/inputs/#context-object)
