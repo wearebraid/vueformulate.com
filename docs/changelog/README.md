@@ -11,6 +11,7 @@ sidebar: auto
 - Adds `hasValue` attribute to the context object.
 - Fixes a css bug causing `box` inputs to have their internal box visible on super wide screens.
 - Adds polish diacritic characters to `alpha` and `alphanumeric` rules.
+- Fixes a bug that caused `data-is-showing-errors` to sometimes indicate a false positive.
 
 ## v2.3.3 - May 20, 2020
 
