@@ -4,7 +4,7 @@ sidebar: auto
 
 # Changelog
 
-## v2.3.5 - June 2, 2020
+## v2.3.4- June 2, 2020
 
 - Adds `rootEmit` to the context object to allow custom inputs to trigger events.
 - Adds `data-has-value` attribute to root wrapper when inputs have values.
