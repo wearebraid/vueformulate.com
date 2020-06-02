@@ -56,9 +56,7 @@ Vue.use(VueFormulate, {
 
 For even more power, you can override the `getClasses` option with you own
 function. This function is responsible for providing all the default classes
-for every class key.
-
--- getClasses --
+for every class key. It allows you to tease out additional nuance.
 
 ### Changing classes on inputs
 
