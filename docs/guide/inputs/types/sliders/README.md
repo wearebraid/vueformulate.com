@@ -26,3 +26,12 @@ is not displayed by default. By adding the prop `show-value`, Vue
 Formulate will expose the value of the range input next to the slider.
 
 <demo-input-range-value />
+
+## Custom class keys
+
+In addition to all [global class keys](/guide/theming/#customizing-classes)
+following are available:
+
+Key             | Default                          | Description
+----------------|----------------------------------|---------------------------------------------------
+`rangeValue`         | `.formulate-input-range-value`   | A element immediately after the `<input>` element containing the value of the range input. Only available when `show-value` is true.

@@ -388,3 +388,16 @@ Slot name      | Description
 `grouping`     | The primary repeatable area, responsible for rendering the inner content.
 `remove`       | The remove button when `repeatable`.<br>_The context object in this slot includes a `removeItem` function that should be called to remove that item._
 `repeatable`   | Responsible for rendering each row of fields.<br>_The context object in this slot includes a `removeItem` function that should be called to remove that item._
+
+## Custom class keys
+
+In addition to all [global class keys](/guide/theming/#customizing-classes)
+following are available:
+
+Key             | Default                          | Description
+----------------|----------------------------------|---------------------------------------------------
+`group`         | `.formulate-input-group`         | A wrapper around the content of a group field.
+`grouping`      | `.formulate-input-grouping`      | A wrapper around all repeatable fields (only exists when repeatable)
+`repeatable`    | `.formulate-input-group-repeatable` | A wrapper around each set of grouped fields (exists even for non-repeatable groups).
+`groupRemove`   | `.formulate-input-group-repeatable-remove` | The remove button for a field group.
+`addMore`       | `.formulate-input-group-add-more` | The wrapper around the add more button for repeatable groups.

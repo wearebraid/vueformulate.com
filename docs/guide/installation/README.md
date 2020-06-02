@@ -42,10 +42,9 @@ import VueFormulate from '@braid/vue-formulate'
 Vue.use(VueFormulate)
 ```
 
-::: warning
-When loading Vue Formulate from the minified version or using a commonJS module
-environment (think `require()`) it may be necessary to use `VueFormulate.default`
-when registering with Vue:
+::: tip
+When loading Vue Formulate as a commonJS module (think `require()`) it may be
+necessary to use `VueFormulate.default` when registering with Vue:
 
 ```js
 const VueFormulate = require('@braid/vue-formulate')
@@ -61,6 +60,12 @@ an object of configuration options.
 ```js
 Vue.use(VueFormulate, options)
 ```
+
+## Add styles
+
+If you’d like to use the default theme (the one used in these docs) you can
+[easily include that css on your page](/guide/theming/#default-theme). Vue
+Formulate is easy to [theme on your own](/guide/theming/#custom-theme).
 
 ## IE11 Support
 
