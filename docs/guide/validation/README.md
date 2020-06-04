@@ -281,7 +281,7 @@ If you’d like the rule to use a different field as the confirmation, simply pa
 the other field name as an argument `confirm:other_field`.
 
 :::tip Note
-This rule only works inside the context of a `<FormulateForm>`.
+This rule only works inside the context of a `<FormulateForm>` or a `group` type.
 :::
 
 ```vue
