@@ -4,6 +4,10 @@ sidebar: auto
 
 # Changelog
 
+## v2.3.6 - June 4, 2020
+
+- Fixes a bug that caused `formValues` in custom validation messages to be corrupted.
+
 ## v2.3.5 - June 4, 2020
 
 - Adds automatic dependency tracking to validation rules that access other form values.
