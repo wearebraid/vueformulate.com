@@ -60,7 +60,7 @@ When using the array syntax, make sure your prop is bound with
 `v-bind:validation` or the shorthand `:validation`.
 :::
 
-### Stopping validation
+## Stopping validation
 
 #### The `bail` rule
 
@@ -112,6 +112,7 @@ own [custom rule](#custom-validation-rules) to suit your needs.
 - [after](#after)
 - [alpha](#alpha)
 - [alphanumeric](#alphanumeric)
+- [bail](#bail)
 - [before](#before)
 - [between](#between)
 - [confirm](#confirm)
@@ -199,6 +200,12 @@ For the alphabetical portion you can pass `default` or `latin` - see
 />
 ```
 <demo-validation-alphanumeric />
+
+### Bail
+
+Used to logically stop validation on the first subsequent validation error.
+More detailed documentation on the bail rule is under the [Stopping validation
+section](#stopping-validation).
 
 ### Before
 Checks if a date comes before another date. If no date argument is provided
