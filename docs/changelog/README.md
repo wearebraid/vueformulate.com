@@ -4,7 +4,15 @@ sidebar: auto
 
 # Changelog
 
-## v2.3.5 - June 2, 2020
+## v2.3.5 - June 4, 2020
+
+- Adds automatic dependency tracking to validation rules that access other form values.
+
+**Example:** A validation rule that ensures `Field C` is equal to the sum of field `Field A` and `Field B`.
+
+The above validation rule would sum values of `A` and `B` and compare equality to `C`. Previously this worked when editing `C`, but if you updated `A` or `B` without touching `C` it would not re-run the validation on `C`. This resulted in bug-like behavior in validation rules like [`confirm`](/guide/validation/#confirm). This version ensures the dependencies of the rule are automatically tracked and validation is re-triggered on any dependent fields.
+
+## v2.3.4 - June 2, 2020
 
 - Adds `rootEmit` to the context object to allow custom inputs to trigger events.
 - Adds `data-has-value` attribute to root wrapper when inputs have values.
