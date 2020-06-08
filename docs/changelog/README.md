@@ -4,6 +4,10 @@ sidebar: auto
 
 # Changelog
 
+## v2.3.7 - June 7, 2020
+
+- Adds support for Hebrew language 🇮🇱.
+
 ## v2.3.6 - June 4, 2020
 
 - Fixes a bug that caused `formValues` in custom validation messages to be corrupted.
