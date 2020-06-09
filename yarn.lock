@@ -811,9 +811,9 @@
   integrity sha512-x36+lB2860xwMdUIT5Lw8Fk4ZfjqQO86VnFh1UI6BYeGtAp9X/lcl0SOeQx/ljfMEAxLjwF+dJ1+JAhNj4uzfg==
 
 "@braid/vue-formulate@^2.3.0":
-  version "2.3.7"
-  resolved "https://registry.yarnpkg.com/@braid/vue-formulate/-/vue-formulate-2.3.7.tgz#daf7985376ed096bb0308372ce86ceb30fb7782a"
-  integrity sha512-UHNPFvVDLfDB1qk7zfEfcqlTqDba0DnB4pvdJr4QzCgnpC10cmGPZi4zoUrYnRin4KSmjI0Wf7whcLzxaUD3Uw==
+  version "2.3.8"
+  resolved "https://registry.yarnpkg.com/@braid/vue-formulate/-/vue-formulate-2.3.8.tgz#7e27bebf4f9e1ea6eabc702cb241f6c7b1dae68c"
+  integrity sha512-zJKuLFF5IM55dHxlWBDUxaW5vU4qeiPzwAYMbnAO95gPNb9vHjAEfVGQLhXGpZ/C3Y7qFS18/q7aFhcfYrY/qg==
   dependencies:
     "@braid/vue-formulate-i18n" "^1.9.0"
     is-plain-object "^3.0.0"

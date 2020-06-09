@@ -4,6 +4,10 @@ sidebar: auto
 
 # Changelog
 
+## v2.3.8 - June 9, 2020
+
+- Fixes a bug that could cause two identical `@input` events to be fired from a `FormulateInput`.
+
 ## v2.3.7 - June 7, 2020
 
 - Adds support for Hebrew language 🇮🇱.
