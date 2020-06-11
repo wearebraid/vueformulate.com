@@ -72,7 +72,7 @@ of base classes generated using the global options.
 ```vue
 <FormulateInput
   label="The label is adding it’s own class"
-  :label-class="(context, classes) => ['my-custom-label-class'].concat(classes)"
+  :label-class="(context, classes) => ['my-label-class'].concat(classes)"
 />
 <!-- <label class="my-label-class formulate-input-label formulate-input-label--before" /> -->
 ```
@@ -81,7 +81,7 @@ of base classes generated using the global options.
 ### Changing classes globally
 
 To easily update which classes are applied to every `FormulateInput` by default
-you can update the `classes` option with an object of [class keys](#class-map).
+you can update the `classes` option with an object of [class keys](#class-keys).
 
 Similar to modifying classes with props the values in the `classes` option can
 be a `string`, `array`, or `function`. Strings overwrite any base classes,

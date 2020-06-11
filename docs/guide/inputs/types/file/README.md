@@ -334,3 +334,5 @@ Key             | Default                          | Description
 `fileImage`     | `.formulate-file-image-preview`  | For `image` types, the preview of the uploaded image.
 `fileProgress`  | `.formulate-file-progress`       | The outer wrapper for the progress bar.
 `fileProgressInner` | `.formulate-file-progress-inner` | The inner progress indicator. Width is automatically set as a percentage of upload completion.
+`fileUploadError` | `.formulate-file-upload-error` | The file upload error displayed for each incorrect file.
+`fileImagePreview` | `.formulate-file-image-preview` | The wrapper around the `img` preview.
