@@ -26,15 +26,52 @@ and inclusion.
 
 ## Customizing Classes
 
-There are 3 ways to change the classes applied throughout inputs:
+There are 4 ways to change the classes applied to DOM elements inside a
+`FormulateInput`:
 
-1. Globally change the `classes` or `getClasses` options.
-2. Use props on a `FormulateInput`.
-3. Override the DOM using [slots](/guide/inputs/slots/).
+1. Use props on a `FormulateInput`.
+2. Globally via the `classes` option.
+3. Globally via the `baseClasses` option.
+3. Manually override the DOM using [slots](/guide/inputs/slots/).
 
 In the first two cases, you can use a string to define what class(es) should be
 applied or you can use a function to define additional logic for which classes
 should be applied.
+
+### Changing classes with props.
+
+Replacing classes on a given input is easy. Simply target the [class key](#class-map)
+you’d like to replace with a prop named `[class key]-class`:
+
+```vue
+<FormulateInput
+  label="The label is using it’s own class"
+  label-class="my-label-class"
+/>
+<!-- <label class="my-label-class"> -->
+```
+When using string values any base classes will be replaced. To append your
+custom class to the base classes use an array.
+
+```vue
+<FormulateInput
+  label="The label is using it’s own class"
+  :label-class="[my-label-class]"
+/>
+<!-- <label class="formulate-input-label formulate-input-label--before my-label-class" /> -->
+```
+
+For the most fine grained control you can pass in a function. The function will
+receive 2 arguments, a [class context object](#class-context) and an array
+of base classes.
+
+```vue
+<FormulateInput
+  label="The label is adding it’s own class"
+  :label-class="(context, classes) => ['my-custom-label-class'].concat(classes)"
+/>
+<!-- <label class="my-label-class formulate-input-label formulate-input-label--before" /> -->
+```
 
 
 ### Changing classes globally
@@ -57,29 +94,6 @@ Vue.use(VueFormulate, {
 For even more power, you can override the `getClasses` option with you own
 function. This function is responsible for providing all the default classes
 for every class key. It allows you to tease out additional nuance.
-
-### Changing classes on inputs
-
-Replacing classes on a given input is easy. Simply target the [class key](#class-map)
-you’d like to overwrite with a prop named `[class key]-class`:
-
-```vue
-<FormulateInput
-  label="The label is using it’s own class"
-  label-class="my-custom-label-class"
-/>
-```
-
-When using string values any default classes will be replaced. To append to the
-existing classes (or resort, remove prepend, etc) you can use a function.
-Existing classes are passed into the function as an array.
-
-```vue
-<FormulateInput
-  label="The label is adding it’s own class"
-  :label-class="classes => classes.concat(['my-custom-label-class'])"
-/>
-```
 
 ### Class keys
 
@@ -107,6 +121,22 @@ pages:
 - [Sliders](/guide/inputs/types/slider/#custom-class-keys)
 - [Files](/guide/inputs/types/file/#custom-class-keys)
 - [Groups](/guide/inputs/types/group/#custom-class-keys)
+
+## Class context
+
+Global class functions and prop class functions both receive a “class context”
+with the following values:
+
+Property        | Description
+----------------|----------------------------------------------------------------
+hasValue        | `Boolean` whether or not the field has a value.
+hasValidationErrors | `Boolean` whether or not the field has validation errors (.
+helpPosition    | `String` describing the position of the help text. `before` or `after`.
+labelPosition   | `String` describing the position of the label. `before` or `after`.
+name            | The name of the field.
+type            | The `type` of input
+value           | The value of the input
+visibleValidationErrors | All visible validation errors
 
 ## Custom theme
 
