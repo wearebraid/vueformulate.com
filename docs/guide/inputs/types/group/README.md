@@ -396,8 +396,7 @@ following are available:
 
 Key             | Default                          | Description
 ----------------|----------------------------------|---------------------------------------------------
-`group`         | `.formulate-input-group`         | A wrapper around the content of a group field.
 `grouping`      | `.formulate-input-grouping`      | A wrapper around all repeatable fields (only exists when repeatable)
-`repeatable`    | `.formulate-input-group-repeatable` | A wrapper around each set of grouped fields (exists even for non-repeatable groups).
-`groupRemove`   | `.formulate-input-group-repeatable-remove` | The remove button for a field group.
-`addMore`       | `.formulate-input-group-add-more` | The wrapper around the add more button for repeatable groups.
+`groupRepeatable`    | `.formulate-input-group-repeatable` | A wrapper around each set of grouped fields (exists even for non-repeatable groups).
+`groupRepeatableRemove`   | `.formulate-input-group-repeatable-remove` | The remove button for a field group.
+`groupAddMore`       | `.formulate-input-group-add-more` | The wrapper around the add more button for repeatable groups.
