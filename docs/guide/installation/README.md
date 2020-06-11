@@ -53,6 +53,28 @@ Vue.use(VueFormulate.default)
 ```
 :::
 
+### Nuxt
+It's easy to use Vue Formulate on Nuxt too. [A working example is available.](https://codesandbox.io/s/vue-formulate-test-8segh?file=/components/Attending.vue)
+
+#### plugins/vue-formulate.js
+
+```js
+import Vue from 'vue'
+import VueFormulate from '@braid/vue-formulate'
+
+Vue.use(VueFormulate)
+```
+
+#### nuxt.config.js
+
+```js
+export default {
+  plugins: [
+     '~/plugins/vue-formulate',
+  ]
+  (...)
+```
+
 ## Configuration options
 
 If you need custom configuration options, you can pass a second argument with
