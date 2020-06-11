@@ -150,6 +150,19 @@ Vue Formulate ships with a fake uploader function that advances the progress
 bar but performs no requests. This is helpful for scaffolding and theming, but
 it must be replaced for uploads to work.
 
+If dont need uploading at all (you're processing elsewhere) you can disable
+the fake uploader by replacing it with a dummy function:
+
+```vue
+Vue.use(VueFormulate, {
+  uploader: function (file, progress) {
+    // optionally handle the `file` for your own purposes here...
+    progress(100)
+    return Promise.resolve({})
+  }
+})
+```
+
 ## Getting results
 
 When files are added to a file `type` in Vue Formulate the value is automatically

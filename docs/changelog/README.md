@@ -4,7 +4,35 @@ sidebar: auto
 
 # Changelog
 
-## v2.3.2 - May 20, 2020
+## v2.3.8 - June 9, 2020
+
+- Fixes a bug that could cause two identical `@input` events to be fired from a `FormulateInput`.
+
+## v2.3.7 - June 7, 2020
+
+- Adds support for Hebrew language 🇮🇱.
+
+## v2.3.6 - June 4, 2020
+
+- Fixes a bug that caused `formValues` in custom validation messages to be corrupted.
+
+## v2.3.5 - June 4, 2020
+
+- Adds automatic dependency tracking to validation rules that access other form values.
+
+**Example:** A validation rule that ensures `Field C` is equal to the sum of field `Field A` and `Field B`.
+
+The above validation rule would sum values of `A` and `B` and compare equality to `C`. Previously this worked when editing `C`, but if you updated `A` or `B` without touching `C` it would not re-run the validation on `C`. This resulted in bug-like behavior in validation rules like [`confirm`](/guide/validation/#confirm). This version ensures the dependencies of the rule are automatically tracked and validation is re-triggered on any dependent fields.
+
+## v2.3.4 - June 2, 2020
+
+- Adds `rootEmit` to the context object to allow custom inputs to trigger events.
+- Adds `data-has-value` attribute to root wrapper when inputs have values.
+- Adds `hasValue` attribute to the context object.
+- Fixes a css bug causing `box` inputs to have their internal box visible on super wide screens.
+- Adds polish diacritic characters to `alpha` and `alphanumeric` rules.
+
+## v2.3.3 - May 20, 2020
 
 - Adds support for Spanish language 🇨🇺.
 

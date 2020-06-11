@@ -61,15 +61,23 @@ our example autocomplete would fit well under the `text` classification.
 
 #### What is an input component?
 
-The input component, on the other hand, is a Vue component, that is passed a
-[`context` prop](#context) and is responsible for the input’s logic
-and presentation. This component can be used for entirely new input systems,
-business logic, or custom UI.
+The input component, on the other hand, is a Vue component that is passed a
+[`context` object](/guide/inputs/#context-object) prop (the [context object](/guide/inputs/#context-object)
+is responsible nearly all of the component’s functionality — it’s a good
+idea to familiarize yourself with it). This custom component can be used for
+entirely new input systems, business logic, or custom UI.
+
+#### The model
 
 If you want field validation, form aggregation, hydration and the other
 benefits of Vue Formulate there is only one requirement: the value of the field
 should be read from `context.model` and written to `context.model`. This is a
 special getter/setter property bound to the root `<FormulateInput />`.
+
+#### Custom events
+Your custom component can also emit events on the root `<FormulateInput>` by
+using `context.rootEmit()` exactly the same as you would use `$emit` on any
+other Vue component.
 
 :::details View example autocomplete source
 _File: MyFormulateAutocomplete.vue_
@@ -164,6 +172,7 @@ export default {
   }
 }
 </script>
+
 ```
 _Note: in the above example we wrap our `<template>` with a div containing some
 `.formulate-input-element` classes, this is not required, but is a good practice

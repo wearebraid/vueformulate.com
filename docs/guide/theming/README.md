@@ -198,3 +198,16 @@ can be used to style all text-based inputs at the same time:
   }
 }
 ```
+
+### Data attributes
+
+To make dynamic styling a bit easier, there are several utility data attributes
+that are applied to the outermost wrapper.
+
+Attribute                 | Description
+--------------------------|----------------------------------------------------------------
+`data-classification`     | Always available. Set to the classification of the input (`box`, `text`, `group` etc)
+`data-has-errors`         | Added when the field has any validation errors or explicit errors (passed in via prop or form) *regardless of whether or not the errors are being displayed*.
+`data-has-value`          | Added when the field is not empty.
+`data-is-showing-errors`  | Added when the field has errors and is showing them (based on `error-behavior`)
+`data-type`               | Always available. Set to the value of the `type` prop.

@@ -188,3 +188,53 @@ Event               | Description
 `@input`            | Emitted every time the value of the field changes. Typically this is used implicitly by using `v-model`.
 `@validation`       | Emitted anytime the state of validation changes for an input, irregardless of the visibility of the errors (`v2.3+`). [More details](/guide/validation/#validation-event)
 `@error-visibility` | Emitted when the visibility of the errors changes, for example, on blur or submit (`v2.3+`).
+
+## Context object
+
+All inputs contain a comprehensive context object that details nearly everything
+about the operation of the input. It is passed into all [custom inputs](/guide/inputs/custom-inputs/)
+and slots.
+
+Property        | Description
+----------------|---------------------------------------------------------------
+`addLabel`      | The label to display inside "add more" button on `group` inputs.
+`attributes`    | An object of non-prop attributes passed to the input like `placeholder`
+`blurHandler`   | Function that must be called when an input blurs.
+`classification`| The classification of the input.
+`disableErrors` | `Boolean` indicating if errors should be _displayed_ for this field (defaults to `false`).
+`errors`        | Errors set via the form [error handling](/guide/forms/error-handling/) or directly on the input itself via `error` or `errors` props. Does not include validation errors.
+`hasValue`      | `Boolean` indicates if the field has a valid value.
+`hasLabel`      | `Boolean` indicating if the field has a label prop, `button` classification is always `false`.
+`hasValidationErrors` | Function, returns a `Promise` that resolves to a `Boolean`.
+`help`          | The `help` prop value (help text)
+`helpPosition`  | The position of the help text, `before` or `after` the element wrapper. Defaults to `before`.
+`getValidationErrors` | Function, returns a `Promise` that resolves to an array of validation error objects.
+`id`            | The id prop or an auto-generated id.
+`imageBehavior` | The value of the `image-behavior` prop. Defaults to `preview`.
+`isSubField`    | A function that returns a `boolean` indicating if it is a descendant of a `group` type.
+`label`         | The value of the `label` prop.
+`labelPosition` | The position of the label, `before` or `after`. Default is `before` for all except `box` classified inputs. Can be overridden with `label-position` prop.
+`limit`         | For a `group` type, this is the is the maximum number of repeatable items allowed (default is `Infinity`).
+`model`         | The value of the current field, bound to a setter.
+`name`          | The name of the field, if none is set, it auto-generates a name.
+`options`       | The `options` prop converted to an array (when applicable).
+`performValidation` | Function that will run validation. This is executed on every input automatically.
+`preventWindowDrops` | `true` by default, this prevents the browser from navigating to a file when the user misses the dropzone.
+`repeatable`    | `Boolean` indicating if a field is repeatable or not.
+`rootEmit`      | `Function` identical to `$emit`, but should be used in custom inputs and slots to emit events from the root `<FormulateInput>`.
+`setErrors`     | Function to set (or clear) the current `errors` (not validation errors).
+`showValidationErrors` | `Boolean`, true if the validation errors should be displayed.
+`type`          | The type of input.
+`uploadBehavior` | The `upload-behavior` prop, `live` or `delayed`.
+`uploader`      | [Uploader function](/guide/inputs/types/file/#uploader). `uploader` prop, `axios`, or `uploader` defined when initializing.
+`uploadUrl`     | The `upload-url` prop, or the `uploadUrl` defined when initializing.
+`validationErrors` | An `array` of the current validation errors irregardless of their visibility.
+`value`         | The `value` prop, not the current value of the field. This is the exact value passed into the `value` prop, usually used to set the initial value of the field.
+`visibleValidationErrors` | `Array` of the current validation errors being displayed.
+
+
+::: warning
+If you inspect the context object, you may find additional properties not listed
+in the table above. Using these is discouraged since they are not considered
+available for public consumption and may change between minor versions.
+:::
