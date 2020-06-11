@@ -43,6 +43,9 @@ should be applied.
 Replacing classes on a given input is easy. Simply target the [class key](#class-map)
 you’d like to replace with a prop named `[class key]-class`:
 
+#### Strings
+When using string values any base classes will be replaced.
+
 ```vue
 <FormulateInput
   label="The label is using it’s own class"
@@ -50,8 +53,8 @@ you’d like to replace with a prop named `[class key]-class`:
 />
 <!-- <label class="my-label-class"> -->
 ```
-When using string values any base classes will be replaced. To append your
-custom class to the base classes use an array.
+#### Arrays
+To append your custom class to the base classes use an array.
 
 ```vue
 <FormulateInput
@@ -61,9 +64,10 @@ custom class to the base classes use an array.
 <!-- <label class="formulate-input-label formulate-input-label--before my-label-class" /> -->
 ```
 
+#### Functions
 For the most fine grained control you can pass in a function. The function will
 receive 2 arguments, a [class context object](#class-context) and an array
-of base classes.
+of base classes generated using the global options.
 
 ```vue
 <FormulateInput
@@ -77,23 +81,59 @@ of base classes.
 ### Changing classes globally
 
 To easily update which classes are applied to every `FormulateInput` by default
-you can update the `classes` option with an object of [class keys](#class-map)
+you can update the `classes` option with an object of [class keys](#class-map).
 
+Similar to modifying classes with props the values in the `classes` option can
+be a `string`, `array`, or `function`. Strings overwrite any base classes,
+arrays are appended to the base classes, and functions allow for fine grained
+control and can accept a `context` and `baseClasses` arguments respectively.
+
+### String
 ```js
 import Vue from 'vue'
 import VueFormulate from 'vue-formulate'
 
 Vue.use(VueFormulate, {
   classes: {
-    outer: 'mytheme-outer-wrapper',
-    label: 'mytheme-label'
+    outer: 'mytheme-wrapper',
   }
 })
+// All <FormulateInput> will output:
+// <div class="mytheme-wrapper">...
 ```
 
-For even more power, you can override the `getClasses` option with you own
-function. This function is responsible for providing all the default classes
-for every class key. It allows you to tease out additional nuance.
+### Array
+```js
+...
+Vue.use(VueFormulate, {
+  classes: {
+    outer: ['mytheme-wrapper'],
+  }
+})
+// All <FormulateInput> will output:
+// <div class="formulate-input mytheme-wrapper">...
+```
+
+### Function
+```js
+...
+Vue.use(VueFormulate, {
+  classes: {
+    outer: (context, classes) => {
+      return classes.concat([
+        'mytheme-wrapper',
+        `mytheme-wrapper--${context.type}`
+      ])
+    },
+  }
+})
+// All <FormulateInput> will output:
+// <div class="formulate-input mytheme-wrapper mytheme-wrapper--[type]">...
+```
+
+For even more power, you can override the `baseClasses` option with you own
+function. This function is responsible for providing an object with all of the
+class keys and their base classes.
 
 ### Class keys
 
@@ -127,16 +167,16 @@ pages:
 Global class functions and prop class functions both receive a “class context”
 with the following values:
 
-Property        | Description
-----------------|----------------------------------------------------------------
-hasValue        | `Boolean` whether or not the field has a value.
-hasValidationErrors | `Boolean` whether or not the field has validation errors (.
-helpPosition    | `String` describing the position of the help text. `before` or `after`.
-labelPosition   | `String` describing the position of the label. `before` or `after`.
-name            | The name of the field.
-type            | The `type` of input
-value           | The value of the input
-visibleValidationErrors | All visible validation errors
+Property          | Description
+------------------|----------------------------------------------------------------
+`classification`  | The classification of the input (`text`, `group`, `select` etc)
+`hasValue`        | `Boolean` whether or not the field has a value.
+`hasValidationErrors` | `Boolean` whether or not the field has validation errors (.
+`helpPosition`    | `String` describing the position of the help text. `before` or `after`.
+`labelPosition`   | `String` describing the position of the label. `before` or `after`.
+`type`            | The `type` of input
+`value`           | The value of the input
+`visibleValidationErrors` | All visible validation errors
 
 ## Custom theme
 
