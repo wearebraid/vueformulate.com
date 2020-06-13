@@ -103,6 +103,11 @@ module.exports = ctx => ({
               path: '/guide/forms/',
             },
             {
+              title: 'Generating forms',
+              collapsable: true,
+              path: '/guide/forms/generating-forms/',
+            },
+            {
               title: 'Error handling',
               collapsable: true,
               path: '/guide/forms/error-handling/',

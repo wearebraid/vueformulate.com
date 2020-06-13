@@ -113,13 +113,13 @@ export default {
 
 ## Setting initial values
 
-To re-populate an entire form of data, you can simply set the `v-model`
-attribute of the form. This makes it trivial to create update forms.
+To re-populate an entire form of data, you can set the `values` prop of the
+form. This makes it easy to create “update” forms like account pages:
 
 ```vue
 <template>
   <FormulateForm
-    v-model="formValues"
+    values="formValues"
   >
     <FormulateInput
       type="text"
@@ -154,20 +154,18 @@ export default {
 
 <demo-form-repopulate />
 
-#### Setting initial values without model binding
+## Model binding
 
-In the above example, `formValues` is `v-modeled` meaning it is bi-directionally
-bound to the form values — if you change the values of that object, the form
-fields will update and if you type into one of the text fields the object will
-update.
-
-Occasionally you may prefer to set the initial state with an object but not have
-that object be manipulated when someone uses the form. To do this use the
-`values` prop.
+In the above example, `formValues` is used to initially set the field values,
+but then it is never changed after that. Often it’s helpful to use the values of
+the form reactively. To do this use `v-model` instead of `values` to
+bi-directionally bind to the form values — if you change the values of that
+object, the form fields will update and if you type into one of the text fields
+the object will update!
 
 ```vue
   <FormulateForm
-    :values="formValues"
+    v-model="formValues"
   >
     ...
   </FormulateForm>
@@ -253,6 +251,7 @@ Method                         | Description
 `reset(formName, values)`      | Reset the form's values, validation messages, and error messages.
 `resetValidation(formName)`    | Reset all validation and error messages.
 `setValues(formName)`          | Set the value of the form's model (even if no `v-model` is defined).
+`submit(formName)`             | Used to submit a form programmatically.
 
 :::details View source code
 ```vue
@@ -337,69 +336,3 @@ export default {
 :::
 <demo-named-form />
 
-## Generating Forms
-
-Because Vue Formulate uses a single input component, you can easily generate
-an entire form from a JSON string.
-
-```js
-[
-  {
-    type: 'text',
-    name: 'name',
-    label: 'What is your name?',
-    placeholder: 'Your name...',
-    validation: 'required'
-  },
-  {
-    type: 'text',
-    name: 'address',
-    label: 'What is your street address?',
-    placeholder: 'Your address...',
-    help: 'Where would you like your product shipped?',
-    validation: 'required'
-  },
-  {
-    type: 'radio',
-    name: 'method',
-    label: 'What shipping method would you like?',
-    options: [
-      { value: 'fedex_overnight', id: 'fedex_overnight', label: 'FedEx overnight' },
-      { value: 'fedex_ground', id: 'fedex_ground', label: 'FedEx ground' },
-      { value: 'usps', id: 'usps', label: 'US Postal Service' }
-    ],
-    value: 'fedex_ground',
-    'validation-name': 'Shipping method',
-    validation: 'required'
-  },
-  {
-    name: 'submit',
-    type: 'submit',
-    label: 'Submit order'
-  }
-]
-```
-
-The above JSON can then be fed into a `<FormulateInput>` using a `v-for` and
-`v-bind` to generate a form.
-
-```vue
-<FormulateForm>
-  <FormulateInput
-    v-for="input in inputs"
-    :key="input.name"
-    v-bind="input"
-  />
-</FormulateForm>
-```
-
-**Outputs**
-
-<demo-generated />
-
-:::tip Note 
-Iterating over objects to produce a form is an actively supported feature — even
-encouraged in many cases — but keep in mind that some complex forms, like
-forms that include [`group`](/guide/inputs/types/group/#data-organization)
-fields, may require additional effort to iterate over.
-:::
