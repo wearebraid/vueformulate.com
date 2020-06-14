@@ -22,7 +22,9 @@ We’ll go into more detail on the structure of the schemas after this.
 
 ##### Interactive JSON playground
 
-<demo-schemas />
+<ClientOnly>
+  <demo-schemas />
+</ClientOnly>
 
 ### Schema inputs
 

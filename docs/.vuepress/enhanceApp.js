@@ -8,7 +8,6 @@ import Autocomplete from './Autocomplete'
 import GithubButton from 'vue-github-button'
 import VTooltip from 'v-tooltip'
 
-import 'codemirror/lib/codemirror.css'
 import '../../node_modules/@braid/vue-formulate/themes/snow/snow.scss'
 
 export default ({ Vue }) => {

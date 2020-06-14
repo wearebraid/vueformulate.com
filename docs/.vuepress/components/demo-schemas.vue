@@ -11,9 +11,7 @@
     </div>
     <div class="schema-group">
       <div class="schema-editor">
-        <ClientOnly>
-          <CodeMirror v-model="code" :options="options" class="cm-editor" />
-        </ClientOnly>
+        <CodeMirror v-model="code" :options="options" class="cm-editor" />
       </div>
       <div class="schema-example">
         <FormulateForm
@@ -36,8 +34,10 @@
 
 <script>
 import { codemirror } from 'vue-codemirror'
-import 'codemirror/mode/javascript/javascript.js'
+import 'codemirror/mode/javascript/javascript'
+import 'codemirror/lib/codemirror.css'
 import 'codemirror/theme/idea.css'
+
 
 const simple_input_list = `[
   {
