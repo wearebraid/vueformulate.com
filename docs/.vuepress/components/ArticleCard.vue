@@ -111,7 +111,7 @@ img {
   [data-sidebar] & {
     width: 100%;
     margin-right: 0;
-    max-width: 300px;
+    max-width: 300px !important;
   }
 }
 
