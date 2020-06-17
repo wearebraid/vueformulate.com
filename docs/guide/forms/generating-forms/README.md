@@ -104,7 +104,7 @@ Schemas are not limited to `FormulateInput` elements. Each object can define a
 ### Schema children
 
 The final piece of the puzzle is the ability to nest schemas. For example,
-if we wanted to wrap two elements, or use a `group` input. There is no limit
+you might want to wrap two elements, or use a `group` input. There is no limit
 to the depth or size of your schema.
 
 ```js

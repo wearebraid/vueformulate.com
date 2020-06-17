@@ -61,13 +61,13 @@ an object of configuration options.
 Vue.use(VueFormulate, options)
 ```
 
-## Add styles
+## Styling/theming
 
-If you’d like to use the default theme (the one used in these docs) you can
+If you’d like to use the default theme (the one used in these docs), you can
 [easily include that css on your page](/guide/theming/#default-theme). Vue
-Formulate is easy to [theme on your own](/guide/theming/#custom-theme).
+Formulate is also extremely easy to [theme on your own](/guide/theming/#custom-theme).
 
-## IE11 Support
+## IE11 support
 
 While Internet Explorer 11 is supported polyfills for ES2015 language features
 are not included in Vue Formulate. For those who do require IE11 support we
