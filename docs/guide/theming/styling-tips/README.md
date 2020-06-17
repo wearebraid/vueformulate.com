@@ -39,7 +39,7 @@ file.
 </div>
 ```
 
-Once the above output has been themed styles will largely transfer too all
+Once the above output has been themed, styles will largely transfer to all
 formulate inputs. The only variance is some classifications use
 different internal inputs.
 
@@ -51,7 +51,7 @@ can be used to style all text-based inputs at the same time:
 
 ```scss
 .formulate-input {
-  [data-classification="text"] {
+  & [data-classification="text"] {
     input {
       // style all text-like inputs here
     }
@@ -66,7 +66,7 @@ that are applied to the outermost wrapper.
 
 Attribute                 | Description
 --------------------------|----------------------------------------------------------------
-`data-classification`     | Always available. Set to the classification of the input (`box`, `text`, `group` etc)
+`data-classification`     | Always available. Set to the classification of the input (`box`, `text`, `group`, etc.)
 `data-has-errors`         | Added when the field has any validation errors or explicit errors (passed in via prop or form) *regardless of whether or not the errors are being displayed*.
 `data-has-value`          | Added when the field is not empty.
 `data-is-showing-errors`  | Added when the field has errors and is showing them (based on `error-behavior`)
