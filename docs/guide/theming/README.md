@@ -2,7 +2,7 @@
 
 Vue Formulate is completely agnostic about the styling you choose to apply to
 your form inputs, but has been intentionally designed to be easy to write
-styles for. Vue Formulate has provided functionality for each of the major
+styles for. Vue Formulate provides functionality for each of the major
 ingredients in theming, including:
 
 - [Customizing classes](/guide/theming/customizing-classes) (since 2.4)
