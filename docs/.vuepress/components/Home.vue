@@ -39,7 +39,7 @@
 
     <div class="updates-section">
       <div class="new-badge">
-        <span class="label">June 17th 2020</span>
+        <span class="label">June 17th, 2020</span>
         <span class="text">
           2.4 introduces <NavLink :item="{link: '/guide/theming/customizing-classes/#customizing-classes', text: 'theming class customization'}" />, <NavLink :item="{link: '/guide/forms/generating-forms/#schemas', text: 'form generation schema'}" />, and <NavLink :item="{link: '/changelog/', text: 'more'}" />
         </span>

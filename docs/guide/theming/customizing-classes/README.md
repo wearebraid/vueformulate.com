@@ -24,7 +24,7 @@ you’d like to change with a prop named `[element class key]-class`. To target 
 state use `[element class key]-[state class key]-class`.
 
 ### Strings (to replace base classes)
-When using string values any base classes will be **replaced**.
+Use `string` values in your class prop to **replace** any base classes.
 
 ```vue
 <FormulateInput
@@ -35,14 +35,14 @@ When using string values any base classes will be **replaced**.
 ```
 
 ### Arrays (to append to base classes)
-To **append** classes to the base classes use an array.
+To **append** classes to the base classes, use an `array` in your class prop.
 
 ```vue
 <FormulateInput
-  label="The label is using its own class"
-  :label-class="['my-label-class']"
+  label="The input wrapping div is using its own class"
+  :wrapper-class="['my-wrapper-class']"
 />
-<!-- <label class="formulate-input-label formulate-input-label--before my-label-class" /> -->
+<!-- <div class="formulate-input-wrapper my-wrapper-class" /> -->
 ```
 
 ### Functions
@@ -52,10 +52,10 @@ of base classes generated using the global options.
 
 ```vue
 <FormulateInput
-  label="The label is adding it’s own class"
-  :label-class="(context, classes) => ['my-label-class'].concat(classes)"
+  label="The element div is using its own class"
+  :element-class="(context, classes) => ['my-element-class'].concat(classes)"
 />
-<!-- <label class="my-label-class formulate-input-label formulate-input-label--before" /> -->
+<!-- <div class="my-element-class formulate-input-element formulate-input-element--text" /> -->
 ```
 
 

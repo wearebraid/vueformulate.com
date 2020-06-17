@@ -12,7 +12,7 @@ file.
 <!-- Outer Wrapper -->
 <div class="formulate-input"  data-classification="text" data-type="text" data-has-errors="true" data-is-showing-errors="true">
 
-  <!-- Outer Wrapper -->
+  <!-- Wrapper around label + input -->
   <div class="formulate-input-wrapper">
     <!-- Label -->
     <label for="my-id" class="formulate-input-label formulate-input-label--before">
