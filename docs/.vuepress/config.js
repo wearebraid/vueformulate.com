@@ -23,7 +23,7 @@ module.exports = ctx => ({
               collapsable: true
             },
             {
-              title: 'Getting Started',
+              title: 'Getting started',
               path: '/guide/',
               collapsable: true
             },

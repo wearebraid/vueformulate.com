@@ -818,7 +818,7 @@ validation errors change, instead `validation` events are fired even if the
 field errors are not currently visible due to the current `error-behavior`.
 :::
 
-## Error Behavior
+## Error behavior
 
 By default, validation error messages are not shown until the user’s focus
 leaves (technically a `blur` event) the current field. There are 3 modes of
