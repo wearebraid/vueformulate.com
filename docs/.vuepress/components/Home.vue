@@ -155,16 +155,20 @@ export default {
 .new-badge {
   border: 1px solid #dfe4ee;
   background: #f6f9fd;
-  border-radius: 999em;
+  border-radius: 6px;
   padding: 0.5em 1em 0.5em 1em;
   margin-top: 1em;
   margin-bottom: -2em;
   font-size: 0.9em;
   margin-left: auto;
   margin-right: auto;
+  line-height: 1.6;
 
   @media (min-width: 500px) {
     padding: 0.5em 0.75em 0.5em 0.66em;
+  }
+  @media (min-width: 720px) {
+    border-radius: 999em;
   }
 
   .label {
@@ -176,6 +180,7 @@ export default {
     font-size: 0.85em;
     margin-right: 0.5em;
     font-weight: bold;
+    line-height: 1.2;
 
     @media (min-width: 500px) {
       padding: 0.33em 0.66em;
@@ -184,7 +189,7 @@ export default {
   }
 
   .nav-link {
-    display: inline;
+    display: inline-block;
   }
 }
 
