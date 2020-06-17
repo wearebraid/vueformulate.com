@@ -326,7 +326,7 @@ following are available:
 Key             | Default                          | Description
 ----------------|----------------------------------|---------------------------------------------------
 `uploadArea`    | `.formulate-input-upload-area`   | The dropzone area wrapper for an upload.
-`uploadAreaMask`| `.formulate-input-upload-area-mask` | An additional element position immediately after the `<input>` used for stylistic reasons.
+`uploadAreaMask`| `.formulate-input-upload-area-mask` | An additional element positioned immediately after the `<input>` used for stylistic reasons.
 `files`         | `.formulate-files`               | A wrapper around a list of files.
 `file`          | `.formulate-file`                | A single input file.
 `fileName`      | `.formulate-file-name`           | The element responsible for outputting the name of the file.

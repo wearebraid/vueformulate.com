@@ -34,4 +34,4 @@ following are available:
 
 Key             | Default                          | Description
 ----------------|----------------------------------|---------------------------------------------------
-`rangeValue`         | `.formulate-input-element-range-value`   | A element immediately after the `<input>` element containing the value of the range input. Only available when `show-value` is true.
+`rangeValue`         | `.formulate-input-element-range-value`   | An element immediately after the `<input>` element containing the value of the range input. Only available when `show-value` is true.
