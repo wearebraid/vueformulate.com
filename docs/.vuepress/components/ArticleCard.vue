@@ -3,7 +3,6 @@
     class="article-card"
     :data-sidebar="sidebar"
     :href="href"
-    target="_blank"
   >
     <img v-if="image" :src="image" :alt="imageAlt">
     <div class="copy">
