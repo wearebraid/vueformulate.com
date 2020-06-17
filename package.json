@@ -11,7 +11,7 @@
     "build": "NODE_ENV=production vuepress build docs"
   },
   "dependencies": {
-    "@braid/vue-formulate": "https://github.com/wearebraid/vue-formulate/archive/release/2.4.0.tar.gz",
+    "@braid/vue-formulate": "https://github.com/wearebraid/vue-formulate/archive/release/2.4.0.tar.gz?v=2",
     "axios": "^0.19.2",
     "jshint": "^2.11.1",
     "v-tooltip": "^2.0.3",
