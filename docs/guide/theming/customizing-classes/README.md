@@ -31,7 +31,7 @@ Use `string` values in your class prop to **replace** any base classes.
   label="The label is using its own class"
   label-class="my-label-class"
 />
-<!-- <label class="my-label-class"> without errors -->
+<!-- <label class="my-label-class"> -->
 ```
 
 ### Arrays (to append to base classes)
