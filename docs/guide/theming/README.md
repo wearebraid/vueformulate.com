@@ -2,11 +2,12 @@
 
 Vue Formulate is completely agnostic about the styling you choose to apply to
 your form inputs, but has been intentionally designed to be easy to write
-styles for. Theming, as a discipline, generally consists of some mixture of:
+styles for. Vue Formulate has provided functionality for each of the major
+ingredients in theming, including:
 
+- [Customizing classes](/guide/theming/customizing-classes) (since 2.4)
+- [Changing DOM structure](/guide/inputs/slots) (since 2.3)
 - [Writing custom styles](/guide/theming/styling-tips)
-- [Customizing classes](/guide/theming/customizing-classes)
-- [Changing DOM structure](/guide/inputs/slots)
 
 ## Default theme
 
