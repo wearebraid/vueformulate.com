@@ -12,34 +12,34 @@ There are 4 ways to change the classes applied to DOM elements inside a
 3. Globally via the `baseClasses` option.
 3. Manually override the DOM using [slots](/guide/inputs/slots/).
 
-In the first two cases, you can use a string, array, or function to define which
-classes should be applied to a given element (ex `label`) on a given state (ex
-field has validation errors). Each element and state is identified via by [class
-key](#class-keys).
+In the first two cases, you can use a `string`, `array`, or `function` to define
+which classes should be applied to a given element (e.g., `label`) in a given
+state (e.g., field has validation errors). Each element and state is identified 
+by [class key](#class-keys).
 
-## Changing classes with props.
+## Changing classes with props
 
-Replacing classes on a given input is easy. Simply target the [class key](#class-map)
-you’d like to replace with a prop named `[element class key]-class`. To target a
+Changing classes on a given input is easy. Simply target the [class key](#class-keys)
+you’d like to change with a prop named `[element class key]-class`. To target a
 state use `[element class key]-[state class key]-class`.
 
-### Strings
+### Strings (to replace base classes)
 When using string values any base classes will be **replaced**.
 
 ```vue
 <FormulateInput
-  label="The label is using it’s own class"
+  label="The label is using its own class"
   label-class="my-label-class"
 />
 <!-- <label class="my-label-class"> without errors -->
 ```
 
-### Arrays
+### Arrays (to append to base classes)
 To **append** classes to the base classes use an array.
 
 ```vue
 <FormulateInput
-  label="The label is using it’s own class"
+  label="The label is using its own class"
   :label-class="['my-label-class']"
 />
 <!-- <label class="formulate-input-label formulate-input-label--before my-label-class" /> -->
@@ -61,12 +61,12 @@ of base classes generated using the global options.
 
 ## Changing classes globally
 
-To easily update which classes are applied to every `FormulateInput` by default
-you can update the `classes` option with an object of [class keys](#class-keys).
+To globally update which classes are applied to _every_ `FormulateInput` by default
+you can update the `classes` option with an `object` of [class keys](#class-keys).
 
 Similar to modifying classes with props the values in the `classes` option can
-be a `string`, `array`, or `function`. Strings overwrite any base classes,
-arrays are appended to the base classes, and functions allow for fine grained
+be a `string`, `array`, or `function`. Strings _overwrite_ any base classes,
+arrays _are appended_ to the base classes, and functions allow for fine grained
 control and can accept a `context` and `baseClasses` arguments respectively.
 
 ### String
@@ -114,10 +114,10 @@ Vue.use(VueFormulate, {
 
 ## A custom `baseClasses` function
 
-For advanced use cases, you can also choose to override the base classes being
+For advanced use cases, you can also choose to override the base classes
 by setting `options.baseClasses` to your own function. This function will be
 applied to every [class key](#class-keys) on every `<FormulateInput>`. For
-example, you wanted to perform a reset of all classes in Vue Formulate you
+example, if you wanted to perform a reset of all classes in Vue Formulate you
 could return an empty array:
 
 ```js
@@ -129,10 +129,10 @@ Vue.use(VueFormulate, {
 ## Class keys
 
 Manipulating classes on DOM elements requires targeting _which_ element you want
-to add/remove classes on. To allow for precise class targeting every DOM element
+to add/remove classes on. To allow for precise class targeting, every DOM element
 is assigned an “element key” which can be used to [customize classes](#customizing-classes).
 
-In addition to “element keys” Vue Formualte also includes
+In addition to “element keys”, Vue Formulate also includes
 “state keys” that are used to describe a specific state of the input. For
 example `hasErrors` is the state key for an input that is currently
 displaying an error. Classes defined with “state keys” are _additive_,
@@ -144,7 +144,7 @@ Key             | Default                          | Description
 ----------------|----------------------------------|---------------------------------------------------
 `outer`         | `.formulate-input`               | The outermost div wrapper.
 `wrapper`       | `.formulate-input-wrapper`       | A wrapper around the label + interior element.
-`label`         | `.formulate-input-label`<br>`.formulate-input-label--[position]` | The label wrapper and it's position (before/after).
+`label`         | `.formulate-input-label`<br>`.formulate-input-label--[position]` | The label wrapper and its position (before/after).
 `element`       | `.formulate-input-element`<br>`.formulate-input-element--[type]` | The wrapper around the actual `<input>` element(s).
 `input`         | n/a                              | Applied directly to the input DOM element. Not used by default to allow for more flexible cascading.
 `help`          | `.formulate-input-help`<br>`.formulate-input-help--[position]` | Wrapper around the help text.
@@ -157,7 +157,7 @@ Some input types have additional class keys that are detailed on their own
 pages:
 
 - [Boxes](/guide/inputs/types/box/#custom-class-keys)
-- [Sliders](/guide/inputs/types/slider/#custom-class-keys)
+- [Sliders](/guide/inputs/types/sliders/#custom-class-keys)
 - [Files](/guide/inputs/types/file/#custom-class-keys)
 - [Groups](/guide/inputs/types/group/#custom-class-keys)
 
@@ -168,9 +168,9 @@ has a value. **State keys must always be combined with an element key.**
 
 Key             | Description
 ----------------|---------------------------------------------------------------
-`hasErrors`     | The field is actually visibly _showing_ errors. If the `error-behavior` is not `live` this will be `false` until the errors are shown.
+`hasErrors`     | The field is visibly _showing_ errors. If the `error-behavior` is not `live` this will be `false` until the errors are shown.
 `hasValue`      | The field has a value.
-`isValid`       | The field has _no_ errors regardless of the visibility.
+`isValid`       | The field has _no errors_ regardless of the visibility.
 
 :::tip Note
 You can achieve the same result as a state key by using a function for an
@@ -219,11 +219,11 @@ with the following values:
 
 Property          | Description
 ------------------|----------------------------------------------------------------
-`classification`  | The classification of the input (`text`, `group`, `select` etc)
-`hasErrors`       | `Boolean` indicating visible errors.
+`classification`  | The classification of the input (`text`, `group`, `select`, etc.)
+`hasErrors`       | `Boolean` indicating _visible_ errors.
 `hasValue`        | `Boolean` whether or not the field has a value.
 `helpPosition`    | `String` describing the position of the help text. `before` or `after`.
 `isValid`         | `Boolean` indicating if the field is error free, regardless of error visibility.
 `labelPosition`   | `String` describing the position of the label. `before` or `after`.
-`type`            | The `type` of input
-`value`           | The value of the input
+`type`            | The `type` of input.
+`value`           | The value of the input.
