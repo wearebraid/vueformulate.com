@@ -4,6 +4,14 @@ new: true
 
 # Customizing classes
 
+<ArticleCard
+  href="https://dev.to/justinschroeder/introducing-vue-formulate-truly-delightful-form-authoring-56f5"
+  badge="Article"
+  headline="Using Tailwind with Vue Formulate 2.4"
+  copy="Using the new class props in Vue Formulate, learn how to leverage the Tailwind CSS utility framework to quickly add custom styling to your forms."
+  :sidebar="true"
+/>
+
 There are 4 ways to change the classes applied to DOM elements inside a
 `FormulateInput`:
 
@@ -14,7 +22,7 @@ There are 4 ways to change the classes applied to DOM elements inside a
 
 In the first two cases, you can use a `string`, `array`, or `function` to define
 which classes should be applied to a given element (e.g., `label`) in a given
-state (e.g., field has validation errors). Each element and state is identified 
+state (e.g., field has validation errors). Each element and state is identified
 by [class key](#class-keys).
 
 ## Changing classes with props

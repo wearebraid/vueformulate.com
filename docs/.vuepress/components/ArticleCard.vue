@@ -102,6 +102,7 @@ img {
   margin-right: 2em;
   border-radius: 5px;
   margin-bottom: 1em;
+  display: block;
 
   @media (min-width: 600px) {
     width: 33%;
@@ -109,9 +110,9 @@ img {
   }
 
   [data-sidebar] & {
-    width: auto;
+    width: 100%;
     margin-right: 0;
-    max-width: 100% !important;
+    max-width: 300px;
   }
 }
 
