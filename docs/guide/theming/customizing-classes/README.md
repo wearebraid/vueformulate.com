@@ -46,7 +46,7 @@ To **append** classes to the base classes, use an `array` in your class prop.
 ```
 
 ### Functions
-For fine grained control you can use a function. The function will
+For fine grained control you can use a `function`. The function will
 receive 2 arguments, a [class context object](#class-context) and an array
 of base classes generated using the global options.
 
