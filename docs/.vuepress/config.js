@@ -115,6 +115,11 @@ module.exports = ctx => ({
           path: '/guide/theming',
           children: [
             {
+              title: 'Overview',
+              collapsable: true,
+              path: '/guide/theming/',
+            },
+            {
               title: 'Customizing classes',
               collapsable: true,
               path: '/guide/theming/customizing-classes/',
