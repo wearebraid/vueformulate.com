@@ -61,11 +61,11 @@ an object of configuration options.
 Vue.use(VueFormulate, options)
 ```
 
-## Add styles
+## Styling/Theming
 
-If you’d like to use the default theme (the one used in these docs) you can
+If you’d like to use the default theme (the one used in these docs), you can
 [easily include that css on your page](/guide/theming/#default-theme). Vue
-Formulate is easy to [theme on your own](/guide/theming/#custom-theme).
+Formulate is also extremely easy to [theme on your own](/guide/theming/#custom-theme).
 
 ## IE11 Support
 
