@@ -17,8 +17,14 @@ features:
   details: Ridiculously easy validation out-of-the-box to handle 95% of use-cases. Help text, validation rules, and validation messages are simple props. Need more? You can add custom validations too.
 - title: 🔌 Plugin system
   details: Extend Vue Formulate's functionality or reuse custom inputs, validation rules, and messages across projects by tapping into the plugin system. Make your plugin open source to share with others!
-- title: ✨ Generate forms
-  details: Generate an entire form from a JSON string. Because Vue Formulate uses a single input component, you can easily loop through an array and dynamically generate a form.
+- title: ✨ Form Generation
+  details: Generate an entire form from JSON. Vue Formulate includes a schema to allow you to render complex forms from JSON with groups, wrappers, and custom components.
+- title: 🎨 Styling Control
+  details: With provided class props you can add your own set of style classes globally or on a case-by-case basis. Tailwind? No problem. Bootstrap? You're covered. Roll your own? Right on, it’s supported.
+- title: 🔍 Scoped Slots
+  details: Need even more control over your form’s markup? Vue Formulate ships with full scoped slots support so that you can globally or selectively provide your own markup.
+- title: 🌐 Internationalization
+  details: Thanks to the wonderfully collaborative Vue community, Vue Formulate ships with support for over a dozen languages which are selectively importable to keep bundle size light.
 ---
 # Live Code Examples
 

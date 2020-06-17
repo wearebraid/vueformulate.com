@@ -39,9 +39,9 @@
 
     <div class="updates-section">
       <div class="new-badge">
-        <span class="label">June 17th</span>
+        <span class="label">June 17th 2020</span>
         <span class="text">
-          2.4.0 introduces <NavLink :item="{link: '/guide/theming/customizing-classes/#customizing-classes', text: 'theming class customization'}" />, <NavLink :item="{link: '/guide/forms/generating-forms/#schemas', text: 'form generation schema'}" />, and <NavLink :item="{link: '/changelog/', text: 'more'}" />
+          2.4 introduces <NavLink :item="{link: '/guide/theming/customizing-classes/#customizing-classes', text: 'theming class customization'}" />, <NavLink :item="{link: '/guide/forms/generating-forms/#schemas', text: 'form generation schema'}" />, and <NavLink :item="{link: '/changelog/', text: 'more'}" />
         </span>
       </div>
     </div>
@@ -58,7 +58,23 @@
         <h2>{{ feature.title }}</h2>
         <p>{{ feature.details }}</p>
       </div>
+    </div>
 
+    <hr>
+
+    <div class="resources">
+      <a
+        class="article-card"
+        href="https://dev.to/justinschroeder/introducing-vue-formulate-truly-delightful-form-authoring-56f5"
+        target="_blank"
+      >
+        <img src="/assets/img/resources/tailwind.png" alt="Tailwind">
+        <div class="copy">
+          <Badge>Latest Article</Badge>
+          <h3>Vue Formulate 2.4 Class Maps — Using Tailwind to style your forms</h3>
+          <p>Aenean cras felis viverra sollicitudin lorem elit vitae nulla luctus auctor orci, litora natoque nam feugiat arcu est quis condimentum vehicula dapibus.</p>
+        </div>
+      </a>
     </div>
 
     <hr>
@@ -132,6 +148,8 @@ export default {
 <style lang="scss" scoped>
 .updates-section {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .new-badge {
@@ -166,7 +184,41 @@ export default {
   }
 
   .nav-link {
-    display: inline-block;
+    display: inline;
+  }
+}
+
+.article-card {
+  margin-top: 3em;
+  margin-bottom: 1.5em;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+
+  @media (min-width: 600px) {
+    flex-direction: row;
+  }
+
+  img {
+    border: 1px solid #eee;
+    max-width: 250px;
+    margin-right: 2em;
+    border-radius: 5px;
+    margin-bottom: 1em;
+
+    @media (min-width: 600px) {
+      width: 33%;
+      max-width: 200px;
+    }
+  }
+
+  & /deep/ .badge {
+    margin-bottom: 1em;
+  }
+
+  h3 {
+    margin-top: 0;
+    margin-bottom: 1em;
   }
 }
 </style>
