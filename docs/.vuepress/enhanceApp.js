@@ -5,6 +5,7 @@
 import VueFormulate from '@braid/vue-formulate'
 import pageComponents from '@internal/page-components'
 import Autocomplete from './Autocomplete'
+import ArticleCard from './components/ArticleCard'
 import GithubButton from 'vue-github-button'
 import VTooltip from 'v-tooltip'
 
@@ -22,4 +23,5 @@ export default ({ Vue }) => {
     Vue.component(name, component)
   }
   Vue.component('github-button', GithubButton)
+  Vue.component('ArticleCard', ArticleCard)
 }

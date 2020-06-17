@@ -2,6 +2,16 @@
 
 Vue Formulate is the easiest way to build forms using [Vue](https://vuejs.org/).
 
+<ArticleCard
+  href="https://dev.to/justinschroeder/introducing-vue-formulate-truly-delightful-form-authoring-56f5"
+  image="/assets/img/og.jpg"
+  image-alt="Vue Formulate"
+  badge="Article"
+  headline="Introducing Vue Formulate — truly delightful form authoring."
+  copy="An overview of Vue Formulate by the author. Why it exists, what it does, and where it is going."
+  :sidebar="true"
+/>
+
 Although forms are required in almost every project developers encounter they are
 surprisingly tedious to create. Vue Formulate is built to increase developer happiness
 by anticipating pain points and exposing clean APIs — with sensible defaults — that
