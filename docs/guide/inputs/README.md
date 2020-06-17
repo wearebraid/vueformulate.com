@@ -210,6 +210,7 @@ Property        | Description
 `helpPosition`  | The position of the help text, `before` or `after` the element wrapper. Defaults to `before`.
 `getValidationErrors` | Function, returns a `Promise` that resolves to an array of validation error objects.
 `id`            | The id prop or an auto-generated id.
+`isValid`       | `Boolean` indicating if the field has no errors at all (visible or not).
 `imageBehavior` | The value of the `image-behavior` prop. Defaults to `preview`.
 `isSubField`    | A function that returns a `boolean` indicating if it is a descendant of a `group` type.
 `label`         | The value of the `label` prop.

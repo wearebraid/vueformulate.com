@@ -4,6 +4,22 @@ sidebar: auto
 
 # Changelog
 
+## v2.4.0 - June 17, 2020
+
+Vue Formulate `2.4.0` is another significant update with some much-anticipated
+features:
+
+- Full [class customization](/guide/theming/customizing-classes/) 🎨
+  - Includes a robust system for customizing classes on [every DOM element](/guide/theming/customizing-classes/#element-keys).
+  - Customize classes based on the [state of an input](/guide/theming/customizing-classes/#class-keys) (ex `hasValue`).
+  - Allows for easy customization globally or inline, making it compatible with utility frameworks like [tailwind css](https://tailwindcss.com/).
+- Adds a robust [schema for form generation](/guide/forms/generating-forms/#generating-forms) 🤖
+  - Supports any external components
+  - Supports HTML elements
+  - Supports element nesting
+- Adds support for programmatic form submission using [named forms](/guide/forms/#named-forms).
+- Adds support for custom [`slotProps`](/guide/inputs/slots/#declaring-slot-props), top-level props that can be passed into your custom slot components.
+
 ## v2.3.8 - June 9, 2020
 
 - Fixes a bug that could cause two identical `@input` events to be fired from a `FormulateInput`.

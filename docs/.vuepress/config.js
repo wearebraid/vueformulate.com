@@ -13,7 +13,7 @@ module.exports = ctx => ({
     sidebar: {
       '/guide': [
         {
-          title: 'Guide',
+          title: 'Essentials',
           path: '/guide',
           collapsable: false,
           children: [
@@ -35,11 +35,6 @@ module.exports = ctx => ({
             {
               title: 'Plugins',
               path: '/guide/plugins/',
-              collapsable: true
-            },
-            {
-              title: 'Theming',
-              path: '/guide/theming/',
               collapsable: true
             },
             {
@@ -111,6 +106,23 @@ module.exports = ctx => ({
               title: 'Error handling',
               collapsable: true,
               path: '/guide/forms/error-handling/',
+            }
+          ]
+        },
+        {
+          title: 'Theming',
+          collapsable: false,
+          path: '/guide/theming',
+          children: [
+            {
+              title: 'Customizing classes',
+              collapsable: true,
+              path: '/guide/theming/customizing-classes/',
+            },
+            {
+              title: 'Styling tips',
+              collapsable: true,
+              path: '/guide/theming/styling-tips/',
             }
           ]
         }

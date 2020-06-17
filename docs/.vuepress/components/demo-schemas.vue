@@ -257,6 +257,18 @@ export default {
   border: 1px solid #eaecef;
   border-radius: 6px;
   margin-top: 1em;
+
+  @media (min-width: 1200px) {
+    margin-left: -3vw;
+    margin-right: -3vw;
+    max-width: 1000px;
+  }
+
+  @media (min-width: 1400px) {
+    margin-left: -5vw;
+    margin-right: -5vw;
+    max-width: 1100px;
+  }
 }
 .schema-selector {
   padding: 1em;

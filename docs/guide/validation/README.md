@@ -778,7 +778,7 @@ Vue.use(VueFormulate, {
 })
 ```
 
-## Validation event <Badge text="2.3+" />
+## Validation event
 
 Occasionally it may be useful to know when the validation state of a field or
 form changes — for these instances, the `@validation` event can be used on both

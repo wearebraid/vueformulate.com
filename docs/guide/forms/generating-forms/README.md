@@ -1,3 +1,6 @@
+---
+new: true
+---
 
 # Generating Forms
 

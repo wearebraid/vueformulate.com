@@ -1,8 +1,4 @@
----
-new: true
----
-
-# Group <Badge text="2.3.0+" />
+# Group
 
 The `group` [classification](/guide/inputs/custom-inputs/#what-is-a-classification)
 only contains the input type `group`. It is a special input used to

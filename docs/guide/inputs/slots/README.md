@@ -1,8 +1,4 @@
----
-new: true
----
-
-# Slots <Badge text='2.3.0+'/>
+# Slots
 
 Sometimes it’s necessary to override the markup or structure of Vue Formulate’s
 inputs. Vue Formulate has 3 mechanisms to customize an input:
@@ -71,9 +67,25 @@ slots, but it would require a ton of copy and paste or wrapping every
 `FormulateInput` —  both poor choices. Using “slot components” you can override the
 default value of any of the [available slots](#available-slots) with your own
 component. Slot components are passed the [context object](/guide/inputs/#context-object) as a
-prop.
+prop as well as any `slotProps` that have been declared for that slot.
 
-### Global slot components
+Slot components are extremely powerful, and work to maintain a consistent API
+wich is desirable both for consistency, ease of use, and [generating forms](/guide/forms/generating-forms/). For more details checkout the [example slot
+component](#a-slot-component-example).
+
+::: tip Extra context properties
+In some slots, extra data is bound to the context object, like the
+`removeItem` property on the `remove` slot. When using slot components, these
+extra properties are passed as props in addition to the context object instead
+of inside merged with the context object.
+:::
+
+### Registering slot components
+
+You can register a slot component for all inputs, or for a specific type of
+input.
+
+#### Global slot components
 
 To replace the default component placed in any available slot, simply
 register your component with Vue Formulate using the `slotComponents` option:
@@ -94,7 +106,7 @@ Vue.use(VueFormulate, {
 })
 ```
 
-### Specific `type` slot components
+#### Specific `type` slot components
 
 Sometimes it may be desirable to only customize the slot component for a
 specific input type.
@@ -120,9 +132,147 @@ Vue.use(VueFormulate, {
 })
 ```
 
+### Declaring slot props
+
+Slot components can declare their own props, these props are then accepted at
+the top level `FormulateInput` and passed to the appropriate slot component as
+a prop. You can declare a `slotProp` for a specific type of input, or for all
+inputs. `slotProp` declarations should always be an array of string values.
+
+#### For all inputs types
+```js
+Vue.use(VueFormulate, {
+  slotProps: {
+    help: ['extraHelpText']
+  }
+})
+```
+
+The above declaration can then be used as a standard prop on a `FormulateInput`.
+
+```vue
+<FormualteInput
+  extra-help-text="My extra help text"
+/>
+```
+
+#### For a specific type
+
+```js
+Vue.use(VueFormulate, {
+  library: {
+    range: {
+      slotProps: {
+        label: ['slider-icon']
+      }
+    }
+  }
+})
+```
+
+And the above could be used on any `range` types:
+
+```vue
+<FormulateInput
+  type="range"
+  min="10"
+  max="20"
+  :slider-icon="true"
+/>
+```
+
 ## Context object
 
 All 3 methods of creating and customizing inputs operate by using
 [the same `context` object](/guide/inputs/#context-object). This object has a full awareness of nearly every
 aspect of the input, the input’s model and even other inputs in the same
 `FormulateForm` (if applicable). [View the context object →](/guide/inputs/#context-object)
+
+## A slot component example
+
+In our scoped slot [example above](#scoped-slots), we use the `label` scoped
+slot to add a tooltip to one input. So how do we use slot components to replace
+every label on our project?
+
+#### 1. Create a new component
+`file: ./components/MyCustomLabel.vue`
+```vue
+<template>
+  <label :for="context.id">
+    {{ context.label }}
+    <svg
+      v-if="context.tooltip"
+      v-tooltip="context.tooltip"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 100 100"
+    >
+      <path d="M50,11A39,39,0,1,0,89,50,39.05,39.05,0,0,0,50,11Zm4,55a4,4,0,0,1-8,0V47a4,4,0,0,1,8,0ZM50,38a4,4,0,1,1,4-4A4,4,0,0,1,50,38Z" />
+    </svg>
+  </label>
+</template>
+
+<script>
+export default {
+  props: {
+    context: {
+      type: Object,
+      required: true
+    },
+    tooltip: {
+      type: [String, Boolean],
+      default: false
+    }
+  }
+}
+</script>
+
+<style>
+/* styles? sure... */
+</style>
+```
+Notice a few things about the above component:
+
+1. It accepted the [all-powerful `context` object](#context-object) as a prop.
+2. It is also accepting a "tooltip" prop for the tooltip content (called a slotProp).
+
+When the `label` slot was defined inline we could easily hard code our tooltip
+value, but now that we've defined it as a component — and that component is
+rendered _inside_ our `FormulateElement` how do we pass that “tooltip” prop in?
+The answer is to tell VueFormulate you have a `slotProp`. You do this when you
+register your slot component, and Vue Formulate will take care of passing the
+right prop to the right slot.
+
+#### 2. Register the `slotComponent` and `slotProp`
+
+```js
+import Vue from 'vue';
+import VueFormulate from '@braid/vue-formulate'
+import MyCustomLabel from './components/MyCustomLabel'
+
+// Register our slot component globally
+Vue.component('MyCustomLabel', MyCustomLabel)
+
+Vue.use(VueFormulate, {
+  // Define our custom slot component(s)
+  slotComponents: {
+    label: 'MyCustomLabel'
+  },
+  // Define any props we want to pass to our slot component
+  slotProps: {
+    label: ['tooltop']
+  }
+})
+```
+
+Read more about [registering slot components →](#registering-slot-components).
+
+#### 3. Use our new component!
+
+```vue
+<FormulateInput
+  type="text"
+  label="Enter your EIN"
+  tooltip="EIN is an employee identification number"
+/>
+```
+<demo-slots-label-2 />
