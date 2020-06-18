@@ -70,7 +70,7 @@ component. Slot components are passed the [context object](/guide/inputs/#contex
 prop as well as any `slotProps` that have been declared for that slot.
 
 Slot components are extremely powerful, and work to maintain a consistent API
-wich is desirable both for consistency, ease of use, and [generating forms](/guide/forms/generating-forms/). For more details checkout the [example slot
+which is desirable both for consistency, ease of use, and [generating forms](/guide/forms/generating-forms/). For more details checkout the [example slot
 component](#a-slot-component-example).
 
 ::: tip Extra context properties
@@ -237,7 +237,7 @@ Notice a few things about the above component:
 
 When the `label` slot was defined inline we could easily hard code our tooltip
 value, but now that we've defined it as a component — and that component is
-rendered _inside_ our `FormulateElement` how do we pass that “tooltip” prop in?
+rendered _inside_ our `FormulateInput`, how do we pass that “tooltip” prop in?
 The answer is to tell VueFormulate you have a `slotProp`. You do this when you
 register your slot component, and Vue Formulate will take care of passing the
 right prop to the right slot.
