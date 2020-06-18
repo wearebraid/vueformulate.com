@@ -135,7 +135,7 @@ inside the `<FormulateForm>` element.
 <demo-errors-5 />
 
 This automatically removes the form errors from the top and locates them wherever
-that `<FormulateErrors />` is placed. You can even multiple `<FormulateErrors />`
+that `<FormulateErrors />` is placed. You can even have multiple `<FormulateErrors />`
 if you'd like the form errors to appear in multiple locations.
 
 ## Error handling

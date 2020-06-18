@@ -317,3 +317,22 @@ If the file has already been uploaded (like when using the default
 `upload‑behavior` of `live`) the `FileUpload.upload()` method will not cause a
 duplicate upload, but rather return the resolved path.
 :::
+
+## Custom class keys
+
+In addition to all [global class keys](/guide/theming/#customizing-classes)
+following are available:
+
+Key             | Default                          | Description
+----------------|----------------------------------|---------------------------------------------------
+`uploadArea`    | `.formulate-input-upload-area`   | The dropzone area wrapper for an upload.
+`uploadAreaMask`| `.formulate-input-upload-area-mask` | An additional element positioned immediately after the `<input>` used for stylistic reasons.
+`files`         | `.formulate-files`               | A wrapper around a list of files.
+`file`          | `.formulate-file`                | A single input file.
+`fileName`      | `.formulate-file-name`           | The element responsible for outputting the name of the file.
+`fileRemove`    | `.formulate-file-remove`         | The element responsible for removing an existing file.
+`fileImage`     | `.formulate-file-image-preview`  | For `image` types, the preview of the uploaded image.
+`fileProgress`  | `.formulate-file-progress`       | The outer wrapper for the progress bar.
+`fileProgressInner` | `.formulate-file-progress-inner` | The inner progress indicator. Width is automatically set as a percentage of upload completion.
+`fileUploadError` | `.formulate-file-upload-error` | The file upload error displayed for each incorrect file.
+`fileImagePreview` | `.formulate-file-image-preview` | The wrapper around the `img` preview.

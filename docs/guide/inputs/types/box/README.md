@@ -81,3 +81,13 @@ The syntax for radio inputs is identical to checkboxes.
 ```
 
 <demo-input-radio />
+
+## Custom class keys
+
+In addition to all [global class keys](/guide/theming/#customizing-classes)
+following are available:
+
+Key             | Default                          | Description
+----------------|----------------------------------|---------------------------------------------------
+`decorator`     | `.formulate-input-decorator`     | A secondary `<label>` element position immediately after the `<input>` element for styling “pretty” checkboxes.
+

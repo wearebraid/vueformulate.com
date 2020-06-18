@@ -2,9 +2,15 @@
 
 Vue Formulate is completely agnostic about the styling you choose to apply to
 your form inputs, but has been intentionally designed to be easy to write
-styles for.
+styles for. Vue Formulate provides functionality for each of the major
+ingredients in theming, including:
+
+- [Customizing classes](/guide/theming/customizing-classes) (since 2.4)
+- [Changing DOM structure](/guide/inputs/slots) (since 2.3)
+- [Writing custom styles](/guide/theming/styling-tips)
 
 ## Default theme
+
 By default, the package contains the SCSS and compiled CSS for a single theme
 (named "snow"). It’s the one you see on this documentation site. You can import
 the SCSS directly into your own SCSS, or just use the minified CSS directly.
@@ -23,76 +29,24 @@ and inclusion.
 
 [View CSS on Github](https://github.com/wearebraid/vue-formulate/blob/master/dist/snow.min.css)
 
-## Creating your own theme
+## Contributing themes
 
-Consistent markup and like-field grouping with classifications help considerably
-with keeping the necessary CSS to a minimum. The package includes a boilerplate SCSS
-file.
+We would love to see community contributed themes for Vue Formulate! If you’ve
+create a your own masterpiece — please share it by [opening an issue](https://github.com/wearebraid/vue-formulate/issues/new?assignees=&labels=feature+request&template=feature_request.md&title=I%E2%80%99d%20like%20to%20contribute%20a%20theme!) on github
+to let us know about it and we may list it on this documentation page.
 
-[Download a SCSS boilerplate](https://github.com/wearebraid/vue-formulate-next/tree/master/themes/boilerplate/boilerplate.scss)
+## Specimen page
 
-#### Sample markup
+Vue Formulate includes a specimen page of every input type for use in styling
+and theming. To use it first clone Vue Formulate, install, and run dev:
 
-```html
-<!-- Outer Wrapper -->
-<div class="formulate-input"  data-classification="text" data-type="text" data-has-errors="true" data-is-showing-errors="true">
-
-  <!-- Outer Wrapper -->
-  <div class="formulate-input-wrapper">
-    <!-- Label -->
-    <label for="oX5F-N4TS" class="formulate-input-label formulate-input-label--before">
-      Sample text input
-    </label>
-    <!-- Interior element wrapper -->
-    <div data-type="text" class="formulate-input-element formulate-input-element--text">
-      <!-- Actual input element -->
-      <input type="text" placeholder="Sample placeholder" id="oX5F-N4TS">
-    </div>
-  </div>
-
-  <!-- Help message -->
-  <div class="formulate-input-help">
-    Sample help text
-  </div>
-
-  <!-- List of error messages -->
-  <ul class="formulate-input-errors">
-    <li class="formulate-input-error">
-      Sample is required.
-    </li>
-  </ul>
-</div>
+```sh
+git clone git@github.com:wearebraid/vue-formulate.git
+npm install
+npm run dev
 ```
 
-Once the above output has been themed styles will largely transfer too all
-formulate inputs. The only variance is some classifications use
-different internal inputs.
+Open the provided URL in the browser and you should see each input type broken
+out by its classification.
 
-### Using classifications
-
-The outermost wrapper always has a `data-classification` attribute which can be
-used to group styles. For example the `[data-classification="text"]` selector
-can be used to style all text-based inputs at the same time:
-
-```scss
-.formulate-input {
-  [data-classification="text"] {
-    input {
-      // style all text-like inputs here
-    }
-  }
-}
-```
-
-### Data attributes
-
-To make dynamic styling a bit easier, there are several utility data attributes
-that are applied to the outermost wrapper.
-
-Attribute                 | Description
---------------------------|----------------------------------------------------------------
-`data-classification`     | Always available. Set to the classification of the input (`box`, `text`, `group` etc)
-`data-has-errors`         | Added when the field has any validation errors or explicit errors (passed in via prop or form) *regardless of whether or not the errors are being displayed*.
-`data-has-value`          | Added when the field is not empty.
-`data-is-showing-errors`  | Added when the field has errors and is showing them (based on `error-behavior`)
-`data-type`               | Always available. Set to the value of the `type` prop.
+![Screenshot of all inputs by classification](./specimen.png)

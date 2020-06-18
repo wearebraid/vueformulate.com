@@ -1,8 +1,4 @@
----
-new: true
----
-
-# Group <Badge text="2.3.0+" />
+# Group
 
 The `group` [classification](/guide/inputs/custom-inputs/#what-is-a-classification)
 only contains the input type `group`. It is a special input used to
@@ -388,3 +384,15 @@ Slot name      | Description
 `grouping`     | The primary repeatable area, responsible for rendering the inner content.
 `remove`       | The remove button when `repeatable`.<br>_The context object in this slot includes a `removeItem` function that should be called to remove that item._
 `repeatable`   | Responsible for rendering each row of fields.<br>_The context object in this slot includes a `removeItem` function that should be called to remove that item._
+
+## Custom class keys
+
+In addition to all [global class keys](/guide/theming/#customizing-classes)
+following are available:
+
+Key             | Default                          | Description
+----------------|----------------------------------|---------------------------------------------------
+`grouping`      | `.formulate-input-grouping`      | A wrapper around all repeatable fields (only exists when repeatable)
+`groupRepeatable`    | `.formulate-input-group-repeatable` | A wrapper around each set of grouped fields (exists even for non-repeatable groups).
+`groupRepeatableRemove`   | `.formulate-input-group-repeatable-remove` | The remove button for a field group.
+`groupAddMore`       | `.formulate-input-group-add-more` | The wrapper around the add more button for repeatable groups.

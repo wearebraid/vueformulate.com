@@ -778,7 +778,7 @@ Vue.use(VueFormulate, {
 })
 ```
 
-## Validation event <Badge text="2.3+" />
+## Validation event
 
 Occasionally it may be useful to know when the validation state of a field or
 form changes — for these instances, the `@validation` event can be used on both
@@ -818,7 +818,7 @@ validation errors change, instead `validation` events are fired even if the
 field errors are not currently visible due to the current `error-behavior`.
 :::
 
-## Error Behavior
+## Error behavior
 
 By default, validation error messages are not shown until the user’s focus
 leaves (technically a `blur` event) the current field. There are 3 modes of

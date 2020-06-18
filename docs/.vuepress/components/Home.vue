@@ -39,9 +39,9 @@
 
     <div class="updates-section">
       <div class="new-badge">
-        <span class="label">NEW</span>
+        <span class="label">June 17th, 2020</span>
         <span class="text">
-          Introducing <NavLink :item="{link: '/guide/inputs/types/group/', text: 'groups'}" />, <NavLink :item="{link: '/guide/inputs/slots/', text: 'scoped slots'}" />, and <NavLink :item="{link: '/changelog/', text: 'more'}" />
+          2.4 introduces <NavLink :item="{link: '/guide/theming/customizing-classes/#customizing-classes', text: 'theming class customization'}" />, <NavLink :item="{link: '/guide/forms/generating-forms/#schemas', text: 'form generation schema'}" />, and <NavLink :item="{link: '/changelog/', text: 'more'}" />
         </span>
       </div>
     </div>
@@ -58,7 +58,19 @@
         <h2>{{ feature.title }}</h2>
         <p>{{ feature.details }}</p>
       </div>
+    </div>
 
+    <hr>
+
+    <div class="resources">
+      <ArticleCard
+        href="https://dev.to/justinschroeder/introducing-vue-formulate-truly-delightful-form-authoring-56f5"
+        image="/assets/img/resources/tailwind.png"
+        image-alt="Tailwind CSS"
+        badge="Latest Article"
+        headline="Vue Formulate 2.4 Class Maps — Using Tailwind to style your forms"
+        copy="Aenean cras felis viverra sollicitudin lorem elit vitae nulla luctus auctor orci, litora natoque nam feugiat arcu est quis condimentum vehicula dapibus."
+      />
     </div>
 
     <hr>
@@ -132,21 +144,27 @@ export default {
 <style lang="scss" scoped>
 .updates-section {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .new-badge {
   border: 1px solid #dfe4ee;
   background: #f6f9fd;
-  border-radius: 999em;
+  border-radius: 6px;
   padding: 0.5em 1em 0.5em 1em;
   margin-top: 1em;
   margin-bottom: -2em;
   font-size: 0.9em;
   margin-left: auto;
   margin-right: auto;
+  line-height: 1.6;
 
   @media (min-width: 500px) {
     padding: 0.5em 0.75em 0.5em 0.66em;
+  }
+  @media (min-width: 720px) {
+    border-radius: 999em;
   }
 
   .label {
@@ -158,6 +176,7 @@ export default {
     font-size: 0.85em;
     margin-right: 0.5em;
     font-weight: bold;
+    line-height: 1.2;
 
     @media (min-width: 500px) {
       padding: 0.33em 0.66em;
