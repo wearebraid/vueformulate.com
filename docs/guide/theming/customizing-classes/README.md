@@ -5,10 +5,10 @@ new: true
 # Customizing classes
 
 <ArticleCard
-  href="https://dev.to/justinschroeder/introducing-vue-formulate-truly-delightful-form-authoring-56f5"
+  href="https://dev.to/justinschroeder/tailwind-vue-formulate-24k1"
   badge="Article"
   headline="Using Tailwind with Vue Formulate 2.4"
-  copy="Using the new class props in Vue Formulate, learn how to leverage the Tailwind CSS utility framework to quickly add custom styling to your forms."
+  copy="Using the newly customizable classes in Vue Formulate, learn how to leverage the Tailwind CSS utility framework to quickly add custom styling to your forms."
   :sidebar="true"
 />
 

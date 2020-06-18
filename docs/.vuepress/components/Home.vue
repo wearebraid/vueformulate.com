@@ -64,12 +64,12 @@
 
     <div class="resources">
       <ArticleCard
-        href="https://dev.to/justinschroeder/introducing-vue-formulate-truly-delightful-form-authoring-56f5"
+        href="https://dev.to/justinschroeder/tailwind-vue-formulate-24k1"
         image="/assets/img/resources/tailwind.png"
         image-alt="Tailwind CSS"
         badge="Latest Article"
-        headline="Vue Formulate 2.4 Class Maps — Using Tailwind to style your forms"
-        copy="Aenean cras felis viverra sollicitudin lorem elit vitae nulla luctus auctor orci, litora natoque nam feugiat arcu est quis condimentum vehicula dapibus."
+        headline="Vue Formulate + Tailwind = ❤️"
+        copy="Vue Formulate 2.4 introduces customizable classes. It’s a match made in heaven for Tailwind users."
       />
     </div>
 
