@@ -810,9 +810,10 @@
   resolved "https://registry.yarnpkg.com/@braid/vue-formulate-i18n/-/vue-formulate-i18n-1.9.0.tgz#745c165b4fae1a2644bf8f07b33420ed00d58533"
   integrity sha512-x36+lB2860xwMdUIT5Lw8Fk4ZfjqQO86VnFh1UI6BYeGtAp9X/lcl0SOeQx/ljfMEAxLjwF+dJ1+JAhNj4uzfg==
 
-"@braid/vue-formulate@https://github.com/wearebraid/vue-formulate/archive/release/2.4.0.tar.gz?v=2":
+"@braid/vue-formulate@^2.4.0":
   version "2.4.0"
-  resolved "https://github.com/wearebraid/vue-formulate/archive/release/2.4.0.tar.gz?v=2#69f41dd5613d41bf6f127c36467a29b1060c728a"
+  resolved "https://registry.yarnpkg.com/@braid/vue-formulate/-/vue-formulate-2.4.0.tgz#0aa246783038befb0d30b15ee5bf5c005e414682"
+  integrity sha512-V3cfQSm80FC1sse3YA6stQp9oFvA5BdaZ9mHoS8w3gxBjzTogkdn++NNg3gsIkXeX1ovhcgPTHchMLFHroHRzw==
   dependencies:
     "@braid/vue-formulate-i18n" "^1.9.0"
     is-plain-object "^3.0.0"
