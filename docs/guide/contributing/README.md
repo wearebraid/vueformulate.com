@@ -74,7 +74,7 @@ your time to translate this documentation, please [get in touch](mailto:hello@we
 
 ## Guides
 
-We'd love Vue Formulate to be useful to all Vue developers, such as those using [Tailwind](https://tailwindcss.com/), [Laravel](https://laravel.com/), [Rails](https://rubyonrails.org/), [Bulma](https://bulma.io/), [Vuetify](https://vuetifyjs.com/en/), and [Bootstrap](https://getbootstrap.com/). With the release of the [class system](https://vueformulate.com/guide/theming/customizing-classes) in `2.4` and the powerful [slot functionality](https://vueformulate.com/guide/inputs/slots/) introduced in `2.3`, Vue Formulate is more compatible than ever with these frameworks!
+We'd love Vue Formulate to be useful to all Vue developers, such as those using [Tailwind](https://tailwindcss.com/), [Laravel](https://laravel.com/), [Rails](https://rubyonrails.org/), [Bulma](https://bulma.io/), [Vuetify](https://vuetifyjs.com/en/), and [Bootstrap](https://getbootstrap.com/). With the release of the [class system](/guide/theming/customizing-classes) in `2.4` and the powerful [slot functionality](/guide/inputs/slots) introduced in `2.3`, Vue Formulate is more compatible than ever with these frameworks!
 
 If you belong to one of these communities, consider writing a guide (like [this one](https://dev.to/justinschroeder/tailwind-vue-formulate-24k1) for Tailwind) and/or documentation for this site for how to use Vue Formulate with your favorite tech. 
 
