@@ -4,6 +4,11 @@ sidebar: auto
 
 # Changelog
 
+## v2.4.1 - June 22, 2020
+
+- Adds support for Polish language 🇵🇱.
+- Updates Korean translation removing generic particles.
+
 ## v2.4.0 - June 17, 2020
 
 Vue Formulate `2.4.0` is another significant update with some much-anticipated
