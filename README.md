@@ -39,7 +39,7 @@ The syntax is what developers would expect:
 ✓ Easy to add [form validation](https://vueformulate.com/guide/validation)<br>
 ✓ Easy to add [custom validation](https://vueformulate.com/guide/validation/#custom-validation-rules) rules<br>
 ✓ Easy to modify [validation messages](https://vueformulate.com/guide/validation/#customize-validation-messages)<br>
-✓ Easy to add [custom inputs](https://vueformulate.com/guide/custom-inputs)
+✓ Easy to add [custom inputs](https://vueformulate.com/guide/inputs/custom-inputs)
 ✓ Backend response [error handling](https://vueformulate.com/guide/forms/error-handling)
 
 There's a lot more available to read at the [documentation website](https://vueformulate.com).

@@ -32,7 +32,7 @@ With Vue Formulate developers are empowered to:
 ✓ Perform robust [form validation](/guide/validation)<br>
 ✓ Create [custom validation](/guide/validation/#custom-validation-rules) rules<br>
 ✓ Modify default [validation messages](/guide/validation/#customize-validation-messages)<br>
-✓ Create and share [custom inputs](/guide/custom-inputs)<br>
+✓ Create and share [custom inputs](/guide/inputs/custom-inputs)<br>
 ✓ Override default component templates with [scoped slots](/guide/inputs/slots)<br>
 
 ## Inputs

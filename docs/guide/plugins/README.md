@@ -50,7 +50,7 @@ to overwrite and add any configuration options.
 
 A common use case for a plugin is to re-use custom inputs, so as an example lets
 create a plugin that exposes the autocomplete input from the [custom inputs
-documentation page](/guide/custom-inputs/#custom-types).
+documentation page](/guide/inputs/custom-inputs/#custom-types).
 
 ```js
 // file: Autocomplete.js
