@@ -151,7 +151,7 @@ Vue.use(VueFormulate, {
 The above declaration can then be used as a standard prop on a `FormulateInput`.
 
 ```vue
-<FormualteInput
+<FormulateInput
   extra-help-text="My extra help text"
 />
 ```
