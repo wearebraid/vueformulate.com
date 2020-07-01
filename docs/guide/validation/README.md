@@ -102,7 +102,6 @@ do this we can use the `^` modifier on the rule name.
 
 <demo-validation-modifier />
 
-
 ## Available rules
 Vue Formulate ships with a library of frequently used validation rules. If
 you don’t find one that meets your exact requirement you can always add your
@@ -126,6 +125,7 @@ own [custom rule](#custom-validation-rules) to suit your needs.
 - [min](#min)
 - [not](#not)
 - [number](#number)
+- [optional](#optional)
 - [required](#required)
 - [starts_with](#starts-with)
 - [url](#url)
@@ -556,6 +556,25 @@ Checks if the input is a valid number as evaluated by `isNaN()`.
 />
 ```
 <demo-validation-number />
+
+### Optional
+
+Use this rule to make a field optional. When used all validation rules pass
+until the field is no longer empty. It’s location in the list of validation
+rules has no effect, 
+
+```vue
+<FormulateInput
+  label="A gmail address (optional)"
+  help="Enter a gmail email address."
+  validation="optional|^email|ends_with:gmail.com"
+  :validation-messages="{
+    ends_with: 'Please use a gmail address.'
+  }"
+  error-behavior="live"
+/>
+```
+<demo-validation-optional />
 
 ### Required
 Checks if the input is empty.

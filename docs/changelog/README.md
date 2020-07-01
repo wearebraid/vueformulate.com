@@ -4,6 +4,13 @@ sidebar: auto
 
 # Changelog
 
+## v2.4.2 - July 1, 2020
+
+- Adds new `optional` validation rule that allows allows fields to only run validation if they have a value.
+- Fixes a bug where `context.hasValue` was `false` when forms seeded a `Number 0` to a `<FormulateInput>`.
+- Fixes a bug where `<FormulateInput>` emitted the `@input` event before the form model was updated.
+- Fixed a bug where an empty string was parsed as a validation rule.
+
 ## v2.4.1 - June 22, 2020
 
 - Adds support for Polish language 🇵🇱.
