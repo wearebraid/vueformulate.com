@@ -560,7 +560,7 @@ Checks if the input is a valid number as evaluated by `isNaN()`.
 ### Optional
 
 Use this rule to make a field optional. When used all validation rules pass
-until the field is no longer empty. It’s location in the list of validation
+until the field is no longer empty. Its location in the list of validation
 rules has no effect, 
 
 ```vue
