@@ -201,8 +201,8 @@ every label on our project?
   <label :for="context.id">
     {{ context.label }}
     <svg
-      v-if="context.tooltip"
-      v-tooltip="context.tooltip"
+      v-if="tooltip"
+      v-tooltip="tooltip"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 100 100"
     >
@@ -246,8 +246,12 @@ right prop to the right slot.
 
 ```js
 import Vue from 'vue';
+import VTooltip from 'v-tooltip'
 import VueFormulate from '@braid/vue-formulate'
 import MyCustomLabel from './components/MyCustomLabel'
+
+// Register v-tooltip (or whatever extras you might want to use)
+Vue.component(VTooltip)
 
 // Register our slot component globally
 Vue.component('MyCustomLabel', MyCustomLabel)
@@ -259,7 +263,7 @@ Vue.use(VueFormulate, {
   },
   // Define any props we want to pass to our slot component
   slotProps: {
-    label: ['tooltop']
+    label: ['tooltip']
   }
 })
 ```
