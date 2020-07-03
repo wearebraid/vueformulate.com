@@ -251,7 +251,7 @@ import VueFormulate from '@braid/vue-formulate'
 import MyCustomLabel from './components/MyCustomLabel'
 
 // Register v-tooltip (or whatever extras you might want to use)
-Vue.component(VTooltip)
+Vue.use(VTooltip)
 
 // Register our slot component globally
 Vue.component('MyCustomLabel', MyCustomLabel)
