@@ -11,7 +11,10 @@
     <slot name="bottom" />
 
     <footer class="footer">
-      MIT Licensed | A product by <a href="https://www.wearebraid.com/" target="_blank" rel="noopener">Braid</a>
+      MIT Licensed | A product by:
+      <a href="https://www.wearebraid.com/" target="_blank" rel="noopener" class="footer-card">
+        <img src="/assets/img/braid-logo.png" />
+      </a>
     </footer>
   </aside>
 </template>
@@ -90,11 +93,24 @@ export default {
   }
 
   .footer {
+    box-sizing: border-box;
     padding: 5em 1em 2em 2em;
     margin-top: auto;
     width: 100%;
     font-size: .8em;
     color: #647d96;
+
+    * {
+      box-sizing: inherit;
+    }
+  }
+
+  .footer-card {
+    display: block;
+    max-width: 120px;
+    width: 90%;
+    margin-bottom: 1em;
+    margin-top: 1em;
   }
 }
 </style>
