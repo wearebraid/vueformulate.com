@@ -216,6 +216,7 @@ Property        | Description
 `label`         | The value of the `label` prop.
 `labelPosition` | The position of the label, `before` or `after`. Default is `before` for all except `box` classified inputs. Can be overridden with `label-position` prop.
 `limit`         | For a `group` type, this is the is the maximum number of repeatable items allowed (default is `Infinity`).
+`minimum`       | For a `group` type, this is the minimum number of repeatable items allowed (default is `0`).
 `model`         | The value of the current field, bound to a setter.
 `name`          | The name of the field, if none is set, it auto-generates a name.
 `options`       | The `options` prop converted to an array (when applicable).
