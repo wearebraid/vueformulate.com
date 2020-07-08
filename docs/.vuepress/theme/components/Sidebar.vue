@@ -4,6 +4,13 @@
 
     <slot name="top" />
 
+    <div
+      :key="$route.path"
+      class="carbon-area"
+    >
+      <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CE7IEKQN&placement=vueformulatecom" id="_carbonads_js" />
+    </div>
+
     <SidebarLinks
       :depth="0"
       :items="items"
