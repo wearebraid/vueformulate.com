@@ -2,6 +2,7 @@
   <a
     class="article-card"
     :data-sidebar="sidebar"
+    :data-block="block"
     :href="href"
   >
     <img v-if="image" :src="image" :alt="imageAlt">
@@ -43,6 +44,10 @@ export default {
     sidebar: {
       type: Boolean,
       default: false
+    },
+    block: {
+      type: Boolean,
+      default: false
     }
   }
 }
@@ -60,6 +65,20 @@ export default {
 
   @media (min-width: 600px) {
     flex-direction: row;
+  }
+
+  &[data-block] {
+    padding: 1em;
+    border: 1px solid #eee;
+    border-radius: 5px;
+
+    p {
+      margin-bottom: 0;
+    }
+
+    @media(min-width: 600px) {
+      padding: 1.5em;
+    }
   }
 
   &[data-sidebar] {

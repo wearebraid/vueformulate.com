@@ -46,6 +46,11 @@ module.exports = ctx => ({
               title: 'Contributing',
               path: '/guide/contributing/',
               collapsable: true
+            },
+            {
+              title: 'Community',
+              path: '/guide/community/',
+              collapsable: true
             }
           ]
         },
