@@ -1,5 +1,5 @@
-const description = 'The easiest way to build forms with Vue. Built-in validation, error handling, repeatable fields, form generation & more — make complex form creation a breeze.'
-const title = 'Vue Formulate'
+const description = 'Built-in validation, error handling, grouped and repeatable fields, form generation & more — make complex form creation a breeze.'
+const title = 'Vue Formulate — The easiest way to build forms with Vue.js'
 
 module.exports = ctx => ({
   title,
