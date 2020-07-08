@@ -164,7 +164,10 @@ img {
 /* ========== CARBON ADS ============== */
 .carbon-area {
   padding: 1em 1em 0 1em;
-  min-height: 120px;
+
+  @media (min-width: 960px) {
+    min-height: 120px;
+  }
 }
 #carbonads {
   max-width: 300px;
@@ -182,11 +185,21 @@ img {
 
 #carbonads .carbon-wrap {
   display: flex;
+  flex-direction: column;
+
+  @media (min-width: 960px) {
+    flex-direction: row;
+  }
 }
 
 #carbonads .carbon-img {
   margin-right: 10px;
   line-height: 1;
+  margin-bottom: 1em;
+
+  @media (min-width: 960px) {
+    margin-bottom 0
+  }
 }
 
 #carbonads .carbon-text {
@@ -199,8 +212,7 @@ img {
 
 #carbonads .carbon-poweredby {
   position: absolute;
-  bottom: 10px;
-  left: 152px;
+  bottom: 5px;
   color: #c5cdd0;
   text-decoration: none;
   text-transform: uppercase;
@@ -208,4 +220,8 @@ img {
   font-weight: 500;
   font-size: 8px;
   line-height: 1;
+
+  @media (min-width: 960px) {
+    left: 152px;
+  }
 }
