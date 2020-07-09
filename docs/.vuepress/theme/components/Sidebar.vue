@@ -4,6 +4,16 @@
 
     <slot name="top" />
 
+
+    <client-only>
+      <div
+        :key="$route.path"
+        class="carbon-area"
+      >
+        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CE7IEKQN&placement=vueformulatecom" id="_carbonads_js" />
+      </div>
+    </client-only>
+
     <SidebarLinks
       :depth="0"
       :items="items"
@@ -22,11 +32,12 @@
 <script>
 import SidebarLinks from '@theme/components/SidebarLinks.vue'
 import NavLinks from '@theme/components/NavLinks.vue'
+import ClientOnly from 'vue-client-only'
 
 export default {
   name: 'Sidebar',
 
-  components: { SidebarLinks, NavLinks },
+  components: { SidebarLinks, NavLinks, ClientOnly },
 
   props: ['items']
 }
