@@ -11,7 +11,7 @@ new: true
 If you have a question about how to use Vue Formulate please ask it on
 Stack Overflow tagged with `vue-formulate`. When you do, please include code
 examples and if possible, a link to a CodePen or CodeSandbox so the community
-can further assist you (see [Code Playgrounds](#code-playground) below)
+can further assist you (see [Code Playgrounds](#code-playgrounds) below)
 
 <stack-overflow-link />
 
