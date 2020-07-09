@@ -20,7 +20,8 @@ can further assist you (see [Code Playgrounds](#code-playgrounds) below)
 Stack Overflow is not the right place to ask generalized "Why doesn't my code
 work" questions. It's intended to ask questions about isolated issues. If you're
 in need of more generalized help, consider asking it on the #code-help channel
-on the Vue discord server.
+on the Vue discord server. If you are not already a member (it's free and open)
+you'll first need to use the invite link to join the server.
 
 <vue-discord-link />
 
