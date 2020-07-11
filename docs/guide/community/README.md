@@ -36,7 +36,7 @@ served by Vue Formulate, we want to know that too.
 
 ## Code playgrounds
 
-We maintain a Vue Formulate enabled CoedPen and CodeSandbox to let you quickly
+We maintain a Vue Formulate enabled CodePen and CodeSandbox to let you quickly
 mockup your forms and reproduce issues or bugs you might have. If you want to
 just play around, or plan to file an issue, coding up an example is a great
 place to start.
