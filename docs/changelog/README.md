@@ -4,6 +4,17 @@ sidebar: auto
 
 # Changelog
 
+## v2.4.3 - July 11, 2020
+
+- Adds support for Czech language 🇨🇿.
+- Event listeners applied to `<FormulateInput>` are now forwarded to their internal input element.
+- `select` inputs that have no model data and no placeholder now auto-select the first value.
+- Adds a `minimum` prop to the input type `group`.
+- Improves model reactivity for `<FormulateForm>` and `group` types.
+- Fixes a bug that prevented `group` inputs from accessing `getFormValues` and `formValues` in custom validation rules.
+- Fixes a bug in the `date` validation rule that incorrectly parsed some dates ending in zero.
+- Fixes a bug that prevented models being initially set to `Number 0`.
+
 ## v2.4.2 - July 1, 2020
 
 - Adds [new `optional` validation](/guide/validation/#optional) rule that allows allows fields to only run validation if they have a value.

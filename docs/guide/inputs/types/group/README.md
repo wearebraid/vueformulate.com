@@ -371,6 +371,7 @@ Prop           | Description
 ---------------|----------------------------------------------------------------
 `add-label`    | When repeatable, this is the label to display on the "+ Add" button (defaults to `label || name`).
 `limit`        | When repeatable, this is the maximum number of group items.
+`minimum`      | When repeatable, this is the minimum number of group items.
 `repeatable`   | `Boolean` indicates if the field is repeatable.
 
 ## Slots
