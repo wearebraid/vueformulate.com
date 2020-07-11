@@ -28,19 +28,17 @@ us build our platform to get the word out about Vue Formulate.
 Want to contribute Vue Formulate? You can join the [list of users](https://github.com/wearebraid/vue-formulate/graphs/contributors)
 helping build Vue Formulate through in the following ways:
 
-## Feature requests
+## Answer questions
 
-Do you have a great idea for how to make this project better? First, consider if
-the feature you’d like to add would be applicable to the majority of users of
-this project. If so, please [submit an issue on Github](https://github.com/wearebraid/vue-formulate/issues).
+This is a great way for people of any skill level to contribute. As Vue
+Formulate continues to grow in usage, we're hoping to see people jump in
+and help others out who might have questions. [Checkout the community page](/guide/community/)
+to see some places where you can find people looking for help.
 
-## Bug reports
+## Feature requests & bug reports
 
-Bug reports are very welcome, first check on [Github](https://github.com/wearebraid/vue-formulate/issues)
-to see if the bug has already been reported. If not, please create a new issue.
-The more detail you can give to describe the issue the better. Screenshots,
-steps to reproduce, and CodePen examples are greatly appreciated, but not
-required to submit.
+Head over to the [community page](/guide/community/#github-issues-bugs-and-features)
+to review guidelines for submitting feature requests and bug reports.
 
 ## Pull requests
 
@@ -52,18 +50,9 @@ below. Other core feature pull requests should be made to the primary repository
 ## Documentation
 
 Find a typo in our documentation? Or have a better way of explaining a
-concept? Awesome! The documentation lives in a [separate repository](https://github.com/wearebraid/vueformulate.com)
-
-#### For small changes
-
-At the bottom of every page on this site there is a "Help improve this page!"
-link where you can submit small corrections.
-
-#### New pages
-
-For any significant changes to the documentation you’re best off forking the
-documentation to your own machine and editing it there. When you're done, submit
-a pull request.
+concept? Awesome! The documentation lives in a [separate repository](https://github.com/wearebraid/vueformulate.com).
+You can easily submit pull requests to it by clicking the “Help improve this page”
+button at the bottom of every page.
 
 #### Language support
 
@@ -71,13 +60,6 @@ We’re looking for people to translate these documentation pages! It’s no sma
 task and would require a higher level of coordination, but if you are a native
 speaker with a good grasp of technical english and are willing to contribute
 your time to translate this documentation, please [get in touch](mailto:hello@wearebraid.com)!
-
-## Guides
-
-We'd love Vue Formulate to be useful to all Vue developers, such as those using [Tailwind](https://tailwindcss.com/), [Laravel](https://laravel.com/), [Rails](https://rubyonrails.org/), [Bulma](https://bulma.io/), [Vuetify](https://vuetifyjs.com/en/), and [Bootstrap](https://getbootstrap.com/). With the release of the [class system](/guide/theming/customizing-classes) in `2.4` and the powerful [slot functionality](/guide/inputs/slots) introduced in `2.3`, Vue Formulate is more compatible than ever with these frameworks!
-
-If you belong to one of these communities, consider writing a guide (like [this one](https://dev.to/justinschroeder/tailwind-vue-formulate-24k1) for Tailwind) and/or documentation for this site for how to use Vue Formulate with your favorite tech. 
-
 
 ## Internationalization
 

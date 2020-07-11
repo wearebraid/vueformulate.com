@@ -1,5 +1,5 @@
-const description = 'The easiest way to build forms with Vue. Built-in validation, error handling, repeatable fields, form generation & more — make complex form creation a breeze.'
-const title = 'Vue Formulate'
+const description = 'Built-in validation, error handling, grouped & repeatable fields, form generation, and more — make complex form creation a breeze.'
+const title = 'Vue Formulate ⚡️ The easiest way to build forms with Vue.js'
 
 module.exports = ctx => ({
   title,
@@ -45,6 +45,11 @@ module.exports = ctx => ({
             {
               title: 'Contributing',
               path: '/guide/contributing/',
+              collapsable: true
+            },
+            {
+              title: 'Community',
+              path: '/guide/community/',
               collapsable: true
             }
           ]

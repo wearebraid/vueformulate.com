@@ -112,7 +112,10 @@
     </div>
 
     <footer class="footer">
-      MIT Licensed | A product by <a href="https://www.wearebraid.com/" target="_blank" rel="noopener">Braid</a>
+      MIT Licensed | A product by:
+      <a href="https://www.wearebraid.com/" target="_blank" rel="noopener" class="footer-card">
+        <img src="/assets/img/braid-logo.png" />
+      </a>
     </footer>
   </main>
 </template>
@@ -187,6 +190,23 @@ export default {
   .nav-link {
     display: inline-block;
   }
+}
+
+.footer {
+  border-top: 1px solid #eaecef;
+  margin-top: 1em;
+}
+
+.footer-card {
+  display: block;
+  max-width: 100px;
+  width: 90%;
+  padding: 1em 1.5em;
+  border-radius: 5px;
+  margin-bottom: 1em;
+  margin-top: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
 }
 </style>
 
