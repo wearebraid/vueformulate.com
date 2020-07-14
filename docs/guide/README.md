@@ -255,7 +255,7 @@ Vue Formulate is second-to-none.
 
 ### Buefy
 
-Similar to Vuetify, Beufy is a full UI framework. If you’re already using Bulma
+Similar to Vuetify, Buefy is a full UI framework. If you’re already using Bulma
 or you're looking for a comprehensive UI solution it’s a solid choice.
 Vue Formulate is happy to live in the context of any UI framework and still
 offers the benefits of slick form composition, validation, and error handling
