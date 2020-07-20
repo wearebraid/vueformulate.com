@@ -222,6 +222,7 @@ Property        | Description
 `options`       | The `options` prop converted to an array (when applicable).
 `performValidation` | Function that will run validation. This is executed on every input automatically.
 `preventWindowDrops` | `true` by default, this prevents the browser from navigating to a file when the user misses the dropzone.
+`removeLabel`   | The label to display inside "remove" button on `group` inputs.
 `repeatable`    | `Boolean` indicating if a field is repeatable or not.
 `rootEmit`      | `Function` identical to `$emit`, but should be used in custom inputs and slots to emit events from the root `<FormulateInput>`.
 `setErrors`     | Function to set (or clear) the current `errors` (not validation errors).
