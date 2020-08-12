@@ -841,7 +841,7 @@ field errors are not currently visible due to the current `error-behavior`.
 
 By default, validation error messages are not shown until the user’s focus
 leaves (technically a `blur` event) the current field. There are 3 modes of
-error behavior that can be set on your `FormulateInput`s:
+error behavior that can be set on your `FormulateInput`'s `error-behavior` prop:
 
 - `blur` (default): Shows applicable error messages when a user's focus leaves a field.
 - `submit`: Shows applicable error messages when the form is submitted.
