@@ -91,6 +91,7 @@ Consider writing an article about it! Whether it's on DEV, Medium, or your perso
 A growing list of Vue Formulate code examples.
 
 - [Custom validation rule (multi-field)](https://codepen.io/justin-schroeder/pen/ExPagor)
+- [Disable submit button until entire form is valid](https://codepen.io/justin-schroeder/pen/KKzaqjJ)
 - [CDN usage](https://codepen.io/justin-schroeder/pen/Poqmyba)
 - [Group input with a `v-model`](https://codepen.io/justin-schroeder/pen/PoPxyLx)
 - [Initial value for an `image` input](https://codepen.io/justin-schroeder/pen/KKdOBvX)
