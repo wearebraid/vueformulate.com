@@ -221,9 +221,7 @@ Notice how the above form does not trigger the alert dialog until the fields it
 contains pass validation. Neat-o.
 
 :::tip Note
-Because validation rules are asynchronous, and [file uploads](/guide/inputs/file),
-will wait to resolve the `@submit` event is also asynchronous relative to when
-the form was submitted.
+Because validation rules are asynchronous, and [file uploads](/guide/inputs/types/file), will wait to resolve the `@submit` event is also asynchronous relative to when the form was submitted.
 :::
 
 ### Advanced form submission
