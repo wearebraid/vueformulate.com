@@ -241,7 +241,7 @@ on forms — there are some things this package does not aim to do:
     This package assumes you'll still be responsible for your form layout.
   2. This package is BYOB — bring your own backend. Vue Formulate doesn't care
     a lick about the backend you choose (the closest it gets to caring is when
-    using [file inputs](/guide/inputs/file))
+    using [file inputs](/guide/inputs/types/file/))
 
 ## Why not...?
 

@@ -165,12 +165,12 @@ Prop              | Description
 `help-position`   | The position of the help text `before` or `after` (default is `after`).
 `id`              | The id of the input (defaults to an auto-generated one)
 `label`           | A descriptive label for the input element.
-`label‑position`  | Most input elements place the label before the input by default. The `box` [classification](/guide/inputs/box) places labels after by default, but either can be overridden with this prop.
+`label‑position`  | Most input elements place the label before the input by default. The `box` [classification](/guide/inputs/types/box/) places labels after by default, but either can be overridden with this prop.
 `name`            | Adds a name attribute, and when used with `<FormulateForm>` this is the key of the field. If no name is defined a random hash will be assigned
 `options`         | Array or object of options (`select` or `box` classifications)
 `placeholder`     | The placeholder attribute of the element (if applicable)
 `show‑errors`     | When `true` this forces an element to show it’s errors regardless of the state of the `error-behavior`.
-`type`            | *Required.* The type of input element. [See the input library](/guide/inputs/text) for a full range of options.
+`type`            | *Required.* The type of input element. [See the input library](/guide/inputs/types/text/) for a full range of options.
 `validation`      | A `string` or `array` of validation rules. See [input validation](/guide/validation)
 `validation‑name` | The name to use in validation error messages. By default, this uses the `name` prop if available and falls back to the `label` prop. It can be explicitly overridden here if needed.
 `validation‑messages` | See [custom validation messages](/guide/validation/#customize-validation-messages).
