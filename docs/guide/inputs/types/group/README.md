@@ -214,6 +214,10 @@ be shown when someone attempts to submit a form. If you prefer errors to be
 immediately show, consider using `error-behavior="live"`.
 :::
 
+:::tip Note
+The [`confirm`-rule](/guide/validation/#confirm) currently does not work within groups. This will be fixed in an upcoming release. See [tracking issue](https://github.com/wearebraid/vue-formulate/issues/226)
+:::
+
 #### Applying custom validation rules
 
 Applying custom validation rules to a `group` field allows for very granular and

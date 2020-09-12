@@ -241,7 +241,7 @@ on forms — there are some things this package does not aim to do:
     This package assumes you'll still be responsible for your form layout.
   2. This package is BYOB — bring your own backend. Vue Formulate doesn't care
     a lick about the backend you choose (the closest it gets to caring is when
-    using [file inputs](/guide/inputs/file))
+    using [file inputs](/guide/inputs/types/file/))
 
 ## Why not...?
 
@@ -255,7 +255,7 @@ Vue Formulate is second-to-none.
 
 ### Buefy
 
-Similar to Vuetify, Beufy is a full UI framework. If you’re already using Bulma
+Similar to Vuetify, Buefy is a full UI framework. If you’re already using Bulma
 or you're looking for a comprehensive UI solution it’s a solid choice.
 Vue Formulate is happy to live in the context of any UI framework and still
 offers the benefits of slick form composition, validation, and error handling
