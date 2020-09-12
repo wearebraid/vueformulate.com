@@ -109,3 +109,10 @@ A growing list of Vue Formulate code examples.
 Have you created a Vue Formulate CodePen or CodeSandbox? Share it with the
 community! Just [edit this page and submit a pull request](https://github.com/wearebraid/vueformulate.com/edit/master/docs/guide/community/README.md)
 :::
+
+## Projects using Vue Formulate
+
+Have you built something using Vue Formulate in the wild? Submit it to [Vue Telemetry](https://vuetelemetry.com/) — which
+has support for detecting Vue Formulate within projects — and add it to the growing list of example sites.
+
+<vuetelemetry-link />
