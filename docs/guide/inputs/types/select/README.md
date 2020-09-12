@@ -18,6 +18,20 @@ The select [classification](/guide/inputs/custom-inputs/#what-is-a-classificatio
 
 <demo-input-select />
 
+The `options` prop can be an object or an array of objects. When using an array
+each object must include a `label` and `value` property while `id` is optional:
+
+```vue
+<FormulateInput
+  type="select"
+  :options="[
+    { value: 'first', label: 'First name' },
+    { value: 'last', label: 'Last name' },
+    { value: 'initial', label: 'Middle Initial', id: 'name-initial' }
+  ]"
+/>
+```
+
 :::tip Note
 Native select elements don’t have placeholders, but that prop is available
 and will inject a non-selectable option item as the initially selected value.
