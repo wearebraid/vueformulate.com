@@ -380,17 +380,18 @@ Example:
                 name="attendees"
                 :repeatable="true"
                 add-label="+ Add Attendee"
-            >   <template v-slot:default="groupProps">
+            >
+            <template v-slot:default="groupProps">
               
-              <p>This is Group # {{index}} </p>
+              <p>This is Group # {{groupProps.index}} </p>
                 <FormulateInput
                                 name="price"
                                 disabled
                                 :value="getPrice(groupProps.index)"
                                 label="Price""
                             />
-                </template>
-            </FormulateInput>
+            </template>
+ </FormulateInput>
             
 ```
 
