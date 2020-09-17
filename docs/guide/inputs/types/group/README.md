@@ -369,12 +369,12 @@ export default {
 
 ## Index of current group
 
-To manipulate a distinct group field, it is helpful to get the index of the current group item. Luckily, slots can help. The `default` slot for instance offers the `index` as a context variable:
+To manipulate a distinct group field, it is helpful to get the index of the current group item. Luckily, slots can help. The `default` slot for instance offers the `index` as a context variable of `groupProps`:
 
 Example:
 
 
-```
+```vue
  <FormulateInput
                 type="group"
                 name="attendees"
@@ -386,7 +386,7 @@ Example:
                 <FormulateInput
                                 name="price"
                                 disabled
-                                :value="getPrice(index)"
+                                :value="getPrice(groupProps.index)"
                                 label="Price""
                             />
                 </template>
