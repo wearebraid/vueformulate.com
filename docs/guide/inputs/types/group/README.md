@@ -367,6 +367,36 @@ export default {
 :::
 <demo-group-validation />
 
+## Index of current group
+
+To manipulate a distinct group field, it is helpful to get the index of the current group item. Luckily, slots can help. The `default` slot for instance offers the `index` as a context variable of `groupProps`:
+
+Example:
+
+
+```vue
+ <FormulateInput
+                type="group"
+                name="attendees"
+                :repeatable="true"
+                add-label="+ Add Attendee"
+            >
+            <template v-slot:default="groupProps">
+              
+              <p>This is Group # {{groupProps.index}} </p>
+                <FormulateInput
+                                name="price"
+                                disabled
+                                :value="getPrice(groupProps.index)"
+                                label="Price""
+                            />
+            </template>
+ </FormulateInput>
+            
+```
+
+
+
 ## Props
 
 The group field has a few unique props:
