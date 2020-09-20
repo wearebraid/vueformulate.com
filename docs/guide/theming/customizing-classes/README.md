@@ -227,6 +227,7 @@ with the following values:
 
 Property          | Description
 ------------------|----------------------------------------------------------------
+`attrs`           | Attributes that are applied to the input (ex. `disabled`)
 `classification`  | The classification of the input (`text`, `group`, `select`, etc.)
 `hasErrors`       | `Boolean` indicating _visible_ errors.
 `hasValue`        | `Boolean` whether or not the field has a value.
