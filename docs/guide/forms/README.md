@@ -171,6 +171,76 @@ the object will update!
   </FormulateForm>
 ```
 
+## Conditional fields
+
+To make fields conditional use simple Vue directives such as `v-if`.
+
+```vue
+<FormulateForm v-model="values">
+  <FormulateInput
+    type="select"
+    name="planet"
+    label="What is your favorite rocky planet?"
+    :options="{ mercury: 'Mercury', venus: 'Venus', earth: 'Earth', mars: 'Mars' }"
+  />
+  <FormulateInput
+    v-if="values.planet === 'earth'"
+    key="earth"
+    name="earth_moon"
+    label="What is the name of earth’s moon?"
+  />
+  <FormulateInput
+    v-if="values.planet === 'mars'"
+    key="mars"
+    name="mars_sunset"
+    label="What color is the Martian sunset?"
+  />
+</FormulateForm>
+```
+<demo-form-4 />
+
+:::warning Conditional fields and keys
+Due to the way Vue patches the DOM, it is generally a best practice to put
+a `key` on each `FormulateInput` that can be dynamically swapped out. This ensures that
+Vue does not re-use the DOM element when patching. For more information read the
+about [reusing elements in the Vue Docs](https://vuejs.org/v2/guide/conditional.html#Controlling-Reusable-Elements-with-key).
+:::
+
+#### Preserving conditional values
+
+Did you notice in the example above that values were removed from the form's
+data when the corresponding `FormulateInput` was removed? If you need to keep
+those values in the form data set the `keep-model-data` prop to `true`. If you
+only want one or two fields to keep their data you can set the `keep-model-data`
+prop directly on `<FormulateInput>` as well.
+
+```vue
+<FormulateForm
+  v-model="values"
+  :keep-model-data="true"
+>
+  <FormulateInput
+    type="select"
+    name="planet"
+    label="What is your favorite rocky planet?"
+    :options="{ mercury: 'Mercury', venus: 'Venus', earth: 'Earth', mars: 'Mars' }"
+  />
+  <FormulateInput
+    v-if="values.planet === 'earth'"
+    key="earth"
+    name="earth_moon"
+    label="What is the name of earth’s moon?"
+  />
+  <FormulateInput
+    v-if="values.planet === 'mars'"
+    key="mars"
+    name="mars_sunset"
+    label="What color is the Martian sunset?"
+  />
+</FormulateForm>
+```
+<demo-form-5 />
+
 ## Submitting forms
 
 While it’s easy to use `v-model` to get and set form values, the `@submit` event

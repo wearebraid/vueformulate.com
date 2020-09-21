@@ -4,6 +4,29 @@ sidebar: auto
 
 # Changelog
 
+## v.2.4.4 - September 21, 2020
+
+- New Features 🎉
+  - Adds support for Chinese 🇨🇳, Lithuanian 🇱🇹, Norwegian 🇳🇴, and Swedish 🇸🇪.
+  - Adds support for a `remove-label` prop on `group` inputs to support i18n language for the remove button.
+  - Adds support for ARIA live regions on error messages
+  - Fixes styling issues for `select` type with `multiple` attribute.
+  - Adds stylistic support for the `size` attribute on a `multiple` select input.
+  - Adds a `$formulate.setLocale` method to easily change the active locale manually.
+  - Adds a `keep-model-data` prop to `FormulateForm` and `FormulateInput` to allow you to keep an input's model data even after it has been removed.
+  - Adds attributes (`attrs`) to the [context object](/guide/theming/customizing-classes/#class-context) that is passed to class functions.
+
+- Bug Fixes 🐛
+  - Fixes an issue that could cause a select type with the `multiple` attribute to incorrectly select the first item in the list.
+  - Fixes a styling issue in the snow theme that caused select lists items to appear grey when used with placeholders.
+  - Fixed an issue that prevented the `file` type from removing files from the model after they had been uploaded on the same page session.
+  - Fixes stylistic alignment of progress bar and file name on `file` type.
+  - Fixes issue that caused incorrect id generation when using array syntax on inputs that accept `options` like `checkbox` inputs.
+  - Fixes compatibility with IE11 for the `group` type which previously used a `Symbol` internally and now uses unique strings.
+  - Fixes an issue that prevented an input's `context.model` from being accessible in some scoped slots.
+  - Fixed the `class` attribute in schemas to support Vue's [special handling of classes](https://vuejs.org/v2/guide/class-and-style.html).
+  - Fixed an issue that caused mutations to schemas to sometimes (incorrectly) re-use DOM nodes causing model cross contamination.
+
 ## v2.4.3 - July 11, 2020
 
 - Adds support for Czech language 🇨🇿.
