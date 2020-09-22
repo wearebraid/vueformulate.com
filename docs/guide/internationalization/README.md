@@ -16,6 +16,8 @@ a PR following the [contribution guide](/guide/contributing/#internationalizatio
 :::
 
 - 🇪🇬 Arabic (ar)
+- 🇨🇳 Chinese (zh)
+- 🇨🇿 Czech (cs)
 - 🇩🇰 Danish (da)
 - 🇳🇱 Dutch (nl)
 - 🇩🇪 German (de)
@@ -25,10 +27,13 @@ a PR following the [contribution guide](/guide/contributing/#internationalizatio
 - 🇮🇹 Italian (it)
 - 🇯🇵 Japanese (ja)
 - 🇰🇷 Korean (ko)
+- 🇱🇹 Lithuanian (lt)
+- 🇳🇴 Norwegian (nb)
 - 🇵🇱 Polish (pl)
 - 🇧🇷 Portuguese (pt)
 - 🇷🇺 Russian (ru)
 - 🇨🇺 Spanish (es)
+- 🇸🇪 Swedish (sv)
 
 When using a right-to-left language like Arabic with the default [snow theme](/guide/theming/#default-theme)
 it may be necessary to modify the `direction` css property in your project.

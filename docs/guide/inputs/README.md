@@ -164,6 +164,7 @@ Prop              | Description
 `help`            | Help text to be displayed with the input.
 `help-position`   | The position of the help text `before` or `after` (default is `after`).
 `id`              | The id of the input (defaults to an auto-generated one)
+`keep-model-data` | Keeps the input's data in the model when removing it from a `FormulateForm`.
 `label`           | A descriptive label for the input element.
 `label‑position`  | Most input elements place the label before the input by default. The `box` [classification](/guide/inputs/types/box/) places labels after by default, but either can be overridden with this prop.
 `name`            | Adds a name attribute, and when used with `<FormulateForm>` this is the key of the field. If no name is defined a random hash will be assigned
@@ -222,6 +223,7 @@ Property        | Description
 `options`       | The `options` prop converted to an array (when applicable).
 `performValidation` | Function that will run validation. This is executed on every input automatically.
 `preventWindowDrops` | `true` by default, this prevents the browser from navigating to a file when the user misses the dropzone.
+`removeLabel`   | The label to display inside "remove" button on `group` inputs.
 `repeatable`    | `Boolean` indicating if a field is repeatable or not.
 `rootEmit`      | `Function` identical to `$emit`, but should be used in custom inputs and slots to emit events from the root `<FormulateInput>`.
 `setErrors`     | Function to set (or clear) the current `errors` (not validation errors).
