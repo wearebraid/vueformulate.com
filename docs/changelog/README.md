@@ -10,13 +10,13 @@ sidebar: auto
   - Adds support for Chinese 🇨🇳, Lithuanian 🇱🇹, Norwegian 🇳🇴, and Swedish 🇸🇪.
   - Adds support for a `remove-label` prop on `group` inputs to support i18n language for the remove button.
   - Adds support for ARIA live regions on error messages
-  - Fixes styling issues for `select` type with `multiple` attribute.
   - Adds stylistic support for the `size` attribute on a `multiple` select input.
   - Adds a `$formulate.setLocale` method to easily change the active locale manually.
   - Adds a `keep-model-data` prop to `FormulateForm` and `FormulateInput` to allow you to keep an input's model data even after it has been removed.
   - Adds attributes (`attrs`) to the [context object](/guide/theming/customizing-classes/#class-context) that is passed to class functions.
 
 - Bug Fixes 🐛
+  - Fixes styling issues for `select` type with `multiple` attribute.
   - Fixes an issue that could cause a select type with the `multiple` attribute to incorrectly select the first item in the list.
   - Fixes a styling issue in the snow theme that caused select lists items to appear grey when used with placeholders.
   - Fixed an issue that prevented the `file` type from removing files from the model after they had been uploaded on the same page session.
