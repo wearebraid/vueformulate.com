@@ -66,8 +66,9 @@ our example autocomplete would fit well under the `text` classification.
 The input component, on the other hand, is a Vue component that is passed a
 [`context` object](/guide/inputs/#context-object) prop (the [context object](/guide/inputs/#context-object)
 is responsible nearly all of the component’s functionality — it’s a good
-idea to familiarize yourself with it). This custom component can be used for
-entirely new input systems, business logic, or custom UI.
+idea to familiarize yourself with it). Additionally your custom input can be
+passed it’s own props defined as `slotProps`. This custom component can be used
+for entirely new input systems, business logic, or custom UI.
 
 #### The model
 
@@ -180,6 +181,29 @@ _Note: in the above example we wrap our `<template>` with a div containing some
 `.formulate-input-element` classes, this is not required, but is a good practice
 to keep things consistent for theme authors._
 :::
+
+## Custom props
+
+Often, when creating custom inputs, you’ll need to pass custom props, such as a
+url or a debounce duration. Custom inputs can also declare they want to receive
+their own props directly. This is done by leveraging the [`slotProp`](https://vueformulate.com/guide/inputs/slots/#declaring-slot-props)
+mechanism under the `component` key during registration. For example to expose a
+`url` prop to a custom input named `myinput`:
+
+```js
+// Vue Formulate config:
+{
+  library: {
+    myinput: {
+      classification: 'myclassification',
+      component: 'MyFormulateInput',
+      slotProps: {
+        component: ['url']
+      }
+    }
+  }
+}
+```
 
 ## Registering an input
 

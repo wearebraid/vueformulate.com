@@ -26,7 +26,6 @@
         <slot name="sidebar-bottom" />
       </template>
     </Sidebar>
-
     <Home />
   </div>
 </template>

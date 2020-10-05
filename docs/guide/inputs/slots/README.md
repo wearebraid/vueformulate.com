@@ -181,6 +181,11 @@ And the above could be used on any `range` types:
 />
 ```
 
+:::tip Custom inputs types
+When creating a custom input, you can declare [custom props](/guide/inputs/custom-inputs/#custom-props)
+by using the `component` slotProp.
+:::
+
 ## Context object
 
 All 3 methods of creating and customizing inputs operate by using
