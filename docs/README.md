@@ -30,20 +30,24 @@ features:
 
 ### Form validation
 Vue Formulate includes [20 rules](/guide/validation/) and support for defining your own.
-```html live
-<FormulateInput
-  type="email"
-  label="What is your school email address?"
-  validation="bail|required|email|ends_with:.edu"
-  validation-name="School email"
-  placeholder="user@university.edu"
-/>
-```
+
+<ClientOnly>
+  ```html live
+  <FormulateInput
+    type="email"
+    label="What is your school email address?"
+    validation="bail|required|email|ends_with:.edu"
+    validation-name="School email"
+    placeholder="user@university.edu"
+  />
+  ```
+</ClientOnly>
 
 
 ### Single-element inputs
 Try changing `type="radio"` to `checkbox` or `select` in this demo.
 
+<ClientOnly>
 ```html live
 <FormulateInput
   type="radio"
@@ -55,9 +59,12 @@ Try changing `type="radio"` to `checkbox` or `select` in this demo.
   }"
 />
 ```
+</ClientOnly>
 
 ### Well-considered file inputs
 [File inputs](/guide/inputs/types/file/) done well, right out of the box.
+
+<ClientOnly>
 ```html live
 <FormulateInput
   type="image"
@@ -67,11 +74,13 @@ Try changing `type="radio"` to `checkbox` or `select` in this demo.
   multiple
 />
 ```
+</ClientOnly>
 
 ### Model an entire form in one object
 Effortlessly ensure all fields have validated and even `v-model` field values
 to a single object.
 
+<ClientOnly>
 ```vue live
 <template>
   <!-- some code condensed for display reasons -->
@@ -92,12 +101,14 @@ to a single object.
 export default { data () { return { values: {}, handleLogin: () => alert('Logged in') } } }
 </script>
 ```
+</ClientOnly>
 
 
 ### Quickly implement complex repeatable fields
 Add [grouped](/guide/inputs/types/group/) and [repeatable](/guide/inputs/types/group/#repeatable-groups)
 fields without the complexity.
 
+<ClientOnly>
 ```vue live
 <template>
   <!-- some code condensed for display reasons -->
@@ -129,3 +140,4 @@ fields without the complexity.
 export default { data () { return { values: {} } }, methods: {submitHandler () { alert(`Thank you for your order!`) } } }
 </script>
 ```
+</ClientOnly>

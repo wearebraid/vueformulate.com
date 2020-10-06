@@ -157,7 +157,7 @@ module.exports = ctx => ({
     }
   },
   plugins: [
-    ['live'],
+    ['live', { noSsr: true }],
     [
       '@vuepress/google-analytics',
       {
