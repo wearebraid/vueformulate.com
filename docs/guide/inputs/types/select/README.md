@@ -60,3 +60,9 @@ Use the `optionGroups` prop when you need to use `<optgroup>`.
 ```
 
 <demo-input-select-group />
+
+:::warning String values only
+Although Vue Formulate supports non-string values, HTML `select` inputs only
+support string values, using integers or booleans as keys will result in
+unexpected behavior.
+:::

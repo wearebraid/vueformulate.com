@@ -4,6 +4,17 @@ sidebar: auto
 
 # Changelog
 
+## v.2.4.5 - October 4, 2020
+
+- New features 🎉:
+  - Adds support for Serbian 🇷🇸 and Thai 🇹🇭.
+  - Adds a new slotProp `component` to allow custom props to be passed to custom inputs.
+
+- Bug Fixes 🐛
+  - Fixes bug that caused `file` inputs with hydrated values to not remove their files from the model when removed.
+  - Fixes a `z-index` bug with hover states on `image` type inputs.
+  - Fixes an issue that allowed multiple uploads of a `file` type when triggered by the `submit` button.
+
 ## v.2.4.4 - September 21, 2020
 
 - New Features 🎉
