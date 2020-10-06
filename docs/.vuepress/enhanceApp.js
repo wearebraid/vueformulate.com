@@ -9,6 +9,8 @@ import ArticleCard from './components/ArticleCard'
 import GithubButton from 'vue-github-button'
 import VTooltip from 'v-tooltip'
 
+// import '../../node_modules/prismjs/components/prism-javascript';
+import '../../node_modules/prismjs/themes/prism-tomorrow.css'
 import '../../node_modules/@braid/vue-formulate/themes/snow/snow.scss'
 
 export default ({ Vue }) => {
