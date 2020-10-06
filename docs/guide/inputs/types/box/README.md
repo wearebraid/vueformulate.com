@@ -91,3 +91,9 @@ Key             | Default                          | Description
 ----------------|----------------------------------|---------------------------------------------------
 `decorator`     | `.formulate-input-decorator`     | A secondary `<label>` element position immediately after the `<input>` element for styling “pretty” checkboxes.
 
+:::warning String values only
+Although Vue Formulate supports non-string values, HTML `radio` and `checkbox`
+inputs only support string values, using integers or booleans as keys will
+result in unexpected behavior. The only exception to this rule is single
+checkboxes (no `options`), which Vue will cast to booleans for you automatically.
+:::
