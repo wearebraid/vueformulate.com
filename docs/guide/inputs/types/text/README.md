@@ -1,6 +1,6 @@
 # Text
 
-The text [classification](/inputs/) is given to the following types:
+The text [classification](/guide/inputs/) is given to the following types:
 
 - [color](#color)
 - [date](#date)
