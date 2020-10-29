@@ -294,6 +294,51 @@ contains pass validation. Neat-o.
 Because validation rules are asynchronous, and [file uploads](/guide/inputs/types/file), will wait to resolve the `@submit` event is also asynchronous relative to when the form was submitted.
 :::
 
+## Ignoring inputs
+
+Complex forms often have inputs that do not need to be submitted to the server,
+for example inputs that are only used to control the display of the form. These
+inputs can opt-out of form participation by adding an `ignored` prop:
+
+```vue
+<FormulateForm
+  v-model="values"
+>
+  <FormulateInput
+    label="Select your meal"
+    v-model="meal"
+    type="select"
+    :options="{burger: 'Hamburger', pasta: 'Pasta'}"
+    ignored
+  />
+  <FormulateInput
+    v-if="meal === 'burger'"
+    label="Build your own burger"
+    type="checkbox"
+    name="burger"
+    :options="{
+      meat: 'Meat',
+      lettuce: 'Lettuce',
+      tomato: 'Tomato',
+      cheese: 'Cheese'
+    }"
+  />
+  <FormulateInput
+    label="Select a pasta sauce"
+    v-if="meal === 'pasta'"
+    name="sauce"
+    type="radio"
+    :options="{
+      bolognese: 'Bolognese',
+      carbonara: 'Carbonara',
+      tortellini: 'Tortellini'
+    }"
+  />
+</FormulateForm>
+```
+
+<demo-form-6 />
+
 ### Advanced form submission
 
 There are times where you may not want to opt-in to the default behavior of the
