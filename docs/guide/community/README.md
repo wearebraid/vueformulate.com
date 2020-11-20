@@ -105,6 +105,7 @@ A growing list of Vue Formulate code examples.
 - [Tailwind via config](https://codesandbox.io/s/tailwind-vue-formulate-2-password-reset-all-global-kydyp)
 - [Using the `label` slot to add a tooltip](https://codepen.io/justin-schroeder/pen/rNOQQww)
 - [Use `@click.prevent` in `v-slot:addmore` to prevent auto-validation on click](https://codesandbox.io/s/use-prevent-to-add-element-to-vue-formulate-group-without-it-validation-triggered-n2wg6?file=/src/components/Reproduction.vue)
+- [Button group styled with Tailwind](https://codesandbox.io/s/tailwind-vue-formulate-button-group-iq4we)
 
 :::tip Add your example
 Have you created a Vue Formulate CodePen or CodeSandbox? Share it with the
