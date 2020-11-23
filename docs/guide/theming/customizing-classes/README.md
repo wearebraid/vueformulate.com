@@ -158,6 +158,7 @@ Key             | Default                          | Description
 `help`          | `.formulate-input-help`<br>`.formulate-input-help--[position]` | Wrapper around the help text.
 `errors`        | `.formulate-input-errors`        | Wrapper around the list of errors.
 `error`         | `.formulate-input-error`         | Wrapper around a single error message.
+`form`          | `.formulate-form`                | Class key for `form` element of a `FormulateForm`.
 
 ![Chart of element class keys](./class-keys.svg)
 

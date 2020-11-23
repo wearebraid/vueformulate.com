@@ -401,13 +401,14 @@ Example:
 
 The group field has a few unique props:
 
-Prop           | Description
----------------|----------------------------------------------------------------
-`add-label`    | When repeatable, this is the label to display on the "+ Add" button (defaults to `label || name`).
-`remove-label` | When repeatable, this is the label to display on the "Remove" button.
-`limit`        | When repeatable, this is the maximum number of group items.
-`minimum`      | When repeatable, this is the minimum number of group items.
-`repeatable`   | `Boolean` indicates if the field is repeatable.
+Prop             | Description
+-----------------|----------------------------------------------------------------
+`add-label`      | When repeatable, this is the label to display on the "+ Add" button (defaults to `label || name`).
+`remove-label`   | When repeatable, this is the label to display on the "Remove" button.
+`limit`          | When repeatable, this is the maximum number of group items.
+`minimum`        | When repeatable, this is the minimum number of group items.
+`repeatable`     | `Boolean` indicates if the field is repeatable.
+`removePosition` | Show the remove button `before` or `after` the group inputs (defaults to `before`)
 
 ## Slots
 
@@ -418,8 +419,8 @@ Slot name      | Description
 `addmore`      | The add more button when `repeatable`.<br>_The context object in this slot includes an `addMore` function that should be called to add new items._
 `default`      | Anything in the default slot will be considered part of the group, and become `repeatable` if applicable. _The context object will additionally have an "index" property._
 `grouping`     | The primary repeatable area, responsible for rendering the inner content.
-`remove`       | The remove button when `repeatable`.<br>_The context object in this slot includes a `removeItem` function that should be called to remove that item._
-`repeatable`   | Responsible for rendering each row of fields.<br>_The context object in this slot includes a `removeItem` function that should be called to remove that item._
+`remove`       | The remove button when `repeatable`.<br>_The context object in this slot includes the `index` and a `removeItem` function that should be called to remove that item._
+`repeatable`   | Responsible for rendering each row of inputs.<br>_The context object in this slot includes a `removeItem` function that should be called to remove that item._
 
 ## Custom class keys
 

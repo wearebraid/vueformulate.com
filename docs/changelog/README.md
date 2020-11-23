@@ -4,6 +4,17 @@ sidebar: auto
 
 # Changelog
 
+## v.2.5.5 — @todo RELEASE DATE HERE
+
+- New Features 🎉:
+  - New `removePosition` prop allows the remove button of a `group` type to control location of the `remove` slot.
+  - Each group’s `index` is now available to the `remove` slot of a `group` type.
+  - New `ignored` prop to allow using a `FormulateInput` inside a `FormulateForm` without registering it with the form using.
+  - New `form` class key allows class features on the `FormulateForm` component.
+- Bug fixes 🐛:
+
+
+
 ## v.2.4.5 - October 4, 2020
 
 - New features 🎉:
