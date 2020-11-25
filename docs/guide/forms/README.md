@@ -188,7 +188,7 @@ submitting to a backend. There are a number of reasons for this:
 
 You can listen for the `@submit` event just as you would on a standard `<form>`
 element. If you return a `Promise` from your submit handler `FormulateForm` will
-automatically expose define an `isLoading` property on the [context object](#context-object).
+automatically expose an `isLoading` property on the [context object](#context-object).
 
 ```vue
 <template>
@@ -238,12 +238,23 @@ contains pass validation. Neat-o.
 Because validation rules are asynchronous, and [file uploads](/guide/inputs/types/file), will wait to resolve the `@submit` event is also asynchronous relative to when the form was submitted.
 :::
 
+#### Non-validated submit handler
+
+There are times where you may not want to opt-in to the default behavior of the
+`@submit` event, and would rather be notified synchronously on every attempt to
+submit a form. For these edge cases, you can bind to the `@submit-raw` event.
+
+This event is triggered on all submission attempts, even if the inputs do not
+pass validation. It’s up to you to determine how you want to handle it. The
+payload of the event is a [`FormSubmission` instance](https://github.com/wearebraid/vue-formulate/blob/master/src/FormSubmission.js).
+
 ## Form validation
 
 The `<FormulateForm>` component is always aware the validation state for
 each of it’s inputs. In addition to the `@submit` handler not being called
 unless every nested `FormulateInput` is valid, the validation state of the form
-is also made available to your template via the `default` slot.
+is also made available to your template via the `default` slot. In this example
+we only enable the submit button when all the fields pass validation:
 
 ```vue
 <FormulateForm
@@ -277,6 +288,70 @@ is also made available to your template via the `default` slot.
 </FormulateForm>
 ```
 <demo-form-7 />
+
+### Validation failed message
+
+On long forms it can be helpful to display an error message near the submit
+button when submitting a form that contains invalid fields, since the validation
+errors may be out of the viewport. To do this, use the `invalid-message` prop.
+
+```vue
+<FormulateForm
+  invalid-message="Not all fields were filled out properly"
+>
+  <FormulateInput
+    label="Email"
+    type="email"
+    name="email"
+    validation="required|email"
+  />
+  <FormulateInput
+    label="First name"
+    name="first_name"
+    validation="required"
+  />
+  <FormulateInput
+    label="Last name"
+    name="first_name"
+    validation="required"
+  />
+  <!-- Form errors will show here -->
+  <FormulateErrors />
+  <FormulateInput type="submit" />
+</FormulateForm>
+```
+
+<demo-form-8 />
+
+The `invalid-message` prop can be a `String`, `Array`, or a `Function`.
+Functions are passed an object of the invalid inputs, and you are expected to
+return a `String` or `Array` of strings. A slight tweak to the above example
+allows us to output the names of the fields that are failing:
+
+```vue
+<FormulateForm
+  :invalid-message="invalidMessage"
+>
+...
+<script>
+export default {
+  methods: {
+    invalidMessage(fields) {
+      const fieldNames = Object.keys(fields)
+      const listOfNames = fieldNames.map(fieldName => fieldName.replace('_', ' '))
+      return `Invalid fields: ${listOfNames}`
+    }
+  }
+}
+</script>
+```
+
+<demo-form-9 />
+
+:::tip Note
+For more information on the `FormulateErrors` component please read about
+[Form errors](/guide/forms/error-handling/#form-errors).
+:::
 
 ## Conditional fields
 
@@ -393,16 +468,6 @@ inputs can opt-out of form participation by adding an `ignored` prop:
 
 <demo-form-6 />
 
-### Advanced form submission
-
-There are times where you may not want to opt-in to the default behavior of the
-`@submit` event, and would rather be notified synchronously on every attempt to
-submit a form. For these edge cases, you can bind to the `@submit-raw` event.
-
-This event is triggered on all submission attempts, and it’s up to you to
-determine how you want to handle it. The payload of the event is a
-[`FormSubmission` instance](https://github.com/wearebraid/vue-formulate/blob/master/src/FormSubmission.js).
-
 ## Named forms
 
 Vue Formulate introduces the concept of "named forms" as a mechanism for
@@ -514,4 +579,4 @@ Property            | Description
 errors              | An array of explicit form errors (not validation errors) assigned via the [error handling](/guide/forms/error-handling/) features.
 hasErrors           | `Boolean` indicating if the form has validation errors
 isValid             | Inverse of `hasErrors`
-isLoading           | If the form is currently loading. This is automatically managed by returning a promise from your `@submit` handler.
+isLoading           | If the form is currently loading. This is automatically managed by returning a promise from your `@submit handler.
