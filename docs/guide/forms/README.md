@@ -568,15 +568,30 @@ export default {
 :::
 <demo-named-form />
 
+## Events
+
+Event          | Description
+---------------|------------------------------------------------------------------
+`submit`       | Emitted by any standard form submission events _if_ all fields are passing validation
+`submit-raw`   | Emitted on any form submission attempt, even with invalid fields.
+`failed-validation` | Emitted when form submission fails due to validation, passed an object with field names as properties and component instances as values.
+`input`        | Emitted when any values in the form change.
+
+## Props
+
+Name              | Description
+------------------|-----------------------------------------------------------------
+`invalid-message` | `String`, `Array`, or `Function`, error message to show when a form is submitted with invalid fields.
+
 ## Context object
 
 Forms contain a single slot `default`, which is passed a form context object.
 This object is similar to the [input context object](/guide/inputs/#context-object),
 albeit much simpler.
 
-Property            | Description
---------------------|-----------------------------------------------------------
-errors              | An array of explicit form errors (not validation errors) assigned via the [error handling](/guide/forms/error-handling/) features.
-hasErrors           | `Boolean` indicating if the form has validation errors
-isValid             | Inverse of `hasErrors`
-isLoading           | If the form is currently loading. This is automatically managed by returning a promise from your `@submit handler.
+Property              | Description
+----------------------|-----------------------------------------------------------
+`errors`              | An array of explicit form errors (not validation errors) assigned via the [error handling](/guide/forms/error-handling/) features.
+`hasErrors`           | `Boolean` indicating if the form has validation errors
+`isValid`             | Inverse of `hasErrors`
+`isLoading`           | If the form is currently loading. This is automatically managed by returning a promise from your `@submit handler.

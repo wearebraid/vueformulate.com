@@ -148,6 +148,8 @@ they do not replace any base classes.
 
 ### Element keys
 
+#### For inputs
+
 Key             | Default                          | Description
 ----------------|----------------------------------|---------------------------------------------------
 `outer`         | `.formulate-input`               | The outermost div wrapper.
@@ -158,7 +160,6 @@ Key             | Default                          | Description
 `help`          | `.formulate-input-help`<br>`.formulate-input-help--[position]` | Wrapper around the help text.
 `errors`        | `.formulate-input-errors`        | Wrapper around the list of errors.
 `error`         | `.formulate-input-error`         | Wrapper around a single error message.
-`form`          | `.formulate-form`                | Class key for `form` element of a `FormulateForm`.
 
 ![Chart of element class keys](./class-keys.svg)
 
@@ -170,6 +171,20 @@ pages:
 - [Files](/guide/inputs/types/file/#custom-class-keys)
 - [Groups](/guide/inputs/types/group/#custom-class-keys)
 
+#### For Forms
+
+Key             | Default                          | Description
+----------------|----------------------------------|---------------------------------------------------
+`form`          | `.formulate-form`                | The `form` element of a `FormulateForm`.
+`form-errors`   | `.formulate-form-errors`         | The list (`ul`) of the `FormulateErrors` component.
+`form-error`    | `.formulate-form-error`          | A list item (`li`) of the `FormulateErrors` component.
+
+:::warning Important
+When using props to change classes for form errors, the props must be placed on the
+`FormulateForm` component, never use class keys directly on the `FormulateErrors`
+component.
+:::
+
 ### State keys
 
 State keys make it easy to add a class for a given input state like when a field
@@ -177,9 +192,9 @@ has a value. **State keys must always be combined with an element key.**
 
 Key             | Description
 ----------------|---------------------------------------------------------------
-`hasErrors`     | The field is visibly _showing_ errors. If the `error-behavior` is not `live` this will be `false` until the errors are shown.
-`hasValue`      | The field has a value.
-`isValid`       | The field has _no errors_ regardless of the visibility.
+`hasErrors`     | For inputs, when the input is visibly _showing_ errors (if the `error-behavior` is not `live` this will be `false` until the errors are shown). For forms, `hasErrors` is true if any of it’s inputs are not valid irregardless of their visibility.
+`hasValue`      | The input has a value.
+`isValid`       | The input has _no errors_ regardless of the visibility.
 
 :::tip Note
 You can achieve the same result as a state key by using a function for an
@@ -226,6 +241,8 @@ label of a field that is valid:
 Global class functions and prop class functions both receive a “class context”
 with the following values:
 
+#### For inputs
+
 Property          | Description
 ------------------|----------------------------------------------------------------
 `attrs`           | Attributes that are applied to the input (ex. `disabled`)
@@ -237,3 +254,16 @@ Property          | Description
 `labelPosition`   | `String` describing the position of the label. `before` or `after`.
 `type`            | The `type` of input.
 `value`           | The value of the input.
+
+#### For forms
+
+Property          | Description
+------------------|----------------------------------------------------------------
+`attrs`           | Attributes that are applied to the form
+`classification`  | Always `form`
+`errors`          | Form errors from error handling or `invalid-message` prop.
+`hasErrors`       | `Boolean` indicating not all fields are valid (does _not_ account for visibility like the input’s class context).
+`isLoading`       | The loading state of the form (set with a `Promise` from the `@submit` handler)
+`isValid`         | Inverse of `hasErrors`.
+`type`            | Always `form`.
+`value`           | The value of the form model
