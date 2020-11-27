@@ -10,7 +10,8 @@ sidebar: auto
   - New `removePosition` prop allows the remove button of a `group` type to control location of the `remove` slot.
   - Each group’s `index` is now available to the `remove` slot of a `group` type.
   - New `ignored` prop to allow using a `FormulateInput` inside a `FormulateForm` without registering it with the form using.
-  - New `form` class key allows class features on the `FormulateForm` component.
+  - Adds `form`, `formErrors` and `formError` class keys for styling form errors.
+  - Adds `fileImagePreviewImage` class key for styling `image` previews.
   - `FormulateForm` now exposes a [context object](/guide/forms/#context-object) with properties like `hasErrors`
   - Form `@submit` handlers can now return a `Promise` and use an automatic `isLoading` property in the form context object.
   - New `invalid-message` prop to show form error when a user attempts to submit a form with invalid fields.

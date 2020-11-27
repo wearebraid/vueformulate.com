@@ -335,3 +335,4 @@ Key             | Default                          | Description
 `fileProgressInner` | `.formulate-file-progress-inner` | The inner progress indicator. Width is automatically set as a percentage of upload completion.
 `fileUploadError` | `.formulate-file-upload-error` | The file upload error displayed for each incorrect file.
 `fileImagePreview` | `.formulate-file-image-preview` | The wrapper around the `img` preview.
+`fileImagePreviewImage` | `.formulate-file-image-preview-image` | The `img` preview element.
