@@ -106,6 +106,7 @@ A growing list of Vue Formulate code examples.
 - [Using the `label` slot to add a tooltip](https://codepen.io/justin-schroeder/pen/rNOQQww)
 - [Use `@click.prevent` in `v-slot:addmore` to prevent auto-validation on click](https://codesandbox.io/s/use-prevent-to-add-element-to-vue-formulate-group-without-it-validation-triggered-n2wg6?file=/src/components/Reproduction.vue)
 - [Button group styled with Tailwind](https://codesandbox.io/s/tailwind-vue-formulate-button-group-iq4we)
+- [Using HTML and Images for checkboxes](https://codesandbox.io/s/vue-formulate-image-checkboxes-example-clbwf?file=/src/components/Reproduction.vue)
 
 :::tip Add your example
 Have you created a Vue Formulate CodePen or CodeSandbox? Share it with the
