@@ -74,7 +74,7 @@ with a working Vue Formulate Nuxt plugin file.
 export default {
   ...
   buildModules: [
-    '@braid/vue-formulate/dist/nuxt'
+    '@braid/vue-formulate/nuxt'
   ]
   // optionally, define a path for your Vue Formulate configuration options.
   // the default value is formulate.config.js in your Nuxt source directory
