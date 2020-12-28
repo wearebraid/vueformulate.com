@@ -90,10 +90,7 @@ export default {
 To configure Vue Formulate with additional [plugins](/guide/plugins/),
 [locales](/guide/internationalization/), [validation rules](/guide/validation/)
 and more you can create a `formulate.config.js` file which will be imported and
-used by the Vue Formulate Nuxt module.
-
-The easiest option is to create a `formulate.config.js` file in your Nuxt project
-root and it will automatically be imported by the Nuxt module. If you wish to place
+used by the Vue Formulate Nuxt module.  If you wish to place
 your configuration file somewhere else, just tell the Nuxt module where it can locate
 the configuration file using the `configPath` argument of the `formulate` object in your
 `nuxt.config.js` file.
