@@ -48,32 +48,6 @@ file uploads in Vue Formulate.
 
 <img alt="Submission control flow" src="../../../forms/control-flow.svg">
 
-## Props
-
-File inputs use the [default props](/guide/inputs/#props), as well as the
-following classification specific props:
-
-Prop                | Description
---------------------|-----------------------------------------------------------
-`upload‑behavior`   | `live` or `delayed` - Determines when the file is uploaded. Defaults to `live`, which uploads the file as soon as it is selected.
-`image‑behavior`    | `preview` or `file` - For an input type `image`, the default is `preview` where a thumbnail of the image is shown.
-`upload‑url`        | URL to perform a POST request which overrides the configured default.
-`uploader`          | `function` or [axios instance](https://github.com/axios/axios) - Mechanism used to perform upload. Defaults to the [globally configured](#uploader) instance.
-`prevent‑window‑drops` | `true` by default, this prevents the browser from navigating to a file when the user misses the dropzone.
-`accept`            | This is [standard HTML](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#attr-accept), but helpful when trying to upload files of a certain type.
-
-## Events
-
-File inputs use the [default events](/guide/inputs/#events), as well as the
-following classification specific events:
-
-Event name         | Description
--------------------|------------------------------------------------------------
-`file-upload-progress` | Emitted when the [`uploader`](#uploader) updates the progress of a file upload. The payload is a progress integer (`0-100`).
-`file-upload-complete` | Emitted when a file has completed it's upload. The payload is the `file` object.
-`file-upload-error`    | Emitted when the `error` function of the `uploader` is called during the upload process. The payload is the error itself.
-`file-removed`        | Emitted when a file is removed from the `FileList`. Payload is the resulting `FileList`.
-
 ## Uploader
 
 Inputs in the `file` classification are all used to upload data to a server.
@@ -343,6 +317,41 @@ If the file has already been uploaded (like when using the default
 `upload‑behavior` of `live`) the `FileUpload.upload()` method will not cause a
 duplicate upload, but rather return the resolved path.
 :::
+
+
+## Props
+
+File inputs use the [default props](/guide/inputs/#props), as well as the
+following classification specific props:
+
+Prop                | Description
+--------------------|-----------------------------------------------------------
+`upload‑behavior`   | `live` or `delayed` - Determines when the file is uploaded. Defaults to `live`, which uploads the file as soon as it is selected.
+`image‑behavior`    | `preview` or `file` - For an input type `image`, the default is `preview` where a thumbnail of the image is shown.
+`upload‑url`        | URL to perform a POST request which overrides the configured default.
+`uploader`          | `function` or [axios instance](https://github.com/axios/axios) - Mechanism used to perform upload. Defaults to the [globally configured](#uploader) instance.
+`prevent‑window‑drops` | `true` by default, this prevents the browser from navigating to a file when the user misses the dropzone.
+`accept`            | This is [standard HTML](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#attr-accept), but helpful when trying to upload files of a certain type.
+
+## Events
+
+File inputs use the [default events](/guide/inputs/#events), as well as the
+following classification specific events:
+
+Event name         | Description
+-------------------|------------------------------------------------------------
+`file-upload-progress` | Emitted when the [`uploader`](#uploader) updates the progress of a file upload. The payload is a progress integer (`0-100`).
+`file-upload-complete` | Emitted when a file has completed it's upload. The payload is the `file` object.
+`file-upload-error`    | Emitted when the `error` function of the `uploader` is called during the upload process. The payload is the error itself.
+`file-removed`        | Emitted when a file is removed from the `FileList`. Payload is the resulting `FileList`.
+
+## Slots
+
+The `file` classification has some unique slots (and matching [Slot Components](/guide/inputs/slots/#slot-components)):
+
+Slot name         | Description
+------------------|-------------------------------------------------------------
+`file`            | Responsible for rendering a single file of the file input. When the input type is `multiple` this slot will be rendered multiple times. <br>_The context object in this slot includes a `file` object and a `imagePreview` boolean._
 
 ## Custom class keys
 

@@ -412,7 +412,7 @@ Prop             | Description
 
 ## Slots
 
-The group field has several unique slots:
+The group input has several unique slots (and matching [Slot Components](/guide/inputs/slots/#slot-components)):
 
 Slot name      | Description
 ---------------|----------------------------------------------------------------
