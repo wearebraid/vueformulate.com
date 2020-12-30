@@ -33,6 +33,21 @@ The file [classification](/guide/inputs/custom-inputs/#what-is-a-classification)
 
 <demo-image />
 
+## How it works
+
+File inputs perform their upload function before your
+`@submit` handler is called. This is an opinionated approach to reducing
+the complexity of building forms across your project(s) by having a single (or small number of)
+endpoint that performs the actual upload and storage of the files. This allows
+your back end submission handlers to only deal with pure JSON results, and
+ensures a clean and concise API for authoring forms on the front end. It also
+aligns well with developers who use services like S3, Cloudinary or ImgIX.
+
+The following diagram explains the submission flow of a form that includes
+file uploads in Vue Formulate.
+
+<img alt="Submission control flow" src="../../../forms/control-flow.svg">
+
 ## Props
 File inputs use the [default props](/guide/inputs/#all-options), as well as the
 following classification specific props:

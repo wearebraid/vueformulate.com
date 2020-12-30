@@ -17,7 +17,9 @@ sidebar: auto
   - New `invalid-message` prop to show form error when a user attempts to submit a form with invalid fields.
   - Adds a new `@failed-validation` event when a form submission is attempted but blocked due to invalid fields.
 - Bug fixes 🐛:
-
+  - Fixes an issue where `file` and `image` type inputs could submit old data after an input had been cleared.
+  - Fixes a bug that threw an error when attempting to upload an invalid `mime` and then remove it.
+  - Fixes a bug that caused an upload progress bar to appear on re-hydrated files when submitting a form.
 
 
 ## v.2.4.5 - October 4, 2020

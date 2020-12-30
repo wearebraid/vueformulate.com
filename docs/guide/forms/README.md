@@ -190,6 +190,10 @@ You can listen for the `@submit` event just as you would on a standard `<form>`
 element. If you return a `Promise` from your submit handler `FormulateForm` will
 automatically expose an `isLoading` property on the [context object](#context-object).
 
+::: details Form Submission Control Flow Diagram
+![Form submission control flow](./control-flow.svg)
+:::
+
 ```vue
 <template>
   <FormulateForm
