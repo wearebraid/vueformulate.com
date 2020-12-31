@@ -18,6 +18,7 @@ sidebar: auto
   - Adds a new `@failed-validation` event when a form submission is attempted but blocked due to invalid fields.
   - Adds new events to `file` classification inputs `@file-upload-progress`, `@file-upload-complete`, `@file-upload-error`, `@file-removed`.
   - Adds new slot and slot component `file`.
+  - Adds ability to upload additional files to `file` type with the `multiple` attribute. Includes new `addFile` and `addFileInput` class keys.
 - Bug fixes 🐛:
   - Fixes an issue where `file` and `image` type inputs could submit old data after an input had been cleared.
   - Fixes a bug that threw an error when attempting to upload an invalid `mime` and then remove it.

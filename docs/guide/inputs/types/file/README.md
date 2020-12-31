@@ -43,10 +43,12 @@ your back end submission handlers to only deal with pure JSON results, and
 ensures a clean and concise API for authoring forms on the front end. It also
 aligns well with developers who use services like S3, Cloudinary or ImgIX.
 
+::: details Form submission control flow diagram
 The following diagram explains the submission flow of a form that includes
 file uploads in Vue Formulate.
 
 <img alt="Submission control flow" src="../../../forms/control-flow.svg">
+:::
 
 ## Uploader
 
@@ -72,7 +74,7 @@ Vue.use(VueFormulate, {
 })
 ```
 
-### Upload function
+### Custom uploader
 
 If you prefer to roll-your-own upload mechanism, you can provide a function as
 the `uploader`. The function will receive 4 arguments:
@@ -144,7 +146,7 @@ If you prefer to use a different property than `url` you can change that by
 setting the `fileUrlKey` option when registering Vue Formulate.
 :::
 
-## A fake uploader
+### Faux uploader
 
 Vue Formulate ships with a fake uploader function that advances the progress
 bar but performs no requests. This is helpful for scaffolding and theming, but
@@ -153,7 +155,7 @@ it must be replaced for uploads to work.
 If dont need uploading at all (you're processing elsewhere) you can disable
 the fake uploader by replacing it with a dummy function:
 
-```vue
+```js
 Vue.use(VueFormulate, {
   uploader: function (file, progress) {
     // optionally handle the `file` for your own purposes here...
@@ -162,12 +164,6 @@ Vue.use(VueFormulate, {
   }
 })
 ```
-
-## Getting results
-
-When files are added to a file `type` in Vue Formulate the value is automatically
-transformed into an instance of `FileUpload`, a helper class to wrap the [FileList](https://developer.mozilla.org/en-US/docs/Web/API/FileList)
-object. It is recommended that the backend have a common URL where files can be uploaded.
 
 ## Setting initial values
 
@@ -178,7 +174,12 @@ form element, and return the same url in the payload, but wont re-upload.
 ```vue
 <FormulateInput
   type="file"
-  :value="[{ url: '/path/to/document.pdf' }]"
+  :value="[
+    {
+      url: '/path/to/document.pdf', // url is required
+      name: 'employment-offer.pdf' // name is optional
+    }
+  ]"
 />
 ```
 
