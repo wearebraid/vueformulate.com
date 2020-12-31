@@ -365,6 +365,8 @@ Key             | Default                          | Description
 `uploadAreaMask`| `.formulate-input-upload-area-mask` | An additional element positioned immediately after the `<input>` used for stylistic reasons.
 `files`         | `.formulate-files`               | A wrapper around a list of files.
 `file`          | `.formulate-file`                | A single input file.
+`fileAdd`       | `.formulate-file-add`            | The `+ Add File` button for `[multiple]` file inputs.
+`fileAddInput`  | `.formulate-file-add-input`      | The `+ Add File` `<input>` element (normally hidden).
 `fileName`      | `.formulate-file-name`           | The element responsible for outputting the name of the file.
 `fileRemove`    | `.formulate-file-remove`         | The element responsible for removing an existing file.
 `fileProgress`  | `.formulate-file-progress`       | The outer wrapper for the progress bar.
