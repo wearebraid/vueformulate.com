@@ -198,7 +198,7 @@ and slots.
 
 Property        | Description
 ----------------|---------------------------------------------------------------
-`addLabel`      | The label to display inside "add more" button on `group` inputs.
+`addLabel`      | The label to display inside "add more" button on `group` and `file[multiple]` inputs.
 `attributes`    | An object of non-prop attributes passed to the input like `placeholder`
 `blurHandler`   | Function that must be called when an input blurs.
 `classification`| The classification of the input.
