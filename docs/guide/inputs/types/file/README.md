@@ -354,6 +354,7 @@ The `file` classification has some unique slots (and matching [Slot Components](
 Slot name         | Description
 ------------------|-------------------------------------------------------------
 `file`            | Responsible for rendering a single file of the file input. When the input type is `multiple` this slot will be rendered multiple times. <br>_The context object in this slot includes a `file` object and a `imagePreview` boolean._
+`uploadAreaMask`  | Responsible for adding content or styles in the `uploadArea` when there are no files. <br>_The context object in this slot includes a `hasFiles` boolean._
 
 ## Custom class keys
 
@@ -363,7 +364,7 @@ following are available:
 Key             | Default                          | Description
 ----------------|----------------------------------|---------------------------------------------------
 `uploadArea`    | `.formulate-input-upload-area`   | The dropzone area wrapper for an upload.
-`uploadAreaMask`| `.formulate-input-upload-area-mask` | An additional element positioned immediately after the `<input>` used for stylistic reasons.
+`uploadAreaMask`| `.formulate-input-upload-area-mask` | An additional element positioned immediately after the `<input>` to be used for styling the dropzone.
 `files`         | `.formulate-files`               | A wrapper around a list of files.
 `file`          | `.formulate-file`                | A single input file.
 `fileAdd`       | `.formulate-file-add`            | The `+ Add File` button for `[multiple]` file inputs.
