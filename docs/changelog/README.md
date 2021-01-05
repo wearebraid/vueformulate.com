@@ -17,7 +17,7 @@ sidebar: auto
   - New `invalid-message` prop to show form error when a user attempts to submit a form with invalid fields.
   - Adds a new `@failed-validation` event when a form submission is attempted but blocked due to invalid fields.
   - Adds new events to `file` classification inputs `@file-upload-progress`, `@file-upload-complete`, `@file-upload-error`, `@file-removed`.
-  - Adds new slot and slot component `file`.
+  - Adds new slots and slot components `file` and `uploadAreaMask`.
   - Adds ability to upload additional files to `file` type with the `multiple` attribute. Includes new `addFile` and `addFileInput` class keys.
 - Bug fixes 🐛:
   - Fixes an issue where `file` and `image` type inputs could submit old data after an input had been cleared.

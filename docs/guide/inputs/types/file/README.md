@@ -35,10 +35,10 @@ The file [classification](/guide/inputs/custom-inputs/#what-is-a-classification)
 
 ## How it works
 
-File inputs perform their upload function before your
+File inputs perform their upload function before your `FormulateForm`
 `@submit` handler is called. This is an opinionated approach to reducing
 the complexity of building forms across your project(s) by having a single (or small number of)
-endpoint that performs the actual upload and storage of the files. This allows
+endpoint that performs the upload and storage of any/all files. This allows
 your back end submission handlers to only deal with pure JSON results, and
 ensures a clean and concise API for authoring forms on the front end. It also
 aligns well with developers who use services like S3, Cloudinary or ImgIX.
@@ -82,7 +82,7 @@ the `uploader`. The function will receive 4 arguments:
 - `File` object to upload
 - `progress` callback, expects `0-100` percentage return value
 - `error` callback to call when the upload fails. Accepts a string error message argument.
-- `options `Vue Formulate’s configuration object
+- `options` The full VueFormulate global options (includes `options.uploadUrl`).
 
 The `uploader` function must always return a `Promise`. `async`
 functions are a good option for doing this automatically.
@@ -268,6 +268,21 @@ If you prefer to handle the form submission manually you can listen to the
 }
 ```
 
+::: warning Safari and the `FileList` object
+HTML `file` inputs use a [`FileList`](https://developer.mozilla.org/en-US/docs/Web/API/FileList)
+object to track what files are currently attached to the input. The `FileList`
+is an immutable object so adding/removing additional files is impossible. To
+get around this limitation when a file accepts `[multiple]` files, Vue Formulate
+uses its own internal [`FileUpload`](https://github.com/wearebraid/vue-formulate/blob/master/src/FileUpload.js) object to track mutations. The `FileUpload`
+does its best to keep the `FileList` accurate by using a [`DataTransfer`](https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/DataTransfer)
+object to create new a `FileList` on each add/remove event — however the
+`DataTransfer` constructor is not supported in Safari. This doesn't matter if
+you are using the recommended approach of uploading files with `Axios` or an
+`uploader` function since `FileUpload` tracks these changes for you, but
+if you're relying on the native `FormData` constructor your results will not
+include mutations made to the `FileList` Safari.
+:::
+
 ### Upload results with `v-model` on `FormulateInput`
 
 If your use case does not call for a full form, you can directly bind to the
@@ -319,7 +334,6 @@ If the file has already been uploaded (like when using the default
 duplicate upload, but rather return the resolved path.
 :::
 
-
 ## Props
 
 File inputs use the [default props](/guide/inputs/#props), as well as the
@@ -345,7 +359,7 @@ Event name         | Description
 `file-upload-progress` | Emitted when the [`uploader`](#uploader) updates the progress of a file upload. The payload is a progress integer (`0-100`).
 `file-upload-complete` | Emitted when a file has completed it's upload. The payload is the `file` object.
 `file-upload-error`    | Emitted when the `error` function of the `uploader` is called during the upload process. The payload is the error itself.
-`file-removed`        | Emitted when a file is removed from the `FileList`. Payload is the resulting `FileList`.
+`file-removed`        | Emitted when a file is removed from the `FileList`. Payload is the internal array of files.
 
 ## Slots
 
