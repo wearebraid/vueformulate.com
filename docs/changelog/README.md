@@ -23,6 +23,7 @@ sidebar: auto
   - Fixes an issue where `file` and `image` type inputs could submit old data after an input had been cleared.
   - Fixes a bug that threw an error when attempting to upload an invalid `mime` and then remove it.
   - Fixes a bug that caused an upload progress bar to appear on re-hydrated files when submitting a form.
+  - Fixes issue causing `group` v-models required full replacement (new object reference) to properly set sub field values.
 
 
 ## v.2.4.5 - October 4, 2020

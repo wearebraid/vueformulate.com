@@ -731,6 +731,7 @@ Property      | Description
 --------------|-----------------
 value         | The value of the field
 getFormValues | When the input is in the context of a `FormulateForm` you can retrieve an object of form values by using this function
+getGroupValues | When the input is in the context of a `group` type you can retrieve an object of the input's local group values by using this function, if the input is not in a group, this function falls back to `getFormValues`.
 name          | The name of the field being evaluated
 
 In addition to the context object, any rule arguments are passed as additional
