@@ -74,6 +74,76 @@ the values will both be shown, and any duplicates removed.
 ```
 <demo-errors-3 />
 
+### Group input errors
+
+[Inputs of type `group`](/guide/inputs/types/group/) presents an interesting
+challenge because they are nested inside an array. To handle these nested and
+repeatable inputs Vue Formulate supports setting errors via "dot notation".
+
+```vue
+<FormulateForm
+  :errors="{
+    'stocks.0.price': 'You’re paying too much for this stock',
+    'stocks.2.symbol': 'That stock symbol doesn’t exist.'
+  }"
+>
+```
+
+:::details Full example code
+<FormulateForm
+  :errors="{
+    'stocks.0.price': 'You’re paying too much for this stock',
+    'stocks.2.symbol': 'That stock symbol doesn’t exist.'
+  }"
+  :values="{
+    payment_method: 'mastercard',
+    stocks: [
+      { symbol: 'AAPL', price: '122.00' },
+      { symbol: 'MSFT', price: '13.00' },
+      { symbol: 'FXSW', price: '3200.00' }
+    ]
+  }"
+>
+  <FormulateInput
+    label="Payment method"
+    type="select"
+    name="payment_method"
+    :options="{
+      visa: 'Visa x-4452',
+      mastercard: 'Mastercard x-9927'
+    }"
+  />
+  <FormulateInput
+    type="group"
+    name="stocks"
+    label="Enter the names of stocks you want to purchase"
+    add-label="+ Add stock"
+    :repeatable="true"
+  >
+    <FormulateInput
+      name="symbol"
+      label="Stock symbol"
+    />
+    <FormulateInput
+      name="price"
+      label="Limit price"
+      help="How much are you willing to pay?"
+    />
+  </FormulateInput>
+  <FormulateInput
+    type="submit"
+    label="Purchase stocks"
+  />
+</FormulateForm>
+:::
+
+<demo-group-errors-2 />
+
+:::tip Note
+You can also set `group-errors` directly on the group itself. For more details
+read the [`group` type documentation](/guide/inputs/types/group/).
+:::
+
 ## Form errors
 
 Occasionally, form errors are not related directly to a `FormulateInput`.

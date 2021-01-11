@@ -179,7 +179,6 @@ Prop              | Description
 `value`           | An initial unbound value (use when `v-model` or form binding is not a good option)
 `disableErrors`   | Will not show any error messages when set to true.
 
-
 ## Events
 
 These events are emitted by every input type.

@@ -367,35 +367,68 @@ export default {
 :::
 <demo-group-validation />
 
+## Settings errors on groups
+
+When setting explicit errors on group input we need a way to indicate which
+index the errant field is at. To make this as simple as possible, use the
+`group-errors` prop along with "dot notation" to reference inputs in their
+index. For example:
+
+```vue
+<FormulateInput
+  type="group"
+  :repeatable="true"
+  name="invitees"
+  :group-errors="{
+    '0.email': 'This email is already in use',
+    '1.name': 'Pretty sure Rensmold isn’t a real last name'
+  }"
+  :value="[
+    { name: 'Todd Berkins', email: 'todd@example.com' },
+    { name: 'Stella Rensmold', email: 'stella@example.com' },
+  ]"
+>
+  <FormulateInput
+    name="name"
+    label="Invitee's name"
+  />
+  <FormulateInput
+    name="email"
+    label="What is this user's email?"
+  />
+</FormulateInput>
+```
+
+<demo-group-errors-1 />
+
+Notice how the errors always begin with the index of the group. The proeprties
+of the `group-errors` prop must always begin with the index of the group they
+are being applied to.
+
+You can also apply group errors [using dot notation from a `<FormulateForm>`](/guide/forms/error-handling/#form-input-errors).
+
 ## Index of current group
 
 To manipulate a distinct group field, it is helpful to get the index of the current group item. Luckily, slots can help. The `default` slot for instance offers the `index` as a context variable of `groupProps`:
 
 Example:
-
-
 ```vue
  <FormulateInput
-                type="group"
-                name="attendees"
-                :repeatable="true"
-                add-label="+ Add Attendee"
-            >
-            <template v-slot:default="groupProps">
-              
-              <p>This is Group # {{groupProps.index}} </p>
-                <FormulateInput
-                                name="price"
-                                disabled
-                                :value="getPrice(groupProps.index)"
-                                label="Price""
-                            />
-            </template>
- </FormulateInput>
-            
+    type="group"
+    name="attendees"
+    :repeatable="true"
+    add-label="+ Add Attendee"
+    #default="{ index }"
+>
+  <p>This is Group # {{ index }} </p>
+  <FormulateInput
+    name="price"
+    disabled
+    :value="getPrice(index)"
+    label="Price""
+  />
+</FormulateInput>
 ```
-
-
 
 ## Props
 
@@ -407,8 +440,9 @@ Prop             | Description
 `limit`          | When repeatable, this is the maximum number of group items.
 `minimum`        | When repeatable, this is the minimum number of group items.
 `remove-label`   | When repeatable, this is the label to display on the "Remove" button.
-`removePosition` | Show the remove button `before` or `after` the group inputs (defaults to `before`)
+`remove-position`| Show the remove button `before` or `after` the group inputs (defaults to `before`)
 `repeatable`     | `Boolean` indicates if the field is repeatable.
+`group-errors`   | `Object` of dot notation properties (like `0.name`) with errors.
 
 ## Slots
 
