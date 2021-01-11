@@ -82,6 +82,33 @@ The syntax for radio inputs is identical to checkboxes.
 
 <demo-input-radio />
 
+## Styling box inputs
+
+Checkboxes and radio boxes are notoriously frustrating to style. To assist,
+Vue Formulate places a `<label>` element immediately after the `<input>` tag.
+This allows for easy sibling selector css rules using the `:checked` psuedo-class
+selector. The default snow theme using this technique to style checkboxes and
+inputs.
+
+```css
+input ~ label {
+  /* style the label to look like a checkbox */
+}
+input:checked ~ label {
+  /* make the label look like a checked checkbox */
+}
+```
+
+If you don't want to use this "decorator" label on your project, you can disbale
+it by setting the global option `useInputDecorators` to `false`:
+
+```js
+// Wherever you register Vue Formulate
+Vue.use(VueFormulate, {
+  useInputDecorators: false
+})
+```
+
 ## Custom class keys
 
 In addition to all [global class keys](/guide/theming/#customizing-classes)
