@@ -28,6 +28,7 @@ sidebar: auto
   - Fixes a bug that threw an error when attempting to upload an invalid `mime` and then remove it.
   - Fixes a bug that caused an upload progress bar to appear on re-hydrated files when submitting a form.
   - Fixes issue causing `group` v-models required full replacement (new object reference) to properly set sub field values.
+  - Re-runs validation on any named `FormulateForm`s when `setLocale` is called to change the language of the messages.
 
 
 ## v.2.4.5 - October 4, 2020
