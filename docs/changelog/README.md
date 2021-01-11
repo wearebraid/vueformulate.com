@@ -21,6 +21,7 @@ sidebar: auto
   - Adds ability to upload additional files to `file` type with the `multiple` attribute. Includes new `addFile` and `addFileInput` class keys.
   - Adds the ability to place error messages on deeply nested `group` types [by using "dot notation"](/guide/inputs/types/group/#settings-errors-on-groups).
   - Adds a new `useInputDecorators` global option to disable `box` input decorators.
+  - Adds a new `validationNameStrategy` global option that allows you to declare the priority of props that are used in validation messages as the `name`.
 
 - Bug fixes 🐛:
   - Fixes an issue where `file` and `image` type inputs could submit old data after an input had been cleared.

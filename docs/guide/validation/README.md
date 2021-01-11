@@ -630,10 +630,47 @@ There are several ways to customize your validation message. The most basic
 of which is to use the `validation-name` prop — allowing you to change the name
 of the field as used in the pre-defined validation messages.
 
-If you need to be more specific you have two options:
+If you need to be more specific you have three options:
 
-- Override a rule’s message function on an individual `FormulateInput`
-- Globally override a validation rule’s message function
+- Override the validation name strategy.
+- Override a rule’s message function on an individual `FormulateInput`.
+- Globally override a validation rule’s message function.
+
+### Validation name strategy
+
+Validation messages frequently include the name of the failing input. For
+example, the default `required` rule validation message is simply `${validationName} is required`.
+How that `validationName` is determined is up to the gloabl configuration option
+`validationNameStrategy`. By default this strategy is:
+
+```js
+Vue.use(VueFormualte, {
+  validationNameStrategy: ['validationName', 'name', 'label', 'type']
+})
+```
+
+Meaning, validation messages first check the `validation-name` prop, then the
+`name` prop, then the `label`, and finally they fall back to the input `type`.
+
+You can change this validation name strategy by providing your own array in
+order of priority. For example, if you'd like inputs to use the `label` instead
+of the `name`, change the strategy to:
+
+```js
+Vue.use(VueFormualte, {
+  validationNameStrategy: ['validationName', 'name', 'label', 'type']
+})
+```
+
+Finally, if you want to write a more complex strategy, you can provide a
+function as the your `validationNameStrategy`. In this case your function
+will be passed the full instance of the component.
+
+```js
+Vue.use(VueFormualte, {
+  validationNameStrategy: (vm) => vm.context.name || vm.id
+})
+```
 
 ### Custom field-level messages
 
