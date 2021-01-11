@@ -597,5 +597,7 @@ Property              | Description
 ----------------------|-----------------------------------------------------------
 `errors`              | An array of explicit form errors (not validation errors) assigned via the [error handling](/guide/forms/error-handling/) features.
 `hasErrors`           | `Boolean` indicating if the form has validation errors
+`hasValue`            | `Boolean` indicating if the form has any values at all
 `isValid`             | Inverse of `hasErrors`
 `isLoading`           | If the form is currently loading. This is automatically managed by returning a promise from your `@submit handler.
+`values`              | The values of the inputs in the form itself.
