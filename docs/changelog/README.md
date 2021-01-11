@@ -23,6 +23,7 @@ sidebar: auto
   - Adds a new `useInputDecorators` global option to disable `box` input decorators.
   - Adds a new `validationNameStrategy` global option that allows you to declare the priority of props that are used in validation messages as the `name`.
   - Adds a new `slotComponent` `buttonContent` to allow the internal replacement of all button's `#default` slot.
+  - Adds new `@repeatableAdded` and `@repeatableRemoved` events to `group` types.
 
 - Bug fixes 🐛:
   - Fixes an issue where `file` and `image` type inputs could submit old data after an input had been cleared.
@@ -31,6 +32,7 @@ sidebar: auto
   - Fixes issue causing `group` v-models required full replacement (new object reference) to properly set sub field values.
   - Re-runs validation on any named `FormulateForm`s when `setLocale` is called to change the language of the messages.
   - Outputs the `name` attribute on `FormulateForm` (useful for Netlify users).
+  - Fixes a bug that sometimes caused the `v-model` value to be used as an initial state over the `value` prop.
 
 
 ## v.2.4.5 - October 4, 2020

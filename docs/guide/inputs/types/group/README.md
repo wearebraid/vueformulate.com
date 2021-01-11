@@ -456,6 +456,15 @@ Slot name      | Description
 `remove`       | The remove button when `repeatable`.<br>_The context object in this slot includes the `index` and a `removeItem` function that should be called to remove that item._
 `repeatable`   | Responsible for rendering each row of inputs.<br>_The context object in this slot includes a `removeItem` function that should be called to remove that item._
 
+## Events
+
+The group input type has two unique events:
+
+Event name | Description
+-----------|--------------------------------------------------------------------
+`@repeatableAdded` | Emitted when a new repeatable item is added to the group.
+`@repeatableRemoved` | Emitted when a repeatable item is removed from the group.
+
 ## Custom class keys
 
 In addition to all [global class keys](/guide/theming/#customizing-classes)
