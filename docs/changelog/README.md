@@ -22,6 +22,7 @@ sidebar: auto
   - Adds the ability to place error messages on deeply nested `group` types [by using "dot notation"](/guide/inputs/types/group/#settings-errors-on-groups).
   - Adds a new `useInputDecorators` global option to disable `box` input decorators.
   - Adds a new `validationNameStrategy` global option that allows you to declare the priority of props that are used in validation messages as the `name`.
+  - Adds a new `slotComponent` `buttonContent` to allow the internal replacement of all button's `#default` slot.
 
 - Bug fixes 🐛:
   - Fixes an issue where `file` and `image` type inputs could submit old data after an input had been cleared.
