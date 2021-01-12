@@ -35,6 +35,7 @@ sidebar: auto
   - Outputs the `name` attribute on `FormulateForm` (useful for Netlify users).
   - Fixes a bug that sometimes caused the `v-model` value to be used as an initial state over the `value` prop.
   - Fixes a bug that prevents validation from re-running if the rules are changed dynamically.
+  - Allows users to now override the `aria-describedby` attribute if necessary.
 
 
 ## v.2.4.5 - October 4, 2020
