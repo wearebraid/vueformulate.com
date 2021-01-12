@@ -225,6 +225,7 @@ Property        | Description
 `removeLabel`   | The label to display inside "remove" button on `group` inputs.
 `repeatable`    | `Boolean` indicating if a field is repeatable or not.
 `rootEmit`      | `Function` identical to `$emit`, but should be used in custom inputs and slots to emit events from the root `<FormulateInput>`.
+`rules`         | `Array` of validation rules on the input. Array is populated with objects containing `{ ruleName: string, args: [] }`.
 `setErrors`     | Function to set (or clear) the current `errors` (not validation errors).
 `showValidationErrors` | `Boolean`, true if the validation errors should be displayed.
 `type`          | The type of input.

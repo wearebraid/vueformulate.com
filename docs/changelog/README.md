@@ -24,6 +24,7 @@ sidebar: auto
   - Adds a new `validationNameStrategy` global option that allows you to declare the priority of props that are used in validation messages as the `name`.
   - Adds a new `slotComponent` `buttonContent` to allow the internal replacement of all button's `#default` slot.
   - Adds new `@repeatableAdded` and `@repeatableRemoved` events to `group` types.
+  - Adds a new `rules` (validation rules) property to the input context object. Especially useful for use in slots for doing things like adding an asterisk to the label of a field with the `required` validation rule.
 
 - Bug fixes 🐛:
   - Fixes an issue where `file` and `image` type inputs could submit old data after an input had been cleared.
@@ -33,6 +34,7 @@ sidebar: auto
   - Re-runs validation on any named `FormulateForm`s when `setLocale` is called to change the language of the messages.
   - Outputs the `name` attribute on `FormulateForm` (useful for Netlify users).
   - Fixes a bug that sometimes caused the `v-model` value to be used as an initial state over the `value` prop.
+  - Fixes a bug that prevents validation from re-running if the rules are changed dynamically.
 
 
 ## v.2.4.5 - October 4, 2020
