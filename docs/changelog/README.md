@@ -25,6 +25,8 @@ sidebar: auto
   - Adds a new `slotComponent` `buttonContent` to allow the internal replacement of all button's `#default` slot.
   - Adds new `@repeatableAdded` and `@repeatableRemoved` events to `group` types.
   - Adds a new `rules` (validation rules) property to the input context object. Especially useful for use in slots for doing things like adding an asterisk to the label of a field with the `required` validation rule.
+  - Adds automatic string casting for numeric option values (for `select` and `checkbox` types)
+  - Option lists for `select` and `checkbox` can now be a simple array of strings `['Amy', 'Janey', 'Rainy']`
 
 - Bug fixes 🐛:
   - Fixes an issue where `file` and `image` type inputs could submit old data after an input had been cleared.

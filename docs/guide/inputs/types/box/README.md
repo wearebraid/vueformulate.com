@@ -67,6 +67,20 @@ each `input`.
 ]
 ```
 
+#### Array string syntax
+
+You can also use a simple array of strings. In this case both the `value` and
+the `label` of the checkboxes will be the string value.
+
+```vue
+<FormulateInput
+  v-model="value"
+  :options="['First', 'Second', 'Third', 'Fourth']"
+  type="checkbox"
+  label="This is a label for all the options"
+/>
+```
+
 ## Radio
 
 The syntax for radio inputs is identical to checkboxes.
