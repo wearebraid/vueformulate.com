@@ -5,6 +5,7 @@ The file [classification](/guide/inputs/custom-inputs/#what-is-a-classification)
 - [file](#file)
 - [image](#image)
 
+
 ## File
 
 ```vue
@@ -55,6 +56,16 @@ file uploads in Vue Formulate.
 Inputs in the `file` classification are all used to upload data to a server.
 Because of this, they require additional configuration to work
 properly. An `uploader` must be defined before `file` inputs are supported.
+
+<ArticleCard
+  href="@todo article URL here"
+  image="/assets/img/resources/aws.jpg"
+  image-alt="Vue Formulate with S3 and Lambda"
+  badge="Article"
+  headline="Better uploads with Vue Formulate, S3, and Lambda"
+  copy="A practical guide to improving file uploads with Vue Formulate, AWS S3, and AWS Lambda."
+  :sidebar="false"
+/>
 
 ### Axios
 
