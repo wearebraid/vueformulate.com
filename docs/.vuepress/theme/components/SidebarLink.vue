@@ -89,7 +89,7 @@ function renderLink (h, to, text, active, level, item) {
       active,
       'sidebar-link': true,
       'new-badge': item && item.frontmatter && item.frontmatter.new,
-      'inline-header-badge': item.slug && slugify(item.title).toLowerCase() !== item.slug
+      'inline-header-badge': item.slug && slugify(item.title) !== item.slug && `${slugify(item.title)}-2` !== item.slug
     }
   }
 

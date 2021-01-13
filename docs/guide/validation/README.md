@@ -579,7 +579,7 @@ Checks if the input is a valid number as evaluated by `isNaN()`.
 
 Use this rule to make a field optional. When used all validation rules pass
 until the field is no longer empty. Its location in the list of validation
-rules has no effect, 
+rules has no effect,
 
 ```vue
 <FormulateInput
@@ -654,7 +654,7 @@ If you need to be more specific you have three options:
 - Override a rule’s message function on an individual `FormulateInput`.
 - Globally override a validation rule’s message function.
 
-### Validation name strategy
+### Validation name strategy <span class="new-badge">2.5+</span>
 
 Validation messages frequently include the name of the failing input. For
 example, the default `required` rule validation message is simply `${validationName} is required`.

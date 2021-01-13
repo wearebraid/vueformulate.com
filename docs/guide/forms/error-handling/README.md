@@ -74,7 +74,7 @@ the values will both be shown, and any duplicates removed.
 ```
 <demo-errors-3 />
 
-### Group input errors
+### Group input errors <span class="new-badge">2.5+</span>
 
 [Inputs of type `group`](/guide/inputs/types/group/) presents an interesting
 challenge because they are nested inside an array. To handle these nested and
@@ -90,6 +90,7 @@ repeatable inputs Vue Formulate supports setting errors via "dot notation".
 ```
 
 :::details Full example code
+```vue
 <FormulateForm
   :errors="{
     'stocks.0.price': 'You’re paying too much for this stock',
@@ -135,6 +136,7 @@ repeatable inputs Vue Formulate supports setting errors via "dot notation".
     label="Purchase stocks"
   />
 </FormulateForm>
+```
 :::
 
 <demo-group-errors-2 />
@@ -208,7 +210,7 @@ This automatically removes the form errors from the top and locates them whereve
 that `<FormulateErrors />` is placed. You can even have multiple `<FormulateErrors />`
 if you'd like the form errors to appear in multiple locations.
 
-## Error handling
+## Form Error handling
 
 Now that we've covered how we display errors on forms, lets talk about how we
 can actually handle those errors in a more graceful way. Lets work through a
@@ -220,7 +222,7 @@ simple login form:
   <FormulateForm
     :form-errors="formErrors"
     :errors="inputErrors"
-    @submit="login"  
+    @submit="login"
   >
     <FormulateInput
       type="email"
@@ -288,7 +290,7 @@ forms](/guide/forms/#named-forms) in conjunction with an error handler function.
 <template>
   <FormulateForm
     name="login"
-    @submit="login" 
+    @submit="login"
   >
     // ...login form inputs
   </FormulateForm>
