@@ -242,7 +242,7 @@ contains pass validation. Neat-o.
 Because validation rules are asynchronous, and [file uploads](/guide/inputs/types/file), will wait to resolve the `@submit` event is also asynchronous relative to when the form was submitted.
 :::
 
-#### Non-validated submit handler <span class="new-badge">2.5+</span>
+#### Non-validated submit handler
 
 There are times where you may not want to opt-in to the default behavior of the
 `@submit` event, and would rather be notified synchronously on every attempt to

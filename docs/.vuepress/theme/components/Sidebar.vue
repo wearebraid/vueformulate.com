@@ -102,7 +102,7 @@ export default {
       font-weight: bold;
     }
   }
-  & /deep/ .inline-header-badge {
+  & /deep/ .has-inline-header-badge {
     &::after {
       display: inline-block;
       content: 'NEW';
