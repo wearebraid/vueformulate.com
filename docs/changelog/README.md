@@ -29,7 +29,7 @@ sidebar: auto
   - Option lists for `select` and `checkbox` can now be a simple array of strings `['Amy', 'Janey', 'Rainy']`
   - Added a new `errorList` slotComponent that can replace the rendering of all errors system wide without requiring any logic changes.
   - Added new `prefix` and `suffix` slots to all inputs.
-  - Adds new `error-behavior` `value` that shows validation errors only after a field has had a value.
+  - Adds new `error-behavior` `value` that shows validation errors after a field has had a value, or been blurred.
 
 - Bug fixes 🐛:
   - Fixes an issue where `file` and `image` type inputs could submit old data after an input had been cleared.

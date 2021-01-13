@@ -76,7 +76,7 @@ Error Behavior  | Description
 `blur`    | **(Default)** Shown when a user removes focus from an input, and on `@submit`
 `submit`  | Only shown on `@submit`
 `live`    | Always displayed
-`value`   | Shown as soon as the input has a value, and on `@submit`
+`value`   | Shown as soon as the input has a value, on `@submit`, and on `blur`.
 
 ## Stopping validation
 
