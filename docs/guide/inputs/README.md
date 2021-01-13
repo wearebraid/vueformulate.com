@@ -181,13 +181,14 @@ Prop              | Description
 
 ## Events
 
-These events are emitted by every input type.
+These events are emitted by every input type (in addition to native DOM events).
 
 Event               | Description
 --------------------|-------------------------------------------------------------
 `@input`            | Emitted every time the value of the field changes. Typically this is used implicitly by using `v-model`.
 `@validation`       | Emitted anytime the state of validation changes for an input, irregardless of the visibility of the errors (`v2.3+`). [More details](/guide/validation/#validation-event)
 `@error-visibility` | Emitted when the visibility of the errors changes, for example, on blur or submit (`v2.3+`).
+`@blur-context`     | Emitted on blur, but includes the input's context as the payload.
 
 ## Context object
 
