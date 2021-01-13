@@ -160,7 +160,7 @@ Prop              | Description
 ------------------|-------------------------------------------------------------
 `error`           | A custom error message to be manually shown on an element (validation errors are generated on their own). This error will always be visible (if you want to remove it, use a dynamic prop).
 `errors`          | An array of custom error messages to show on an element (see above).
-`error‑behavior`  | Defines when error messages are shown. Can be `blur` (default), `submit`, or `live`. Anytime a `<FormulateForm>` element is submitted errors are also shown. `live` will always display all error messages for the input.
+`error‑behavior`  | Defines when error messages are shown. Can be `blur` (default), `submit`, `value`, or `live`. Anytime a `<FormulateForm>` element is submitted errors are also shown. `live` will always display all error messages for the input, and `value` will show errors immediately after content has been entered into the field.
 `help`            | Help text to be displayed with the input.
 `help-position`   | The position of the help text `before` or `after` (default is `after`).
 `id`              | The id of the input (defaults to an auto-generated one)

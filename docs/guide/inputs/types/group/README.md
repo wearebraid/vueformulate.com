@@ -209,7 +209,7 @@ validation rules directly on the group. So placing a "required" rule on the
 <demo-group-repeatable-2 />
 
 :::tip Note
-There is no `blur` event for a group type, so by default valiation errors will
+There is no `blur` event for a group type, so by default validation errors will
 be shown when someone attempts to submit a form. If you prefer errors to be
 immediately show, consider using `error-behavior="live"`.
 :::

@@ -60,6 +60,24 @@ When using the array syntax, make sure your prop is bound with
 `v-bind:validation` or the shorthand `:validation`.
 :::
 
+## Showing validation
+
+Validation errors are always computed in realtime, but they are displayed on
+the input based on `error-behavior` of the input. The default `error-behavior`
+is `blur` — meaning a field with validation errors are only shows those errors
+when a user removes focus from the input. In most circumstances this
+provides the best user experience since a user isn't bombarded with error
+messages. Additionally error messages are always shown when a user tries to
+submit a form with failing validation messages. In addition to the `blur`
+behavior, these additional `error-behavior` strategies are supported.
+
+Error Behavior  | Description
+----------|---------------------------------------------------------------------
+`blur`    | **(Default)** Shown when a user removes focus from an input, and on `@submit`
+`submit`  | Only shown on `@submit`
+`live`    | Always displayed
+`value`   | Shown as soon as the input has a value, and on `@submit`
+
 ## Stopping validation
 
 #### The `bail` rule
