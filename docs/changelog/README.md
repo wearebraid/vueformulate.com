@@ -27,6 +27,8 @@ sidebar: auto
   - Adds a new `rules` (validation rules) property to the input context object. Especially useful for use in slots for doing things like adding an asterisk to the label of a field with the `required` validation rule.
   - Adds automatic string casting for numeric option values (for `select` and `checkbox` types)
   - Option lists for `select` and `checkbox` can now be a simple array of strings `['Amy', 'Janey', 'Rainy']`
+  - Added a new `errorList` slotComponent that can replace the rendering of all errors system wide without requiring any logic changes.
+  - Added new `prefix` and `suffix` slots to all inputs.
 
 - Bug fixes 🐛:
   - Fixes an issue where `file` and `image` type inputs could submit old data after an input had been cleared.

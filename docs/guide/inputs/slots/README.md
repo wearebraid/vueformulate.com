@@ -19,6 +19,8 @@ Slot name      | Description
 `element`      | The primary element slot. The component rendered by default in this slot is determined by the plugin's `options.library` values. _It is rare that you would use this slot — instead create a custom input._
 `errorList`    | This can only be used as a `slotComponent`, and allows you to replace the rendering of errors without changing the logic. Developers should reference [`FormulateErrorList.vue`](https://github.com/wearebraid/vue-formulate/blob/master/src/slots/FormulateErrorList.vue) for props and usage example.
 `errors`       | The errors that are displayed for a given input. Defaults to a `FormulateErrors` component.
+`prefix`       | Immediately before the `<input>` element on all default input types — empty by default.
+`suffix`       | Immediately after the `<input>` element on all default input types — empty by default.
 `help`         | The help text value that appears after the element.
 `label`        | The label value that will appear `before` or `after` the input element, default is a `<label>` element.
 
