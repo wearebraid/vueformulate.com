@@ -102,6 +102,21 @@ export default {
       font-weight: bold;
     }
   }
+  & /deep/ .inline-header-badge {
+    &::after {
+      display: inline-block;
+      content: 'NEW';
+      padding: 0.2em 0.5em;
+      margin-left: 0.66em;
+      line-height: 1;
+      color: #fff;
+      background: #41b883;
+      border: 1px solid #3eaf7c;
+      border-radius: 5px;
+      font-size: 0.7em;
+      font-weight: bold;
+    }
+  }
 
   .footer {
     box-sizing: border-box;

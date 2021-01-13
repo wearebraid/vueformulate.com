@@ -1,7 +1,3 @@
----
-new: true
----
-
 # Generating Forms
 
 Form generation is a first-class feature of Vue Formulate, and can be accomplished
