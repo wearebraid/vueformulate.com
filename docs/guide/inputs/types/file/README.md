@@ -291,7 +291,7 @@ object to create new a `FileList` on each add/remove event — however the
 you are using the recommended approach of uploading files with `Axios` or an
 `uploader` function since `FileUpload` tracks these changes for you, but
 if you're relying on the native `FormData` constructor your results will not
-include mutations made to the `FileList` Safari.
+include mutations made to the `FileList` in Safari.
 :::
 
 ### Upload results with `v-model` on `FormulateInput`
