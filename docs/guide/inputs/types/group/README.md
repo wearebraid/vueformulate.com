@@ -456,7 +456,7 @@ Slot name      | Description
 `remove`       | The remove button when `repeatable`.<br>_The context object in this slot includes the `index` and a `removeItem` function that should be called to remove that item._
 `repeatable`   | Responsible for rendering each row of inputs.<br>_The context object in this slot includes a `removeItem` function that should be called to remove that item._
 
-## Events <Badge text="2.5+" />
+## Events <Badge text="2.5" /> {data-new}
 
 The group input type has two unique events:
 

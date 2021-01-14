@@ -147,7 +147,7 @@ to the depth or size of your schema.
 
 <demo-schema-3 />
 
-### Schema events <Badge text="2.5.0" />
+### Schema events <Badge text="2.5" /> {data-new}
 
 Schemas also support event bindings. There are three ways to bind events to your
 schema:
