@@ -5,6 +5,7 @@ sidebar: auto
 # Changelog
 
 ## v.2.5.0 — January 14, 2021
+Vue Formulate `2.5.0` is a significant release that includes 45 closed GitHub issues, implementation of many highly requested features, and improvements to groups and file uploads.
 
 - New Features 🎉:
   - Adds support for [events on schema generated forms](/guide/forms/generating-forms/#schema-events).
