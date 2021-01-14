@@ -33,6 +33,7 @@ a PR following the [contribution guide](/guide/contributing/#internationalizatio
 - 🇵🇱 Polish (pl)
 - 🇧🇷 Portuguese (pt)
 - 🇷🇺 Russian (ru)
+- 🇸🇰 Slovak (sk)
 - 🇨🇺 Spanish (es)
 - 🇷🇸 Serbian (sr)
 - 🇹🇭 Thai (th)
