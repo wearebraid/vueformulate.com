@@ -3,7 +3,7 @@
 The button [classification](/guide/inputs/custom-inputs/#what-is-a-classification) is given to the following types:
 
 - [button](#button)
-- [submit](#button)
+- [submit](#submit)
 
 Formulate determines what becomes the text of the button in the following order:
 

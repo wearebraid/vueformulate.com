@@ -60,7 +60,6 @@ example:
       type="submit"
       label="Register"
     />
-    </div>
     <pre
       class="code"
       v-text="formValues"
