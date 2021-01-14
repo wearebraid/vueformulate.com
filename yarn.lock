@@ -868,7 +868,7 @@
 
 "@braid/vue-formulate@github:wearebraid/vue-formulate#release/2.5.0":
   version "2.5.0"
-  resolved "https://codeload.github.com/wearebraid/vue-formulate/tar.gz/a71aa5d3a13204f9a0321c7754bd691fe5fcb0ca"
+  resolved "https://codeload.github.com/wearebraid/vue-formulate/tar.gz/5d514fe5e01a0b1ff069e9206c3be3c78417548c"
   dependencies:
     "@braid/vue-formulate-i18n" "^1.13.0"
     is-plain-object "^3.0.1"

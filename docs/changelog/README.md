@@ -31,6 +31,7 @@ sidebar: auto
   - Added new `prefix` and `suffix` slots to all inputs.
   - Adds new `error-behavior` `value` that shows validation errors after a field has had a value, or been blurred.
   - Adds a new `blur-context` event for inputs that emits when the input is blurred and contains the `context` object as the payload.
+  - Adds support for events to schema generated forms.
 
 - Bug fixes 🐛:
   - Fixes an issue where `file` and `image` type inputs could submit old data after an input had been cleared.

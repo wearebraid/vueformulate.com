@@ -17,7 +17,7 @@ features like [slot components](/guide/inputs/slots/#slot-components) allow
 for customization of the inputs being rendered without needing to bring-your-own
 components (although you can).
 
-## Schemas <Badge text="2.4.0" />
+## Schemas
 
 Schemas were introduced in version `2.4` and allow for generating complex forms
 with `group` fields, wrappers, and your own components. Showing is better than telling, so here’s an interactive JSON playground with several examples.
@@ -150,6 +150,112 @@ to the depth or size of your schema.
 ```
 
 <demo-schema-3 />
+
+### Schema events <Badge text="2.5.0" />
+
+Schemas also support event bindings. There are three ways to bind events to your
+schema:
+
+- Simple event listeners
+- Renamed event listeners
+- Inline functions
+
+#### Simple event listeners
+
+Binding an event to a schema element is as simple as including an `@{eventName}`
+property on an element. For example, given this schema:
+
+```json
+[
+  {
+    "type": "text",
+    "name": "username",
+    "@blur": true
+  }
+]
+```
+
+We can now listen for the blur event on `username` by adding an event listener
+to the `<FormulateForm>` or `<FormulateSchema>` element:
+
+```vue
+<FormulateForm
+  :schema="schema"
+  @blur="handleBlur"
+/>
+```
+
+<demo-schema-4 />
+
+#### Renamed event listeners
+
+Simple event listeners work great when you only need to listen to one or two
+events in your schema, but what happens when you need to listen to several
+events on multiple schema nodes? For example, if every input in a long form
+listened to the `@focus` event, it could be frustrating to determine which input
+had been focused.
+
+To solve for this, you can rename the event listener by simply providing a new
+event name as the value of your `@{eventName}` property. You can choose
+any string (`kebab-case` is recommended). For example:
+
+```json
+[
+  {
+    "label": "Select a username",
+    "type": "text",
+    "name": "username",
+    "@focus": "focus-username"
+  },
+  {
+    "label": "Select a password",
+    "type": "password",
+    "name": "password",
+    "@focus": "focus-password"
+  },
+  {
+    "label": "Confirm your password",
+    "validation": "confirm",
+    "type": "password",
+    "name": "password_confirm",
+    "@focus": "focus-confirm"
+  }
+]
+```
+
+```vue
+<FormualteForm
+  :schema="schema"
+  @focus-username="focusedOn = 'username'"
+  @focus-password="focusedOn = 'password'"
+  @focus-confirm="focusedOn = 'confirm'"
+>
+  Now we know the last focus was <strong>{{ focusedOn }}</strong>
+</FormulateForm>
+```
+
+<demo-schema-5 />
+
+#### Inline functions
+
+It is also possible to bind event listener functions directly into your schema.
+This option (obviously) won't work with simple JSON, but it works great if you
+are storing your schema in your component, or if you export your schema from
+a JavaScript file.
+
+```js
+export default [
+  {
+    label: 'Where would you prefer to live?',
+    type: 'select',
+    name: 'location',
+    options: ['Cleveland', 'Fiji', 'San Francisco',],
+    '@change': (e) => e.target.value === 'Fiji' ? alert('🏝') : alert('🤔')
+  }
+]
+```
+
+<demo-schema-6 />
 
 ## Simple iteration
 
