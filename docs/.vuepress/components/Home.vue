@@ -62,7 +62,7 @@
 
     <hr>
 
-    <!-- <div class="resources">
+    <div class="resources">
       <ArticleCard
         href="https://dev.to/justinschroeder/better-uploads-with-vue-formulate-s3-and-lambda-58b8"
         image="/assets/img/resources/aws.jpg"
@@ -71,7 +71,7 @@
         headline="Better uploads with Vue Formulate, S3, and Lambda"
         copy="A practical guide to improving file uploads with Vue Formulate, AWS S3, and AWS Lambda."
       />
-    </div> -->
+    </div>
 
     <hr>
 
