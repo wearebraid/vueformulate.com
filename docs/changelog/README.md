@@ -47,6 +47,8 @@ sidebar: auto
   - Fixes a bug that prevents validation from re-running if the rules are changed dynamically.
   - Allows users to now override the `aria-describedby` attribute if necessary.
 
+- Community Update 📣
+  - There's a new official [Vue Formulate Discord server](https://discord.gg/CGPZfmJe8A) for community questions, idea sharing, and more.
 
 ## v.2.4.5 - October 4, 2020
 
