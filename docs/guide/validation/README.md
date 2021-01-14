@@ -654,7 +654,7 @@ If you need to be more specific you have three options:
 - Override a rule’s message function on an individual `FormulateInput`.
 - Globally override a validation rule’s message function.
 
-### Validation name strategy <Badge text="2.5" />
+### Validation name strategy <Badge text="2.5" /> {data-new}
 
 Validation messages frequently include the name of the failing input. For
 example, the default `required` rule validation message is simply `${validationName} is required`.

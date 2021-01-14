@@ -367,7 +367,7 @@ export default {
 :::
 <demo-group-validation />
 
-## Settings errors on groups <Badge text="2.5" />
+## Settings errors on groups <Badge text="2.5" /> {data-new}
 
 When setting explicit errors on group input we need a way to indicate which
 index the errant field is at. To make this as simple as possible, use the

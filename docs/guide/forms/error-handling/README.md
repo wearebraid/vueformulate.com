@@ -74,7 +74,7 @@ the values will both be shown, and any duplicates removed.
 ```
 <demo-errors-3 />
 
-### Group input errors <Badge text="2.5" />
+### Group input errors <Badge text="2.5" /> {data-new}
 
 [Inputs of type `group`](/guide/inputs/types/group/) presents an interesting
 challenge because they are nested inside an array. To handle these nested and

@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@braid/vue-formulate": "github:wearebraid/vue-formulate#release/2.5.0",
+    "@gerhobbelt/markdown-it-attrs": "^3.0.3-20",
     "axios": "^0.19.2",
     "jshint": "^2.12.0",
     "v-tooltip": "^2.0.3",

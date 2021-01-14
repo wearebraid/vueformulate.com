@@ -247,7 +247,7 @@ This event is triggered on all submission attempts, even if the inputs do not
 pass validation. It’s up to you to determine how you want to handle it. The
 payload of the event is a [`FormSubmission` instance](https://github.com/wearebraid/vue-formulate/blob/master/src/FormSubmission.js).
 
-## Form validation <Badge text="2.5" />
+## Form validation <Badge text="2.5" /> {data-new}
 
 The `<FormulateForm>` component is always aware the validation state for
 each of it’s inputs. In addition to the `@submit` handler not being called
@@ -288,7 +288,7 @@ we only enable the submit button when all the fields pass validation:
 ```
 <demo-form-7 />
 
-### Validation failed message <Badge text="2.5" />
+### Validation failed message <Badge text="2.5" /> {data-new}
 
 On long forms it can be helpful to display an error message near the submit
 button when submitting a form that contains invalid fields, since the validation
@@ -582,7 +582,7 @@ Name              | Description
 ------------------|-----------------------------------------------------------------
 `invalid-message` | `String`, `Array`, or `Function`, error message to show when a form is submitted with invalid fields.
 
-## Context object <Badge text="2.5" />
+## Context object <Badge text="2.5" /> {data-new}
 
 Forms contain a single slot `default`, which is passed a form context object.
 This object is similar to the [input context object](/guide/inputs/#context-object),

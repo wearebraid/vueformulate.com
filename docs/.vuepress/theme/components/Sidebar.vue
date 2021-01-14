@@ -102,10 +102,10 @@ export default {
       font-weight: bold;
     }
   }
-  & /deep/ .has-inline-header-badge {
+  & /deep/ [data-badge] {
     &::after {
       display: inline-block;
-      content: 'NEW';
+      content: attr(data-badge);
       padding: 0.2em 0.5em;
       margin-left: 0.66em;
       line-height: 1;

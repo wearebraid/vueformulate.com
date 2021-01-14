@@ -178,5 +178,10 @@ module.exports = ctx => ({
       modifiedAt: $page => $page.lastUpdated && new Date($page.lastUpdated),
     }]
   ],
+  markdown: {
+    plugins: [
+      '@gerhobbelt/markdown-it-attrs'
+    ]
+  },
   dest: 'public'
 })
