@@ -61,7 +61,7 @@ an object of configuration options.
 Vue.use(VueFormulate, options)
 ```
 
-## Nuxt <span class="new-badge">2.5+</span>
+## Nuxt <Badge text="2.5" />
 It's easy to use Vue Formulate on Nuxt too. As of version `2.5` the easiest way
 to get start with Vue Formulate on a Nuxt project is to use the included Nuxt module.
 

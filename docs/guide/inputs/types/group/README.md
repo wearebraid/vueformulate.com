@@ -367,7 +367,7 @@ export default {
 :::
 <demo-group-validation />
 
-## Settings errors on groups <span class="new-badge">2.5+</span>
+## Settings errors on groups <Badge text="2.5" />
 
 When setting explicit errors on group input we need a way to indicate which
 index the errant field is at. To make this as simple as possible, use the
@@ -456,7 +456,7 @@ Slot name      | Description
 `remove`       | The remove button when `repeatable`.<br>_The context object in this slot includes the `index` and a `removeItem` function that should be called to remove that item._
 `repeatable`   | Responsible for rendering each row of inputs.<br>_The context object in this slot includes a `removeItem` function that should be called to remove that item._
 
-## Events <span class="new-badge">2.5+</span>
+## Events <Badge text="2.5+" />
 
 The group input type has two unique events:
 

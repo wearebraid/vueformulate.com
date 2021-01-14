@@ -360,7 +360,7 @@ Prop                | Description
 `upload‑behavior`   | `live` or `delayed` - Determines when the file is uploaded. Defaults to `live`, which uploads the file as soon as it is selected.
 `upload‑url`        | URL to perform a POST request which overrides the configured default.
 
-## Events
+## Events <Badge text="2.5+" />
 
 File inputs use the [default events](/guide/inputs/#events), as well as the
 following classification specific events:
@@ -372,7 +372,7 @@ Event name         | Description
 `file-upload-error`    | Emitted when the `error` function of the `uploader` is called during the upload process. The payload is the error itself.
 `file-removed`        | Emitted when a file is removed from the `FileList`. Payload is the internal array of files.
 
-## Slots
+## Slots <Badge text="2.5+" />
 
 The `file` classification has some unique slots (and matching [Slot Components](/guide/inputs/slots/#slot-components)):
 
