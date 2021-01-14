@@ -62,26 +62,15 @@ Vue.use(VueFormulate, options)
 ```
 
 ## Nuxt <Badge text="2.5" /> {data-new}
-It's easy to use Vue Formulate on Nuxt too. As of version `2.5` the easiest way
+It's easy to use Vue Formulate on Nuxt too. The easiest way
 to get start with Vue Formulate on a Nuxt project is to use the included Nuxt module.
 
-For earlier versions of Vue Formulate see this [CodeSandbox implementation](https://codesandbox.io/s/vue-formulate-test-8segh?file=/nuxt.config.js)
-with a working Vue Formulate Nuxt plugin file.
-
-#### nuxt.config.js
-
 ```js
+// nuxt.config.js
 export default {
-  ...
   buildModules: [
     '@braid/vue-formulate/nuxt'
   ]
-  // optionally, define a path for your Vue Formulate configuration options.
-  // the default value is formulate.config.js in your Nuxt source directory
-  formulate: {
-    configPath: '~/path/to/different/formulate.config.js'
-  }
-  ...
 }
 ```
 
@@ -89,17 +78,26 @@ export default {
 
 To configure Vue Formulate with additional [plugins](/guide/plugins/),
 [locales](/guide/internationalization/), [validation rules](/guide/validation/)
-and more you can create a `formulate.config.js` file which will be imported and
-used by the Vue Formulate Nuxt module.  If you wish to place
-your configuration file somewhere else, just tell the Nuxt module where it can locate
-the configuration file using the `configPath` argument of the `formulate` object in your
-`nuxt.config.js` file.
+and more you can create a `formulate.config.js` file in the root of
+your Nuxt project which will be imported and used by the Vue Formulate Nuxt module.
+If you wish to place your configuration file somewhere besides the root of your Nuxt
+project, just tell the Nuxt module where it can locate the configuration file using
+the `configPath` argument of the `formulate` object in your `nuxt.config.js` file.
+
+```js
+// nuxt.config.js
+export default {
+  formulate: {
+    configPath: '~/different/location/of/formulate.config.js'
+  }
+}
+```
 
 Your `formulate.config.js` file should export an object which will be passed to the
 Vue Formulate registration via `Vue.use()`.
 
-#### formulate.config.js
 ```js
+// formulate.config.js
 import { de } from '@braid/vue-formulate-i18n'
 
 export default {
