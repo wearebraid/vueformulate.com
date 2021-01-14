@@ -4,7 +4,7 @@ sidebar: auto
 
 # Changelog
 
-## v.2.5.0 — @todo RELEASE DATE HERE
+## v.2.5.0 — January 14, 2021
 
 - New Features 🎉:
   - Adds support for [events on schema generated forms](/guide/forms/generating-forms/#schema-events).
@@ -28,13 +28,16 @@ sidebar: auto
   - Adds ability to upload additional files to `file` type with the `multiple` attribute. Includes new `addFile` and `addFileInput` class keys.
   - Adds the ability to place error messages on deeply nested `group` types [by using "dot notation"](/guide/inputs/types/group/#settings-errors-on-groups).
   - [Adds a new `useInputDecorators`](/guide/inputs/types/box/#styling-box-inputs) global option to disable `box` input decorators.
-  - Adds a new `validationNameStrategy` global option that allows you to declare the priority of props that are used in validation messages as the `name`.
-  - Adds new `@repeatableAdded` and `@repeatableRemoved` events to `group` types.
-  - Adds a new `rules` (validation rules) property to the input context object. Especially useful for use in slots for doing things like adding an asterisk to the label of a field with the `required` validation rule.
+  - [Adds a new `validationNameStrategy` global option](/guide/validation/#customize-validation-messages) that allows you to declare the priority of props that are used in validation messages as the `name`.
+  - [Adds new `@repeatableAdded` and `@repeatableRemoved` events](/guide/inputs/types/group/#events) to `group` types.
+  - [Adds a new `rules` (validation rules) property to the input context object.](/guide/inputs/#context-object) Especially useful for use in slots for doing things like adding an asterisk to the label of a field with the `required` validation rule.
   - Adds automatic string casting for numeric option values (for `select` and `checkbox` types)
   - Option lists for `select` and `checkbox` can now be a simple array of strings `['Amy', 'Janey', 'Rainy']`
-  - Adds new `error-behavior` `value` that shows validation errors after a field has had a value, or been blurred.
-  - Adds a new `blur-context` event for inputs that emits when the input is blurred and contains the `context` object as the payload.
+  - [Adds new `error-behavior` `value`](/guide/validation/#showing-validation) that shows validation errors after a field has had a value, or been blurred.
+  - [Adds a new `blur-context` event](/guide/inputs/#events) for inputs that emits when the input is blurred and contains the `context` object as the payload.
+  - [New translations](/guide/internationalization/) for <img src="../guide/internationalization/Flag_of_Catalonia.svg" style="width: 1.25em; display: inline-block; vertical-align: middle;"> Catalan and 🇸🇰 Slovak.
+  - Language updates for German and Serbian.
+  
 
 - Bug fixes 🐛:
   - Fixes an issue where `file` and `image` type inputs could submit old data after an input had been cleared.

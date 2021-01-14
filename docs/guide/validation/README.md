@@ -62,13 +62,13 @@ When using the array syntax, make sure your prop is bound with
 
 ## Showing validation
 
-Validation errors are always computed in realtime, but they are displayed on
-the input based on `error-behavior` of the input. The default `error-behavior`
+Validation errors are always computed in realtime, but they are displayed
+based on `error-behavior` of the input. The default `error-behavior`
 is `blur` — meaning a field with validation errors are only shows those errors
 when a user removes focus from the input. In most circumstances this
 provides the best user experience since a user isn't bombarded with error
-messages. Additionally error messages are always shown when a user tries to
-submit a form with failing validation messages. In addition to the `blur`
+messages. Error messages are also always shown when a user tries to
+submit a form that has failing validation messages. In addition to the `blur`
 behavior, these additional `error-behavior` strategies are supported.
 
 Error Behavior  | Description
@@ -82,10 +82,10 @@ Error Behavior  | Description
 
 #### The `bail` rule
 
-To stop validation after encountering an error (to prevent showing a
+To stop validation after encountering an error (to prevent showing
 several messages) you can add the special rule: `bail`. When the validation
-parser encounters the `bail` rule, it will stop validating that input after
-encountering any failures in any subsequent rules.
+parser encounters the `bail` rule, it remembers to stop validating that input
+after encountering any failures in any subsequent rules.
 
 ```vue
 <FormulateInput

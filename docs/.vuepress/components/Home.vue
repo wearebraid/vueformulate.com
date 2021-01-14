@@ -39,9 +39,9 @@
 
     <div class="updates-section">
       <div class="new-badge">
-        <span class="label">@todo release date</span>
+        <span class="label">Jan 14, 2021</span>
         <span class="text">
-          2.5 introduces dozens improvements and bug fixes. See the <NavLink :item="{link: '/changelog/#v-2-5-0-@todo-release-date-here', text: 'changelog'}" /> for details.
+          2.5 introduces dozens improvements and bug fixes. See the <NavLink :item="{link: '/changelog/#v-2-5-0-january-14-2021', text: 'changelog'}" /> for details.
         </span>
       </div>
     </div>
@@ -62,7 +62,7 @@
 
     <hr>
 
-    <div class="resources">
+    <!-- <div class="resources">
       <ArticleCard
         href="@todo article URL here"
         image="/assets/img/resources/aws.jpg"
@@ -71,7 +71,7 @@
         headline="Better uploads with Vue Formulate, S3, and Lambda"
         copy="A practical guide to improving file uploads with Vue Formulate, AWS S3, and AWS Lambda."
       />
-    </div>
+    </div> -->
 
     <hr>
 

@@ -16,6 +16,7 @@ a PR following the [contribution guide](/guide/contributing/#internationalizatio
 :::
 
 - 🇪🇬 Arabic (ar)
+- <img src="./Flag_of_Catalonia.svg" style="width: 1.25em; display: inline-block; vertical-align: middle;"> Catalan (ca)
 - 🇨🇳 Chinese (zh)
 - 🇨🇿 Czech (cs)
 - 🇩🇰 Danish (da)
@@ -33,6 +34,9 @@ a PR following the [contribution guide](/guide/contributing/#internationalizatio
 - 🇧🇷 Portuguese (pt)
 - 🇷🇺 Russian (ru)
 - 🇨🇺 Spanish (es)
+- 🇷🇸 Serbian (sr)
+- 🇹🇭 Thai (th)
+- 🇸🇰 Slovak (sk)
 - 🇸🇪 Swedish (sv)
 
 When using a right-to-left language like Arabic with the default [snow theme](/guide/theming/#default-theme)
