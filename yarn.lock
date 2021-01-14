@@ -875,6 +875,11 @@
     is-url "^1.2.4"
     nanoid "^2.1.11"
 
+"@gerhobbelt/markdown-it-attrs@^3.0.3-20":
+  version "3.0.3-20"
+  resolved "https://registry.yarnpkg.com/@gerhobbelt/markdown-it-attrs/-/markdown-it-attrs-3.0.3-20.tgz#706d28c66edf7192a0a542c1ec579fd3dd39fabb"
+  integrity sha512-MROF2Ia3Zd6ErpqrnKNx8cJDioqvqmy5PYHAMHUmCJLwrWHedXoYldgBJ4qgemlFgO8yWYFUENGoyN4OsXTpGQ==
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"

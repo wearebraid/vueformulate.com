@@ -1,6 +1,6 @@
 # Community
 
-## Questions and Support
+## Questions and Support <span /> {data-updated}
 
 ### Stack Overflow
 
@@ -11,13 +11,14 @@ can further assist you (see [Code Playgrounds](#code-playgrounds) below)
 
 <stack-overflow-link />
 
-### Vue Discord (Generalized help)
+### Vue Formulate Discord (Generalized help & discussion) <Badge text="New" />
 
 Stack Overflow is not the right place to ask generalized "Why doesn't my code
 work" questions. It's intended to ask questions about isolated issues. If you're
-in need of more generalized help, consider asking it on the #code-help channel
-on the Vue discord server. If you are not already a member (it's free and open)
-you'll first need to use the invite link to join the server.
+in need of more generalized help — or you just want to make connections within the
+Vue Formulate community — consider joining the official Vue Formulate Discord.
+If you are not already a member (it's free and open) you'll need to use the following
+invite link to join the server.
 
 <vue-discord-link />
 
@@ -70,6 +71,15 @@ initialization `Vue.use(VueFormulate, {...})`, features this is the one to use.
   headline="Tailwind + Vue Formulate = ❤️"
   copy="Using the newly customizable classes in Vue Formulate, learn how to leverage the Tailwind CSS utility framework to quickly add custom styling to your forms."
 />
+
+<!-- <ArticleCard
+  href="@todo article URL here"
+  image="/assets/img/resources/aws.jpg"
+  image-alt="Vue Formulate with S3 and Lambda"
+  badge="Latest Article"
+  headline="Better uploads with Vue Formulate, S3, and Lambda"
+  copy="A practical guide to improving file uploads with Vue Formulate, AWS S3, and AWS Lambda."
+/> -->
 
 <!-- ===========YOUR ARTICLE HERE=============================== -->
 <!-- Copy one of the article cards above and fill out the relevant props! -->

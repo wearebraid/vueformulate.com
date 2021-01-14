@@ -67,7 +67,7 @@ each `input`.
 ]
 ```
 
-#### Array string syntax <Badge text="2.5" />
+#### Array string syntax <Badge text="2.5" /> {data-new}
 
 You can also use a simple array of strings. In this case both the `value` and
 the `label` of the checkboxes will be the string value.
