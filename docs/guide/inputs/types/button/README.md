@@ -61,3 +61,12 @@ forms (including `FormulateForm` wrappers).
 ```
 
 <demo-input-submit />
+
+
+## Slot Component <Badge text="2.5" /> {data-new}
+
+The button input has one slot (`#default`) with a single [Slot Component](/guide/inputs/slots/#slot-components):
+
+Slot component name | Description
+---------------|----------------------------------------------------------------
+`buttonContent`| This slot component renders in the `#default` slot and is passed the input context object.

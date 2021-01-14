@@ -170,6 +170,187 @@ the object will update!
   </FormulateForm>
 ```
 
+:::warning Note
+It is not recommended to use your `v-model` data in your form submit handler.
+Instead, use the data passed to your submit handler. Read [Submitting forms](#submitting-forms) for more info.
+:::
+
+## Submitting forms
+
+While it’s easy to use `v-model` to get and set form values, the `@submit` event
+is the preferred way to retrieve the final values from a form for processing or
+submitting to a backend. There are a number of reasons for this:
+
+- The `@submit` event will not fire until all validation rules (including async validation rules) are passing.
+- Data emitted in the `@submit` event is deeply cloned and can be safely mutated without side effects.
+- The `@submit` event ensures all form uploads are finished before completing.
+
+You can listen for the `@submit` event just as you would on a standard `<form>`
+element. If you return a `Promise` from your submit handler `FormulateForm` will
+automatically expose an `isLoading` property on the [context object](#context-object).
+
+::: details Form Submission Control Flow Diagram
+![Form submission control flow](./control-flow.svg)
+:::
+
+```vue
+<template>
+  <FormulateForm
+    @submit="submitHandler"
+    #default="{ isLoading }"
+  >
+    <FormulateInput
+      label="What is your name?"
+      name="name"
+      help="Please enter your name"
+      validation="required"
+    />
+    <FormulateInput
+      type="submit"
+      :disabled="isLoading"
+      :label="isLoading ? 'Loading...' : 'Submit this form'"
+    />
+  </FormulateForm>
+</template>
+
+<script>
+export default {
+  methods: {
+    async submitHandler (data) {
+      await this.$axios.post('/my/api', data)
+      alert(`Thank you, ${data.name}`)
+    }
+  }
+}
+</script>
+```
+
+**Outputs:**
+
+<demo-form-3 />
+
+Notice how the above form does not trigger the alert dialog until the fields it
+contains pass validation. Neat-o.
+
+:::tip Note
+Because validation rules are asynchronous, and [file uploads](/guide/inputs/types/file), will wait to resolve the `@submit` event is also asynchronous relative to when the form was submitted.
+:::
+
+#### Non-validated submit handler
+
+There are times where you may not want to opt-in to the default behavior of the
+`@submit` event, and would rather be notified synchronously on every attempt to
+submit a form. For these edge cases, you can bind to the `@submit-raw` event.
+
+This event is triggered on all submission attempts, even if the inputs do not
+pass validation. It’s up to you to determine how you want to handle it. The
+payload of the event is a [`FormSubmission` instance](https://github.com/wearebraid/vue-formulate/blob/master/src/FormSubmission.js).
+
+## Form validation <Badge text="2.5" /> {data-new}
+
+The `<FormulateForm>` component is always aware the validation state for
+each of it’s inputs. In addition to the `@submit` handler not being called
+unless every nested `FormulateInput` is valid, the validation state of the form
+is also made available to your template via the `default` slot. In this example
+we only enable the submit button when all the fields pass validation:
+
+```vue
+<FormulateForm
+  #default="{ hasErrors }"
+>
+  <FormulateInput
+    type="email"
+    label="Please enter a superhero email address"
+    validation="required|email"
+    validation-behavior="live"
+  />
+  <FormulateInput
+    type="checkbox"
+    label="Select some of your favorite superheros"
+    validation="required|min:2"
+    :options="{
+      batman: 'Batman',
+      blackpanther: 'Black Panther'
+      captainamerica: 'Captain America,
+      catwoman: 'Catwoman',
+      hulk: 'Hulk,
+      superman: 'Superman',
+      wonderwoman: 'Wonder woman',
+    }"
+    validation-behavior="live"
+  />
+  <FormulateInput
+    type="submit"
+    :disabled="hasErrors"
+  />
+</FormulateForm>
+```
+<demo-form-7 />
+
+### Validation failed message <Badge text="2.5" /> {data-new}
+
+On long forms it can be helpful to display an error message near the submit
+button when submitting a form that contains invalid fields, since the validation
+errors may be out of the viewport. To do this, use the `invalid-message` prop.
+
+```vue
+<FormulateForm
+  invalid-message="Not all fields were filled out properly"
+>
+  <FormulateInput
+    label="Email"
+    type="email"
+    name="email"
+    validation="required|email"
+  />
+  <FormulateInput
+    label="First name"
+    name="first_name"
+    validation="required"
+  />
+  <FormulateInput
+    label="Last name"
+    name="first_name"
+    validation="required"
+  />
+  <!-- Form errors will show here -->
+  <FormulateErrors />
+  <FormulateInput type="submit" />
+</FormulateForm>
+```
+
+<demo-form-8 />
+
+The `invalid-message` prop can be a `String`, `Array`, or a `Function`.
+Functions are passed an object of the invalid inputs, and you are expected to
+return a `String` or `Array` of strings. A slight tweak to the above example
+allows us to output the names of the fields that are failing:
+
+```vue
+<FormulateForm
+  :invalid-message="invalidMessage"
+>
+...
+<script>
+export default {
+  methods: {
+    invalidMessage(fields) {
+      const fieldNames = Object.keys(fields)
+      const listOfNames = fieldNames.map(fieldName => fieldName.replace('_', ' '))
+      return `Invalid fields: ${listOfNames}`
+    }
+  }
+}
+</script>
+```
+
+<demo-form-9 />
+
+:::tip Note
+For more information on the `FormulateErrors` component please read about
+[Form errors](/guide/forms/error-handling/#form-errors).
+:::
+
 ## Conditional fields
 
 To make fields conditional use simple Vue directives such as `v-if`.
@@ -240,68 +421,50 @@ prop directly on `<FormulateInput>` as well.
 ```
 <demo-form-5 />
 
-## Submitting forms
+## Ignoring inputs <Badge text="2.5+" />
 
-While it’s easy to use `v-model` to get and set form values, the `@submit` event
-is the preferred way to retrieve the final values from a form for processing or
-submitting to a backend. There are a number of reasons for this:
-
-- The `@submit` event will not fire until all validation rules (including async validation rules) are passing.
-- Data emitted in the `@submit` event is deeply cloned and can be safely mutated without side effects.
-- The `@submit` event ensures all form uploads are finished before completing.
-
-You can listen for the `@submit` event just as you would on a standard `<form>`
-element:
+Complex forms often have inputs that do not need to be submitted to the server,
+for example inputs that are only used to control the display of the form. These
+inputs can opt-out of form participation by adding an `ignored` prop:
 
 ```vue
-<template>
-  <FormulateForm
-    @submit="submitHandler"
-  >
-    <FormulateInput
-      label="What is your name?"
-      name="name"
-      help="Please enter your name"
-      validation="required"
-    />
-    <FormulateInput
-      type="submit"
-      label="Submit this form"
-    />
-  </FormulateForm>
-</template>
-
-<script>
-export default {
-  methods: {
-    submitHandler (data) {
-      alert(`Thank you, ${data.name}`)
-    }
-  }
-}
-</script>
+<FormulateForm
+  v-model="values"
+>
+  <FormulateInput
+    label="Select your meal"
+    v-model="meal"
+    type="select"
+    :options="{burger: 'Hamburger', pasta: 'Pasta'}"
+    ignored
+  />
+  <FormulateInput
+    v-if="meal === 'burger'"
+    label="Build your own burger"
+    type="checkbox"
+    name="burger"
+    :options="{
+      meat: 'Meat',
+      lettuce: 'Lettuce',
+      tomato: 'Tomato',
+      cheese: 'Cheese'
+    }"
+  />
+  <FormulateInput
+    label="Select a pasta sauce"
+    v-if="meal === 'pasta'"
+    name="sauce"
+    type="radio"
+    :options="{
+      bolognese: 'Bolognese',
+      carbonara: 'Carbonara',
+      tortellini: 'Tortellini'
+    }"
+  />
+</FormulateForm>
 ```
 
-**Outputs:**
-
-<demo-form-3 />
-
-Notice how the above form does not trigger the alert dialog until the fields it
-contains pass validation. Neat-o.
-
-:::tip Note
-Because validation rules are asynchronous, and [file uploads](/guide/inputs/types/file), will wait to resolve the `@submit` event is also asynchronous relative to when the form was submitted.
-:::
-
-### Advanced form submission
-
-There are times where you may not want to opt-in to the default behavior of the
-`@submit` event, and would rather be notified synchronously on every attempt to
-submit a form. For these edge cases, you can bind to the `@submit-raw` event.
-
-This event is triggered on all submission attempts, and it’s up to you to
-determine how you want to handle it. The payload of the event is a
-[`FormSubmission` instance](https://github.com/wearebraid/vue-formulate/blob/master/src/FormSubmission.js).
+<demo-form-6 />
 
 ## Named forms
 
@@ -403,3 +566,32 @@ export default {
 :::
 <demo-named-form />
 
+## Events
+
+Event          | Description
+---------------|------------------------------------------------------------------
+`submit`       | Emitted by any standard form submission events _if_ all fields are passing validation
+`submit-raw`   | Emitted on any form submission attempt, even with invalid fields.
+`failed-validation` | Emitted when form submission fails due to validation, passed an object with field names as properties and component instances as values.
+`input`        | Emitted when any values in the form change.
+
+## Props
+
+Name              | Description
+------------------|-----------------------------------------------------------------
+`invalid-message` | `String`, `Array`, or `Function`, error message to show when a form is submitted with invalid fields.
+
+## Context object <Badge text="2.5" /> {data-new}
+
+Forms contain a single slot `default`, which is passed a form context object.
+This object is similar to the [input context object](/guide/inputs/#context-object),
+albeit much simpler.
+
+Property              | Description
+----------------------|-----------------------------------------------------------
+`errors`              | An array of explicit form errors (not validation errors) assigned via the [error handling](/guide/forms/error-handling/) features.
+`hasErrors`           | `Boolean` indicating if the form has validation errors
+`hasValue`            | `Boolean` indicating if the form has any values at all
+`isValid`             | Inverse of `hasErrors`
+`isLoading`           | If the form is currently loading. This is automatically managed by returning a promise from your `@submit handler.
+`values`              | The values of the inputs in the form itself.

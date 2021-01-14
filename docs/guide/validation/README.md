@@ -60,14 +60,33 @@ When using the array syntax, make sure your prop is bound with
 `v-bind:validation` or the shorthand `:validation`.
 :::
 
+## Showing validation
+
+Validation errors are always computed in realtime, but they are displayed
+based on `error-behavior` of the input. The default `error-behavior`
+is `blur` — meaning a field with validation errors only shows its errors
+when a user removes focus from the input. In most circumstances this
+provides the best user experience since it prevents a user from being immediately
+bombarded with error messages. Error messages are also always shown when a user
+tries to submit a form that has failing validation messages.
+
+In addition to the `blur` behavior, these additional `error-behavior` strategies are supported.
+
+Error Behavior  | Description
+----------|---------------------------------------------------------------------
+`blur`    | **(Default)** Shown when a user removes focus from an input, and on `@submit`
+`submit`  | Only shown on `@submit`
+`live`    | Always displayed
+`value`   | Shown as soon as the input has a value, on `@submit`, and on `blur`.
+
 ## Stopping validation
 
 #### The `bail` rule
 
-To stop validation after encountering an error (to prevent showing a
-several messages) you can add the special rule: `bail`. When the validation
-parser encounters the `bail` rule, it will stop validating that input after
-encountering any failures in any subsequent rules.
+To stop validation after encountering an error (to prevent showing
+several messages simultaneously) you can add the special rule: `bail`. When the validation
+parser encounters the `bail` rule, it remembers to stop validating that input
+after encountering any failures in any subsequent rules.
 
 ```vue
 <FormulateInput
@@ -561,7 +580,7 @@ Checks if the input is a valid number as evaluated by `isNaN()`.
 
 Use this rule to make a field optional. When used all validation rules pass
 until the field is no longer empty. Its location in the list of validation
-rules has no effect, 
+rules has no effect.
 
 ```vue
 <FormulateInput
@@ -630,10 +649,47 @@ There are several ways to customize your validation message. The most basic
 of which is to use the `validation-name` prop — allowing you to change the name
 of the field as used in the pre-defined validation messages.
 
-If you need to be more specific you have two options:
+If you need to be more specific you have three options:
 
-- Override a rule’s message function on an individual `FormulateInput`
-- Globally override a validation rule’s message function
+- Override the validation name strategy.
+- Override a rule’s message function on an individual `FormulateInput`.
+- Globally override a validation rule’s message function.
+
+### Validation name strategy <Badge text="2.5" /> {data-new}
+
+Validation messages frequently include the name of the failing input. For
+example, the default `required` rule validation message is simply `${validationName} is required`.
+How that `validationName` is determined is up to the gloabl configuration option
+`validationNameStrategy`. By default this strategy is:
+
+```js
+Vue.use(VueFormulate, {
+  validationNameStrategy: ['validationName', 'name', 'label', 'type']
+})
+```
+
+Meaning, validation messages first check the `validation-name` prop, then the
+`name` prop, then the `label`, and finally they fall back to the input `type`.
+
+You can change this validation name strategy by providing your own array in
+order of priority. For example, if you'd like inputs to use the `label` instead
+of the `name`, change the strategy to:
+
+```js
+Vue.use(VueFormulate, {
+  validationNameStrategy: ['validationName', 'label', 'name', 'type']
+})
+```
+
+Finally, if you want to write a more complex strategy, you can provide a
+function as the your `validationNameStrategy`. In this case your function
+will be passed the full instance of the component.
+
+```js
+Vue.use(VueFormulate, {
+  validationNameStrategy: (vm) => vm.context.name || vm.id
+})
+```
 
 ### Custom field-level messages
 
@@ -731,6 +787,7 @@ Property      | Description
 --------------|-----------------
 value         | The value of the field
 getFormValues | When the input is in the context of a `FormulateForm` you can retrieve an object of form values by using this function
+getGroupValues | When the input is in the context of a `group` type you can retrieve an object of the input's local group values by using this function, if the input is not in a group, this function falls back to `getFormValues`.
 name          | The name of the field being evaluated
 
 In addition to the context object, any rule arguments are passed as additional

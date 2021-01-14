@@ -18,7 +18,7 @@ The select [classification](/guide/inputs/custom-inputs/#what-is-a-classificatio
 
 <demo-input-select />
 
-The `options` prop can be an object or an array of objects. When using an array
+The `options` prop can be an object or an array of objects, or array of strings. When using an array
 each object must include a `label` and `value` property while `id` is optional:
 
 ```vue
@@ -29,6 +29,16 @@ each object must include a `label` and `value` property while `id` is optional:
     { value: 'last', label: 'Last name' },
     { value: 'initial', label: 'Middle Initial', id: 'name-initial' }
   ]"
+/>
+```
+
+When using an array of strings, the the provided string will be both the value
+and the label.
+
+```vue
+<FormulateInput
+  type="select"
+  :options="['Bologna', 'Rome', 'Florence']"
 />
 ```
 
@@ -63,6 +73,6 @@ Use the `optionGroups` prop when you need to use `<optgroup>`.
 
 :::warning String values only
 Although Vue Formulate supports non-string values, HTML `select` inputs only
-support string values, using integers or booleans as keys will result in
-unexpected behavior.
+support string values. As such when using a `Number` as an option value the
+value will automatically be re-cast as a string.
 :::
