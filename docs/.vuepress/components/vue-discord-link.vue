@@ -1,7 +1,7 @@
 <template>
   <div class="vue-discord-links">
     <a
-      href="https://discord.gg/CGPZfmJe8A"
+      href="https://discord.gg/NZ6nchBDGx"
       class="link-card"
     >
       <svg
