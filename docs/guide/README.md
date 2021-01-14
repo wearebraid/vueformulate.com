@@ -34,6 +34,7 @@ With Vue Formulate developers are empowered to:
 ✓ Modify default [validation messages](/guide/validation/#customize-validation-messages)<br>
 ✓ Create and share [custom inputs](/guide/inputs/custom-inputs)<br>
 ✓ Override default component templates with [scoped slots](/guide/inputs/slots)<br>
+✓ And [so much more](/changelog)<br>
 
 ## Inputs
 Every type of input in Vue Formulate is an instance of the `FormulateInput`

@@ -63,7 +63,7 @@ forms (including `FormulateForm` wrappers).
 <demo-input-submit />
 
 
-## Slot Component
+## Slot Component <span class="new-badge">2.5+</span>
 
 The button input has one slot (`#default`) with a single [Slot Component](/guide/inputs/slots/#slot-components):
 

@@ -67,7 +67,7 @@ each `input`.
 ]
 ```
 
-#### Array string syntax
+#### Array string syntax <span class="new-badge">2.5+</span>
 
 You can also use a simple array of strings. In this case both the `value` and
 the `label` of the checkboxes will be the string value.

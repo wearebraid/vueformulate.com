@@ -1,6 +1,22 @@
 <script>
 import { isActive, hashRE, groupHeaders } from '../util'
 
+// eslint-disable-next-line no-control-regex
+const rControl = /[\u0000-\u001f]/g
+const rSpecial = /[\s~`!@#$%^&*()\-_+=[\]{}|\\;:"'“”‘’–—<>,.?/]+/g
+const rCombining = /[\u0300-\u036F]/g
+
+function slugify (str) {
+  return str.normalize('NFKD')
+    .replace(rCombining, '')
+    .replace(rControl, '')
+    .replace(rSpecial, '-')
+    .replace(/\-{2,}/g, '-')
+    .replace(/^\-+|\-+$/g, '')
+    .replace(/^(\d)/, '_$1')
+    .toLowerCase()
+}
+
 export default {
   functional: true,
 
@@ -62,6 +78,7 @@ export default {
 }
 
 function renderLink (h, to, text, active, level, item) {
+  console.log(slugify(item.title), item.slug)
   const component = {
     props: {
       to,
@@ -71,7 +88,8 @@ function renderLink (h, to, text, active, level, item) {
     class: {
       active,
       'sidebar-link': true,
-      'new-badge': item && item.frontmatter && item.frontmatter.new
+      'new-badge': item && item.frontmatter && item.frontmatter.new,
+      'has-inline-header-badge': item.slug && slugify(item.title) !== item.slug && `${slugify(item.title)}-2` !== item.slug
     }
   }
 

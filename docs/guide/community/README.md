@@ -1,7 +1,3 @@
----
-new: true
----
-
 # Community
 
 ## Questions and Support
