@@ -64,7 +64,7 @@
 
     <!-- <div class="resources">
       <ArticleCard
-        href="@todo article URL here"
+        href="https://dev.to/justinschroeder/better-uploads-with-vue-formulate-s3-and-lambda-58b8"
         image="/assets/img/resources/aws.jpg"
         image-alt="Vue Formulate with S3 and Lambda"
         badge="Latest Article"
