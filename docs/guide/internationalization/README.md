@@ -33,11 +33,10 @@ a PR following the [contribution guide](/guide/contributing/#internationalizatio
 - 🇵🇱 Polish (pl)
 - 🇧🇷 Portuguese (pt)
 - 🇷🇺 Russian (ru)
+- 🇷🇸 Serbian (sr)
 - 🇸🇰 Slovak (sk)
 - 🇨🇺 Spanish (es)
-- 🇷🇸 Serbian (sr)
 - 🇹🇭 Thai (th)
-- 🇸🇰 Slovak (sk)
 - 🇸🇪 Swedish (sv)
 
 When using a right-to-left language like Arabic with the default [snow theme](/guide/theming/#default-theme)
