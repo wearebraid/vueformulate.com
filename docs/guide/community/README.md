@@ -1,6 +1,6 @@
 # Community
 
-## Questions and Support
+## Questions and Support <Badge text="updated" /> {data-updated}
 
 ### Stack Overflow
 
@@ -70,6 +70,15 @@ initialization `Vue.use(VueFormulate, {...})`, features this is the one to use.
   headline="Tailwind + Vue Formulate = ❤️"
   copy="Using the newly customizable classes in Vue Formulate, learn how to leverage the Tailwind CSS utility framework to quickly add custom styling to your forms."
 />
+
+<!-- <ArticleCard
+  href="@todo article URL here"
+  image="/assets/img/resources/aws.jpg"
+  image-alt="Vue Formulate with S3 and Lambda"
+  badge="Latest Article"
+  headline="Better uploads with Vue Formulate, S3, and Lambda"
+  copy="A practical guide to improving file uploads with Vue Formulate, AWS S3, and AWS Lambda."
+/> -->
 
 <!-- ===========YOUR ARTICLE HERE=============================== -->
 <!-- Copy one of the article cards above and fill out the relevant props! -->
