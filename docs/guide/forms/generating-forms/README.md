@@ -220,7 +220,7 @@ any string (`kebab-case` is recommended). For example:
 ```
 
 ```vue
-<FormualteForm
+<FormulateForm
   :schema="schema"
   @focus-username="focusedOn = 'username'"
   @focus-password="focusedOn = 'password'"

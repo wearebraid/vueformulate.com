@@ -662,7 +662,7 @@ How that `validationName` is determined is up to the gloabl configuration option
 `validationNameStrategy`. By default this strategy is:
 
 ```js
-Vue.use(VueFormualte, {
+Vue.use(VueFormulate, {
   validationNameStrategy: ['validationName', 'name', 'label', 'type']
 })
 ```
@@ -675,7 +675,7 @@ order of priority. For example, if you'd like inputs to use the `label` instead
 of the `name`, change the strategy to:
 
 ```js
-Vue.use(VueFormualte, {
+Vue.use(VueFormulate, {
   validationNameStrategy: ['validationName', 'name', 'label', 'type']
 })
 ```
@@ -685,7 +685,7 @@ function as the your `validationNameStrategy`. In this case your function
 will be passed the full instance of the component.
 
 ```js
-Vue.use(VueFormualte, {
+Vue.use(VueFormulate, {
   validationNameStrategy: (vm) => vm.context.name || vm.id
 })
 ```
