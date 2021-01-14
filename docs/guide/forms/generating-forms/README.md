@@ -191,7 +191,7 @@ events on multiple schema nodes? For example, if every input in a long form
 listened to the `@focus` event, it could be frustrating to determine which input
 had been focused.
 
-To solve for this, you can rename the event listener by simply providing a new
+To solve for this, you can rename the emitted event by simply providing a new
 event name as the value of your `@{eventName}` property. You can choose
 any string (`kebab-case` is recommended). For example:
 
