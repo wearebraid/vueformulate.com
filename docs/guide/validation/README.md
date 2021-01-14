@@ -64,12 +64,13 @@ When using the array syntax, make sure your prop is bound with
 
 Validation errors are always computed in realtime, but they are displayed
 based on `error-behavior` of the input. The default `error-behavior`
-is `blur` — meaning a field with validation errors are only shows those errors
+is `blur` — meaning a field with validation errors only shows its errors
 when a user removes focus from the input. In most circumstances this
-provides the best user experience since a user isn't bombarded with error
-messages. Error messages are also always shown when a user tries to
-submit a form that has failing validation messages. In addition to the `blur`
-behavior, these additional `error-behavior` strategies are supported.
+provides the best user experience since it prevents a user from being immediately
+bombarded with error messages. Error messages are also always shown when a user
+tries to submit a form that has failing validation messages.
+
+In addition to the `blur` behavior, these additional `error-behavior` strategies are supported.
 
 Error Behavior  | Description
 ----------|---------------------------------------------------------------------
@@ -83,7 +84,7 @@ Error Behavior  | Description
 #### The `bail` rule
 
 To stop validation after encountering an error (to prevent showing
-several messages) you can add the special rule: `bail`. When the validation
+several messages simultaneously) you can add the special rule: `bail`. When the validation
 parser encounters the `bail` rule, it remembers to stop validating that input
 after encountering any failures in any subsequent rules.
 
@@ -579,7 +580,7 @@ Checks if the input is a valid number as evaluated by `isNaN()`.
 
 Use this rule to make a field optional. When used all validation rules pass
 until the field is no longer empty. Its location in the list of validation
-rules has no effect,
+rules has no effect.
 
 ```vue
 <FormulateInput
@@ -676,7 +677,7 @@ of the `name`, change the strategy to:
 
 ```js
 Vue.use(VueFormulate, {
-  validationNameStrategy: ['validationName', 'name', 'label', 'type']
+  validationNameStrategy: ['validationName', 'label', 'name', 'type']
 })
 ```
 
