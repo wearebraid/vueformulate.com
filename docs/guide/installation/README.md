@@ -63,7 +63,7 @@ Vue.use(VueFormulate, options)
 
 ## Nuxt <Badge text="2.5" /> {data-new}
 It's easy to use Vue Formulate on Nuxt too. The easiest way
-to get start with Vue Formulate on a Nuxt project is to use the included Nuxt module.
+to get started with Vue Formulate on a Nuxt project is to use the included Nuxt module.
 
 ```js
 // nuxt.config.js

@@ -682,7 +682,7 @@ Vue.use(VueFormulate, {
 ```
 
 Finally, if you want to write a more complex strategy, you can provide a
-function as the your `validationNameStrategy`. In this case your function
+function to your `validationNameStrategy` key. In this case your function
 will be passed the full instance of the component.
 
 ```js
