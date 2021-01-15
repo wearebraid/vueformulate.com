@@ -61,51 +61,23 @@ an object of configuration options.
 Vue.use(VueFormulate, options)
 ```
 
-## Nuxt <Badge text="2.5" /> {data-new}
-It's easy to use Vue Formulate on Nuxt too. The easiest way
-to get start with Vue Formulate on a Nuxt project is to use the included Nuxt module.
+## Nuxt
+It's easy to use Vue Formulate on Nuxt too. [A working example is available](https://codesandbox.io/s/vue-formulate-test-8segh).
 
+#### plugins/vue-formulate.js
 ```js
-// nuxt.config.js
+import Vue from 'vue'
+import VueFormulate from '@braid/vue-formulate'
+
+Vue.use(VueFormulate)
+```
+
+#### nuxt.config.js
+```js
 export default {
-  buildModules: [
-    '@braid/vue-formulate/nuxt'
+  plugins: [
+     '~/plugins/vue-formulate',
   ]
-}
-```
-
-### Nuxt module configuration file
-
-To configure Vue Formulate with additional [plugins](/guide/plugins/),
-[locales](/guide/internationalization/), [validation rules](/guide/validation/)
-and more you can create a `formulate.config.js` file in the root of
-your Nuxt project which will be imported and used by the Vue Formulate Nuxt module.
-If you wish to place your configuration file somewhere besides the root of your Nuxt
-project, just tell the Nuxt module where it can locate the configuration file using
-the `configPath` argument of the `formulate` object in your `nuxt.config.js` file.
-
-```js
-// nuxt.config.js
-export default {
-  formulate: {
-    configPath: '~/different/location/of/formulate.config.js'
-  }
-}
-```
-
-Your `formulate.config.js` file should export an object which will be passed to the
-Vue Formulate registration via `Vue.use()`.
-
-```js
-// formulate.config.js
-import { de } from '@braid/vue-formulate-i18n'
-
-export default {
-  plugins: [de],
-  locale: 'de',
-  rules: {
-    foobar: ({ value }) => ['foo', 'bar'].includes(value)
-  }
 }
 ```
 
