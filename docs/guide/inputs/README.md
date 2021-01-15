@@ -160,7 +160,7 @@ Prop              | Description
 ------------------|-------------------------------------------------------------
 `error`           | A custom error message to be manually shown on an element (validation errors are generated on their own). This error will always be visible (if you want to remove it, use a dynamic prop).
 `errors`          | An array of custom error messages to show on an element (see above).
-`error‑behavior`  | Defines when error messages are shown. Can be `blur` (default), `submit`, or `live`. Anytime a `<FormulateForm>` element is submitted errors are also shown. `live` will always display all error messages for the input.
+`error‑behavior`  | Defines when error messages are shown. Can be `blur` (default), `submit`, `value`, or `live`. Anytime a `<FormulateForm>` element is submitted errors are also shown. `live` will always display all error messages for the input, and `value` will show errors immediately after content has been entered into the field.
 `help`            | Help text to be displayed with the input.
 `help-position`   | The position of the help text `before` or `after` (default is `after`).
 `id`              | The id of the input (defaults to an auto-generated one)
@@ -179,16 +179,16 @@ Prop              | Description
 `value`           | An initial unbound value (use when `v-model` or form binding is not a good option)
 `disableErrors`   | Will not show any error messages when set to true.
 
-
 ## Events
 
-These events are emitted by every input type.
+These events are emitted by every input type (in addition to native DOM events).
 
 Event               | Description
 --------------------|-------------------------------------------------------------
 `@input`            | Emitted every time the value of the field changes. Typically this is used implicitly by using `v-model`.
 `@validation`       | Emitted anytime the state of validation changes for an input, irregardless of the visibility of the errors (`v2.3+`). [More details](/guide/validation/#validation-event)
 `@error-visibility` | Emitted when the visibility of the errors changes, for example, on blur or submit (`v2.3+`).
+`@blur-context`     | Emitted on blur, but includes the input's context as the payload.
 
 ## Context object
 
@@ -198,7 +198,7 @@ and slots.
 
 Property        | Description
 ----------------|---------------------------------------------------------------
-`addLabel`      | The label to display inside "add more" button on `group` inputs.
+`addLabel`      | The label to display inside "add more" button on `group` and `file[multiple]` inputs.
 `attributes`    | An object of non-prop attributes passed to the input like `placeholder`
 `blurHandler`   | Function that must be called when an input blurs.
 `classification`| The classification of the input.
@@ -226,6 +226,7 @@ Property        | Description
 `removeLabel`   | The label to display inside "remove" button on `group` inputs.
 `repeatable`    | `Boolean` indicating if a field is repeatable or not.
 `rootEmit`      | `Function` identical to `$emit`, but should be used in custom inputs and slots to emit events from the root `<FormulateInput>`.
+`rules`         | `Array` of validation rules on the input. Array is populated with objects containing `{ ruleName: string, args: [] }`.
 `setErrors`     | Function to set (or clear) the current `errors` (not validation errors).
 `showValidationErrors` | `Boolean`, true if the validation errors should be displayed.
 `type`          | The type of input.

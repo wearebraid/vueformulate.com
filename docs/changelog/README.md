@@ -4,21 +4,55 @@ sidebar: auto
 
 # Changelog
 
-## v.2.5.5 — @todo RELEASE DATE HERE
+## v.2.5.0 — January 14, 2021
+Vue Formulate `2.5.0` is a significant release that includes 45 closed GitHub issues, implementation of many highly requested features, and improvements to groups and file uploads.
 
 - New Features 🎉:
-  - New `removePosition` prop allows the remove button of a `group` type to control location of the `remove` slot.
-  - Each group’s `index` is now available to the `remove` slot of a `group` type.
-  - New `ignored` prop to allow using a `FormulateInput` inside a `FormulateForm` without registering it with the form using.
-  - Adds `form`, `formErrors` and `formError` class keys for styling form errors.
-  - Adds `fileImagePreviewImage` class key for styling `image` previews.
-  - `FormulateForm` now exposes a [context object](/guide/forms/#context-object) with properties like `hasErrors`
-  - Form `@submit` handlers can now return a `Promise` and use an automatic `isLoading` property in the form context object.
-  - New `invalid-message` prop to show form error when a user attempts to submit a form with invalid fields.
-  - Adds a new `@failed-validation` event when a form submission is attempted but blocked due to invalid fields.
+  - Adds support for [events on schema generated forms](/guide/forms/generating-forms/#schema-events).
+  - `FormulateForm` now exposes a [context object](/guide/forms/#context-object) with properties like `isValid`.
+  - Adds multiple new slots and slotComponents:
+    - [`buttonContent` overrides all `#default` slots for buttons](/guide/inputs/types/button/#slot-component) (slotComponent only).
+    - [`file` overrides each individual file](/guide/inputs/types/file/#slots) on `file` and `image` inputs.
+    - [`uploadAreaMask` overrides the visible dropzone](/guide/inputs/types/file/#slots) for `file` and `image` inputs when they have no value.
+    - [`errorList` overrides rendering](/guide/inputs/slots/#available-slots) of all error lists system wide without requiring any logic changes (slotComponent only).
+    - [`prefix` allows content](/guide/inputs/slots/#available-slots) immediately before the input element on all types.
+    - [`suffix` allows content](/guide/inputs/slots/#available-slots) immediately after the input element on all types.
+  - New [`ignored` prop on `FormulateInput`](guide/forms/#ignoring-inputs) prevents `FormulateForm` from model binding or registering the input in any way.
+  - New [`remove-position` prop](/guide/inputs/types/group/#props) allows changing the position of the `remove` slot/button on repeatable `group` types.
+  - Each group’s `index` is now available to the [`remove` slot of a `group` type](/guide/inputs/types/group/#slots).
+  - [Adds `form`, `formErrors` and `formError` class keys for styling form errors](/guide/theming/customizing-classes/#class-keys).
+  - [Adds `fileImagePreviewImage` class key](/guide/theming/customizing-classes/#class-keys) for styling `image` previews.
+  - [Form `@submit` handlers can now return a `Promise`](/guide/forms/#submitting-forms) and use an automatic `isLoading` property in the form context object.
+  - [New `invalid-message` prop to show form error](/guide/forms/#validation-failed-message) when a user attempts to submit a form with invalid fields, useful for long forms where users may not be able to see the errant fields.
+  - [Adds a new `@failed-validation` event](/guide/forms/#events) when a form submission is attempted but blocked due to invalid fields.
+  - [Adds new events to `file` classification inputs](/guide/inputs/types/file/#events) `@file-upload-progress`, `@file-upload-complete`, `@file-upload-error`, `@file-removed`.
+  - Adds ability to upload additional files to `file` type with the `multiple` attribute. Includes new `addFile` and `addFileInput` class keys.
+  - Adds the ability to place error messages on deeply nested `group` types [by using "dot notation"](/guide/inputs/types/group/#settings-errors-on-groups).
+  - [Adds a new `useInputDecorators`](/guide/inputs/types/box/#styling-box-inputs) global option to disable `box` input decorators.
+  - [Adds a new `validationNameStrategy` global option](/guide/validation/#customize-validation-messages) that allows you to declare the priority of props that are used in validation messages as the `name`.
+  - [Adds new `@repeatableAdded` and `@repeatableRemoved` events](/guide/inputs/types/group/#events) to `group` types.
+  - [Adds a new `rules` (validation rules) property to the input context object.](/guide/inputs/#context-object) Especially useful for use in slots for doing things like adding an asterisk to the label of a field with the `required` validation rule.
+  - Adds automatic string casting for numeric option values (for `select` and `checkbox` types)
+  - Option lists for `select` and `checkbox` can now be a simple array of strings `['Amy', 'Janey', 'Rainy']`
+  - [Adds new `error-behavior` `value`](/guide/validation/#showing-validation) that shows validation errors after a field has had a value, or been blurred.
+  - [Adds a new `blur-context` event](/guide/inputs/#events) for inputs that emits when the input is blurred and contains the `context` object as the payload.
+  - [New translations](/guide/internationalization/) for <img src="../guide/internationalization/Flag_of_Catalonia.svg" style="width: 1.25em; display: inline-block; vertical-align: middle;"> Catalan and 🇸🇰 Slovak.
+  - Language updates for German and Serbian.
+
+
 - Bug fixes 🐛:
+  - Fixes an issue where `file` and `image` type inputs could submit old data after an input had been cleared.
+  - Fixes a bug that threw an error when attempting to upload an invalid `mime` and then remove it.
+  - Fixes a bug that caused an upload progress bar to appear on re-hydrated files when submitting a form.
+  - Fixes issue causing `group` v-models required full replacement (new object reference) to properly set sub field values.
+  - Re-runs validation on any named `FormulateForm`s when `setLocale` is called to change the language of the messages.
+  - Outputs the `name` attribute on `FormulateForm` (useful for Netlify users).
+  - Fixes a bug that sometimes caused the `v-model` value to be used as an initial state over the `value` prop.
+  - Fixes a bug that prevents validation from re-running if the rules are changed dynamically.
+  - Allows users to now override the `aria-describedby` attribute if necessary.
 
-
+- Community Update 📣
+  - There's a new official [Vue Formulate Discord server](https://discord.gg/NZ6nchBDGx) for community questions, idea sharing, and more.
 
 ## v.2.4.5 - October 4, 2020
 

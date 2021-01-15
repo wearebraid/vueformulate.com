@@ -62,6 +62,18 @@ export default {
 }
 
 function renderLink (h, to, text, active, level, item) {
+  const dataRegex = /\{data-(.*)\}/
+  const matches = text.match(dataRegex)
+  let dataAttribute = false
+  if (matches && matches.length) {
+    text = text.replace(matches[0], '').trim()
+    dataAttribute = matches[1]
+      .replace('-', ' ')
+      .toLowerCase()
+      .split(' ')
+      .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+      .join(' ');
+  }
   const component = {
     props: {
       to,
@@ -72,6 +84,9 @@ function renderLink (h, to, text, active, level, item) {
       active,
       'sidebar-link': true,
       'new-badge': item && item.frontmatter && item.frontmatter.new
+    },
+    attrs: {
+      'data-badge': dataAttribute
     }
   }
 

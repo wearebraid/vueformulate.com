@@ -1,7 +1,3 @@
----
-new: true
----
-
 # Customizing classes
 
 <ArticleCard
@@ -181,7 +177,7 @@ Key             | Default                          | Description
 
 :::warning Important
 When using props to change classes for form errors, the props must be placed on the
-`FormulateForm` component, never use class keys directly on the `FormulateErrors`
+`FormulateForm` component. Never use class keys directly on the `FormulateErrors`
 component.
 :::
 

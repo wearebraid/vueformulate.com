@@ -5,6 +5,7 @@ The file [classification](/guide/inputs/custom-inputs/#what-is-a-classification)
 - [file](#file)
 - [image](#image)
 
+
 ## File
 
 ```vue
@@ -33,26 +34,38 @@ The file [classification](/guide/inputs/custom-inputs/#what-is-a-classification)
 
 <demo-image />
 
-## Props
-File inputs use the [default props](/guide/inputs/#all-options), as well as the
-following classification specific props:
+## How it works
 
+File inputs perform their upload function before your `FormulateForm`
+`@submit` handler is called. This is an opinionated approach to reducing
+the complexity of building forms across your project(s) by having a single (or small number of)
+endpoint that performs the upload and storage of any/all files. This allows
+your back end submission handlers to only deal with pure JSON results, and
+ensures a clean and concise API for authoring forms on the front end. It also
+aligns well with developers who use services like S3, Cloudinary or ImgIX.
 
-Prop                | Description
---------------------|-------------------------------------------------------------
-`upload‑behavior`   | `live` or `delayed` - Determines when the file is uploaded. Defaults to `live`, which uploads the file as soon as it is selected.
-`image‑behavior`    | `preview` or `file` - For an input type `image`, the default is `preview` where a thumbnail of the image is shown.
-`upload‑url`        | URL to perform a POST request which overrides the configured default.
-`uploader`          | `function` or [axios instance](https://github.com/axios/axios) - Mechanism used to perform upload. Defaults to the [globally configured](#uploader) instance.
-`prevent‑window‑drops` | `true` by default, this prevents the browser from navigating to a file when the user misses the dropzone.
-`accept`            | This is [standard HTML](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#attr-accept), but helpful when trying to upload files of a certain type.
+::: details Form submission control flow diagram
+The following diagram explains the submission flow of a form that includes
+file uploads in Vue Formulate.
 
+<img alt="Submission control flow" src="../../../forms/control-flow.svg">
+:::
 
 ## Uploader
 
 Inputs in the `file` classification are all used to upload data to a server.
 Because of this, they require additional configuration to work
 properly. An `uploader` must be defined before `file` inputs are supported.
+
+<ArticleCard
+  href="https://dev.to/justinschroeder/better-uploads-with-vue-formulate-s3-and-lambda-58b8"
+  image="/assets/img/resources/aws.jpg"
+  image-alt="Vue Formulate with S3 and Lambda"
+  badge="Article"
+  headline="Better uploads with Vue Formulate, S3, and Lambda"
+  copy="A practical guide to improving file uploads with Vue Formulate, AWS S3, and AWS Lambda."
+  :sidebar="false"
+/>
 
 ### Axios
 
@@ -72,7 +85,7 @@ Vue.use(VueFormulate, {
 })
 ```
 
-### Upload function
+### Custom uploader
 
 If you prefer to roll-your-own upload mechanism, you can provide a function as
 the `uploader`. The function will receive 4 arguments:
@@ -80,7 +93,7 @@ the `uploader`. The function will receive 4 arguments:
 - `File` object to upload
 - `progress` callback, expects `0-100` percentage return value
 - `error` callback to call when the upload fails. Accepts a string error message argument.
-- `options `Vue Formulate’s configuration object
+- `options` The full VueFormulate global options (includes `options.uploadUrl`).
 
 The `uploader` function must always return a `Promise`. `async`
 functions are a good option for doing this automatically.
@@ -144,7 +157,7 @@ If you prefer to use a different property than `url` you can change that by
 setting the `fileUrlKey` option when registering Vue Formulate.
 :::
 
-## A fake uploader
+### Faux uploader
 
 Vue Formulate ships with a fake uploader function that advances the progress
 bar but performs no requests. This is helpful for scaffolding and theming, but
@@ -153,7 +166,7 @@ it must be replaced for uploads to work.
 If dont need uploading at all (you're processing elsewhere) you can disable
 the fake uploader by replacing it with a dummy function:
 
-```vue
+```js
 Vue.use(VueFormulate, {
   uploader: function (file, progress) {
     // optionally handle the `file` for your own purposes here...
@@ -162,12 +175,6 @@ Vue.use(VueFormulate, {
   }
 })
 ```
-
-## Getting results
-
-When files are added to a file `type` in Vue Formulate the value is automatically
-transformed into an instance of `FileUpload`, a helper class to wrap the [FileList](https://developer.mozilla.org/en-US/docs/Web/API/FileList)
-object. It is recommended that the backend have a common URL where files can be uploaded.
 
 ## Setting initial values
 
@@ -178,7 +185,12 @@ form element, and return the same url in the payload, but wont re-upload.
 ```vue
 <FormulateInput
   type="file"
-  :value="[{ url: '/path/to/document.pdf' }]"
+  :value="[
+    {
+      url: '/path/to/document.pdf', // url is required
+      name: 'employment-offer.pdf' // name is optional
+    }
+  ]"
 />
 ```
 
@@ -267,6 +279,21 @@ If you prefer to handle the form submission manually you can listen to the
 }
 ```
 
+::: warning Safari and the `FileList` object
+HTML `file` inputs use a [`FileList`](https://developer.mozilla.org/en-US/docs/Web/API/FileList)
+object to track what files are currently attached to the input. The `FileList`
+is an immutable object so adding/removing additional files is impossible. To
+get around this limitation when a file accepts `[multiple]` files, Vue Formulate
+uses its own internal [`FileUpload`](https://github.com/wearebraid/vue-formulate/blob/master/src/FileUpload.js) object to track mutations. The `FileUpload`
+does its best to keep the `FileList` accurate by using a [`DataTransfer`](https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer/DataTransfer)
+object to create new a `FileList` on each add/remove event — however the
+`DataTransfer` constructor is not supported in Safari. This doesn't matter if
+you are using the recommended approach of uploading files with `Axios` or an
+`uploader` function since `FileUpload` tracks these changes for you, but
+if you're relying on the native `FormData` constructor your results will not
+include mutations made to the `FileList` in Safari.
+:::
+
 ### Upload results with `v-model` on `FormulateInput`
 
 If your use case does not call for a full form, you can directly bind to the
@@ -318,6 +345,42 @@ If the file has already been uploaded (like when using the default
 duplicate upload, but rather return the resolved path.
 :::
 
+## Props
+
+File inputs use the [default props](/guide/inputs/#props), as well as the
+following classification specific props:
+
+Prop                | Description
+--------------------|-----------------------------------------------------------
+`accept`            | This is [standard HTML](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#attr-accept), but helpful when trying to upload files of a certain type.
+`add-label`         | The label of the `+ Add File` button, or `false` to disable the add button all together.
+`image‑behavior`    | `preview` or `file` - For an input type `image`, the default is `preview` where a thumbnail of the image is shown.
+`prevent‑window‑drops` | `true` by default, this prevents the browser from navigating to a file when the user misses the dropzone.
+`uploader`          | `function` or [axios instance](https://github.com/axios/axios) - Mechanism used to perform upload. Defaults to the [globally configured](#uploader) instance.
+`upload‑behavior`   | `live` or `delayed` - Determines when the file is uploaded. Defaults to `live`, which uploads the file as soon as it is selected.
+`upload‑url`        | URL to perform a POST request which overrides the configured default.
+
+## Events <Badge text="2.5" /> {data-new}
+
+File inputs use the [default events](/guide/inputs/#events), as well as the
+following classification specific events:
+
+Event name         | Description
+-------------------|------------------------------------------------------------
+`file-upload-progress` | Emitted when the [`uploader`](#uploader) updates the progress of a file upload. The payload is a progress integer (`0-100`).
+`file-upload-complete` | Emitted when a file has completed it's upload. The payload is the `file` object.
+`file-upload-error`    | Emitted when the `error` function of the `uploader` is called during the upload process. The payload is the error itself.
+`file-removed`        | Emitted when a file is removed from the `FileList`. Payload is the internal array of files.
+
+## Slots <Badge text="2.5" /> {data-new}
+
+The `file` classification has some unique slots (and matching [Slot Components](/guide/inputs/slots/#slot-components)):
+
+Slot name         | Description
+------------------|-------------------------------------------------------------
+`file`            | Responsible for rendering a single file of the file input. When the input type is `multiple` this slot will be rendered multiple times. <br>_The context object in this slot includes a `file` object and a `imagePreview` boolean._
+`uploadAreaMask`  | Responsible for adding content or styles in the `uploadArea` when there are no files. <br>_The context object in this slot includes a `hasFiles` boolean._
+
 ## Custom class keys
 
 In addition to all [global class keys](/guide/theming/#customizing-classes)
@@ -326,9 +389,11 @@ following are available:
 Key             | Default                          | Description
 ----------------|----------------------------------|---------------------------------------------------
 `uploadArea`    | `.formulate-input-upload-area`   | The dropzone area wrapper for an upload.
-`uploadAreaMask`| `.formulate-input-upload-area-mask` | An additional element positioned immediately after the `<input>` used for stylistic reasons.
+`uploadAreaMask`| `.formulate-input-upload-area-mask` | An additional element positioned immediately after the `<input>` to be used for styling the dropzone.
 `files`         | `.formulate-files`               | A wrapper around a list of files.
 `file`          | `.formulate-file`                | A single input file.
+`fileAdd`       | `.formulate-file-add`            | The `+ Add File` button for `[multiple]` file inputs.
+`fileAddInput`  | `.formulate-file-add-input`      | The `+ Add File` `<input>` element (normally hidden).
 `fileName`      | `.formulate-file-name`           | The element responsible for outputting the name of the file.
 `fileRemove`    | `.formulate-file-remove`         | The element responsible for removing an existing file.
 `fileProgress`  | `.formulate-file-progress`       | The outer wrapper for the progress bar.

@@ -209,7 +209,7 @@ validation rules directly on the group. So placing a "required" rule on the
 <demo-group-repeatable-2 />
 
 :::tip Note
-There is no `blur` event for a group type, so by default valiation errors will
+There is no `blur` event for a group type, so by default validation errors will
 be shown when someone attempts to submit a form. If you prefer errors to be
 immediately show, consider using `error-behavior="live"`.
 :::
@@ -367,35 +367,68 @@ export default {
 :::
 <demo-group-validation />
 
+## Settings errors on groups <Badge text="2.5" /> {data-new}
+
+When setting explicit errors on group input we need a way to indicate which
+index the errant field is at. To make this as simple as possible, use the
+`group-errors` prop along with "dot notation" to reference inputs in their
+index. For example:
+
+```vue
+<FormulateInput
+  type="group"
+  :repeatable="true"
+  name="invitees"
+  :group-errors="{
+    '0.email': 'This email is already in use',
+    '1.name': 'Pretty sure Rensmold isn’t a real last name'
+  }"
+  :value="[
+    { name: 'Todd Berkins', email: 'todd@example.com' },
+    { name: 'Stella Rensmold', email: 'stella@example.com' },
+  ]"
+>
+  <FormulateInput
+    name="name"
+    label="Invitee's name"
+  />
+  <FormulateInput
+    name="email"
+    label="What is this user's email?"
+  />
+</FormulateInput>
+```
+
+<demo-group-errors-1 />
+
+Notice how the errors always begin with the index of the group. The proeprties
+of the `group-errors` prop must always begin with the index of the group they
+are being applied to.
+
+You can also apply group errors [using dot notation from a `<FormulateForm>`](/guide/forms/error-handling/#form-input-errors).
+
 ## Index of current group
 
 To manipulate a distinct group field, it is helpful to get the index of the current group item. Luckily, slots can help. The `default` slot for instance offers the `index` as a context variable of `groupProps`:
 
 Example:
-
-
 ```vue
  <FormulateInput
-                type="group"
-                name="attendees"
-                :repeatable="true"
-                add-label="+ Add Attendee"
-            >
-            <template v-slot:default="groupProps">
-              
-              <p>This is Group # {{groupProps.index}} </p>
-                <FormulateInput
-                                name="price"
-                                disabled
-                                :value="getPrice(groupProps.index)"
-                                label="Price""
-                            />
-            </template>
- </FormulateInput>
-            
+    type="group"
+    name="attendees"
+    :repeatable="true"
+    add-label="+ Add Attendee"
+    #default="{ index }"
+>
+  <p>This is Group # {{ index }} </p>
+  <FormulateInput
+    name="price"
+    disabled
+    :value="getPrice(index)"
+    label="Price""
+  />
+</FormulateInput>
 ```
-
-
 
 ## Props
 
@@ -404,15 +437,16 @@ The group field has a few unique props:
 Prop             | Description
 -----------------|----------------------------------------------------------------
 `add-label`      | When repeatable, this is the label to display on the "+ Add" button (defaults to `label || name`).
-`remove-label`   | When repeatable, this is the label to display on the "Remove" button.
 `limit`          | When repeatable, this is the maximum number of group items.
 `minimum`        | When repeatable, this is the minimum number of group items.
+`remove-label`   | When repeatable, this is the label to display on the "Remove" button.
+`remove-position`| Show the remove button `before` or `after` the group inputs (defaults to `before`)
 `repeatable`     | `Boolean` indicates if the field is repeatable.
-`removePosition` | Show the remove button `before` or `after` the group inputs (defaults to `before`)
+`group-errors`   | `Object` of dot notation properties (like `0.name`) with errors.
 
 ## Slots
 
-The group field has several unique slots:
+The group input has several unique slots (and matching [Slot Components](/guide/inputs/slots/#slot-components)):
 
 Slot name      | Description
 ---------------|----------------------------------------------------------------
@@ -421,6 +455,15 @@ Slot name      | Description
 `grouping`     | The primary repeatable area, responsible for rendering the inner content.
 `remove`       | The remove button when `repeatable`.<br>_The context object in this slot includes the `index` and a `removeItem` function that should be called to remove that item._
 `repeatable`   | Responsible for rendering each row of inputs.<br>_The context object in this slot includes a `removeItem` function that should be called to remove that item._
+
+## Events <Badge text="2.5" /> {data-new}
+
+The group input type has two unique events:
+
+Event name | Description
+-----------|--------------------------------------------------------------------
+`@repeatableAdded` | Emitted when a new repeatable item is added to the group.
+`@repeatableRemoved` | Emitted when a repeatable item is removed from the group.
 
 ## Custom class keys
 

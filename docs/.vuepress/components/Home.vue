@@ -39,9 +39,9 @@
 
     <div class="updates-section">
       <div class="new-badge">
-        <span class="label">June 17th, 2020</span>
+        <span class="label">Jan 14, 2021</span>
         <span class="text">
-          2.4 introduces <NavLink :item="{link: '/guide/theming/customizing-classes/#customizing-classes', text: 'theming class customization'}" />, <NavLink :item="{link: '/guide/forms/generating-forms/#schemas', text: 'form generation schema'}" />, and <NavLink :item="{link: '/changelog/', text: 'more'}" />
+          2.5 introduces dozens of improvements and bug fixes. See the <NavLink :item="{link: '/changelog/#v-2-5-0-january-14-2021', text: 'changelog'}" /> for details.
         </span>
       </div>
     </div>
@@ -64,12 +64,12 @@
 
     <div class="resources">
       <ArticleCard
-        href="https://dev.to/justinschroeder/tailwind-vue-formulate-24k1"
-        image="/assets/img/resources/tailwind.png"
-        image-alt="Tailwind CSS"
+        href="https://dev.to/justinschroeder/better-uploads-with-vue-formulate-s3-and-lambda-58b8"
+        image="/assets/img/resources/aws.jpg"
+        image-alt="Vue Formulate with S3 and Lambda"
         badge="Latest Article"
-        headline="Vue Formulate + Tailwind = ❤️"
-        copy="Vue Formulate 2.4 introduces customizable classes. It’s a match made in heaven for Tailwind users."
+        headline="Better uploads with Vue Formulate, S3, and Lambda"
+        copy="A practical guide to improving file uploads with Vue Formulate, AWS S3, and AWS Lambda."
       />
     </div>
 

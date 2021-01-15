@@ -4,3 +4,5 @@ node_modules
 report.*.json
 .yarn-error.log
 .DS_Store
+
+.vercel

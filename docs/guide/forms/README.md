@@ -60,7 +60,6 @@ example:
       type="submit"
       label="Register"
     />
-    </div>
     <pre
       class="code"
       v-text="formValues"
@@ -190,6 +189,10 @@ You can listen for the `@submit` event just as you would on a standard `<form>`
 element. If you return a `Promise` from your submit handler `FormulateForm` will
 automatically expose an `isLoading` property on the [context object](#context-object).
 
+::: details Form Submission Control Flow Diagram
+![Form submission control flow](./control-flow.svg)
+:::
+
 ```vue
 <template>
   <FormulateForm
@@ -213,14 +216,9 @@ automatically expose an `isLoading` property on the [context object](#context-ob
 <script>
 export default {
   methods: {
-    submitHandler (data) {
-      // Do your long-running backend stuff here...
-      return new Promise(resolve => {
-        setTimeout(() => {
-          alert(`Thank you, ${data.name}`)
-          resolve()
-        }, 2000)
-      })
+    async submitHandler (data) {
+      await this.$axios.post('/my/api', data)
+      alert(`Thank you, ${data.name}`)
     }
   }
 }
@@ -248,7 +246,7 @@ This event is triggered on all submission attempts, even if the inputs do not
 pass validation. It’s up to you to determine how you want to handle it. The
 payload of the event is a [`FormSubmission` instance](https://github.com/wearebraid/vue-formulate/blob/master/src/FormSubmission.js).
 
-## Form validation
+## Form validation <Badge text="2.5" /> {data-new}
 
 The `<FormulateForm>` component is always aware the validation state for
 each of it’s inputs. In addition to the `@submit` handler not being called
@@ -282,14 +280,14 @@ we only enable the submit button when all the fields pass validation:
     validation-behavior="live"
   />
   <FormulateInput
-    type="submit
+    type="submit"
     :disabled="hasErrors"
   />
 </FormulateForm>
 ```
 <demo-form-7 />
 
-### Validation failed message
+### Validation failed message <Badge text="2.5" /> {data-new}
 
 On long forms it can be helpful to display an error message near the submit
 button when submitting a form that contains invalid fields, since the validation
@@ -423,7 +421,7 @@ prop directly on `<FormulateInput>` as well.
 ```
 <demo-form-5 />
 
-## Ignoring inputs
+## Ignoring inputs <Badge text="2.5+" />
 
 Complex forms often have inputs that do not need to be submitted to the server,
 for example inputs that are only used to control the display of the form. These
@@ -583,7 +581,7 @@ Name              | Description
 ------------------|-----------------------------------------------------------------
 `invalid-message` | `String`, `Array`, or `Function`, error message to show when a form is submitted with invalid fields.
 
-## Context object
+## Context object <Badge text="2.5" /> {data-new}
 
 Forms contain a single slot `default`, which is passed a form context object.
 This object is similar to the [input context object](/guide/inputs/#context-object),
@@ -593,5 +591,7 @@ Property              | Description
 ----------------------|-----------------------------------------------------------
 `errors`              | An array of explicit form errors (not validation errors) assigned via the [error handling](/guide/forms/error-handling/) features.
 `hasErrors`           | `Boolean` indicating if the form has validation errors
+`hasValue`            | `Boolean` indicating if the form has any values at all
 `isValid`             | Inverse of `hasErrors`
 `isLoading`           | If the form is currently loading. This is automatically managed by returning a promise from your `@submit handler.
+`values`              | The values of the inputs in the form itself.
