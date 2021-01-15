@@ -62,7 +62,7 @@ Vue.use(VueFormulate, options)
 ```
 
 ## Nuxt
-It's easy to use Vue Formulate on Nuxt too. [A working example is available](https://codesandbox.io/s/vue-formulate-test-8segh).
+It's easy to use Vue Formulate on Nuxt too. [A working example is available](https://codesandbox.io/s/vue-formulate-test-8segh?file=/components/Attending.vue).
 
 #### plugins/vue-formulate.js
 ```js
