@@ -1,3 +1,7 @@
+::: warning
+Vue Formulate is compatible with Vue.js version 2. We're working hard on supporting Vue.js version 3
+:::
+
 # Installation
 The preferred way to use Vue Formulate is to install via your favorite JavaScript
 package manager.
