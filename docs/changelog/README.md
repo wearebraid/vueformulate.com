@@ -9,6 +9,7 @@ sidebar: auto
 ## v.2.5.1 — March 1, 2021
 
 - New Features 🎉:
+  - Adds a [Nuxt](https://nuxtjs.org/) module for easier installation and configuration with Nuxt.
   - Adds new `debounce` prop to inputs and forms allowing you to delay the input value from triggering model dependencies.
   - New `created` event emitted by `FormulateForm`.
   - You can now easily disable select list options by adding a `disabled` property to the option object.
