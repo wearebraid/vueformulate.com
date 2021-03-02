@@ -1,5 +1,5 @@
-::: warning
-Vue Formulate is compatible with Vue.js version 2. We're working hard on supporting Vue.js version 3
+::: tip A note on Vue 3
+Vue Formulate is compatible with Vue 2. We're working hard on supporting Vue 3. To be notified when there are updates on Vue 3 compatibility [subscribe to the Vue Formulate newsletter](https://mailchi.mp/193f17457807/vue-formulate-newsletter).
 :::
 
 # Installation

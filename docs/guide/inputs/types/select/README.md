@@ -18,8 +18,8 @@ The select [classification](/guide/inputs/custom-inputs/#what-is-a-classificatio
 
 <demo-input-select />
 
-The `options` prop can be an object or an array of objects, or array of strings. When using an array
-each object must include a `label` and `value` property while `id` is optional:
+The `options` prop can be an object, an array of objects, or array of strings. When using an array
+of objects each object must include a `label` and `value` property.
 
 ```vue
 <FormulateInput
@@ -27,10 +27,17 @@ each object must include a `label` and `value` property while `id` is optional:
   :options="[
     { value: 'first', label: 'First name' },
     { value: 'last', label: 'Last name' },
-    { value: 'initial', label: 'Middle Initial', id: 'name-initial' }
+    { value: 'initial', label: 'Middle Initial', id: 'name-initial' },
+    { value: 'maiden', label: 'Maiden name', disabled: true },
   ]"
 />
 ```
+
+:::tip Note
+The `label` and `value` properties are required when using an array of objects,
+however you can also pass `id`, `disabled`, or an `attrs` sub-object with
+additional attributes to bind to each option.
+:::
 
 When using an array of strings, the provided string will be both the value
 and the label.

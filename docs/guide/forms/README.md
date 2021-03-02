@@ -570,17 +570,18 @@ export default {
 
 Event          | Description
 ---------------|------------------------------------------------------------------
-`submit`       | Emitted by any standard form submission events _if_ all fields are passing validation
-`submit-raw`   | Emitted on any form submission attempt, even with invalid fields.
+`created`      | Emitted in from the form's `created` lifecycle hook after it has applied default values.
 `failed-validation` | Emitted when form submission fails due to validation, passed an object with field names as properties and component instances as values.
 `input`        | Emitted when any values in the form change.
+`submit-raw`   | Emitted on any form submission attempt, even with invalid fields.
+`submit`       | Emitted by any standard form submission events _if_ all fields are passing validation
 
 ## Props
 
 Name              | Description
 ------------------|-----------------------------------------------------------------
-`invalid-message` | `String`, `Array`, or `Function`, error message to show when a form is submitted with invalid fields.
 `debounce`        | Amount of time (in milliseconds) to debounce all inputs in the form. _Note: this is not reactive, it only applies to inputs when they register_
+`invalid-message` | `String`, `Array`, or `Function`, error message to show when a form is submitted with invalid fields.
 
 ## Context object <Badge text="2.5" /> {data-new}
 
