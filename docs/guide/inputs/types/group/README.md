@@ -177,6 +177,13 @@ code {
 
 <demo-group-repeatable />
 
+:::warning Warning
+It's easy to use groups to create very large forms with deep nesting, however
+bear in mind that all the inputs have dependencies on one another — doing so
+can create performance issues. If you notice performance issues, try leveraging
+a [`debounce` on the form](/guide/inputs/#props).
+:::
+
 ### Validation
 
 By default, fields inside a group validate just like any other fields. Making

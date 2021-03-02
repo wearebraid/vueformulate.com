@@ -580,6 +580,7 @@ Event          | Description
 Name              | Description
 ------------------|-----------------------------------------------------------------
 `invalid-message` | `String`, `Array`, or `Function`, error message to show when a form is submitted with invalid fields.
+`debounce`        | Amount of time (in milliseconds) to debounce all inputs in the form. _Note: this is not reactive, it only applies to inputs when they register_
 
 ## Context object <Badge text="2.5" /> {data-new}
 

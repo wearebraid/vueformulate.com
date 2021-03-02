@@ -1,8 +1,23 @@
+
+
 ---
 sidebar: auto
 ---
 
 # Changelog
+
+## v.2.5.1 — March 1, 2021
+
+- New Features 🎉:
+  - Adds new `debounce` prop to inputs and forms allowing you to delay the input value from triggering model dependencies.
+  - New `created` event emitted by `FormulateForm`.
+  - You can now easily disable select list options by adding a `disabled` property to the option object.
+  - Adds Vietnamese 🇻🇳 and Turkish 🇹🇷 translations.
+- Bug fixes 🐛:
+  - Fixed an issue that could cause groups to loose focus on initial input keystroke.
+  - Fixed a bug that caused errors when adding a new file to an already populated `multiple` file input.
+  - Fixed a bug that caused some checkboxes inside `group` types to not be set programmatically.
+  - Fixed a bug in the `date` validation rule that did not properly validate days using the `D` pattern.
 
 ## v.2.5.0 — January 14, 2021
 
