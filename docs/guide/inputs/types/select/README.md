@@ -32,7 +32,7 @@ each object must include a `label` and `value` property while `id` is optional:
 />
 ```
 
-When using an array of strings, the the provided string will be both the value
+When using an array of strings, the provided string will be both the value
 and the label.
 
 ```vue
