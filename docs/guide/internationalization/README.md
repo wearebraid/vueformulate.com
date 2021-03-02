@@ -37,6 +37,8 @@ a PR following the [contribution guide](/guide/contributing/#internationalizatio
 - 🇸🇰 Slovak (sk)
 - 🇨🇺 Spanish (es)
 - 🇹🇭 Thai (th)
+- 🇹🇷 Turkish (tr)
+- 🇻🇳 Vietnamese (vi)
 - 🇸🇪 Swedish (sv)
 
 When using a right-to-left language like Arabic with the default [snow theme](/guide/theming/#default-theme)

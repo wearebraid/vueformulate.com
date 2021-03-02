@@ -120,6 +120,10 @@ Have you created a Vue Formulate CodePen or CodeSandbox? Share it with the
 community! Just [edit this page and submit a pull request](https://github.com/wearebraid/vueformulate.com/edit/master/docs/guide/community/README.md)
 :::
 
+## Community plugins
+
+Checkout the plugins documentation page for a short list of [community plugins](/guide/plugins).
+
 ## Projects using Vue Formulate
 
 Have you built something using Vue Formulate in the wild? Submit it to [Vue Telemetry](https://vuetelemetry.com/) — which
