@@ -6,7 +6,7 @@ sidebar: auto
 
 # Changelog
 
-## v.2.5.1 — March 1, 2021
+## v.2.5.1 — March 2, 2021
 
 - New Features 🎉:
   - Adds a [Nuxt](https://nuxtjs.org/) module for easier installation and configuration with Nuxt.
