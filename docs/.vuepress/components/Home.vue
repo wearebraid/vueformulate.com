@@ -41,7 +41,7 @@
       <div class="new-badge">
         <span class="label">Jan 14, 2021</span>
         <span class="text">
-          2.5 introduces dozens improvements and bug fixes. See the <NavLink :item="{link: '/changelog/#v-2-5-0-january-14-2021', text: 'changelog'}" /> for details.
+          2.5 introduces dozens of improvements and bug fixes. See the <NavLink :item="{link: '/changelog/#v-2-5-0-january-14-2021', text: 'changelog'}" /> for details.
         </span>
       </div>
     </div>
@@ -62,16 +62,16 @@
 
     <hr>
 
-    <!-- <div class="resources">
+    <div class="resources">
       <ArticleCard
-        href="@todo article URL here"
+        href="https://dev.to/justinschroeder/better-uploads-with-vue-formulate-s3-and-lambda-58b8"
         image="/assets/img/resources/aws.jpg"
         image-alt="Vue Formulate with S3 and Lambda"
         badge="Latest Article"
         headline="Better uploads with Vue Formulate, S3, and Lambda"
         copy="A practical guide to improving file uploads with Vue Formulate, AWS S3, and AWS Lambda."
       />
-    </div> -->
+    </div>
 
     <hr>
 

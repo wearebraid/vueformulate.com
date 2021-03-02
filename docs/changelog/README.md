@@ -20,6 +20,7 @@ sidebar: auto
   - Fixed a bug in the `date` validation rule that did not properly validate days using the `D` pattern.
 
 ## v.2.5.0 — January 14, 2021
+Vue Formulate `2.5.0` is a significant release that includes 45 closed GitHub issues, implementation of many highly requested features, and improvements to groups and file uploads.
 
 - New Features 🎉:
   - Adds support for [events on schema generated forms](/guide/forms/generating-forms/#schema-events).
@@ -52,7 +53,7 @@ sidebar: auto
   - [Adds a new `blur-context` event](/guide/inputs/#events) for inputs that emits when the input is blurred and contains the `context` object as the payload.
   - [New translations](/guide/internationalization/) for <img src="../guide/internationalization/Flag_of_Catalonia.svg" style="width: 1.25em; display: inline-block; vertical-align: middle;"> Catalan and 🇸🇰 Slovak.
   - Language updates for German and Serbian.
-  
+
 
 - Bug fixes 🐛:
   - Fixes an issue where `file` and `image` type inputs could submit old data after an input had been cleared.
@@ -66,7 +67,7 @@ sidebar: auto
   - Allows users to now override the `aria-describedby` attribute if necessary.
 
 - Community Update 📣
-  - There's a new official [Vue Formulate Discord server](https://discord.gg/CGPZfmJe8A) for community questions, idea sharing, and more.
+  - There's a new official [Vue Formulate Discord server](https://discord.gg/NZ6nchBDGx) for community questions, idea sharing, and more.
 
 ## v.2.4.5 - October 4, 2020
 

@@ -248,7 +248,7 @@ payload of the event is a [`FormSubmission` instance](https://github.com/wearebr
 
 ## Form validation <Badge text="2.5" /> {data-new}
 
-The `<FormulateForm>` component is always aware the validation state for
+The `<FormulateForm>` component is always aware of the validation state for
 each of it’s inputs. In addition to the `@submit` handler not being called
 unless every nested `FormulateInput` is valid, the validation state of the form
 is also made available to your template via the `default` slot. In this example
