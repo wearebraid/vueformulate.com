@@ -6,12 +6,14 @@ instance and can extend it. This is most helpful if you want to codify your own
 [messages](/guide/validation/#customize-validation-messages) or
 [inputs](/guide/inputs/custom-inputs/).
 
-:::tip Please share!
-Vue Formulate is brand new, so if you publish a custom input plugin on npm or
-GitHub and want to share it, submit a [pull request](https://github.com/wearebraid/vueformulate.com/edit/master/docs/guide/plugins/README.md)
-or [file an issue](https://github.com/wearebraid/vueformulate.com/issues/new)
-on the documentation repository and we'll list it on this page.
-:::
+## Community plugins
+
+This is a short list of community created plugins, add your
+own to this list by [editing this page](https://github.com/wearebraid/vueformulate.com/edit/master/docs/guide/plugins/README.md):
+
+- [`vue-formulate-datetime`](https://www.npmjs.com/package/@cone2875/vue-formulate-datetime) — Vue Formulate support for [vue-datetime](https://github.com/mariomka/vue-datetime)
+- [`vue-formulate-select`](https://www.npmjs.com/package/@cone2875/vue-formulate-select) — Vue Formualte support for [vue-select](https://vue-select.org/)
+- [`vue-formulate-extended`](https://www.npmjs.com/package/vue-formulate-extended) — Extend and adds various features to Vue Formulate.
 
 ## Creating a new plugin
 
@@ -92,3 +94,4 @@ Vue.use(VueFormulate, {
 
 Of course, the above code could also be bundled up into a tidy `npm` package
 and published for public consumption.
+
