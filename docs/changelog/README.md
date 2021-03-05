@@ -4,6 +4,17 @@ sidebar: auto
 
 # Changelog
 
+## v2.5.2 — March 5, 2021
+
+- New Features 🎉:
+  - Adds Hungarian 🇭🇺 translation.
+  - Adds a `required:trim` rule option to invalidate inputs with only whitespace.
+- Bug fixes 🐛:
+  - Fixes a bug that caused debounced forms to not populate properly when server rendered.
+  - The `index` was not being passed to the `remove` slot on `group` inputs, but now it is.
+  - Fixes a bug that caused checkbox groups inside repeating groups to reset their initial values when being hydrated from a `FormulateForm`.
+  - Fixes a bug that was introduce in `2.5.1` that caused improper dom node re-use in repeatable groups when a group item was removed.
+
 ## v.2.5.1 — March 2, 2021
 
 - New Features 🎉:
