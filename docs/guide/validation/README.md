@@ -614,6 +614,25 @@ By default, fields are not required, meaning that all validation rules will
 pass with an empty value unless they include the `required` rule.
 :::
 
+:::tip Note
+By default, a whitespace only string like `   ` is considered a valid input, however an argument for whitespace can be used, for eg:
+
+```vue
+<FormulateInput
+  type="text"
+  name="city"
+  label="What city do you live in?"
+  validation="required:trim"
+  error-behavior="live"
+/>
+```
+
+`required:trim` will trim any whitespace in the input and then evaluate the validation accordingly, as a result, a whitespace only string `   ` would not pass the validation.
+Do note that it does not modify the input string.
+:::
+
+<demo-validation-required-trim />
+
 ### Starts With
 Checks if the input starts with one of the provided options
 

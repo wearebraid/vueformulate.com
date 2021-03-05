@@ -12,7 +12,7 @@ This is a short list of community created plugins, add your
 own to this list by [editing this page](https://github.com/wearebraid/vueformulate.com/edit/master/docs/guide/plugins/README.md):
 
 - [`vue-formulate-datetime`](https://www.npmjs.com/package/@cone2875/vue-formulate-datetime) — Vue Formulate support for [vue-datetime](https://github.com/mariomka/vue-datetime)
-- [`vue-formulate-select`](https://www.npmjs.com/package/@cone2875/vue-formulate-select) — Vue Formualte support for [vue-select](https://vue-select.org/)
+- [`vue-formulate-select`](https://www.npmjs.com/package/@cone2875/vue-formulate-select) — Vue Formulate support for [vue-select](https://vue-select.org/)
 - [`vue-formulate-extended`](https://www.npmjs.com/package/vue-formulate-extended) — Extend and adds various features to Vue Formulate.
 
 ## Creating a new plugin
