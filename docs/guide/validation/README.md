@@ -609,13 +609,8 @@ Checks if the input is empty.
 ```
 <demo-validation-required />
 
-::: warning Important
-By default, fields are not required, meaning that all validation rules will
-pass with an empty value unless they include the `required` rule.
-:::
-
-:::tip Note
-By default, a whitespace only string like `   ` is considered a valid input, however an argument for whitespace can be used, for eg:
+:::tip A note on whitespace
+By default, a whitespace only string (like ` `) is considered a valid input, however an argument can be used to alter this behavior eg:
 
 ```vue
 <FormulateInput
@@ -627,11 +622,11 @@ By default, a whitespace only string like `   ` is considered a valid input, how
 />
 ```
 
-`required:trim` will trim any whitespace in the input and then evaluate the validation accordingly, as a result, a whitespace only string `   ` would not pass the validation.
-Do note that it does not modify the input string.
+<demo-validation-required-trim />
+
+The rule `required:trim` will trim any whitespace in the input before evaluating the validation, as a result, a whitespace only string would not pass the validation. Note: it does not modify the input value.
 :::
 
-<demo-validation-required-trim />
 
 ### Starts With
 Checks if the input starts with one of the provided options

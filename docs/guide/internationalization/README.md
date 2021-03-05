@@ -25,6 +25,7 @@ a PR following the [contribution guide](/guide/contributing/#internationalizatio
 - 🇺🇸 English (en)
 - 🇫🇷 French (fr)
 - 🇮🇱 Hebrew (he)
+- 🇭🇺 Hungarian (hu)
 - 🇮🇹 Italian (it)
 - 🇯🇵 Japanese (ja)
 - 🇰🇷 Korean (ko)

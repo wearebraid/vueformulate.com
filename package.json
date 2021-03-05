@@ -11,7 +11,7 @@
     "build": "NODE_ENV=production vuepress build docs"
   },
   "dependencies": {
-    "@braid/vue-formulate": "^2.5.1",
+    "@braid/vue-formulate": "^2.5.2",
     "@gerhobbelt/markdown-it-attrs": "^3.0.3-20",
     "axios": "^0.21.1",
     "jshint": "^2.12.0",
