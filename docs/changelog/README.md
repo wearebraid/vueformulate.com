@@ -6,6 +6,12 @@ sidebar: auto
 
 # Changelog
 
+## v2.5.2 — [TK]
+
+- Bug fixes 🐛:
+  - Fixes a bug that caused debounced forms to not populate properly when server rendered.
+  - The `index` was not being passed to the `remove` slot on `group` inputs, but now it is.
+
 ## v.2.5.1 — March 2, 2021
 
 - New Features 🎉:
