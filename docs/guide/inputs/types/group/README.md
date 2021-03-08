@@ -432,7 +432,7 @@ Example:
     name="price"
     disabled
     :value="getPrice(index)"
-    label="Price""
+    label="Price"
   />
 </FormulateInput>
 ```
