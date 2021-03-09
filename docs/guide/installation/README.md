@@ -56,6 +56,17 @@ Vue.use(VueFormulate.default)
 ```
 :::
 
+## Using a Progressive Web App without the CLI
+If you are integrating vue into a legecy project or app where vue is not 
+the primary framework you'll need to import Formulate in your components.
+
+```js
+....
+<script>
+  import { FormulateInput } from '@braid/vue-formulate/dist/formulate.min.js';
+....
+```
+
 ### Configuration options
 
 If you need custom configuration options, you can pass a second argument with
