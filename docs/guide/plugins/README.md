@@ -14,6 +14,7 @@ own to this list by [editing this page](https://github.com/wearebraid/vueformula
 - [`vue-formulate-datetime`](https://www.npmjs.com/package/@cone2875/vue-formulate-datetime) — Vue Formulate support for [vue-datetime](https://github.com/mariomka/vue-datetime)
 - [`vue-formulate-select`](https://www.npmjs.com/package/@cone2875/vue-formulate-select) — Vue Formulate support for [vue-select](https://vue-select.org/)
 - [`vue-formulate-extended`](https://www.npmjs.com/package/vue-formulate-extended) — Extend and adds various features to Vue Formulate.
+- [`vue-formulate-star-rating`](https://www.npmjs.com/package/vue-formulate-star-rating) — Vue Formulate support for [vue-star-rating](https://www.npmjs.com/package/vue-star-rating)
 
 ## Creating a new plugin
 
