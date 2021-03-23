@@ -93,6 +93,11 @@ Vue.use(VueFormulate,  {
 })
 ```
 
+:::tip Using a CDN
+When importing your locale from a CDN via the `.min.js` file, you must use the `.default` property.
+See this example: https://codepen.io/team/braid/pen/ExZaQYr
+:::
+
 #### `vue-i18n`
 
 If your site already uses [`vue-i18n`](https://kazupon.github.io/vue-i18n/) you
