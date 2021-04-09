@@ -278,7 +278,7 @@ export default {
         {
           name: 'email',
           label: 'Your email',
-          validation 'required|email'
+          validation: 'required|email'
         }
       ]
     }
