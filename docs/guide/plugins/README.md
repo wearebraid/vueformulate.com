@@ -15,6 +15,7 @@ own to this list by [editing this page](https://github.com/wearebraid/vueformula
 - [`vue-formulate-select`](https://www.npmjs.com/package/@cone2875/vue-formulate-select) — Vue Formulate support for [vue-select](https://vue-select.org/)
 - [`vue-formulate-extended`](https://www.npmjs.com/package/vue-formulate-extended) — Extend and adds various features to Vue Formulate.
 - [`vue-formulate-star-rating`](https://www.npmjs.com/package/vue-formulate-star-rating) — Vue Formulate support for [vue-star-rating](https://www.npmjs.com/package/vue-star-rating)
+- [`vue-formulate-datepicker`](https://www.npmjs.com/package/vue-formulate-datepicker) — Vue Formulate support for [@sum.cumo/vue-datepicker](https://www.npmjs.com/package/@sum.cumo/vue-datepicker)
 
 ## Creating a new plugin
 
