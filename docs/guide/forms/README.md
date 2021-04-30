@@ -480,7 +480,7 @@ Method                         | Description
 `handle(err, formName)`        | Used to set error messages on a form, typically from a backend server. Read more about [error handling](/guide/forms/error-handling/).
 `reset(formName, values)`      | Reset the form's values, validation messages, and error messages.
 `resetValidation(formName)`    | Reset all validation and error messages.
-`setValues(formName)`          | Set the value of the form's model (even if no `v-model` is defined).
+`setValues(formName, values)`  | Set the value of the form's model with values (even if no `v-model` is defined).
 `submit(formName)`             | Used to submit a form programmatically.
 
 :::details View source code
