@@ -673,7 +673,7 @@ If you need to be more specific you have three options:
 
 Validation messages frequently include the name of the failing input. For
 example, the default `required` rule validation message is simply `${validationName} is required`.
-How that `validationName` is determined is up to the gloabl configuration option
+How that `validationName` is determined is up to the global configuration option
 `validationNameStrategy`. By default this strategy is:
 
 ```js
