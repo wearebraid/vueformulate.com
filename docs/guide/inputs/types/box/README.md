@@ -113,7 +113,7 @@ input:checked ~ label {
 }
 ```
 
-If you don't want to use this "decorator" label on your project, you can disbale
+If you don't want to use this "decorator" label on your project, you can disable
 it by setting the global option `useInputDecorators` to `false`:
 
 ```js
