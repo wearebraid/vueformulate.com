@@ -1,13 +1,12 @@
-# Inputs
+# 表单域
 
-Inputs are the base element of Vue Formulate and using them is very easy. To begin,
-simply use the `<FormulateInput />` component tag to declare any
-type of input field and you get validation, model binding, file uploads, and
-a plugin system to boot. Here's an example of changing the input type itself:
+表单域是 Vue Formulate 的基本元素，使用它们非常容易。首先，只需使用 `<FormulateInput />` 组件标签
+声明任何类型的输入字段，您就可以获得一个由验证、模型绑定、文件上传和一个插件系统来组成的表单域。
+这是更改输入类型本身的示例：
 
 <demo-4-inputs />
 
-::: details View source
+::: details 查看源码
 ```vue
 <template>
   <div>
@@ -49,23 +48,20 @@ export default {
 ```
 :::
 
-## Model binding
+## 模型绑定
 
-Checkout the [Getting Started](/zh/guide/#model-binding) documentation for details
-on how to bind models to `FormulateInput` fields.
+查看 [入门](/zh/guide/#model-binding) 的详细信息，了解如何结合模型和 `FormulateInput`。
 
-## Setting an initial value
+## 设置初始值
+设置字段的初始值有以下三种方式：
 
-There are three ways to set the initial value of a field:
+- 使用 `v-model`
+- 使用 `value` prop
+- 使用 `FormulateForm`
 
-- Using `v-model`
-- Using the `value` prop
-- Using a `FormulateForm`
+### 通过 `v-model` 设置初始值
 
-### Initial value with `v-model`
-
-Using `v-model` to set the initial value of an input field is as simple as
-declaring a data property to use as the `v-model`
+给一个表单域通过 `v-model` 设置初始值，直接给它指定一个 `v-model` 属性即可
 
 ```vue
 <template>
@@ -88,10 +84,9 @@ export default {
 **输出:**
 <demo-2-initial />
 
-### Initial value with value prop
+### 带有 value 属性的初始值
 
-Sometimes it's helpful to set the initial value of a field without binding a
-model. This can be done with the `value` prop, no `v-model` necessary:
+有时在不绑定模型的情况下设置字段的初始值会很有帮助。这可以通过 `value` prop 完成，没有必要用 `v-model`：
 
 ```vue
 <FormulateInput
@@ -103,16 +98,14 @@ model. This can be done with the `value` prop, no `v-model` necessary:
 <demo-1-initial />
 
 ::: tip
-Note: When using `v-model` and `value` on the same `<FormulateInput>` the
-initial value will use the `value` over the `v-model`, updating the `v-model`
-to match.
+注意: 如果在同一个 `<FormulateInput>` 上面使用了 `v-model` 和 `value` ，初始值会使用 `value` 覆盖掉 `v-model`, 
+更新后，会匹配到 `v-model`
 :::
 
-### Initial value with `FormulateForm`
+### 使用 `FormulateForm` 初始值
 
-Frequently, it’s important to set the initial value for a whole collection of
-field elements, like on an update form. You can easily do this by allowing
-a wrapping `FormulateForm` to set the value of its fields:
+通常，为整个字段元素集合设置初始值很重要，例如在更新表单上。
+您可以通过允许包装 `FormulateForm` 设置其字段的值来轻松做到这一点：
 
 ```vue
 <template>
@@ -147,99 +140,94 @@ export default {
 <demo-3-initial />
 
 ## Props
-Each `FormulateInput` can be configured by declaring props. The list below
-contains all of the available universal options:
+每个 `FormulateInput` 都可以通过声明 `props` 来配置。下面的列表包含所有可用的通用选项：
 
-::: tip Note
-Some `FormulateInput` types have props that are specific to their type. Please
-reference the input library for the type you're implementing to see all available
-props.
+::: tip
+某些 `FormulateInput` 类型具有特定于其类型的道具。请参考您正在实现的类型的输入库以查看所有可用的道具。
 :::
 
-Prop              | Description
+Prop              | 描述
 ------------------|-------------------------------------------------------------
-`debounce`        | A debounce delay (in milliseconds) before the input's `model` is updated.
-`disableErrors`   | Will not show any error messages when set to true.
-`error`           | A custom error message to be manually shown on an element (validation errors are generated on their own). This error will always be visible (if you want to remove it, use a dynamic prop).
-`errors`          | An array of custom error messages to show on an element (see above).
-`error‑behavior`  | Defines when error messages are shown. Can be `blur` (default), `submit`, `value`, or `live`. Anytime a `<FormulateForm>` element is submitted errors are also shown. `live` will always display all error messages for the input, and `value` will show errors immediately after content has been entered into the field.
-`help-position`   | The position of the help text `before` or `after` (default is `after`).
-`help`            | Help text to be displayed with the input.
-`id`              | The id of the input (defaults to an auto-generated one)
-`keep-model-data` | Keeps the input's data in the model when removing it from a `FormulateForm`.
-`label`           | A descriptive label for the input element.
-`label‑position`  | Most input elements place the label before the input by default. The `box` [classification](/zh/guide/inputs/types/box/) places labels after by default, but either can be overridden with this prop.
-`name`            | Adds a name attribute, and when used with `<FormulateForm>` this is the key of the field. If no name is defined a random hash will be assigned
-`options`         | Array or object of options (`select` or `box` classifications)
-`placeholder`     | The placeholder attribute of the element (if applicable)
-`show‑errors`     | When `true` this forces an element to show it’s errors regardless of the state of the `error-behavior`.
-`type`            | *Required.* The type of input element. [See the input library](/zh/guide/inputs/types/text/) for a full range of options.
-`validation-rules` | See [custom validation rules](/zh/guide/validation/#custom-validation-rules).
-`validation`      | A `string` or `array` of validation rules. See [input validation](/zh/guide/validation)
-`validation‑messages` | See [custom validation messages](/zh/guide/validation/#customize-validation-messages).
-`validation‑name` | The name to use in validation error messages. By default, this uses the `name` prop if available and falls back to the `label` prop. It can be explicitly overridden here if needed.
-`value`           | An initial unbound value (use when `v-model` or form binding is not a good option)
-## Events
+`debounce`        | `model` 更新输入之前的去抖动延迟（以毫秒为单位）。
+`disableErrors`   | 设置为 true 时不会显示任何错误消息。
+`error`           | 要在元素上手动显示的自定义错误消息（验证错误是自行生成的）。此错误将始终可见（如果要删除它，请使用动态 prop ）。
+`errors`          | 显示在元素上的一组自定义错误消息（见上文）。
+`error‑behavior`  | 定义何时显示错误消息。可以是 `blur`（默认）`submit`、`value`、 或 `live`。任何时候 `<FormulateForm>` 提交元素时都会显示错误。`live` 将始终显示输入的所有错误消息，并将 `value` 在内容输入字段后立即显示错误。
+`help-position`   | 帮助文本显示的位置 `before` 或 `after` (默认为 `after`).
+`help`            | 与输入一起显示的帮助文本。
+`id`              | 表单域的 id（默认为自动生成的）
+`keep-model-data` | 将输入的数据从 `FormulateForm` 中删除时将其保留在模型中
+`label`           | 输入元素的描述性标签。
+`label‑position`  | 默认情况下，大多数输入元素将标签放在输入之前。默认情况下，[`box` 类型](/zh/guide/inputs/types/box/) 将标签放置在后面，但可以使用此属性覆盖其中任何一个。
+`name`            | 添加 name 属性，与 `<FormulateForm>` 此一起使用时是字段的键。如果未定义名称，则将分配随机散列值
+`options`         | 选项的数组或对象 (`select` 或 `box` 类型)
+`placeholder`     | 元素的占位符属性（如果适用）
+`show‑errors`     | 当设置为 `true` 时，强制显示这个元素的错误信息，无论 `error-behavior` 值是怎样
+`type`            | *必需的* 输入元素的类型。[查看表单域资料库](/zh/guide/inputs/types/text/) 了解更多
+`validation-rules` | 查看 [自定义验证器](/zh/guide/validation/#custom-validation-rules).
+`validation`      | 一个 `string` 或 `array` 类型的验证器，查看 [表单域验证器](/zh/guide/validation)
+`validation‑messages` | 查看 [自定义验证器消息](/zh/guide/validation/#customize-validation-messages).
+`validation‑name` | 在验证错误消息中使用的名称。默认情况下，这会使用 `name` prop（如果可用）并且备用选项是 `label` prop。如果需要，可以在此处显式覆盖它。
+`value`           | 初始未绑定值（当 `v-model` 或表单绑定不是一个好的选择时使用）
 
-These events are emitted by every input type (in addition to native DOM events).
+## 事件
 
-Event               | Description
+这些事件由每种表单域类型触发（添加原生 DOM 事件）。
+
+事件                | 描述
 --------------------|-------------------------------------------------------------
-`@input`            | Emitted every time the value of the field changes. Typically this is used implicitly by using `v-model`.
-`@validation`       | Emitted anytime the state of validation changes for an input, irregardless of the visibility of the errors (`v2.3+`). [More details](/zh/guide/validation/#validation-event)
-`@error-visibility` | Emitted when the visibility of the errors changes, for example, on blur or submit (`v2.3+`).
-`@blur-context`     | Emitted on blur, but includes the input's context as the payload.
+`@input`            | 每次字段值更改时发出。通常，这是通过使用 `v-model` 隐式使用的。
+`@validation`       | 无论错误的可见性如何（`v2.3+`），只要输入的验证状态发生变化，就会发出 [更多细节](/zh/guide/validation/#validation-event)
+`@error-visibility` | 当错误的可见性发生变化时发出，例如，在 `blur` 或 `submit` (`v2.3+`) 时
+`@blur-context`     | 失去焦点时触发，但包括输入的上下文作为有效负载
 
-## Context object
+## 上下文对象
 
-All inputs contain a comprehensive context object that details nearly everything
-about the operation of the input. It is passed into all [custom inputs](/zh/guide/inputs/custom-inputs/)
-and slots.
+所有输入都包含一个全面的上下文对象，它详细说明了输入操作的几乎所有内容。它被传递到所有 [自定义表单域](/zh/guide/inputs/custom-inputs/) 和插槽中。
 
-Property        | Description
+Property        | 描述
 ----------------|---------------------------------------------------------------
-`addLabel`      | The label to display inside "add more" button on `group` and `file[multiple]` inputs.
-`attributes`    | An object of non-prop attributes passed to the input like `placeholder`
-`blurHandler`   | Function that must be called when an input blurs.
-`classification`| The classification of the input.
-`disableErrors` | `Boolean` indicating if errors should be _displayed_ for this field (defaults to `false`).
-`errors`        | Errors set via the form [error handling](/zh/guide/forms/error-handling/) or directly on the input itself via `error` or `errors` props. Does not include validation errors.
-`hasValue`      | `Boolean` indicates if the field has a valid value.
-`hasLabel`      | `Boolean` indicating if the field has a label prop, `button` classification is always `false`.
-`hasValidationErrors` | Function, returns a `Promise` that resolves to a `Boolean`.
-`help`          | The `help` prop value (help text)
-`helpPosition`  | The position of the help text, `before` or `after` the element wrapper. Defaults to `before`.
-`getValidationErrors` | Function, returns a `Promise` that resolves to an array of validation error objects.
-`id`            | The id prop or an auto-generated id.
-`isValid`       | `Boolean` indicating if the field has no errors at all (visible or not).
-`imageBehavior` | The value of the `image-behavior` prop. Defaults to `preview`.
-`isSubField`    | A function that returns a `boolean` indicating if it is a descendant of a `group` type.
-`label`         | The value of the `label` prop.
-`labelPosition` | The position of the label, `before` or `after`. Default is `before` for all except `box` classified inputs. Can be overridden with `label-position` prop.
-`limit`         | For a `group` type, this is the is the maximum number of repeatable items allowed (default is `Infinity`).
-`minimum`       | For a `group` type, this is the minimum number of repeatable items allowed (default is `0`).
-`model`         | The value of the current field, bound to a setter.
-`name`          | The name of the field, if none is set, it auto-generates a name.
-`options`       | The `options` prop converted to an array (when applicable).
-`performValidation` | Function that will run validation. This is executed on every input automatically.
-`preventWindowDrops` | `true` by default, this prevents the browser from navigating to a file when the user misses the dropzone.
-`removeLabel`   | The label to display inside "remove" button on `group` inputs.
-`repeatable`    | `Boolean` indicating if a field is repeatable or not.
-`rootEmit`      | `Function` identical to `$emit`, but should be used in custom inputs and slots to emit events from the root `<FormulateInput>`.
-`rules`         | `Array` of validation rules on the input. Array is populated with objects containing `{ ruleName: string, args: [] }`.
-`setErrors`     | Function to set (or clear) the current `errors` (not validation errors).
-`showValidationErrors` | `Boolean`, true if the validation errors should be displayed.
-`type`          | The type of input.
-`uploadBehavior` | The `upload-behavior` prop, `live` or `delayed`.
-`uploader`      | [Uploader function](/zh/guide/inputs/types/file/#uploader). `uploader` prop, `axios`, or `uploader` defined when initializing.
-`uploadUrl`     | The `upload-url` prop, or the `uploadUrl` defined when initializing.
-`validationErrors` | An `array` of the current validation errors irregardless of their visibility.
-`value`         | The `value` prop, not the current value of the field. This is the exact value passed into the `value` prop, usually used to set the initial value of the field.
-`visibleValidationErrors` | `Array` of the current validation errors being displayed.
+`addLabel`      | 在 `group` and `file[multiple]` 表单域的 “添加更多” 按钮中显示的标签。
+`attributes`    | 传递给输入的非 prop 属性的对象，如 `placeholder`
+`blurHandler`   | 失去焦点时调用的函数
+`classification`| 表单域的类型
+`disableErrors` | `Boolean` 指示是否应为此字段 *显示* 错误（默认为 `false` ）。
+`errors`        | 通过表单的 [错误处理](/zh/guide/forms/error-handling/) 或通过 `error`, `errors` prop 直接在输入本身上设置错误。不包括验证错误。
+`hasValue`      | `Boolean` 指示该字段是否具有有效值。
+`hasLabel`      | `Boolean` 指示该字段是否具有标签属性， `button` 分类始终为 `false`.
+`hasValidationErrors` | 函数，返回 `Promise` 他的 resolve 需要返回一个 `Boolean`。
+`help`          | `help` prop 的值，帮助文本
+`helpPosition`  | 帮助文本处于包裹器的位置， `before` 或 `after` 。默认值 `before`.
+`getValidationErrors` | 函数，返回 `Promise` ，其 resolve 返回验证错误对象数组。
+`id`            | id 属性或自动生成的 id。
+`isValid`       | `Boolean` 指示该字段是否完全没有错误 (可见与否).
+`imageBehavior` | `image-behavior` prop 的值，默认是 `preview`。
+`isSubField`    | 这是一个函数，他的返回值是一个 `boolean` 指示它是否是一个 `group` 类型的后代元素
+`label`         | `label` prop 的值
+`labelPosition` | 标签的位置，有 `before` 或 `after`. 除了 `box` 类型的表单域默认为 `before` ，可以使用 `label-position` prop 覆盖他
+`limit`         | 对于 `group` 类型, 这是允许的最大可重复项数 (默认值 `Infinity`)。
+`minimum`       | 对于 `group` 类型, 这是允许的最小可重复项数（默认为 `0`)。
+`model`         | 当前字段的值，绑定到一个 setter。
+`name`          | 字段的名称，如果没有设置，它会自动生成一个名称。
+`options`       | 将 `options` prop 转换为一个数组（如果可用）
+`performValidation` | 将运行的验证函数。这将在每个 `FormulateInput` 上自动执行。
+`preventWindowDrops` | 默认为 `true`， this prevents the browser from navigating to a file when the user misses the dropzone.
+`removeLabel`   | 在 `group` 表单域中，删除按钮的显示的标签
+`repeatable`    | `Boolean` 指示字段是否可重复。
+`rootEmit`      | 函数，等同于 `$emit`, 但应在自定义表单域和插槽中使用这个用来触发 `<FormulateInput>` 事件 。
+`rules`         | `Array` 类型的表单域验证规则. 数组填充值包含 `{ ruleName: string, args: [] }` 格式
+`setErrors`     | 设置（或清除）当前 `errors`（非验证错误）的函数。
+`showValidationErrors` | `Boolean`, 如果应显示验证错误，则为 true。
+`type`          | 表单域的类型
+`uploadBehavior` | 此 `upload-behavior` prop ，有 `live` 或 `delayed`.
+`uploader`      | [上传函数](/zh/guide/inputs/types/file/#uploader). `uploader` prop 的值，根据初始化时定义的 `axios` 或 `uploader`。
+`uploadUrl`     | `upload-url` prop 的值, 或初始化时定义的 `uploadUrl`。
+`validationErrors` | 当前的验证错误与其可见性无关的一个数组
+`value`         | 该 `value` prop 的值, 而不是字段的当前值。这是传递给 `value` prop 的确切值，通常用于设置字段的初始值。
+`visibleValidationErrors` | 显示的当前验证错误的一个数组
 
 
-::: warning
-If you inspect the context object, you may find additional properties not listed
-in the table above. Using these is discouraged since they are not considered
-available for public consumption and may change between minor versions.
+::: 警告
+如果您检查上下文对象，您可能会发现上表中未列出的其他属性。不鼓励使用这些，
+因为它们不被视为可供公众使用，并且可能会在次要版本之间发生变化。
 :::

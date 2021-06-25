@@ -1,41 +1,31 @@
-# Custom input types
+# 自定义表单域类型
 
-If the input type you're looking for is not part of the built-in fields (mostly
-HTML5 input types), and you haven't found a [plugin](/zh/guide/plugins) that adds
-the functionality you need — you can create input types of your own.
+如果您要查找的输入类型不是内置字段（主要是 HTML5 input 类型）的一部分，
+并且您还没有找到添加所需功能的 [plugin](/zh/guide/plugins)— 您可以创建自己的表单域类型。
 
-### Preamble: Input composition
+### 序言: 表单域的组合方式
 
-A core concept in Vue Formulate is the ability for developers to _compose_ their
-forms using a dead-simple API with a single component. True to that goal, when
-developing a custom input you should endeavour to maintain that same ease of
-composition by create your own `type` of `FormulateInput`, ensuring the
-syntax for creating forms and fields stays consistent even when using custom
-inputs.
+Vue Formate 的一个核心概念是让开发人员能够使用极其简单的 API 和单个组件来组合他们的表单。
+为了实现这一目标，在开发自定义表单域时，您应该努力通过创建自己类型的来保持跟已有的 `FormulateInput` 具有相同的便利性，
+确保即使在使用自定义表单域时创建表单和字段的语法也保持一致。
 
-This is notably different than many Vue libraries that make heavy use of scoped
-slots as the primary mechanism of extension. Vue Formulate also has robust
-support for [scoped slots](/zh/guide/inputs/slots/), but these should be used more
-for the occasional override rather than the customization of the entire utility.
+这与许多大量使用作用域插槽作为主要扩展机制的 Vue 库明显不同。Vue Formulate 也对 [作用域插槽](/zh/guide/inputs/slots/) 有强大的支持，
+但这些应该更多地用于偶尔的覆盖而不是整个实用程序的定制。
 
-A tell-tale sign that you could implement this principle better is if you find
-yourself doing a lot of copy-paste of scoped slots, or wrapping `FormulateInput`
-in wrapper components. If these patterns are creeping into your code consider
-using [“Slot Components”](/zh/guide/inputs/slots/#slot-components) or creating a
-custom inputs.
+如果您发现自己对作用域插槽进行了大量复制粘贴，或者包装 `FormulateInput` 在包装器组件中，
+则表明您可以更好地实施此原则的一个明显迹象。
+如果这些模式正在渗透到您的代码中，请考虑使用 ["插槽组件"](/zh/guide/inputs/slots/#slot-components) 或创建自定义表单域。
 
-## Structure of an input
+## 一个表单域的结构
 
-Before diving into code, let’s take a high-level look at how a
-`FormulateInput` component is structured:
+在深入研究代码之前，让我们从高层次看一下 `FormulateInput` 组件的结构：
 
 ![FormulateInput internal structure](./structure.svg)
 
-## Custom types
+## 自定义类型
 <div id="custom-types"></div>
 
-Let’s tackle an autocomplete field. Our goal is to extend Vue Formulate to allow
-for new inputs that look like this:
+让我们处理一个自动完成字段。我们的目标是扩展 Vue Formulate 以允许如下所示的新表单域：
 
 ```vue
 <FormulateInput
@@ -51,40 +41,31 @@ for new inputs that look like this:
 />
 ```
 
-To do this, we need to write a custom component that handles the "autocomplete"
-input logic. Each `type` is designated as a component and a classification. Both
-components and classifications can be shared across multiple `types`.
+为此，我们需要编写一个自定义组件来处理“自动完成”表单域逻辑。
+每个 `type` 都被指定为一个组件和一个类型。组件和类型都可以在多个 `type` 中
 
-#### What is a classification?
+#### 什么是类型?
 
-A classification is just a helpful way to group logic and styling rules around
-similar input types, but just because you create a new input `type` doesn’t
-necessarily mean you would create a new grouping classification. In fact,
-our example autocomplete would fit well under the `text` classification.
+类型只是围绕类似表单域的 `type` 对逻辑和样式规则进行分组的一种有用方法，
+但仅仅因为您创建了一个新的表单域 type 并不一定意味着您将创建一个新的分组类型。事实上，我们的示例自动完成很适合 text 类型。
 
-#### What is an input component?
+#### 什么是表单域组件?
 
-The input component, on the other hand, is a Vue component that is passed a
-[`context` object](/zh/guide/inputs/#context-object) prop (the [context object](/zh/guide/inputs/#context-object)
-is responsible nearly all of the component’s functionality — it’s a good
-idea to familiarize yourself with it). Additionally your custom input can be
-passed it’s own props defined as `slotProps`. This custom component can be used
-for entirely new input systems, business logic, or custom UI.
+另一个角度讲，表单域组件就是一个 Vue 组件，它传递了一个 [`context` 对象](/zh/guide/inputs/#context-object) prop
+（[`context` 对象](/zh/guide/inputs/#context-object) 负责组件的几乎所有功能——熟悉它是个好主意）。
+此外，您的自定义表单域可以传递它自定义的 prop 到 slotProps 中. 此自定义组件可用于全新的表单域系统、业务逻辑或自定义 UI 中。
 
-#### The model
+#### model
 
-If you want field validation, form aggregation, hydration and the other
-benefits of Vue Formulate there is only one requirement: the value of the field
-should be read from `context.model` and written to `context.model`. This is a
-special getter/setter property bound to the root `<FormulateInput />`.
+如果你需要字段验证，表单聚合或 Vue Formulate 的其他优势，这是一个必要条件，
+表单的值可以通过 `context.model` 读取，或写入。这是一个绑定到 `<FormulateInput />`
+根节点的特殊的 getter/setter 属性
 
-#### Custom events
-Your custom component can also emit events on the root `<FormulateInput>` by
-using `context.rootEmit()` exactly the same as you would use `$emit` on any
-other Vue component.
+#### 自定义事件
+您的自定义组件也可以使用 `context.rootEmit()` 与 `$emit` 在任何其他 Vue 组件上使用的完全相同的方式在 `<FormulateInput>` 根上发出事件。
 
-:::details View example autocomplete source
-_File: MyFormulateAutocomplete.vue_
+:::details 查看自动完成的源码
+_文件: MyFormulateAutocomplete.vue_
 ```vue
 <template>
   <div
@@ -178,18 +159,15 @@ export default {
 </script>
 
 ```
-_Note: in the above example we wrap our `<template>` with a div containing some
-`.formulate-input-element` classes, this is not required, but is a good practice
-to keep things consistent for theme authors._
+_注意: 在上面的例子中，我们 `<template>` 用一个包含一些 `.formulate-input-element` 类的 
+div 来包裹我们的，这不是必需的，但对于主题作者来说，这是一个保持一致的好习惯。_
 :::
 
-## Custom props
+## 自定义 props
 
-Often, when creating custom inputs, you’ll need to pass custom props, such as a
-url or a debounce duration. Custom inputs can also declare they want to receive
-their own props directly. This is done by leveraging the [`slotProp`](https://vueformulate.com/guide/inputs/slots/#declaring-slot-props)
-mechanism under the `component` key during registration. For example to expose a
-`url` prop to a custom input named `myinput`:
+通常，在创建自定义表单域时，您需要传递自定义 prop，例如 url 或去抖动持续时间。
+自定义表单域也可以声明他们想直接接收自己的 prop。这是通过在注册期间传递配置参数来完成的。
+例如，将 prop 公开给名为 `myinput` 的自定义表单域：
 
 ```js
 // Vue Formulate config:
@@ -206,11 +184,10 @@ mechanism under the `component` key during registration. For example to expose a
 }
 ```
 
-## Registering an input
+## 注册表单域
 
-Once your input component is written, you need to let Vue Formulate know there
-is a new `type` of input and it has a custom component (and/or `classification`).
-You do this by extending the `library` global option.
+编写输入组件后，您需要让 Vue Formulate 知道有一个新 `type  的表单域并且它有一个自定义组件（和/或classification）。
+您可以通过扩展 `library` 全局选项来做到这一点。
 
 ```js
 import Vue from 'vue'
@@ -230,6 +207,6 @@ Vue.use(VueFormulate, {
 })
 ```
 
-Presto! You’ve now extended Vue Formulate to include a custom input type.
+一瞬间！您现在已经扩展了 Vue Formulate 以包含自定义表单域类型。
 
 <demo-custom-input />

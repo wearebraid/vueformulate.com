@@ -52,6 +52,7 @@ file uploads in Vue Formulate.
 :::
 
 ## Uploader
+<div id="uploader"></div>
 
 Inputs in the `file` classification are all used to upload data to a server.
 Because of this, they require additional configuration to work
