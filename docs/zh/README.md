@@ -8,7 +8,7 @@ actionText: 开始 →
 actionLink: /zh/guide/
 features:
 - title: 😎 开发者的福利
-  details: 表单无处不在，但对作者来说却味同嚼蜡 —— 好吧，现在不再是了。Vue Formate 为开发人员提供了强大而灵活的 API，使复杂的表单创建变得轻而易举。
+  details: 表单无处不在，但对作者来说却很枯燥 —— 好吧，现在不再是了。Vue Formate 为开发人员提供了强大而灵活的 API，使复杂的表单创建变得轻而易举。
 - title: ☝️ 单一的 input 元素
   details: 使用 Vue Formulate，你不需要记住十几个组件的名称—所有表单元素都是用一个组件创建的。非常简单！
 - title: 💪 成组的表单域

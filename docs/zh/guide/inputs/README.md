@@ -182,6 +182,7 @@ Prop              | 描述
 `@blur-context`     | 失去焦点时触发，但包括输入的上下文作为有效负载
 
 ## 上下文对象
+<div id="context-object"></div>
 
 所有输入都包含一个全面的上下文对象，它详细说明了输入操作的几乎所有内容。它被传递到所有 [自定义表单域](/zh/guide/inputs/custom-inputs/) 和插槽中。
 

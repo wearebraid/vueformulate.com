@@ -1,25 +1,24 @@
-# Box
+# box
 
-The box [classification](/zh/guide/inputs/custom-inputs/#what-is-a-classification) is given to the following types:
+box [classification](/zh/guide/inputs/custom-inputs/#what-is-a-classification) 给出了以下类型:
 
-- [checkbox](#checkbox)
-- [radio](#radio)
+- [复选框](#checkbox)
+- [单选框](#radio)
 
-:::tip Note
-Just like a native checkbox or radio, the `box` classification uses the `checked`
-prop instead of `value` to set it’s initial state.
+:::tip
+就像原生复选框或单选框一样，box 分类使用 `checked` prop 而不是 `value` 设置它的初始状态。
 
-The exception to this rule is when the `options` prop is specified causing it to
-act more like a select list. In this case, use `value` to set the initial state.
+这条规则的例外是当 `options` 指定了 prop 时，它的行为更像是一个选择列表。在这种情况下，使用 `value` 来设置初始状态。
 
-You can also use `v-model` in either case.
+你也可以在任何情况下使用 `v-model`。
 :::
 
-## Checkbox
+## 复选框
+<div id="checkbox"></div>
 
-### Single checkbox
+### 简单的复选框
 
-With a single checkbox, the value of the result is a `boolean`.
+使用单个复选框，结果的值为一个 `boolean` 类型。
 
 ```vue
 <FormulateInput
@@ -31,16 +30,13 @@ With a single checkbox, the value of the result is a `boolean`.
 
 <demo-input-checkbox />
 
-:::tip Tip
-Notice that the labels of `box` types come after the input element. You can
-change this behavior by adding `label-position="before"` as a prop.
+:::tip
+请注意，box 类型标签位与 `input` 元素之后。您可以通过添加 `label-position="before"` prop 来更改此行为。
 :::
 
-### Multiple checkbox options
+### 多个复选框选项
 
-Often multiple checkboxes are used to offer a range of selectable options. This
-can be done with a single `FormulateInput` and the `options` prop. The
-selections are represented as an array.
+通常使用多个复选框来提供一系列可选选项。这可以通过单个 `FormulateInput` 和 `options` prop 来完成。这些可选项代表了一个数组。
 
 ```vue
 <FormulateInput
@@ -53,12 +49,10 @@ selections are represented as an array.
 
 <demo-input-checkbox-multi />
 
-#### Array option syntax
+#### 数组选项的语法
 
-In addition to passing an object of key/value pairs as the `option` prop, you
-can alternatively pass an array of objects with `value` and `label` properties.
-Using this syntax you can optionally define an `id` attribute to be applied to
-each `input`.
+除了将键/值对的对象作为 `option` prop 传递之外，您还可以传递具有 `value` 和 `label` 属性的对象数组。
+使用此语法，您可以在每个 input 元素上可选的定义 `id`.
 
 ```js
 [
@@ -67,10 +61,9 @@ each `input`.
 ]
 ```
 
-#### Array string syntax <Badge text="2.5" /> {data-new}
+#### 数组字符串语法 <Badge text="2.5" /> {data-new}
 
-You can also use a simple array of strings. In this case both the `value` and
-the `label` of the checkboxes will be the string value.
+您还可以使用简单的字符串数组。在这种情况下，复选框的 `value` 和 `label` 值都是这个字符串。
 
 ```vue
 <FormulateInput
@@ -81,9 +74,10 @@ the `label` of the checkboxes will be the string value.
 />
 ```
 
-## Radio
+## 单选框
+<div id="radio"></div>
 
-The syntax for radio inputs is identical to checkboxes.
+单选框的语法跟复选框相同
 
 ```vue
 <FormulateInput
@@ -96,13 +90,11 @@ The syntax for radio inputs is identical to checkboxes.
 
 <demo-input-radio />
 
-## Styling box inputs
+## box 表单域的样式
 
-Checkboxes and radio boxes are notoriously frustrating to style. To assist,
-Vue Formulate places a `<label>` element immediately after the `<input>` tag.
-This allows for easy sibling selector css rules using the `:checked` psuedo-class
-selector. The default snow theme using this technique to style checkboxes and
-inputs.
+众所周知，复选框和单选框的默认样式令人沮丧。为了提供帮助，Vue Formulate 会在 `<input>` 标签之后
+立即放置一个 `<label>` 标签。这允许使用 `:checked` 伪类选择器轻松实现同级选择器 css 的规则。
+默认的 snow 主题使用这种技术来设置复选框的样式
 
 ```css
 input ~ label {
@@ -113,28 +105,24 @@ input:checked ~ label {
 }
 ```
 
-If you don't want to use this "decorator" label on your project, you can disable
-it by setting the global option `useInputDecorators` to `false`:
+如果你不想在你的项目中使用这种 “装饰” 的标签, 你可以通过设置全局选项 `useInputDecorators` 为 `false` 来禁用它 :
 
 ```js
-// Wherever you register Vue Formulate
+// 你注册 Vue Formulate 的地方
 Vue.use(VueFormulate, {
   useInputDecorators: false
 })
 ```
 
-## Custom class keys
+## 自定义 class 名
 
-In addition to all [global class keys](/zh/guide/theming/#customizing-classes)
-following are available:
+除了所有 [全局 class 名](/zh/guide/theming/#customizing-classes) 之外， 还可以使用以下方法：
 
-Key             | Default                          | Description
+名             | 默认值                          | 说明
 ----------------|----------------------------------|---------------------------------------------------
-`decorator`     | `.formulate-input-decorator`     | A secondary `<label>` element position immediately after the `<input>` element for styling “pretty” checkboxes.
+`decorator`     | `.formulate-input-decorator`     | 用于美化紧跟在 `<input>` 元素之后的 `<label>` 元素
 
-:::warning String values only
-Although Vue Formulate supports non-string values, HTML `radio` and `checkbox`
-inputs only support string values, using integers or booleans as keys will
-result in unexpected behavior. The only exception to this rule is single
-checkboxes (no `options`), which Vue will cast to booleans for you automatically.
+:::warning 仅字符串值
+尽管 Vue Formulate 支持非字符串值，但 HTML 的 radio 和 checkbox 表单域只支持字符串值，
+使用整数或布尔值作为键会导致意外行为。此规则的唯一例外是单个复选框（无 options），Vue 会自动为您转换为布尔值。
 :::

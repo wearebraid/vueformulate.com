@@ -1,23 +1,23 @@
-# Button
+# 按钮
 
-The button [classification](/zh/guide/inputs/custom-inputs/#what-is-a-classification) is given to the following types:
+按钮 [classification](/zh/guide/inputs/custom-inputs/#what-is-a-classification) 有以下两种类型:
 
-- [button](#button)
-- [submit](#submit)
+- [普通按钮](#button)
+- [提交按钮](#submit)
 
-Formulate determines what becomes the text of the button in the following order:
+Formulate 确定按以下顺序定义按钮的文本内容：
 
-1. The default slot passed in
-2. The `value` prop
-3. The `label` prop
-4. The `name` prop
+1. 默认插槽
+2. `value` prop
+3. `label` prop
+4. `name` prop
 
-::: tip Note
-Both types output the same markup except that `submit` includes `type="submit"`
-on the button element itself which is necessary to trigger form submissions.
+::: tip
+这两种类型的输出不同的是，标记为 `submit` 的按钮，本身具有 `type="submit"`，用于触发表单提交。
 :::
 
-## Button
+## 普通按钮
+<div id="button"></div>
 
 ```vue
 <FormulateInput
@@ -28,7 +28,7 @@ on the button element itself which is necessary to trigger form submissions.
 
 <demo-button />
 
-You may also use the default slot to pass more complex content into the button.
+您还可以使用默认插槽将更复杂的内容传递到按钮中。
 
 ```vue
 <FormulateInput
@@ -40,14 +40,13 @@ You may also use the default slot to pass more complex content into the button.
 ```
 <demo-button-2 />
 
-::: warning Important
-There is no model binding or label element for button input types.
+::: warning 重要提示
+按钮类型没有模型绑定或标签元素。
 :::
 
-## Submit
+## 提交按钮
 
-Submit elements have the same syntax as buttons, but they are able to submit
-forms (including `FormulateForm` wrappers).
+提交元素与按钮具有相同的语法，但它们能够提交表单 (处于 `FormulateForm` 包裹中).
 
 ```vue
 <FormulateForm
@@ -63,10 +62,10 @@ forms (including `FormulateForm` wrappers).
 <demo-input-submit />
 
 
-## Slot Component <Badge text="2.5" /> {data-new}
+## 插槽组件 <Badge text="2.5" /> {data-new}
 
-The button input has one slot (`#default`) with a single [Slot Component](/zh/guide/inputs/slots/#slot-components):
+按钮表单域有一个插槽 (`#default`) 和一个监督的 [插槽组件](/zh/guide/inputs/slots/#slot-components):
 
-Slot component name | Description
+插槽组件名 | 说明
 ---------------|----------------------------------------------------------------
-`buttonContent`| This slot component renders in the `#default` slot and is passed the input context object.
+`buttonContent`| 此插槽组件在插槽中呈现 `#default` 并传递表单域上下文对象。
