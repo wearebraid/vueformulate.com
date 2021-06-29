@@ -1,10 +1,11 @@
-# Select
+# 下拉选择
 
-The select [classification](/zh/guide/inputs/custom-inputs/#what-is-a-classification) is only given to:
+下拉选择 [classification](/zh/guide/inputs/custom-inputs/#what-is-a-classification) 只能被用于:
 
-- [select](#select-2)
+- [下拉选择器](#select-2)
 
-## Select
+## 下拉选择器
+<div id="select-2"></div>
 
 ```vue
 <FormulateInput
@@ -18,8 +19,7 @@ The select [classification](/zh/guide/inputs/custom-inputs/#what-is-a-classifica
 
 <demo-input-select />
 
-The `options` prop can be an object, an array of objects, or array of strings. When using an array
-of objects each object must include a `label` and `value` property.
+所述 `options` prop 可以是一个对象，对象的数组或字符串的数组。使用对象数组时，每个对象都必须包含 `label` 和 `value` 属性。
 
 ```vue
 <FormulateInput
@@ -33,14 +33,12 @@ of objects each object must include a `label` and `value` property.
 />
 ```
 
-:::tip Note
-The `label` and `value` properties are required when using an array of objects,
-however you can also pass `id`, `disabled`, or an `attrs` sub-object with
-additional attributes to bind to each option.
+:::tip
+`label` 和 `value` 属性是使用对象的数组时必需的，
+但是也可以通过 `id`，`disabled` 或者 `attrs` 将额外的属性绑定到每个选项的元素上。
 :::
 
-When using an array of strings, the provided string will be both the value
-and the label.
+使用字符串数组时，提供的字符串既是值又是标签。
 
 ```vue
 <FormulateInput
@@ -49,14 +47,13 @@ and the label.
 />
 ```
 
-:::tip Note
-Native select elements don’t have placeholders, but that prop is available
-and will inject a non-selectable option item as the initially selected value.
+:::tip
+原生选择器没有占位符，但该 prop 可用，并将注入一个不可选中的选项作为最初选择的值。
 :::
 
-### Option grouping
+### 选项分组
 
-Use the `optionGroups` prop when you need to use `<optgroup>`.
+当你需要 `<optgroup>` 时，可以使用 `optionGroups` prop
 
 ```vue
 <FormulateInput
@@ -78,8 +75,7 @@ Use the `optionGroups` prop when you need to use `<optgroup>`.
 
 <demo-input-select-group />
 
-:::warning String values only
-Although Vue Formulate supports non-string values, HTML `select` inputs only
-support string values. As such when using a `Number` as an option value the
-value will automatically be re-cast as a string.
+:::warning 仅字符串值
+尽管 Vue Formulate 支持非字符串值，但 HTML select 仅支持字符串值。
+因此，当使用 `Number` 作为选项值时，该值将自动重新转换为字符串。
 :::

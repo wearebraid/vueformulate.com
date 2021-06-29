@@ -1,10 +1,10 @@
-# Textarea
+# 文本域
 
-The textarea [classification](/zh/guide/inputs/custom-inputs/#what-is-a-classification) is only given to:
+文本域 [classification](/zh/guide/inputs/custom-inputs/#what-is-a-classification) 仅适用于:
 
-- [textarea](#textarea)
+- [文本域](#textarea)
 
-## Textarea
+## textarea
 
 ```vue
 <FormulateInput

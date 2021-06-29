@@ -1,17 +1,16 @@
-# Group
+# 分组
 
-The `group` [classification](/zh/guide/inputs/custom-inputs/#what-is-a-classification)
-only contains the input type `group`. It is a special input used to
-logically group one or more fields together. It is useful for:
+这个 `group` [classification](/zh/guide/inputs/custom-inputs/#what-is-a-classification)
+只包含 `group` 类型表单域. 它是一种特殊的表单域，用于在逻辑上将一个或多个字段组合在一起。它适用于：
 
-- [Organizing your form’s data](#data-organization).
-- [Creating repeatable groups](#repeatable-groups).
-- [Validating a collection](#validation) of fields.
+- [组织表单数据](#data-organization).
+- [创建可重复的组](#repeatable-groups).
+- [验证字段集合](#validation)
 
 ## Data organization
+<div id="data-organization"></div>
 
-You can use the `group` type to logically group data. The fields nested under a
-`group` will be bundled together as their own object.
+您可以使用该 `group` 类型对数据进行逻辑分组。嵌套在一个 `group` 下的字段将作为它们自己的对象捆绑在一起。
 
 ```vue
 <FormulateForm
@@ -48,20 +47,19 @@ You can use the `group` type to logically group data. The fields nested under a
 <demo-group-data />
 
 
-:::tip Note
-For consistency, the value of a `group` will always be an array even if
-the field is not repeatable. If you need a plain object, we recommend
-destructuring the array inside [a form](/zh/guide/forms/) `submit` handler.
+:::tip
+为了一致性，`group` 即使该字段不可重复，一个分组的值也将始终是一个数组。
+如果您需要一个普通对象，我们建议在 [表单](/zh/guide/forms/) `submit` 处理程序中解构数组。
 :::
 
-## Repeatable groups
+## 可重复的分组
+<div id="repeatable-groups"></div>
 
-By setting the `repeatable` prop to `true` anything inside our group becomes
-infinitely repeatable including non-formulate elements. An "add more" button is
-also added, along with a remove button for each item.  A `repeatable` group can
-be further customized with special [props](#props) and [slots](#slots).
+通过将 `repeatable` prop 设置为 `true` ，让我们组内的任何内容，包括非公式化元素在内的任何内容都可以无限重复。
+还添加了一个 “添加更多” 按钮，以及每个项目的删除按钮。`repeatable` 可以使用特殊 [props](#props) 
+和 [插槽](#slots) 进一步定制一个分组。
 
-::: details View source code
+::: details 查看源代码
 ```vue
 <template>
   <div class="form-wrapper">
@@ -177,20 +175,18 @@ code {
 
 <demo-group-repeatable />
 
-:::warning Warning
-It's easy to use groups to create very large forms with deep nesting, however
-bear in mind that all the inputs have dependencies on one another — doing so
-can create performance issues. If you notice performance issues, try leveraging
-the [`debounce` prop on the form or inputs](/zh/guide/forms/#props).
+:::warning
+使用分组创建具有深度嵌套的非常大的表单很容易，但是请记住，
+所有表单域都相互依赖——这样做会产生性能问题。如果您发现性能问题，
+请尝试利用 [表单或表单域上的 `debounce` prop](/zh/guide/forms/#props).
 :::
 
-### Validation
+### 验证功能
+<div id="validation"></div>
 
-By default, fields inside a group validate just like any other fields. Making
-a field inside a `group` required, for example, would prevent that form from
-submitting until that field has been completed. However, you can also place
-validation rules directly on the group. So placing a "required" rule on the
-`group` component ensures at least 1 repeatable item is in your group.
+默认情况下，组内的字段与任何其他字段一样可以验证。例如，在分组中的必填字段中新加一个字段
+会阻止该表单提交，直到该字段填入了内容。但是，您也可以直接在组上放置验证规则。
+因此，在 `group` 组件上放置 “required” 规则 可确保您的组中至少有 1 个可重复项。
 
 ```vue
 <FormulateForm>
@@ -215,24 +211,21 @@ validation rules directly on the group. So placing a "required" rule on the
 
 <demo-group-repeatable-2 />
 
-:::tip Note
-There is no `blur` event for a group type, so by default validation errors will
-be shown when someone attempts to submit a form. If you prefer errors to be
-immediately show, consider using `error-behavior="live"`.
+:::tip
+在分组组件上没有 `blur` 事件，因此默认情况下，当有人尝试提交表单时将显示验证错误。
+如果您希望立即显示错误，请考虑使用 `error-behavior="live"`。
 :::
 
-:::tip Note
-The [`confirm`-rule](/zh/guide/validation/#confirm) currently does not work within groups. This will be fixed in an upcoming release. See [tracking issue](https://github.com/wearebraid/vue-formulate/issues/226)
+:::tip
+[`confirm` 规则](/zh/guide/validation/#confirm) 目前在分组内无法执行。这将在即将发布的版本中修复。查看 [跟踪问题](https://github.com/wearebraid/vue-formulate/issues/226) 。
 :::
 
-#### Applying custom validation rules
+#### 使用自定义验证规则
 
-Applying custom validation rules to a `group` field allows for very granular and
-powerful rules to meet your specific scenario. These rules give you
-access to the data in all of its sub-fields allowing complex cross-field
-validation.
+将自定义验证规则应用于 `group` 字段允许非常精细和强大的规则来满足您的特定场景。
+这些规则使您可以访问其所有子字段中的数据，从而允许复杂的跨字段验证。
 
-::: details View source code
+::: details 查看源码
 ```vue
 <template>
   <FormulateForm
@@ -374,12 +367,10 @@ export default {
 :::
 <demo-group-validation />
 
-## Settings errors on groups <Badge text="2.5" /> {data-new}
+## 为分组设置错误信息 <Badge text="2.5" /> {data-new}
 
-When setting explicit errors on group input we need a way to indicate which
-index the errant field is at. To make this as simple as possible, use the
-`group-errors` prop along with "dot notation" to reference inputs in their
-index. For example:
+在分组上显式设置错误信息时，我们需要一种方法来指示错误字段位于哪个索引。
+为了使这尽可能简单，请使用 `group-errors` prop 和 “点符号” 来引用索引中的表单域。例如：
 
 ```vue
 <FormulateInput
@@ -408,17 +399,15 @@ index. For example:
 
 <demo-group-errors-1 />
 
-Notice how the errors always begin with the index of the group. The proeprties
-of the `group-errors` prop must always begin with the index of the group they
-are being applied to.
+注意错误信息总是从分组的索引开始。`group-errors` prop 的属性必须始终以它们所应用到的组的索引开始。
 
-You can also apply group errors [using dot notation from a `<FormulateForm>`](/zh/guide/forms/error-handling/#form-input-errors).
+你还可以 [通过 `<FormulateForm>` 使用点符号](/zh/guide/forms/error-handling/#form-input-errors) 来设置分组的错误信息
 
-## Index of current group
+## 分组的当前索引
 
-To manipulate a distinct group field, it is helpful to get the index of the current group item. Luckily, slots can help. The `default` slot for instance offers the `index` as a context variable of `groupProps`:
+要操作分组的不同字段，获取当前组项的索引很有帮助。幸运的是，插槽可以提供帮助。例如 `default`，插槽提供 `index` 作为 `groupProps` 的上下文变量：
 
-Example:
+例如：
 ```vue
  <FormulateInput
     type="group"
@@ -439,47 +428,47 @@ Example:
 
 ## Props
 
-The group field has a few unique props:
+分组里的字段，有一些独特的 props
 
-Prop             | Description
+Prop             | 说明
 -----------------|----------------------------------------------------------------
-`add-label`      | When repeatable, this is the label to display on the "+ Add" button (defaults to `label || name`).
-`limit`          | When repeatable, this is the maximum number of group items.
-`minimum`        | When repeatable, this is the minimum number of group items.
-`remove-label`   | When repeatable, this is the label to display on the "Remove" button.
-`remove-position`| Show the remove button `before` or `after` the group inputs (defaults to `before`)
-`repeatable`     | `Boolean` indicates if the field is repeatable.
-`group-errors`   | `Object` of dot notation properties (like `0.name`) with errors.
+`add-label`      | 当可重复时，这是显示在 “+ 添加” 按钮上的标签（默认为 `label || name`）
+`limit`          | 当可重复时，这是组项目的最大数量。
+`minimum`        | 当可重复时，这是组项目的最小数量。
+`remove-label`   | 当可重复时，这是显示在 “删除” 按钮上的标签。
+`remove-position`| 在组内表单域的 `before` 或 `after` 显示删除按钮 (默认为 `after`)
+`repeatable`     | `Boolean` 类型，指示该字段是否可重复。
+`group-errors`   | `Object` 点符号属性 (就像 `0.name`) 的错误
 
-## Slots
+## 插槽
 
-The group input has several unique slots (and matching [Slot Components](/zh/guide/inputs/slots/#slot-components)):
+分组有几个独特的插槽（和匹配的 [插槽组件](/zh/guide/inputs/slots/#slot-components)）：
 
-Slot name      | Description
+插槽名      | 说明
 ---------------|----------------------------------------------------------------
-`addmore`      | The add more button when `repeatable`.<br>_The context object in this slot includes an `addMore` function that should be called to add new items._
-`default`      | Anything in the default slot will be considered part of the group, and become `repeatable` if applicable. _The context object will additionally have an "index" property._
-`grouping`     | The primary repeatable area, responsible for rendering the inner content.
-`remove`       | The remove button when `repeatable`.<br>_The context object in this slot includes the `index` and a `removeItem` function that should be called to remove that item._
-`repeatable`   | Responsible for rendering each row of inputs.<br>_The context object in this slot includes a `removeItem` function that should be called to remove that item._
+`addmore`      | `repeatable` 时的添加更多按钮。<br>_此插槽中的上下文对象包括一个 `addMore`函数，应调用该函数来添加新项目。_
+`default`      | 默认插槽中的任何内容都将被视为组的一部分, 当存在 `repeatable` 时， _上下文对象将另外具有 "index" 属性。_
+`grouping`     | 主要的可重复区域，负责渲染内部内容。
+`remove`       | `repeatable` 时的删除按钮。<br>_此插槽中的上下文对象包括 `index` 和一个 `removeItem` 函数用于删除该项目_
+`repeatable`   | 负责渲染每一行表单域。<br>_此插槽中的上下文对象包括一个 `removeItem` 函数，应调用该函数以删除该项目。_
 
-## Events <Badge text="2.5" /> {data-new}
+## 事件 <Badge text="2.5" /> {data-new}
 
-The group input type has two unique events:
+分组类型有两个独特的事件：
 
-Event name | Description
+事件名 | 说明
 -----------|--------------------------------------------------------------------
-`@repeatableAdded` | Emitted when a new repeatable item is added to the group.
-`@repeatableRemoved` | Emitted when a repeatable item is removed from the group.
+`@repeatableAdded` | 将新的可重复项添加到分组时触发。
+`@repeatableRemoved` | 从组中删除可重复项时触发
 
-## Custom class keys
+## 自定义样式 class 名
 
-In addition to all [global class keys](/zh/guide/theming/#customizing-classes)
-following are available:
+除了所有 [公共样式 class 名](/zh/guide/theming/#customizing-classes) 之外，
+还可以使用以下 class 名：
 
-Key             | Default                          | Description
+键             | 默认值                          | 说明
 ----------------|----------------------------------|---------------------------------------------------
-`grouping`      | `.formulate-input-grouping`      | A wrapper around all repeatable fields (only exists when repeatable)
-`groupRepeatable`    | `.formulate-input-group-repeatable` | A wrapper around each set of grouped fields (exists even for non-repeatable groups).
-`groupRepeatableRemove`   | `.formulate-input-group-repeatable-remove` | The remove button for a field group.
-`groupAddMore`       | `.formulate-input-group-add-more` | The wrapper around the add more button for repeatable groups.
+`grouping`      | `.formulate-input-grouping`      | 所有可重复字段的包装器（仅在可重复时存在）
+`groupRepeatable`    | `.formulate-input-group-repeatable` | 每组分组字段的包装器（即使对于不可重复的组也存在）。
+`groupRepeatableRemove`   | `.formulate-input-group-repeatable-remove` | 字段组的删除按钮。
+`groupAddMore`       | `.formulate-input-group-add-more` | 可重复分组的 “添加更多按钮” 周围的包裹器。

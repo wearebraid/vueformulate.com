@@ -1,10 +1,10 @@
-# Slider
+# 滑块
 
-The sliders [classification](/zh/guide/inputs/custom-inputs/#what-is-a-classification) is given to the following types:
+滑块 [classification](/zh/guide/inputs/custom-inputs/#what-is-a-classification) 仅支持以下类型:
 
 - [range](#range)
 
-## Range
+## range
 
 ```vue
 <FormulateInput
@@ -21,17 +21,16 @@ The sliders [classification](/zh/guide/inputs/custom-inputs/#what-is-a-classific
 
 <demo-input-range />
 
-Input ranges can create a poor user experience because the value of the range
-is not displayed by default. By adding the prop `show-value`, Vue
-Formulate will expose the value of the range input next to the slider.
+范围表单域可能会造成糟糕的用户体验，
+因为默认情况下不显示范围的值。通过添加 `show-value` prop ，Vue Formulate 将在滑块旁边显示范围输入的值。
 
 <demo-input-range-value />
 
-## Custom class keys
+## 自定义样式 class 名
 
-In addition to all [global class keys](/zh/guide/theming/#customizing-classes)
-following are available:
+除了所有 [全局样式名](/zh/guide/theming/#customizing-classes) 之外， 还可以使用以下方法：
 
-Key             | Default                          | Description
+键             | 默认值                          | 说明
 ----------------|----------------------------------|---------------------------------------------------
-`rangeValue`         | `.formulate-input-element-range-value`   | An element immediately after the `<input>` element containing the value of the range input. Only available when `show-value` is true.
+`rangeValue`         | `.formulate-input-element-range-value`   | 紧跟在 `<input>` 包含范围输入值的元素之后的元素。仅在 `show-value` 为 `true` 时有效。
+

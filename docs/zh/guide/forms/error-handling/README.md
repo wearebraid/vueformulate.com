@@ -1,15 +1,13 @@
-# Error handling
+# 错误处理
 
-Although Vue Formulate provides great [validation](/zh/guide/validation), it's not
-wise to rely solely on front end validation. It can be tedious to get error
-messages from your backend into to the relevant inputs of a form. Vue formulate
-provides an easy way to place both form-level and input-level errors into your
-form.
+尽管 Vue Formulate 提供了很好的 [验证器](/zh/guide/validation)，
+但仅仅依赖前端验证是不明智的。将错误消息从后端获取到表单的相关输入中可能会
+很乏味。Vue Formulate 提供了一种简单的方法来将表单级别和表单域级别的错误放入表单中。
 
-## Manual error handling
+## 手动错误处理
 
-We already know from the [inputs documentation](/zh/guide/inputs#all-options) that
-there are `error` and `errors` props available on all input elements.
+我们从 [表单域文档](/zh/guide/inputs#all-options) 中已经知道所有的表单域都有
+ `error` 和 `errors` props 可以用。
 
 ```vue
 <FormulateInput
@@ -20,15 +18,13 @@ there are `error` and `errors` props available on all input elements.
 ```
 <demo-errors-1 />
 
-These `error` props override the `error-behavior` prop (which surfaces errors
-real-time via `live` or on `blur`) of the element and are displayed no
-matter what. You could certainly handle all your backend errors this way but it
-would still be overly verbose.
+这些 `error` prop 会覆盖元素的 `error-behavior` prop（通过实时 `live` 或 `blur` 显示错误）
+并且无论如何都会显示。您当然可以通过这种方式处理所有后端错误，但它仍然过于冗长。
 
-## Form input errors
+## 表单的错误
+<div id="form-input-errors"></div>
 
-`FormulateForm` has a mechanism for setting errors for every `FormulateInput`
-in a form.
+`FormulateForm` 具有为表单中的每个 `FormulateInput` 设置错误的机制。
 
 ```vue
 <FormulateForm
@@ -51,13 +47,10 @@ in a form.
 ```
 <demo-errors-2 />
 
-As you can see in the example, the `FormulateForm` takes an object passed
-via the `errors` prop and locates fields in the form that have a matching
-`name`. You can define a single error string, or an array of error strings to
-display.
+正如您在示例中所看到的，此 `FormulateForm` 接受一个通过 `errors` prop 传递的对象，
+并在表单中定位到具有匹配 `name` 的表单域上. 您可以定义单个错误字符串或要显示的错误字符串数组。
 
-If you set errors using `FormulateForm` and also directly on a `FormulateInput`
-the values will both be shown, and any duplicates removed.
+如果您使用 `FormulateForm` 和直接在 `FormulateInput` 上设置错误， 则将同时显示值，并删除任何重复项。
 
 ```vue
 <FormulateForm
@@ -74,11 +67,10 @@ the values will both be shown, and any duplicates removed.
 ```
 <demo-errors-3 />
 
-### Group input errors <Badge text="2.5" /> {data-new}
+### 分组的错误 <Badge text="2.5" /> {data-new}
 
-[Inputs of type `group`](/zh/guide/inputs/types/group/) presents an interesting
-challenge because they are nested inside an array. To handle these nested and
-repeatable inputs Vue Formulate supports setting errors via "dot notation".
+[`group` 类型的表单域](/zh/guide/inputs/types/group/) 提出了一个有趣的挑战，因为它们嵌套在数组中。
+为了处理这些嵌套和可重复的表单域，Vue Formulate 支持通过 “点符号” 设置错误。
 
 ```vue
 <FormulateForm
@@ -89,7 +81,7 @@ repeatable inputs Vue Formulate supports setting errors via "dot notation".
 >
 ```
 
-:::details Full example code
+:::details 完整示例代码
 ```vue
 <FormulateForm
   :errors="{
@@ -141,16 +133,16 @@ repeatable inputs Vue Formulate supports setting errors via "dot notation".
 
 <demo-group-errors-2 />
 
-:::tip Note
-You can also set `group-errors` directly on the group itself. For more details
-read the [`group` type documentation](/zh/guide/inputs/types/group/).
+:::tip
+您也可以使用 `group-errors` 直接在分组本身上进行设置。有关更多详细信息，
+请阅读 [`group`类型文档](/zh/guide/inputs/types/group/)。
 :::
 
-## Form errors
+## 表单错误
+<div id="form-errors"></div>
 
-Occasionally, form errors are not related directly to a `FormulateInput`.
-Perhaps the server is responding with a `500` status code. The `form-errors`
-prop is designed for just such an occasion.
+有时，表单错误与 `FormulateInput` 无关。也许是服务器正在响应 `500` 状态码。
+该 `form-errors` prop 专为这种场合而设计。
 
 ```vue
 <FormulateForm
@@ -174,10 +166,8 @@ prop is designed for just such an occasion.
 ```
 <demo-errors-4 />
 
-By default these errors are shown at the top of the form, however often it makes
-more sense to move these errors somewhere closer to the submit action of your
-form. You can do this by adding a `<FormulateErrors />` component anywhere
-inside the `<FormulateForm>` element.
+默认情况下，这些错误显示在表单的顶部，但通常将这些错误移到更靠近表
+单提交操作的地方更有意义。您可以通过在 `<FormulateForm>` 元素内的任何位置添加 `<FormulateErrors />` 组件来实现此目的。
 
 ```vue
 <FormulateForm
@@ -206,17 +196,15 @@ inside the `<FormulateForm>` element.
 
 <demo-errors-5 />
 
-This automatically removes the form errors from the top and locates them wherever
-that `<FormulateErrors />` is placed. You can even have multiple `<FormulateErrors />`
-if you'd like the form errors to appear in multiple locations.
+这会自动从顶部删除表单错误并将它们定位到 `<FormulateErrors />` 放置的任何位置。
+如果您希望表单错误出现在多个位置，您甚至可以有多个 `<FormulateErrors />` 。
 
-## Form Error handling
+## 表单错误处理
 
-Now that we've covered how we display errors on forms, lets talk about how we
-can actually handle those errors in a more graceful way. Lets work through a
-simple login form:
+现在我们已经介绍了如何在表单上显示错误，让我们来谈谈我们
+如何以更优雅的方式实际处理这些错误。让我们完成一个简单的登录表单：
 
-#### A problematic example
+#### 一个有问题的例子
 ```vue
 <template>
   <FormulateForm
@@ -275,16 +263,14 @@ export default {
 </script>
 ```
 
-Woof, that `catch` statement — what a mess, and we only handled a few of the
-possible scenarios. This type of code is often abstracted away to a helper
-function in a `libs` directory somewhere, but it still needs to set some local
-component variables (in our case `formErrors` and `inputErrors`) in order to
-give proper feedback to the user — enter [named forms](#named-forms).
+奥，那 catch 语句——真是一团糟，我们只处理了几种可能的情况。
+这种类型的代码往往是抽象掉在 libs 目录里的一个辅助函数。
+但它仍然需要设置一些本地组件的变量（在我们的情况中是 `formErrors` 和 `inputErrors`）
+为了给用户适当的反馈
 
-### Named forms
+### 命名表单
 
-Vue Formulate simplifies the error handling by leveraging [named
-forms](/zh/guide/forms/#named-forms) in conjunction with an error handler function.
+Vue Formate 通过利用 [命名表单](/zh/guide/forms/#named-forms) 和错误处理函数来简化错误处理。
 
 ```vue
 <template>
@@ -312,18 +298,18 @@ export default {
 }
 </script>
 ```
-Cleaner, but lets go through it. There are a few important things to notice:
+更干净，但让我们通过它。有几个重要的事情需要注意：
 
-  - The form no longer has `:form-errors` and `:errors` props.
-  - The form now has a `name` prop.
-  - The script no longer needs `formErrors` and `inputErrors` data properties.
-  - All our error handling logic is replaced with `this.$formulate.handle(err, 'login')`
+  - 这个表单不能再有 `:form-errors` 和 `:errors` props.
+  - 这个表单必须有一个 `name` prop.
+  - 脚本不再需要 `formErrors` 和 `inputErrors` 数据
+  - 我们所有的错误处理逻辑都被替换为 `this.$formulate.handle(err, 'login')`
 
-#### The `errorHandler` function
+#### `errorHandler` 函数
 
-So where did all that handler code go? Probably extracted to a helper file like
-`libs/utils` — thats up to you, but Formulate wants to know how to access it.
-When registering Vue Formulate, let it know where your error handler is.
+那么所有这些处理程序代码都去哪儿了呢？
+可能提取到一个帮助文件，如 `libs/utils` - 这取决于你，但 Vue Formulate 想知道如何访问它。
+在注册 Vue Formulate 时，让它知道你的错误处理程序在哪里。
 
 ```js
 import yourErrorHandler from './libs/error-handler'
@@ -333,9 +319,8 @@ Vue.use(VueFormulate, {
 })
 ```
 
-So how does it work? In our component, we pass our `err` to the `handle` method
-of `$formulate` along with the string `name` of the form. This `handle` method
-then calls the `yourErrorHandler` and expects an object response with two properties:
+那么它是怎样工作的？在我们的组件中，我们将我们 `err` 的 `handle` 方法与表单的 `name` 字符串一起传递给 $formulate。
+此 `handle` 方法然后调用 `yourErrorHandler` 并期望具有两个属性的对象响应：
 
 ```js
 {
@@ -344,14 +329,12 @@ then calls the `yourErrorHandler` and expects an object response with two proper
 }
 ```
 
-The `handle` method then sets those values on
-your form and form inputs. This means we can have a single function for handling
-all our form errors, and a one liner to set the errors. We don't even need local
-data properties.
+然后该 `handle` 方法在您的表单和表单输入上设置这些值。
+这意味着我们可以有一个单一的函数来处理我们所有的表单错误，
+还有一个单行程序来设置错误。我们甚至不需要本地数据属性。
 
-Out of the box the `errorHandler` function does nothing at all, so if we call
-`handle` with the `{ inputErrors: {}, formErrors: [] }` notation we can test the
-functionality. Here's an example:
+开箱即用的 `errorHandler` 函数什么都不做，所以如果我们想测试功能可以用 `{ inputErrors: {}, formErrors: [] }` 符号调用 `handle`。
+下面是一个例子：
 
 ```vue
 <template>
@@ -393,8 +376,7 @@ export default {
 ```
 <demo-errors-6 />
 
-:::tip errorHandler plugins
-Once you write your error handler function, you can easily encapsulate it in a
-plugin for easy re-use in the future. If you do that, consider sharing it and
-we’ll post it on the plugins page.
+:::tip errorHandler 插件
+一旦您编写了错误处理函数，您就可以轻松地将其封装在一个插件中，以便将来轻松重用。
+如果您这样做，请考虑共享它，我们会将其发布在插件页面上。
 :::

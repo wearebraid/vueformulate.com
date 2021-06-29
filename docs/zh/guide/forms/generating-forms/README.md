@@ -1,41 +1,37 @@
-# Generating Forms
+# 构建表单
 
-Form generation is a first-class feature of Vue Formulate, and can be accomplished
-in two ways:
+构建表单是 Vue Formulate 的一流功能，可以通过以下两种方式完成：
 
-- [Schemas](#schemas) (recommended)
-- [Simple iteration](#simple-iteration)
+- [模式](#schemas) (推荐)
+- [简单迭代](#simple-iteration)
 
-The above methods are very similar — both utilize arrays of objects with prop
-values. This works really well since Vue Formulate is a component-first library,
-where nearly all of the functionality is accessible via props. Additionally,
-features like [slot components](/zh/guide/inputs/slots/#slot-components) allow
-for customization of the inputs being rendered without needing to bring-your-own
-components (although you can).
+上面的方法非常相似——都使用具有 prop 值的对象数组。
+这非常有效，因为 Vue Formulate 是一个组件优先的库，
+几乎所有的功能都可以通过 props 访问。
+此外，[插槽组件](/zh/guide/inputs/slots/#slot-components) 等功能允许自定义渲染的表单域，
+而无需自带组件（尽管您可以）。
 
-## Schemas
+## 模式
+<div id="schemas"></div>
 
-Schemas were introduced in version `2.4` and allow for generating complex forms
-with `group` fields, wrappers, and your own components. Showing is better than telling, so here’s an interactive JSON playground with several examples.
-We’ll go into more detail on the structure of the schemas after this.
+模式是在 `2.4` 版本中引入的，允许生成带有group字段、包装器和您自己的组件的复杂表单。
+展示胜于讲述，因此这里有一个包含多个示例的交互式 JSON 游乐场。在此之后，我们将更详细地介绍模式的结构。
 
-##### Interactive JSON playground
+##### 交互式 JSON 游乐场
 
 <ClientOnly>
   <demo-schemas />
 </ClientOnly>
 
-### Schema inputs
+### 模式表单域
 
-Schemas are simply arrays of objects, where each object represents the props to
-give to the generated component or tag. Objects in a schema are assumed to be `FormulateInput` components by default. In fact, the simplest valid schema is
-just an array with an empty object `[ {} ]` which renders to an empty text field.
+模式只是对象的数组，其中每个对象都表示要给生成的组件或标记的 prop。默认情况下，架构中的对象假定为 `FormulateInput` 组件。
+事实上，最简单的有效模式是一个只带有空对象的数组，该对象 `[{}]` 呈现为一个空文本字段。
 
 <FormulateForm :schema="[{}]" />
 
-These schema arrays can be passed directly as a prop to `<FormulateForm>` or to
-`<FormulateSchema>`. Since `<FormulateForm>` adds model binding, it’s most
-convenient unless you have advanced needs.
+这些模式数组可以作为 prop 直接传递给 `<FormulateForm>` 或 `<FormulateSchema>`。
+由于 `<FormulateForm>` 添加了模型绑定，除非您有高级需求，否则它是最方便的选择。
 
 ```vue
 <template>
@@ -76,10 +72,10 @@ export default {
 ```
 <demo-schema-1 />
 
-### Schema components
+### 模式组件
 
-Schemas are not limited to `FormulateInput` elements. Each object can define a
-`component` property to specify any component or HTML tag to render.
+模式不限于 `FormulateInput` 元素。
+每个对象都可以定义一个 `component` 属性来指定要呈现的任何组件或 HTML 标记。
 
 ```js
 [
@@ -97,11 +93,9 @@ Schemas are not limited to `FormulateInput` elements. Each object can define a
 
 <demo-schema-2 />
 
-### Schema children
+### 模式子级
 
-The final piece of the puzzle is the ability to nest schemas. For example,
-you might want to wrap two elements, or use a `group` input. There is no limit
-to the depth or size of your schema.
+最后一部分，拼图也是嵌套模式的能力。例如，您可能想要包装两个元素，或使用一个 `group` 表单域。模式的深度或大小没有限制。
 
 ```js
 [
@@ -147,19 +141,17 @@ to the depth or size of your schema.
 
 <demo-schema-3 />
 
-### Schema events <Badge text="2.5" /> {data-new}
+### 模式事件 <Badge text="2.5" /> {data-new}
 
-Schemas also support event bindings. There are three ways to bind events to your
-schema:
+模式还支持事件绑定。可以通过三种方式将事件绑定到您的模式中：
 
-- Simple event listeners
-- Renamed event listeners
-- Inline functions
+- 简单的事件监听器
+- 重命名的事件侦听器
+- 内联函数
 
-#### Simple event listeners
+#### 简单的事件监听器
 
-Binding an event to a schema element is as simple as including an `@{eventName}`
-property on an element. For example, given this schema:
+将事件绑定到架构元素就像 `@{eventName}` 在元素上包含属性一样简单。例如，给定这个架构：
 
 ```json
 [
@@ -171,8 +163,8 @@ property on an element. For example, given this schema:
 ]
 ```
 
-We can now listen for the blur event on `username` by adding an event listener
-to the `<FormulateForm>` or `<FormulateSchema>` element:
+我们现在可以通过 `<FormulateForm>` 或 `<FormulateSchema>` 向 username 元素添加事件侦听器来侦听 blur 事件：
+
 
 ```vue
 <FormulateForm
@@ -183,17 +175,14 @@ to the `<FormulateForm>` or `<FormulateSchema>` element:
 
 <demo-schema-4 />
 
-#### Renamed event listeners
+#### 重命名的事件侦听器
 
-Simple event listeners work great when you only need to listen to one or two
-events in your schema, but what happens when you need to listen to several
-events on multiple schema nodes? For example, if every input in a long form
-listened to the `@focus` event, it could be frustrating to determine which input
-had been focused.
+当您只需要侦听模式中的一两个事件时，简单事件侦听器非常有用，但是当您需要侦听多个模式节点上的多
+个事件时会发生什么？例如，如果长表单中的每个输入都侦听 `@focus` 事件，
+则确定哪个输入已被关注可能会令人沮丧。
 
-To solve for this, you can rename the emitted event by simply providing a new
-event name as the value of your `@{eventName}` property. You can choose
-any string (`kebab-case` is recommended). For example:
+为了解决这个问题，您可以通过简单地提供一个新的事件名称作为您的 `@{eventName}` 属性值来重命名发出的事件。
+您可以选择任何字符串（kebab-case推荐）。例如：
 
 ```json
 [
@@ -232,12 +221,11 @@ any string (`kebab-case` is recommended). For example:
 
 <demo-schema-5 />
 
-#### Inline functions
+#### 内联函数
 
-It is also possible to bind event listener functions directly into your schema.
-This option (obviously) won't work with simple JSON, but it works great if you
-are storing your schema in your component, or if you export your schema from
-a JavaScript file.
+也可以将事件侦听器函数直接绑定到您的架构中。
+此选项（显然）不适用于简单的 JSON，但如果您将架构存储在组件中，
+或者如果您从 JavaScript 文件导出架构，则它非常有用。
 
 ```js
 export default [
@@ -253,11 +241,11 @@ export default [
 
 <demo-schema-6 />
 
-## Simple iteration
+## 简单迭代
+<div id="simple-iteration"></div>
 
-Because Vue Formulate stresses a single input API, it makes DIY form-generation
-simple. In its simplest form, all you need is an array of objects you want to
-represent inputs.
+因为 Vue Formulate 强调单一表单域 API，它使 DIY 表单生成变得简单。
+在最简单的形式中，您只需要一个要表示表单域的对象数组即可。
 
 ```vue
 <template>
@@ -288,10 +276,9 @@ export default {
 ```
 <demo-generating-1 />
 
-This simple feature can actually produce fairly robust forms since you have full
-control of your inputs via props:
+这个简单的功能实际上可以生成相当健壮的表单，因为您可以通过 props 完全控制您的表单域：
 
-:::details JSON source
+:::details JSON 源码
 ```js
 [
   {

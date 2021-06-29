@@ -1,6 +1,6 @@
-# Text
+# 文本
 
-The text [classification](/zh/guide/inputs/) is given to the following types:
+文本 [classification](/zh/guide/inputs/) 被赋予以下类型：
 
 - [color](#color)
 - [date](#date)
@@ -17,15 +17,14 @@ The text [classification](/zh/guide/inputs/) is given to the following types:
 - [url](#url)
 - [week](#week)
 
-::: warning Important
-These inputs are all standard HTML inputs, and while we encourage their use for
-semantic and accessibility reasons, some of them are [not supported in](https://caniuse.com/#feat=input-datetime)
-all browsers. Consider using a polyfill, [plugin](/zh/guide/plugins/), or [custom input](/zh/guide/inputs/custom-inputs/)
-on a type-by-type basis.
+::: warning 重要提示
+这些表单域都是标准的 HTML 表单域，虽然我们出于语义和可访问性的原因鼓励使用它们，
+但 [并非](https://caniuse.com/#feat=input-datetime) 所有浏览器都支持它们中的一些。
+你可以考虑在逐个类型的基础上使用 polyfill、[插件](/zh/guide/plugins/) 或 [自定义表单域](/zh/guide/inputs/custom-inputs/)。
 :::
 
 
-## Color
+## color
 
 ```vue
 <FormulateInput
@@ -42,7 +41,7 @@ on a type-by-type basis.
 
 <demo-input-color />
 
-## Date
+## date
 
 ```vue
 <FormulateInput
@@ -60,7 +59,7 @@ on a type-by-type basis.
 
 <demo-input-date />
 
-## Datetime-local
+## datetime-local
 
 ```vue
 <FormulateInput
@@ -75,12 +74,11 @@ on a type-by-type basis.
 
 <demo-input-datetime-local />
 
-:::warning Warning
-Please note that the datetime-local HTML input element has questionable support
-at the moment due to the lack of Firefox support.
+:::warning
+请注意，由于缺乏 Firefox 支持，当前日期时间本地 HTML 表单域的支持有问题。
 :::
 
-## Email
+## email
 
 ```vue
 <FormulateInput
@@ -96,11 +94,10 @@ at the moment due to the lack of Firefox support.
 
 <demo-input-email />
 
-## Hidden
+## hidden
 
-While technically Vue Formulate does support hidden input fields, the use case
-is pretty minimal since you can easily inject your own "hidden" values into
-submitted data with a [form submission](/zh/guide/forms).
+虽然技术上 Vue Formulate 确实支持隐藏的输入字段，
+但用例非常少，因为您可以通过 [表单提交](/zh/guide/forms) 轻松地将自己的 “隐藏” 值注入到提交的数据中。
 
 ```vue
 <FormulateInput
@@ -111,7 +108,7 @@ submitted data with a [form submission](/zh/guide/forms).
 ```
 
 
-## Month
+## month
 
 ```vue
 <FormulateInput
@@ -129,7 +126,7 @@ submitted data with a [form submission](/zh/guide/forms).
 
 <demo-input-month />
 
-## Number
+## number
 
 ```vue
 <FormulateInput
@@ -154,7 +151,7 @@ can use the `inputmode="numeric"` and `pattern="[0-9]*"` attributes to force a
 number keypad for mobile users.
 :::
 
-## Password
+## password
 
 ```vue
 <FormulateInput
@@ -172,11 +169,10 @@ number keypad for mobile users.
 <demo-input-password />
 
 :::tip Tip
-Password inputs work well when paired with a `FormulateForm` and the [confirm](/zh/guide/validation/#confirm)
-validation rule.
+密码输入与 `FormulateForm` 和 [确认](/zh/guide/validation/#confirm) 验证规则配对时效果很好。
 :::
 
-## Search
+## search
 
 ```vue
 <FormulateInput
@@ -190,7 +186,7 @@ validation rule.
 
 <demo-input-search />
 
-## Tel
+## tel
 
 ```vue
 <FormulateInput
@@ -205,7 +201,7 @@ validation rule.
 
 <demo-input-tel />
 
-## Time
+## time
 
 ```vue
 <FormulateInput
@@ -220,7 +216,7 @@ validation rule.
 
 <demo-input-time />
 
-## Text
+## text
 
 ```vue
 <FormulateInput
@@ -236,7 +232,7 @@ validation rule.
 
 <demo-input-text />
 
-## Url
+## url
 
 ```vue
 <FormulateInput
@@ -251,7 +247,7 @@ validation rule.
 
 <demo-input-url />
 
-## Week
+## week
 
 ```vue
 <FormulateInput
@@ -266,8 +262,7 @@ validation rule.
 
 <demo-input-week />
 
-:::warning Warning
-Please note that the week HTML input element has particularly poor support
-at the moment due to the lack of iOS support.
+:::warning
+请注意，由于缺乏 iOS 支持，目前 HTML 周表单域的支持特别差。
 :::
 
