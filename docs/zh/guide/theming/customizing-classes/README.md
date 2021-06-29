@@ -1,4 +1,5 @@
-# Customizing classes
+# 定制 class
+<div id="customizing-classes"></div>
 
 <ArticleCard
   href="https://dev.to/justinschroeder/tailwind-vue-formulate-24k1"
@@ -8,27 +9,23 @@
   :sidebar="true"
 />
 
-There are 4 ways to change the classes applied to DOM elements inside a
-`FormulateInput`:
+有 4 种方法可以更改应用于 `FormulateInput` 中的 DOM 元素的类：
 
-1. Use props on a `FormulateInput`.
-2. Globally via the `classes` option.
-3. Globally via the `baseClasses` option.
-3. Manually override the DOM using [slots](/zh/guide/inputs/slots/).
+1. 在 `FormulateInput` 上设置 prop。
+2. 全局使用 `classes` 选项。
+3. 全局使用 `baseClasses` 选项。
+3. 使用 [插槽](/zh/guide/inputs/slots/) 手动覆盖 DOM。
 
-In the first two cases, you can use a `string`, `array`, or `function` to define
-which classes should be applied to a given element (e.g., `label`) in a given
-state (e.g., field has validation errors). Each element and state is identified
-by [class key](#class-keys).
+在前两种情况下，你可以使用 `string`, `array` 或 `function` 来定义哪些 class 应应用于处于给定状态（比如：有验证错误时）的
+给定元素（比如：`label`），每个元素和状态都由 [类键](#class-keys) 标识。
 
-## Changing classes with props
+## 用 props 改变 class
 
-Changing classes on a given input is easy. Simply target the [class key](#class-keys)
-you’d like to change with a prop named `[element class key]-class`. To target a
-state use `[element class key]-[state class key]-class`.
+更改给定表单域的 class 很容易。只需使用一个名为 `[element class key]-class` 的 prop 将要更改的类键作为目标。
+要以状态为目标，请使用 `[element class key]-[state class key]-class`。
 
-### Strings (to replace base classes)
-Use `string` values in your class prop to **replace** any base classes.
+### 字符串 (用于替换基础 class)
+使用 `string` class prop 中的值 **替换** 任何基础 class。
 
 ```vue
 <FormulateInput
@@ -38,8 +35,9 @@ Use `string` values in your class prop to **replace** any base classes.
 <!-- <label class="my-label-class"> -->
 ```
 
-### Arrays (to append to base classes)
-To **append** classes to the base classes, use an `array` in your class prop.
+### 数组 (附加到基础 class)
+
+要将类附加到基础 class 中，请在您的类 prop 中使用一个 `array` 。
 
 ```vue
 <FormulateInput
@@ -49,10 +47,10 @@ To **append** classes to the base classes, use an `array` in your class prop.
 <!-- <div class="formulate-input-wrapper my-wrapper-class" /> -->
 ```
 
-### Functions
-For fine grained control you can use a `function`. The function will
-receive 2 arguments, a [class context object](#class-context) and an array
-of base classes generated using the global options.
+### 函数
+
+对于细粒度控制，您可以使用 `function`. 该函数将接收 2 个参数，
+一个 [class 上下文对象](#class-context) 和一个使用全局选项生成的基础 class 数组。
 
 ```vue
 <FormulateInput
@@ -63,17 +61,14 @@ of base classes generated using the global options.
 ```
 
 
-## Changing classes globally
+## 全局更改 class
 
-To globally update which classes are applied to _every_ `FormulateInput` by default
-you can update the `classes` option with an `object` of [class keys](#class-keys).
+要全局更新默认情况下应用于 _每个_ `FormulateInput` 的类，你可以使用 [class 键](#class-keys) 的对象更新 classes 选项。
 
-Similar to modifying classes with props the values in the `classes` option can
-be a `string`, `array`, or `function`. Strings _overwrite_ any base classes,
-arrays _are appended_ to the base classes, and functions allow for fine grained
-control and can accept a `context` and `baseClasses` arguments respectively.
+类似于使用 prop 修改， `class` 选项可以使用 `string`, `array` 或函数。字符串用于 _覆盖_ 基础 class。
+数组用于附加样式。函数允许细粒度控制并且可以分别接受一个上下文和 `baseClasses` 参数。
 
-### String
+### 字符串
 ```js
 import Vue from 'vue'
 import VueFormulate from 'vue-formulate'
@@ -87,7 +82,7 @@ Vue.use(VueFormulate, {
 // <div class="mytheme-wrapper">...
 ```
 
-### Array
+### 数组
 ```js
 ...
 Vue.use(VueFormulate, {
@@ -99,7 +94,7 @@ Vue.use(VueFormulate, {
 // <div class="formulate-input mytheme-wrapper">...
 ```
 
-### Function
+### 函数
 ```js
 ...
 Vue.use(VueFormulate, {
@@ -116,13 +111,12 @@ Vue.use(VueFormulate, {
 // <div class="formulate-input mytheme-wrapper mytheme-wrapper--[type]">...
 ```
 
-## A custom `baseClasses` function
+## 自定义 `baseClasses` 函数
 
-For advanced use cases, you can also choose to override the base classes
-by setting `options.baseClasses` to your own function. This function will be
-applied to every [class key](#class-keys) on every `<FormulateInput>`. For
-example, if you wanted to perform a reset of all classes in Vue Formulate you
-could return an empty array:
+对于高级用例，您还可以选择通过设置 `options.baseClasses` 为您自己的函数来覆盖基类。
+该功能将被应用到每一个 `FormulateInput` 中的每个类键上。例如，如果你想在 Vue Formulate 中执行所有类的重置，
+你可以返回一个空数组：
+
 
 ```js
 Vue.use(VueFormulate, {
@@ -130,77 +124,71 @@ Vue.use(VueFormulate, {
 })
 ```
 
-## Class keys
+## 类键
+<div id="class-keys"></div>
 
-Manipulating classes on DOM elements requires targeting _which_ element you want
-to add/remove classes on. To allow for precise class targeting, every DOM element
-is assigned an “element key” which can be used to [customize classes](#customizing-classes).
+在 DOM 元素操控类需要针对其要添加/删除类的元素。
+为了实现精确的类定位，每个 DOM 元素都分配了一个 “元素键”，可用于 [自定义类](#customizing-classes)。
 
-In addition to “element keys”, Vue Formulate also includes
-“state keys” that are used to describe a specific state of the input. For
-example `hasErrors` is the state key for an input that is currently
-displaying an error. Classes defined with “state keys” are _additive_,
-they do not replace any base classes.
+除了 “元素键”，Vue Formulate 还包括 “状态键”，
+用于描述表单域的特定状态。例如 `hasErrors`，当前显示错误的输入的状态键。
+用 “状态键” 定义的类是可添加的，它们不会替换任何基类。
 
-### Element keys
+### 元素键
 
-#### For inputs
+#### 针对表单域
 
-Key             | Default                          | Description
+键             | 默认值                          | 说明
 ----------------|----------------------------------|---------------------------------------------------
-`outer`         | `.formulate-input`               | The outermost div wrapper.
-`wrapper`       | `.formulate-input-wrapper`       | A wrapper around the label + interior element.
-`label`         | `.formulate-input-label`<br>`.formulate-input-label--[position]` | The label wrapper and its position (before/after).
-`element`       | `.formulate-input-element`<br>`.formulate-input-element--[type]` | The wrapper around the actual `<input>` element(s).
-`input`         | n/a                              | Applied directly to the input DOM element. Not used by default to allow for more flexible cascading.
-`help`          | `.formulate-input-help`<br>`.formulate-input-help--[position]` | Wrapper around the help text.
-`errors`        | `.formulate-input-errors`        | Wrapper around the list of errors.
-`error`         | `.formulate-input-error`         | Wrapper around a single error message.
+`outer`         | `.formulate-input`               | 最外面的 div 包裹器。
+`wrapper`       | `.formulate-input-wrapper`       | 标签和内部元素的包裹器。
+`label`         | `.formulate-input-label`<br>`.formulate-input-label--[position]` | 标签包裹器及其位置（之前/之后）。
+`element`       | `.formulate-input-element`<br>`.formulate-input-element--[type]` | 实际 `<input>` 元素周围的包裹器。
+`input`         | n/a                              | 直接应用于输入 DOM 元素。默认情况下不使用以允许更灵活的级联。
+`help`          | `.formulate-input-help`<br>`.formulate-input-help--[position]` | 包裹帮助文本。
+`errors`        | `.formulate-input-errors`        | 包裹错误列表。
+`error`         | `.formulate-input-error`         | 包裹单个错误消息。
 
 ![Chart of element class keys](./class-keys.svg)
 
-Some input types have additional class keys that are detailed on their own
-pages:
+一些表单域类型有额外的类键，在它们自己的页面上有详细说明：
 
-- [Boxes](/zh/guide/inputs/types/box/#custom-class-keys)
-- [Sliders](/zh/guide/inputs/types/sliders/#custom-class-keys)
-- [Files](/zh/guide/inputs/types/file/#custom-class-keys)
-- [Groups](/zh/guide/inputs/types/group/#custom-class-keys)
+- [box](/zh/guide/inputs/types/box/#custom-class-keys)
+- [滑块](/zh/guide/inputs/types/sliders/#custom-class-keys)
+- [文件](/zh/guide/inputs/types/file/#custom-class-keys)
+- [分组](/zh/guide/inputs/types/group/#custom-class-keys)
 
-#### For Forms
+#### 针对表单
 
-Key             | Default                          | Description
+键             | 默认值                          | 说明
 ----------------|----------------------------------|---------------------------------------------------
-`form`          | `.formulate-form`                | The `form` element of a `FormulateForm`.
-`form-errors`   | `.formulate-form-errors`         | The list (`ul`) of the `FormulateErrors` component.
-`form-error`    | `.formulate-form-error`          | A list item (`li`) of the `FormulateErrors` component.
+`form`          | `.formulate-form`                | `FormulateForm` 的 `form` 元素
+`form-errors`   | `.formulate-form-errors`         | `FormulateErrors` 组件的 `ul` 列表
+`form-error`    | `.formulate-form-error`          | `FormulateErrors` 组件的列表的 `li` 元素
 
-:::warning Important
-When using props to change classes for form errors, the props must be placed on the
-`FormulateForm` component. Never use class keys directly on the `FormulateErrors`
-component.
+:::warning 重要提示
+当使用 props 更改表单错误的类时，
+必须将 props 放在 `FormulateForm` 组件上。切勿直接在 `FormulateErrors` 组件上使用类键。
 :::
 
-### State keys
+### 状态键
 
-State keys make it easy to add a class for a given input state like when a field
-has a value. **State keys must always be combined with an element key.**
+状态键可以很容易地为给定的表单域状态添加一个类，比如当一个字段有一个值时。**状态键必须始终与元素键组合在一起。**
 
-Key             | Description
+键             | 说明
 ----------------|---------------------------------------------------------------
 `hasErrors`     | For inputs, when the input is visibly _showing_ errors (if the `error-behavior` is not `live` this will be `false` until the errors are shown). For forms, `hasErrors` is true if any of it’s inputs are not valid irregardless of their visibility.
-`hasValue`      | The input has a value.
-`isValid`       | The input has _no errors_ regardless of the visibility.
+`hasValue`      | 表单域有一个值
+`isValid`       | 无论可见性如何，表单域都 _没有错误_。
 
-:::tip Note
-You can achieve the same result as a state key by using a function for an
-element key and appending some values based on state provided in the `context`.
-These state keys are a helpful shortcut to the same result.
+:::tip
+您可以通过使用元素键的函数并根据 `context` 中提供的状态附加一些值来获得与状态键相同的结果。
+这些状态键是获得相同结果的有用快捷方式。
 :::
 
-#### Globally
+#### 全局
 
-To define a state key globally, combine it camel-case style with an element key.
+要全局定义状态键，请与元素键使用驼峰式风格结合起来。
 
 ```js
 Vue.use(VueFormulate, {
@@ -210,11 +198,10 @@ Vue.use(VueFormulate, {
 })
 ```
 
-#### Via props
+#### 通过 props
 
-To use a state class key via props, you combine it with a element key (kebab
-case) `[element key]-[state-key]-class`. For example, to add a check mark to the
-label of a field that is valid:
+要通过 props 使用状态类键，请将其与元素键 (kebab case) 结合使用 `[element key]-[state-key]-class`。
+例如，要在有效字段的标签上添加对号：
 
 ```vue
 <FormulateInput
@@ -232,34 +219,34 @@ label of a field that is valid:
 
 <demo-state-class-key />
 
-## Class context
+## Class 上下文
+<div id="class-context"></div>
 
-Global class functions and prop class functions both receive a “class context”
-with the following values:
+全局类函数和 prop 类函数都接收具有以下值的 “class 上下文”：
 
-#### For inputs
+#### 对于表单域
 
-Property          | Description
+Property          | 说明
 ------------------|----------------------------------------------------------------
-`attrs`           | Attributes that are applied to the input (ex. `disabled`)
-`classification`  | The classification of the input (`text`, `group`, `select`, etc.)
-`hasErrors`       | `Boolean` indicating _visible_ errors.
-`hasValue`        | `Boolean` whether or not the field has a value.
-`helpPosition`    | `String` describing the position of the help text. `before` or `after`.
-`isValid`         | `Boolean` indicating if the field is error free, regardless of error visibility.
-`labelPosition`   | `String` describing the position of the label. `before` or `after`.
-`type`            | The `type` of input.
-`value`           | The value of the input.
+`attrs`           | 应用于表单域的属性（例如 `disabled`）
+`classification`  | 表单域的 classification (例如 `text`, `group`, `select`)
+`hasErrors`       | `Boolean` 指示 _可见_ 错误。
+`hasValue`        | `Boolean` 指示该字段是否具有值。
+`helpPosition`    | `String` 描述帮助文本的位置。`before` 或 `after`.
+`isValid`         | `Boolean` 指示该字段是否无错误，无论错误可见性如何。
+`labelPosition`   | `String` 描述标签的位置。`before` 或 `after`.
+`type`            | 表单域的 `type`
+`value`           | 表单域的值
 
-#### For forms
+#### 对于表单
 
-Property          | Description
+Property          | 说明
 ------------------|----------------------------------------------------------------
-`attrs`           | Attributes that are applied to the form
-`classification`  | Always `form`
-`errors`          | Form errors from error handling or `invalid-message` prop.
-`hasErrors`       | `Boolean` indicating not all fields are valid (does _not_ account for visibility like the input’s class context).
-`isLoading`       | The loading state of the form (set with a `Promise` from the `@submit` handler)
-`isValid`         | Inverse of `hasErrors`.
-`type`            | Always `form`.
-`value`           | The value of the form model
+`attrs`           | 应用于表单的属性
+`classification`  | 总是 `form`
+`errors`          | 来自错误处理或 `invalid-message` prop 的表单错误
+`hasErrors`       | `Boolean` 说明不是所有的字段都有效（并 _没有_ 考虑表单域的类上下文可见性）。
+`isLoading`       | 表单的加载状态 (当在 `@submit` 函数中使用 `Promise` 时)
+`isValid`         | `hasErrors` 的倒数
+`type`            | 总是 `form`.
+`value`           | 表单模型的值

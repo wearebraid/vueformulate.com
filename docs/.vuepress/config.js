@@ -287,7 +287,7 @@ module.exports = ctx => ({
                   path: '/zh/guide/theming/customizing-classes/',
                 },
                 {
-                  title: '样式提示',
+                  title: '自定义样式技巧',
                   collapsable: true,
                   path: '/zh/guide/theming/styling-tips/',
                 }

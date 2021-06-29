@@ -1,12 +1,10 @@
-# Tips for custom styles
+# 自定义样式技巧
 
-Consistent markup and like-field grouping with classifications help considerably
-with keeping the necessary CSS to a minimum. The package includes a boilerplate SCSS
-file.
+一致的标记和带有分类的类似字段 classifications 有助于将必要的 CSS 保持在最低限度。该软件包包括一个样板 SCSS 文件。
 
-[Download a SCSS boilerplate](https://github.com/wearebraid/vue-formulate-next/tree/master/themes/boilerplate/boilerplate.scss)
+[下载 SCSS 样板](https://github.com/wearebraid/vue-formulate-next/tree/master/themes/boilerplate/boilerplate.scss)
 
-#### Sample markup
+#### 示例标记
 
 ```html
 <!-- Outer Wrapper -->
@@ -39,15 +37,12 @@ file.
 </div>
 ```
 
-Once the above output has been themed, styles will largely transfer to all
-formulate inputs. The only variance is some classifications use
-different internal inputs.
+一旦上述输出被主题化，样式将在很大程度上转移到所有 FormulateInput 。唯一的差异是某些 classification 使用不同的内部表单域。
 
-### Using classifications
+### 使用 classification
 
-The outermost wrapper always has a `data-classification` attribute which can be
-used to group styles. For example the `[data-classification="text"]` selector
-can be used to style all text-based inputs at the same time:
+最外层的包装器始终具有 `data-classification` 可用于对样式进行分组的属性。
+例如，`[data-classification="text"]` 选择器可用于同时设置所有基于单行文本框的样式：
 
 ```scss
 .formulate-input {
@@ -59,15 +54,14 @@ can be used to style all text-based inputs at the same time:
 }
 ```
 
-### Data attributes
+### 数据属性
 
-To make dynamic styling a bit easier, there are several utility data attributes
-that are applied to the outermost wrapper.
+为了使动态样式更容易一些，有几个实用程序数据属性被用于最外层的包裹器。
 
-Attribute                 | Description
+属性                 | 说明
 --------------------------|----------------------------------------------------------------
-`data-classification`     | Always available. Set to the classification of the input (`box`, `text`, `group`, etc.)
-`data-has-errors`         | Added when the field has any validation errors or explicit errors (passed in via prop or form) *regardless of whether or not the errors are being displayed*.
-`data-has-value`          | Added when the field is not empty.
-`data-is-showing-errors`  | Added when the field has errors and is showing them (based on `error-behavior`)
-`data-type`               | Always available. Set to the value of the `type` prop.
+`data-classification`     | 始终可用。设定为表单域的 classification (如：`box`, `text`, `group`)
+`data-has-errors`         | 当字段有任何验证错误或显式错误（通过 prop 或 form 传入）时添加，_无论是否显示错误。_
+`data-has-value`          | 当字段不为空时添加。
+`data-is-showing-errors`  | 在字段有错误并显示错误时添加 (基于 `error-behavior`)
+`data-type`               | 始终可用。设置为 `type` prop 的值。
