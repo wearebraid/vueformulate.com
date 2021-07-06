@@ -133,7 +133,7 @@ Vue Formulate 附带了一个常用的验证规则库。如果您找不到完全
 
 ### accepted
 
-该值必须是 `yes`, `on`, `1` 或 `true`. 对于复选框很有用，通常需要验证某人是否接受了条款。
+该规则要求输入的值必须是 `yes`, `on`, `1` 或 `true`. 对于复选框很有用，通常需要验证某人是否接受了条款。
 
 ```vue
 <FormulateInput
@@ -171,7 +171,7 @@ Vue Formulate 附带了一个常用的验证规则库。如果您找不到完全
 <demo-validation-after />
 
 ### alpha
-检查值是否仅为字母字符。有两个字符集 `latin` 和 `default`. 拉丁字符是严格 `[a-zA-Z]` 而 `default` 集包括最重音符号，以及，如: `ä`, `ù`, 或 `ś`.
+检查值是否仅为字母字符。有两个字符集 `latin` 和 `default`. 前者是严格 `[a-zA-Z]` 规则，而 `default` 集包括最重音符号，如: `ä`, `ù`, 或 `ś`.
 
 ```vue
 <FormulateInput
@@ -184,7 +184,7 @@ Vue Formulate 附带了一个常用的验证规则库。如果您找不到完全
 <demo-validation-alpha />
 
 ### alphanumeric
-检查值是否仅由字母字符或数字组成。对于字母部分，您可以通过 `default` 或 `latin` - 请参阅 上面的 [alpha](#alpha) 。
+检查输入的值是否仅由字母字符或数字组成。对于字母部分，您可以通过 `default` 或 `latin` - 请参阅 上面的 [alpha](#alpha) 。
 
 ```vue
 <FormulateInput
@@ -261,8 +261,8 @@ Vue Formulate 附带了一个常用的验证规则库。如果您找不到完全
 ### confirm
 
 检查字段值是否与另一个字段的值匹配。主要用于隐藏字段 - 如密码确认。
-默认情况下，`confirm` 规则将查找具有相同后缀的其他 `FormulateForm` 字段 `_confirm`。
-如果您希望规则使用不同的字段作为确认，只需像这样 `confirm:other_field` 将另一个字段名称作为参数传递即可。
+默认情况下，`confirm` 规则将在同一 `FormulateForm` 中查找后缀为 `_confirm` 的其他字段。
+如果您希望规则使用不同的字段作为确认，只需像这样 `confirm:other_field` 将另一个字段名称作为参数传递给规则即可。
 
 :::tip
 此规则仅适用于一个 `<FormulateForm>` 或一个 `group` 类型的上下文中。
@@ -333,7 +333,7 @@ export default {
 <demo-validation-date />
 
 ### email
-检查输入是否为有效的电子邮件地址格式。
+检查输入的值是否为有效的电子邮件地址格式。
 
 ```vue
 <FormulateInput
@@ -346,7 +346,7 @@ export default {
 <demo-validation-email />
 
 ### ends_with
-检查输入是否以提供的选项之一结束
+检查输入的值是否以提供的选项之一结束
 
 ```vue
 <FormulateInput
@@ -360,7 +360,7 @@ export default {
 <demo-validation-ends-with />
 
 ### in
-检查输入是否包含在选项数组中。
+检查输入的值是否包含在选项数组中。
 
 ```vue
 <FormulateInput
@@ -376,7 +376,7 @@ export default {
 <demo-validation-in />
 
 ### matches
-检查输入是否与特定值或模式匹配。如果您传递多个参数，它会检查每个参数，直到找到匹配项。
+检查输入的值是否与特定值或模式匹配。如果您传递多个参数，它会检查每个参数，直到找到匹配项。
 
 ```vue
 <FormulateInput
@@ -501,7 +501,7 @@ export default {
 <demo-validation-min />
 
 ### not
-检查以确保输入数据与一组预定义值不匹配。
+要求输入的数据与一组预定义的任意的值都不匹配。
 
 ```vue
 <FormulateInput
@@ -579,7 +579,7 @@ export default {
 
 
 ### starts_with
-检查输入是否以提供的选项之一开头
+检查输入的值是否以提供的选项之一开头
 
 ```vue
 <FormulateInput
