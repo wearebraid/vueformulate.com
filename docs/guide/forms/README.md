@@ -118,7 +118,7 @@ form. This makes it easy to create “update” forms like account pages:
 ```vue
 <template>
   <FormulateForm
-    values="formValues"
+    :values="formValues"
   >
     <FormulateInput
       type="text"
