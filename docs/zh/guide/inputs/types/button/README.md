@@ -1,6 +1,6 @@
 # 按钮
 
-按钮 [classification](/zh/guide/inputs/custom-inputs/#what-is-a-classification) 有以下两种类型:
+按钮 [体系](/zh/guide/inputs/custom-inputs/#what-is-a-classification) 有以下两种类型:
 
 - [普通按钮](#button)
 - [提交按钮](#submit)

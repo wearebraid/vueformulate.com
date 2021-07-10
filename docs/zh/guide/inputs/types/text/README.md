@@ -1,6 +1,6 @@
 # 文本
 
-文本 [classification](/zh/guide/inputs/) 被赋予以下类型：
+文本 [体系](/zh/guide/inputs/) 被赋予以下类型：
 
 - [color](#color)
 - [date](#date)

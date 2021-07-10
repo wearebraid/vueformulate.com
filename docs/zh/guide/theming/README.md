@@ -43,6 +43,6 @@ npm install
 npm run dev
 ```
 
-在浏览器中打开提供的 URL，您应该会看到按 classification 划分的每个输入类型。
+在浏览器中打开提供的 URL，您应该会看到按体系划分的每个输入类型。
 
 ![Screenshot of all inputs by classification](./specimen.png)

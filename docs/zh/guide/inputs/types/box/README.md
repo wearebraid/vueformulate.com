@@ -1,6 +1,6 @@
 # box
 
-box [classification](/zh/guide/inputs/custom-inputs/#what-is-a-classification) 给出了以下类型:
+box [体系](/zh/guide/inputs/custom-inputs/#what-is-a-classification) 给出了以下类型:
 
 - [复选框](#checkbox)
 - [单选框](#radio)

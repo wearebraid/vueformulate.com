@@ -158,9 +158,9 @@ Prop              | 描述
 `id`              | 表单域的 id（默认为自动生成的）
 `keep-model-data` | 将输入的数据从 `FormulateForm` 中删除时将其保留在模型中
 `label`           | 输入元素的描述性标签。
-`label‑position`  | 默认情况下，大多数输入元素将标签放在输入之前。默认情况下，[`box` classification](/zh/guide/inputs/types/box/) 将标签放置在后面，但可以使用此属性覆盖其中任何一个。
+`label‑position`  | 默认情况下，大多数输入元素将标签放在输入之前。默认情况下，[`box` 体系](/zh/guide/inputs/types/box/) 将标签放置在后面，但可以使用此属性覆盖其中任何一个。
 `name`            | 添加 name 属性，与 `<FormulateForm>` 此一起使用时是字段的键。如果未定义名称，则将分配随机散列值
-`options`         | 选项的数组或对象 (`select` 或 `box` classification)
+`options`         | 选项的数组或对象 (`select` 或 `box` 体系)
 `placeholder`     | 元素的占位符属性（如果适用）
 `show‑errors`     | 当设置为 `true` 时，强制显示这个元素的错误信息，无论 `error-behavior` 值是怎样
 `type`            | *必需的* 输入元素的类型。[查看表单域资料库](/zh/guide/inputs/types/text/) 了解更多
@@ -191,11 +191,11 @@ Property        | 描述
 `addLabel`      | 在 `group` and `file[multiple]` 表单域的 “添加更多” 按钮中显示的标签。
 `attributes`    | 传递给输入的非 prop 属性的对象，如 `placeholder`
 `blurHandler`   | 失去焦点时调用的函数
-`classification`| 表单域的 classification
+`classification`| 表单域的体系
 `disableErrors` | `Boolean` 指示是否应为此字段 *显示* 错误（默认为 `false` ）。
 `errors`        | 通过表单的 [错误处理](/zh/guide/forms/error-handling/) 或通过 `error`, `errors` prop 直接在输入本身上设置错误。不包括验证错误。
 `hasValue`      | `Boolean` 指示该字段是否具有有效值。
-`hasLabel`      | `Boolean` 指示该字段是否具有标签属性， `button` classification 始终为 `false`.
+`hasLabel`      | `Boolean` 指示该字段是否具有标签属性， `button` 体系始终为 `false`.
 `hasValidationErrors` | 函数，返回 `Promise` 他的 resolve 需要返回一个 `Boolean`。
 `help`          | `help` prop 的值，帮助文本
 `helpPosition`  | 帮助文本处于包裹器的位置， `before` 或 `after` 。默认值 `before`.

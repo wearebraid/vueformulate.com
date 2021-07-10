@@ -1,6 +1,6 @@
 # 文件
 
-此文件 [classification](/zh/guide/inputs/custom-inputs/#what-is-a-classification) 给出了以下类型:
+此文件 [体系](/zh/guide/inputs/custom-inputs/#what-is-a-classification) 给出了以下类型:
 
 - [文件](#file)
 - [图片](#image)
@@ -52,7 +52,7 @@
 ## 上传器
 <div id="uploader"></div>
 
-`file` classification 中的表单域都用于将数据上传到服务器。
+`file` 体系中的表单域都用于将数据上传到服务器。
 因此，它们需要额外的配置才能正常工作。一个上传器必须定义 file input 支持。
 
 <ArticleCard
@@ -328,7 +328,7 @@ export default {
 
 ## Props
 
-文件表单域使用 [默认的 props](/zh/guide/inputs/#props), 以及以下 classification 特定的 props：
+文件表单域使用 [默认的 props](/zh/guide/inputs/#props), 以及以下体系特定的 props：
 
 Prop                | 说明
 --------------------|-----------------------------------------------------------
@@ -342,7 +342,7 @@ Prop                | 说明
 
 ## 事件 <Badge text="2.5" /> {data-new}
 
-文件表单域使用 [默认事件](/zh/guide/inputs/#events), 以及以下 classification 特定事件：
+文件表单域使用 [默认事件](/zh/guide/inputs/#events), 以及以下体系特定事件：
 
 事件名         | 说明
 -------------------|------------------------------------------------------------
@@ -353,7 +353,7 @@ Prop                | 说明
 
 ## 插槽 <Badge text="2.5" /> {data-new}
 
-该 `file` classification 有一些独特的插槽（和匹配的 [插槽组件](/zh/guide/inputs/slots/#slot-components)）：
+该 `file` 体系有一些独特的插槽（和匹配的 [插槽组件](/zh/guide/inputs/slots/#slot-components)）：
 
 插槽名         | 说明
 ------------------|-------------------------------------------------------------

@@ -229,7 +229,7 @@ Vue.use(VueFormulate, {
 Property          | 说明
 ------------------|----------------------------------------------------------------
 `attrs`           | 应用于表单域的属性（例如 `disabled`）
-`classification`  | 表单域的 classification (例如 `text`, `group`, `select`)
+`classification`  | 表单域的体系 (例如 `text`, `group`, `select`)
 `hasErrors`       | `Boolean` 指示 _可见_ 错误。
 `hasValue`        | `Boolean` 指示该字段是否具有值。
 `helpPosition`    | `String` 描述帮助文本的位置。`before` 或 `after`.

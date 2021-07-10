@@ -1,6 +1,6 @@
 # 滑块
 
-滑块 [classification](/zh/guide/inputs/custom-inputs/#what-is-a-classification) 仅支持以下类型:
+滑块 [体系](/zh/guide/inputs/custom-inputs/#what-is-a-classification) 仅支持以下类型:
 
 - [range](#range)
 

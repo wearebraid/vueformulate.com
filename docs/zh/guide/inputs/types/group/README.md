@@ -1,6 +1,6 @@
 # 分组
 
-这个 `group` [classification](/zh/guide/inputs/custom-inputs/#what-is-a-classification)
+这个 `group` [体系](/zh/guide/inputs/custom-inputs/#what-is-a-classification)
 只包含 `group` 类型表单域. 它是一种特殊的表单域，用于在逻辑上将一个或多个字段组合在一起。它适用于：
 
 - [组织表单数据](#data-organization).

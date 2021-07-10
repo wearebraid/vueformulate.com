@@ -1,6 +1,6 @@
 # 下拉选择
 
-下拉选择 [classification](/zh/guide/inputs/custom-inputs/#what-is-a-classification) 只能被用于:
+下拉选择 [体系](/zh/guide/inputs/custom-inputs/#what-is-a-classification) 只能被用于:
 
 - [下拉选择器](#select-2)
 

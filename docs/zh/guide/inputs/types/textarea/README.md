@@ -1,6 +1,6 @@
 # 文本域
 
-文本域 [classification](/zh/guide/inputs/custom-inputs/#what-is-a-classification) 仅适用于:
+文本域 [体系](/zh/guide/inputs/custom-inputs/#what-is-a-classification) 仅适用于:
 
 - [文本域](#textarea)
 
