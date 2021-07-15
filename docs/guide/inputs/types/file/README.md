@@ -163,7 +163,7 @@ Vue Formulate ships with a fake uploader function that advances the progress
 bar but performs no requests. This is helpful for scaffolding and theming, but
 it must be replaced for uploads to work.
 
-If dont need uploading at all (you're processing elsewhere) you can disable
+If you don't need uploading at all (you're processing elsewhere) you can disable
 the fake uploader by replacing it with a dummy function:
 
 ```js
