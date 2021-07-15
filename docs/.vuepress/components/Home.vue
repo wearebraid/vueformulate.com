@@ -265,6 +265,7 @@ export default {
       color #687288
   .preview-code
     margin-bottom 4em
+    overflow visible
     &:last-child
       margin-bottom 0
     .token.class-name
