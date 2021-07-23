@@ -262,7 +262,7 @@ Vue Formulate 附带了一个常用的验证规则库。如果您找不到完全
 
 检查字段值是否与另一个字段的值匹配。主要用于隐藏字段 - 如密码确认。
 默认情况下，`confirm` 规则将在同一 `FormulateForm` 中查找后缀为 `_confirm` 的其他字段。
-如果您希望规则使用不同的字段作为确认，只需像这样 `confirm:other_field` 将另一个字段名称作为参数传递给规则即可。
+如果你希望规则使用不同的字段作为密码确认，只需像这样 `confirm:other_field` 将另一个字段名称作为参数传递给规则即可。
 
 :::tip
 此规则仅适用于一个 `<FormulateForm>` 或一个 `group` 类型的上下文中。
@@ -318,7 +318,7 @@ export default {
 `YY`      | 两位数的年份
 `YYYY`    | 四位数年份
 
-::: 警告
+:::tip 警告
 小心！此验证规则将验证是否遵循您请求的格式，但不会验证日期是否存在（例如 `02/31/2008`）。
 :::
 
@@ -546,7 +546,7 @@ export default {
 <demo-validation-optional />
 
 ### required
-检查输入是否为空。
+检查输入值是否为空。
 
 ```vue
 <FormulateInput
