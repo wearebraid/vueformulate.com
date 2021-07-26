@@ -87,7 +87,7 @@ _File: MyFormulateAutocomplete.vue_
 ```vue
 <template>
   <div
-    :class="`formulate-input-element formulate-input-element--${context.type}`"
+    :class="`formulate-input-element formulate-input-element--${context.class}`"
     :data-type="context.type"
   >
     <input
