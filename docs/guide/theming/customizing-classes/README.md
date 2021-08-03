@@ -181,6 +181,18 @@ When using props to change classes for form errors, the props must be placed on 
 component.
 :::
 
+#### Globally
+
+To define a form key globally, be sure to use camel-case:
+
+```js
+Vue.use(VueFormulate, {
+  classes: {
+    formErrors: 'form-errors'
+  }
+})
+```
+
 ### State keys
 
 State keys make it easy to add a class for a given input state like when a field
