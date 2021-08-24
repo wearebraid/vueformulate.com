@@ -29,7 +29,7 @@ The theme's [SCSS variables](https://github.com/wearebraid/vue-formulate/blob/ma
 @use '../node_modules/@braid/vue-formulate/themes/snow/snow.scss' with (
   $formulate-dark: #111111,
   $formulate-white: #eeeeee
-)
+);
 ```
 
 ::: warning Warning
