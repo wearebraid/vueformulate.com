@@ -32,7 +32,9 @@ The theme's [SCSS variables](https://github.com/wearebraid/vue-formulate/blob/ma
 )
 ```
 
-:::warning Warning Theme customization relies on [configuring modules](https://sass-lang.com/documentation/variables#configuring-modules), which is currently supported only by `Dart Sass`. :::
+::: warning Warning
+Theme customization relies on [configuring modules](https://sass-lang.com/documentation/variables#configuring-modules), which is currently supported only by `Dart Sass`.
+:::
 
 #### CSS File
 
