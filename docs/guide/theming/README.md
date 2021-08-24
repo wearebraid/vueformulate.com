@@ -22,6 +22,18 @@ the SCSS directly into your own SCSS, or just use the minified CSS directly.
 @import '../node_modules/@braid/vue-formulate/themes/snow/snow.scss';
 ```
 
+#### Customize the theme
+The theme's [SCSS variables](https://github.com/wearebraid/vue-formulate/blob/master/themes/snow/_variables.scss) can be configured like this:
+
+```scss
+@use '../node_modules/@braid/vue-formulate/themes/snow/snow.scss' with (
+  $formulate-dark: #111111,
+  $formulate-white: #eeeeee
+)
+```
+
+:::warning Warning Theme customization relies on [configuring modules](https://sass-lang.com/documentation/variables#configuring-modules), which is currently supported only by `Dart Sass`. :::
+
 #### CSS File
 
 The distribution of the snow theme is available in the repository for download
