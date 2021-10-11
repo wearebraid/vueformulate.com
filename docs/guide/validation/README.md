@@ -907,13 +907,3 @@ The validation event does not fire when the _visibility_ of the
 validation errors change, instead `validation` events are fired even if the
 field errors are not currently visible due to the current `error-behavior`.
 :::
-
-## Error behavior
-
-By default, validation error messages are not shown until the user’s focus
-leaves (technically a `blur` event) the current field. There are 3 modes of
-error behavior that can be set on your `FormulateInput`'s `error-behavior` prop:
-
-- `blur` (default): Shows applicable error messages when a user's focus leaves a field.
-- `submit`: Shows applicable error messages when the form is submitted.
-- `live`: Always shows applicable error messages.
