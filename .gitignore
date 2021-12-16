@@ -6,3 +6,4 @@ report.*.json
 .DS_Store
 
 .vercel
+/.DS_Store
