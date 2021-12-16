@@ -1,55 +1,58 @@
 <template>
-  <header class="navbar">
-    <SidebarButton @toggle-sidebar="$emit('toggle-sidebar')" />
+  <div class="navbar-wrapper">
+    <FormKitTeaser />
+    <header class="navbar">
+      <SidebarButton @toggle-sidebar="$emit('toggle-sidebar')" />
 
-    <RouterLink
-      :to="$localePath"
-      class="home-link"
-    >
-      <img
-        v-if="$site.themeConfig.logo"
-        class="logo"
-        :src="$withBase($site.themeConfig.logo)"
-        :alt="$siteTitle"
+      <RouterLink
+        :to="$localePath"
+        class="home-link"
       >
-      <span
-        ref="siteName"
-        class="site-name"
-        :class="{ 'can-hide': $site.themeConfig.logo }"
-      >
-        Vue Formulate
-      </span>
-    </RouterLink>
+        <img
+          v-if="$site.themeConfig.logo"
+          class="logo"
+          :src="$withBase($site.themeConfig.logo)"
+          :alt="$siteTitle"
+        >
+        <span
+          ref="siteName"
+          class="site-name"
+          :class="{ 'can-hide': $site.themeConfig.logo }"
+        >
+          Vue Formulate
+        </span>
+      </RouterLink>
 
-    <div
-      class="links"
-      :style="linksWrapMaxWidth ? {
-        'max-width': linksWrapMaxWidth + 'px'
-      } : {}"
-    >
-      <AlgoliaSearchBox
-        v-if="isAlgoliaSearch"
-        :options="algolia"
-      />
-      <SearchBox v-else-if="$site.themeConfig.search !== false && $page.frontmatter.search !== false" />
-      <a
-        class="subscribe-button"
-        @click.prevent.stop="toggleShowSubscribeBox"
+      <div
+        class="links"
+        :style="linksWrapMaxWidth ? {
+          'max-width': linksWrapMaxWidth + 'px'
+        } : {}"
       >
-        <span class="label">Get Updates!</span>
+        <AlgoliaSearchBox
+          v-if="isAlgoliaSearch"
+          :options="algolia"
+        />
+        <SearchBox v-else-if="$site.themeConfig.search !== false && $page.frontmatter.search !== false" />
+        <a
+          class="subscribe-button"
+          @click.prevent.stop="toggleShowSubscribeBox"
+        >
+          <span class="label">Get Updates!</span>
 
-        <transition name="slide-in">
-          <SubscribeBox
-            v-if="showSubscribeBox"
-            @close="closeSubscribeBox"
-            @click.native.stop="() => true"
-            class="subscribe-box-container"
-          />
-        </transition>
-      </a>
-      <NavLinks class="can-hide" />
-    </div>
-  </header>
+          <transition name="slide-in">
+            <SubscribeBox
+              v-if="showSubscribeBox"
+              @close="closeSubscribeBox"
+              @click.native.stop="() => true"
+              class="subscribe-box-container"
+            />
+          </transition>
+        </a>
+        <NavLinks class="can-hide" />
+      </div>
+    </header>
+  </div>
 </template>
 
 <script>
@@ -180,6 +183,7 @@ $navbar-horizontal-padding = 1.5rem
 .navbar
   padding $navbar-vertical-padding $navbar-horizontal-padding
   line-height $navbarHeight - 1.4rem
+  position relative
   a, span, img
     display inline-block
   .logo
@@ -200,7 +204,7 @@ $navbar-horizontal-padding = 1.5rem
     font-size 0.9rem
     position absolute
     right $navbar-horizontal-padding
-    top $navbar-vertical-padding
+    bottom $navbar-vertical-padding
     display flex
     .search-box
       flex: 0 0 auto
