@@ -67,6 +67,11 @@ export default {
       }
     }
   },
+  created () {
+    if (this.$cookies.get('vf_fk_notice_dismissed')) {
+      this.dismissed = true
+    }
+  },
   mounted () {
     if (this.$cookies.get('vf_fk_notice_dismissed')) {
       this.handleDismiss()
