@@ -70,7 +70,7 @@ export default {
   created () {
     if (typeof document !== 'undefined') {
       if (this.$cookies.get('vf_fk_notice_dismissed')) {
-        this.dismissed = true
+        this.handleDismiss()
       }
     }
   },
@@ -83,7 +83,6 @@ export default {
     }
   },
   beforeDestroy () {
-    console.log('removing event listener')
     window.removeEventListener('resize', this.getBannerHeight)
   }
 }
