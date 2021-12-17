@@ -29,7 +29,7 @@
 export default {
   data () {
     return {
-      dismissed: false,
+      dismissed: true,
       height: 0
     }
   },
@@ -67,14 +67,6 @@ export default {
           this.getBannerHeight()
           this.setHeight()
         }, 100)
-      }
-    }
-  },
-  created () {
-    if (typeof document !== 'undefined') {
-      this.dismissed = this.$cookies.get('vf_fk_notice_dismissed')
-      if (this.dismissed) {
-        this.hideBanner()
       }
     }
   },
