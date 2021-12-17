@@ -122,7 +122,9 @@ export default {
   }
 
   svg {
+    width: 100%;
     margin-right: 0.5em;
+    max-width: 7.9375em;
     max-height: 1.5em;
   }
   h4 {
