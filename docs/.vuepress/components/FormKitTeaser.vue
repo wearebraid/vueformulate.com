@@ -42,10 +42,13 @@ export default {
   },
   methods: {
     handleDismiss () {
+      this.hideBanner()
+      this.$cookies.set('vf_fk_notice_dismissed', true, '7d')
+    },
+    hideBanner () {
       this.dismissed = true
       this.height = 0
       this.setHeight(true)
-      this.$cookies.set('vf_fk_notice_dismissed', true, '7d')
     },
     getBannerHeight () {
       if (this.$refs && this.$refs.banner) {
@@ -69,14 +72,16 @@ export default {
   },
   created () {
     if (typeof document !== 'undefined') {
-      if (this.$cookies.get('vf_fk_notice_dismissed')) {
-        this.handleDismiss()
+      this.dismissed = this.$cookies.get('vf_fk_notice_dismissed')
+      if (this.dismissed) {
+        this.hideBanner()
       }
     }
   },
   mounted () {
-    if (this.$cookies.get('vf_fk_notice_dismissed')) {
-      this.handleDismiss()
+    this.dismissed = this.$cookies.get('vf_fk_notice_dismissed')
+    if (this.dismissed) {
+      this.hideBanner()
     } else {
       window.addEventListener('resize', this.getBannerHeight)
       this.setHeight()
