@@ -53,7 +53,7 @@ export default {
       }
     },
     setHeight (force) {
-      if (this.height || force) {
+      if ((this.height || force) && typeof document !== 'undefined') {
         const main = document.querySelectorAll('.theme-container > main')[0]
         const sidebar = document.querySelectorAll('.theme-container > aside')[0]
 
@@ -68,8 +68,10 @@ export default {
     }
   },
   created () {
-    if (this.$cookies.get('vf_fk_notice_dismissed')) {
-      this.dismissed = true
+    if (typeof document !== 'undefined') {
+      if (this.$cookies.get('vf_fk_notice_dismissed')) {
+        this.dismissed = true
+      }
     }
   },
   mounted () {
