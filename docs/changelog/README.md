@@ -4,6 +4,15 @@ sidebar: auto
 
 # Changelog
 
+## v2.5.3 - January 21, 2022
+
+- New Features 🎉:
+
+  - Now fully esm compatible with no non-esm build tool requirements. This was accomplished by removing `nanoid` and `is-url` dependencies.
+
+- Bug fixes 🐛:
+  - Fixed a bug that [caused errors with `nuxt-vite`](https://github.com/wearebraid/vue-formulate/issues/514).
+
 ## v2.5.2 — March 5, 2021
 
 - New Features 🎉:
@@ -30,6 +39,7 @@ sidebar: auto
   - Fixed a bug in the `date` validation rule that did not properly validate days using the `D` pattern.
 
 ## v.2.5.0 — January 14, 2021
+
 Vue Formulate `2.5.0` is a significant release that includes 45 closed GitHub issues, implementation of many highly requested features, and improvements to groups and file uploads.
 
 - New Features 🎉:
@@ -64,8 +74,8 @@ Vue Formulate `2.5.0` is a significant release that includes 45 closed GitHub is
   - [New translations](/guide/internationalization/) for <img src="../guide/internationalization/Flag_of_Catalonia.svg" style="width: 1.25em; display: inline-block; vertical-align: middle;"> Catalan and 🇸🇰 Slovak.
   - Language updates for German and Serbian.
 
+* Bug fixes 🐛:
 
-- Bug fixes 🐛:
   - Fixes an issue where `file` and `image` type inputs could submit old data after an input had been cleared.
   - Fixes a bug that threw an error when attempting to upload an invalid `mime` and then remove it.
   - Fixes a bug that caused an upload progress bar to appear on re-hydrated files when submitting a form.
@@ -76,12 +86,13 @@ Vue Formulate `2.5.0` is a significant release that includes 45 closed GitHub is
   - Fixes a bug that prevents validation from re-running if the rules are changed dynamically.
   - Allows users to now override the `aria-describedby` attribute if necessary.
 
-- Community Update 📣
+* Community Update 📣
   - There's a new official [Vue Formulate Discord server](https://discord.gg/NZ6nchBDGx) for community questions, idea sharing, and more.
 
 ## v.2.4.5 - October 4, 2020
 
 - New features 🎉:
+
   - Adds support for Serbian 🇷🇸 and Thai 🇹🇭.
   - Adds a new slotProp `component` to allow custom props to be passed to custom inputs.
 
@@ -93,6 +104,7 @@ Vue Formulate `2.5.0` is a significant release that includes 45 closed GitHub is
 ## v.2.4.4 - September 21, 2020
 
 - New Features 🎉
+
   - Adds support for Chinese 🇨🇳, Lithuanian 🇱🇹, Norwegian 🇳🇴, and Swedish 🇸🇪.
   - Adds support for a `remove-label` prop on `group` inputs to support i18n language for the remove button.
   - Adds support for ARIA live regions on error messages
