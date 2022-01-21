@@ -52,7 +52,7 @@ Vue Formulate `2.5.0` is a significant release that includes 45 closed GitHub is
     - [`errorList` overrides rendering](/guide/inputs/slots/#available-slots) of all error lists system wide without requiring any logic changes (slotComponent only).
     - [`prefix` allows content](/guide/inputs/slots/#available-slots) immediately before the input element on all types.
     - [`suffix` allows content](/guide/inputs/slots/#available-slots) immediately after the input element on all types.
-  - New [`ignored` prop on `FormulateInput`](guide/forms/#ignoring-inputs) prevents `FormulateForm` from model binding or registering the input in any way.
+  - New [`ignored` prop on `FormulateInput`](/guide/forms/#ignoring-inputs) prevents `FormulateForm` from model binding or registering the input in any way.
   - New [`remove-position` prop](/guide/inputs/types/group/#props) allows changing the position of the `remove` slot/button on repeatable `group` types.
   - Each group’s `index` is now available to the [`remove` slot of a `group` type](/guide/inputs/types/group/#slots).
   - [Adds `form`, `formErrors` and `formError` class keys for styling form errors](/guide/theming/customizing-classes/#class-keys).

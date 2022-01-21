@@ -19,6 +19,7 @@
     "vue-clickaway": "^2.2.2",
     "vue-client-only": "^2.0.0",
     "vue-codemirror": "^4.0.6",
+    "vue-cookies": "^1.7.4",
     "vue-github-button": "^1.2.0",
     "vue-live": "1.14.0",
     "vuepress-plugin-seo": "^0.1.4",

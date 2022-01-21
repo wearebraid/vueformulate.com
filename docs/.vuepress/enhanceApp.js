@@ -8,6 +8,7 @@ import Autocomplete from './Autocomplete'
 import ArticleCard from './components/ArticleCard'
 import GithubButton from 'vue-github-button'
 import VTooltip from 'v-tooltip'
+import VueCookies from 'vue-cookies'
 
 // import '../../node_modules/prismjs/components/prism-javascript';
 import '../../node_modules/prismjs/themes/prism-tomorrow.css'
@@ -20,6 +21,7 @@ export default ({ Vue }) => {
   })
 
   Vue.use(VTooltip)
+  Vue.use(VueCookies)
 
   for (const [name, component] of Object.entries(pageComponents)) {
     Vue.component(name, component)
