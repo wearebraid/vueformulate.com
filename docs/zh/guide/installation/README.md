@@ -1,5 +1,6 @@
 ::: tip 关于 Vue 3 的说明
-Vue Formulate 与 Vue 2 兼容。我们正在努力支持 Vue 3。要在 Vue 3 兼容性更新时收到通知，请 [订阅 Vue Formulate 时事通讯](https://mailchi.mp/193f17457807/vue-formulate-newsletter).
+
+Vue Formulate 与 Vue 2 兼容。Vue Formulate 的下一个主要版本称为 FormKit — 它目前处于公开测试阶段，您可以在 [formkit.com](https://formkit.com) 上了解更多信息.
 :::
 
 # 安装

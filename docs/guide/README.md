@@ -1,3 +1,7 @@
+::: tip A note on Vue 3
+Vue Formulate is compatible with Vue 2. The next major version of Vue Formulate for Vue 3 is called FormKit — it is currently in public beta. You can learn more about it at [formkit.com](https://formkit.com).
+:::
+
 # Introduction
 
 Vue Formulate is the easiest way to build forms using [Vue](https://vuejs.org/).
