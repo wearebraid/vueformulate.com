@@ -154,7 +154,7 @@ prop is designed for just such an occasion.
 
 ```vue
 <FormulateForm
-  :form-errors="['Sorry, an unexpected error ocurred. Please try again soon.']"
+  :form-errors="['Sorry, an unexpected error occurred. Please try again soon.']"
 >
   <FormulateInput
     type="text"
@@ -183,7 +183,7 @@ inside the `<FormulateForm>` element.
 <FormulateForm
   class="order-form"
   :form-errors="[
-    'Sorry, an unexpected error ocurred. Please try again soon.'
+    'Sorry, an unexpected error occurred. Please try again soon.'
   ]"
 >
   <FormulateInput
@@ -267,7 +267,7 @@ export default {
             // ... add lots more cases of bad things that can happen here
           }
         }
-        this.formErrors = ['There was an unknown error ocurred.']
+        this.formErrors = ['Sorry, an unexpected error occurred. Please try again soon..']
       }
     }
   }
@@ -340,7 +340,7 @@ then calls the `yourErrorHandler` and expects an object response with two proper
 ```js
 {
   inputErrors: { fieldName: ['Unknown email'] },
-  formErrors: ['Unknown error ocurred']
+  formErrors: ['Unknown error occurred']
 }
 ```
 
