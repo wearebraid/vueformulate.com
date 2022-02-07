@@ -7,12 +7,12 @@
   >
     <div class="the-teaser-title">
       <FormKitLogo />
-      <h4>is now in private beta.</h4>
+      <h4>is now in public beta.</h4>
     </div>
     <div class="the-cta">
-      <p>Vue 3 support, better everything, and PRO inputs.</p>
+      <p><strong>Vue 3</strong> support, better everything.</p>
       <a target="_blank" href="https://www.formkit.com" class="fk-button">
-        Sign up now!
+        Get Started Now!
         <svg viewBox="0 0 14 12" fill="none" data-v-21a21f10=""><path d="M1.66675 6H12.3334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M7.66675 1.33301L12.3334 5.99968L7.66675 10.6663" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
       </a>
       <span
@@ -43,7 +43,7 @@ export default {
   methods: {
     handleDismiss () {
       this.hideBanner()
-      this.$cookies.set('vf_fk_notice_dismissed', true, '7d')
+      this.$cookies.set('vf_fk_public_notice_dismissed', true, '7d')
     },
     hideBanner () {
       this.dismissed = true
@@ -71,7 +71,7 @@ export default {
     }
   },
   mounted () {
-    this.dismissed = this.$cookies.get('vf_fk_notice_dismissed')
+    this.dismissed = this.$cookies.get('vf_fk_public_notice_dismissed')
     if (this.dismissed) {
       this.hideBanner()
     } else {
