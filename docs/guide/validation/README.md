@@ -30,7 +30,7 @@ separating them.
 
 ```vue
 <FormulateInput
-  :validation="required|max:10|min:5"
+  validation="required|max:10|min:5"
 />
 ```
 
