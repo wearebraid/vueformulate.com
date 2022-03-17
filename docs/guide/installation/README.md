@@ -1,11 +1,11 @@
-::: tip A note on Vue 3
-Vue Formulate is compatible with Vue 2. The next major version of Vue Formulate for Vue 3 is called FormKit — it is currently in public beta. You can learn more about it at [formkit.com](https://formkit.com).
-:::
-
 # Installation
 The preferred way to use Vue Formulate is to install via your favorite JavaScript
 package manager.
 
+## Vue 3
+::: tip A note on Vue 3
+Vue Formulate is compatible with Vue 2. The next major version of Vue Formulate for Vue 3 is called FormKit — it is currently in public beta. You can learn more about it at [formkit.com](https://formkit.com).
+:::
 ## NPM
 ```sh
 npm install @braid/vue-formulate

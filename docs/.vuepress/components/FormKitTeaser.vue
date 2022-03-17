@@ -11,7 +11,7 @@
     </div>
     <div class="the-cta">
       <p><strong>Vue 3</strong> support, better everything.</p>
-      <a target="_blank" href="https://www.formkit.com" class="fk-button">
+      <a href="https://www.formkit.com" class="fk-button">
         Get Started Now!
         <svg viewBox="0 0 14 12" fill="none" data-v-21a21f10=""><path d="M1.66675 6H12.3334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M7.66675 1.33301L12.3334 5.99968L7.66675 10.6663" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
       </a>
