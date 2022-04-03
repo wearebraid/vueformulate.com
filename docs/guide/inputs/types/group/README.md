@@ -457,7 +457,7 @@ The group input has several unique slots (and matching [Slot Components](/guide/
 
 Slot name      | Description
 ---------------|----------------------------------------------------------------
-`addMore`      | The add more button when `repeatable`.<br>_The context object in this slot includes an `addMore` function that should be called to add new items._
+`addmore`      | The add more button when `repeatable`.<br>_The context object in this slot includes an `addMore` function that should be called to add new items._
 `default`      | Anything in the default slot will be considered part of the group, and become `repeatable` if applicable. _The context object will additionally have an "index" property._
 `grouping`     | The primary repeatable area, responsible for rendering the inner content.
 `remove`       | The remove button when `repeatable`.<br>_The context object in this slot includes the `index` and a `removeItem` function that should be called to remove that item._
