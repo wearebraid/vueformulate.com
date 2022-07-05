@@ -39,9 +39,9 @@
 
     <div class="updates-section">
       <div class="new-badge">
-        <span class="label">Jan 14, 2021</span>
+        <span class="label">Jan 21, 2022</span>
         <span class="text">
-          2.5 introduces dozens of improvements and bug fixes. See the <NavLink :item="{link: '/changelog/#v-2-5-0-january-14-2021', text: 'changelog'}" /> for details.
+          With 2.5.3, Vue Formulate is now fully ESM compatible. See the <NavLink :item="{link: '/changelog/#v2-5-3-january-21-2022', text: 'changelog'}" /> for more details.
         </span>
       </div>
     </div>
