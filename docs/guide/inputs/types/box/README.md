@@ -100,7 +100,7 @@ The syntax for radio inputs is identical to checkboxes.
 
 Checkboxes and radio boxes are notoriously frustrating to style. To assist,
 Vue Formulate places a `<label>` element immediately after the `<input>` tag.
-This allows for easy sibling selector css rules using the `:checked` psuedo-class
+This allows for easy sibling selector css rules using the `:checked` pseudo-class
 selector. The default snow theme is using this technique to style checkboxes and
 inputs.
 
