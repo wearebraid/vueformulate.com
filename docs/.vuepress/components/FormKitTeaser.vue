@@ -3,16 +3,15 @@
     v-if="!dismissed"
     class="the-formkit-teaser"
     ref="banner"
-    :style="`background-image: url('/assets/img/fk-background.png');`"
   >
     <div class="the-teaser-title">
       <FormKitLogo />
-      <h4>is now in public beta.</h4>
+      <ProBadge class="pro-badge"/>
     </div>
     <div class="the-cta">
-      <p><strong>Vue 3</strong> support, better everything.</p>
-      <a href="https://www.formkit.com" class="fk-button">
-        Get Started Now!
+      <p>FormKit just got a lot more powerful! <strong>Join FormKit Pro Early Access now.</strong></p>
+      <a href="https://www.formkit.com/pro" class="fk-button">
+        Get Started!
         <svg viewBox="0 0 14 12" fill="none" data-v-21a21f10=""><path d="M1.66675 6H12.3334" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M7.66675 1.33301L12.3334 5.99968L7.66675 10.6663" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path></svg>
       </a>
       <span
@@ -87,7 +86,7 @@ export default {
 
 <style lang="scss" scoped>
 .the-formkit-teaser {
-  background-color: #000;
+  background: linear-gradient(90deg, #111111 7.73%, #2B2B35 93.88%);
   background-size: cover;
   background-repeat: no-repeat;
   color: #fff;
@@ -107,16 +106,16 @@ export default {
 .the-teaser-title {
   display: flex;
   flex-grow: 1;
-  align-items: flex-end;
+  align-items: center;
   flex-direction: row;
   width: 100%;
   margin-bottom: 1em;
 
   @media (min-width: 800px) {
     margin-bottom: 0;
+    width: 40%;
   }
   @media (min-width: 1000px) {
-    width: 40%;
   }
 
   svg {
@@ -124,6 +123,11 @@ export default {
     margin-right: 0.5em;
     max-width: 7.9375em;
     max-height: 1.5em;
+
+    &.pro-badge {
+      width: initial;
+      max-width: 2.5em;
+    }
   }
   h4 {
     margin: 0;
@@ -163,24 +167,36 @@ export default {
     margin-bottom: 0.75em;
     width: 100%;
 
+    strong::before {
+      content: "\a";
+      white-space: pre;
+    }
+
     @media (min-width: 600px) {
       margin-bottom: 0;
     }
     @media (min-width: 800px) {
       width: auto;
-      margin-bottom: 0.75em;
+      margin-right: 0.75em;
+
     }
     @media (min-width: 1000px) {
+      font-size: 0.95em;
       margin-right: 2em;
       margin-bottom: 0;
+
+      strong::before {
+        content: "";
+        white-space: initial;
+      }
     }
   }
 }
 
 .fk-button {
   padding: 0.75em 1.5em;
-  background: linear-gradient(90deg, #ff985d 7.73%, #f3742b 93.88%);
-  color: #fff;
+  background: linear-gradient(90deg, #F6F6F6 7.73%, #FFFFFF 93.88%);
+  color: #111111;
   font-weight: bold;
   display: flex;
   border-radius: 0.33em;

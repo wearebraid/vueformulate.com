@@ -37,6 +37,7 @@
       </div>
     </header>
 
+
     <div class="updates-section">
       <div class="new-badge">
         <span class="label">Jan 21, 2022</span>
@@ -45,6 +46,15 @@
         </span>
       </div>
     </div>
+
+    <section class="formkit-callout">
+      <div class="formkit-logo">
+        <FormKitLogo/>
+      </div>
+      <div class="formkit-intro">
+        <h3>Need Vue 3 support? Checkout the Vue Formulate successor <a href="https://www.formkit.com/">FormKit</a>.</h3>
+      </div>
+    </section>
 
     <div
       v-if="data.features && data.features.length"
@@ -145,6 +155,101 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.formkit-callout {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @media (min-width: 1000px) {
+    flex-wrap: nowrap;
+  }
+
+  .formkit-logo {
+    flex-grow: 1;
+    width: 100%;
+
+    svg {
+      width: 100%;
+      max-height: 2.5em;
+
+      &::v-deep {
+        .word-mark {
+          fill: #111;
+        }
+      }
+    }
+
+    @media (min-width: 1000px) {
+      width: 20%;
+    }
+  }
+
+  .formkit-intro {
+    width: 100%;
+    flex-grow: 1;
+    text-align: center;
+    margin-top: 0.75em;
+
+    h3 {
+      margin: 0;
+      color: #111111;
+      background-image: linear-gradient(
+        147.06deg,
+        #111111 7.73%,
+        #2b2b35 93.88%
+      );
+      background-clip: text;
+      color: transparent;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    a {
+      position: relative;
+      color: #ff985d;
+      background-image: linear-gradient(
+        147.06deg,
+        #ff985d 7.73%,
+        #f3742b 93.88%
+      );
+      background-clip: text;
+      color: transparent;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        left: 0;
+        height: 2px;
+        background: #ff985d;
+        background-image: linear-gradient(
+          147.06deg,
+          #ff985d 7.73%,
+          #f3742b 93.88%
+        );
+        transition: all ease-in-out 200ms;
+      }
+
+      &:hover {
+        &::after {
+          width: 0%;
+        }
+      }
+    }
+
+    @media (min-width: 1000px) {
+      width: 80%;
+      text-align: right;
+      margin-top: 0;
+    }
+  }
+
+}
+
 .updates-section {
   display: flex;
   flex-wrap: wrap;
@@ -277,10 +382,13 @@ export default {
         background-color #d6dce6
   .theme-default-content
     margin-top 4em
-  .features
+  .formkit-callout
     border-top 1px solid $borderColor
     padding 1.2rem 0
     margin-top 4.5rem
+  .features
+    border-top 1px solid $borderColor
+    padding 1.2rem 0
     display flex
     flex-wrap wrap
     align-items flex-start
