@@ -7,12 +7,16 @@
         </a>
       </div>
       <div class="the-cta">
-        <p>
-          FormKit is the free & open-source successor to Vue Formulate.<br />
-          <strong>Vue 3 support, advanced schema, pro inputs, and more!</strong>
-        </p>
-        <a href="https://www.formkit.com" class="fk-button">
-          Try FormKit!
+        <p v-html="content.headline[lang]" />
+        <a
+          :href="
+            lang === 'zh'
+              ? 'https://www.formkit.com/zh'
+              : 'https://www.formkit.com'
+          "
+          class="fk-button"
+        >
+          <span v-html="content.cta[lang]" />
           <svg viewBox="0 0 14 12" fill="none" data-v-21a21f10="">
             <path
               d="M1.66675 6H12.3334"
@@ -30,7 +34,11 @@
             ></path>
           </svg>
         </a>
-        <span @click="handleDismiss" class="dismiss"> dismiss </span>
+        <span
+          @click="handleDismiss"
+          class="dismiss"
+          v-html="content.dismiss[lang]"
+        />
       </div>
     </div>
   </div>
@@ -42,6 +50,23 @@ export default {
     return {
       dismissed: true,
       height: 0,
+      lang: this.$route.path.includes("/zh/") ? "zh" : "en",
+      content: {
+        headline: {
+          en: `FormKit is the free & open-source successor to Vue Formulate.<br />
+          <strong>Vue 3 support, advanced schema, pro inputs, and more!</strong>`,
+          zh: `FormKit 是 Vue Formulate 的免费和开源继承者。<br />
+          <strong>支持 Vue 3, 高级架构, 专业输入, 等等！</strong>`,
+        },
+        cta: {
+          en: `Try FormKit!`,
+          zh: `尝试 FormKit!`,
+        },
+        dismiss: {
+          en: `dismiss`,
+          zh: `关闭`,
+        },
+      },
     };
   },
   watch: {
@@ -49,6 +74,9 @@ export default {
       if (this.height) {
         this.setHeight();
       }
+    },
+    $route() {
+      this.lang = this.$route.path.includes("/zh/") ? "zh" : "en";
     },
   },
   methods: {
