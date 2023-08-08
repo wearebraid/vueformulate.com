@@ -82,7 +82,7 @@ export default {
   methods: {
     handleDismiss() {
       this.hideBanner();
-      this.$cookies.set("vf_fk_public_notice_dismissed", true, "7d");
+      this.$cookies.set("vf_fk_public_notice_dismissed", true, "3d");
     },
     hideBanner() {
       this.dismissed = true;
