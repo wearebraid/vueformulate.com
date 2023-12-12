@@ -4,25 +4,28 @@
 
     <slot name="top" />
 
-
     <client-only>
-      <div
-        :key="$route.path"
-        class="carbon-area"
-      >
-        <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CE7IEKQN&placement=vueformulatecom" id="_carbonads_js" />
+      <div :key="$route.path" class="carbon-area">
+        <script
+          async
+          type="text/javascript"
+          src="//cdn.carbonads.com/carbon.js?serve=CE7IEKQN&placement=vueformulatecom"
+          id="_carbonads_js"
+        />
       </div>
     </client-only>
 
-    <SidebarLinks
-      :depth="0"
-      :items="items"
-    />
+    <SidebarLinks :depth="0" :items="items" />
     <slot name="bottom" />
 
     <footer class="footer">
       MIT Licensed | A product by:
-      <a href="https://www.wearebraid.com/" target="_blank" rel="noopener" class="footer-card">
+      <a
+        href="https://www.wearebraid.com/"
+        target="_blank"
+        rel="noopener"
+        class="footer-card"
+      >
         <img src="/assets/img/braid-logo.png" />
       </a>
     </footer>
@@ -30,17 +33,17 @@
 </template>
 
 <script>
-import SidebarLinks from '@theme/components/SidebarLinks.vue'
-import NavLinks from '@theme/components/NavLinks.vue'
-import ClientOnly from 'vue-client-only'
+import SidebarLinks from "@theme/components/SidebarLinks.vue";
+import NavLinks from "@theme/components/NavLinks.vue";
+import ClientOnly from "vue-client-only";
 
 export default {
-  name: 'Sidebar',
+  name: "Sidebar",
 
   components: { SidebarLinks, NavLinks, ClientOnly },
 
-  props: ['items']
-}
+  props: ["items"]
+};
 </script>
 
 <style lang="stylus">
@@ -87,10 +90,10 @@ export default {
   display: flex;
   flex-direction: column;
 
-  & /deep/ .new-badge {
+  & ::v-deep .new-badge {
     &::after {
       display: inline-block;
-      content: 'NEW';
+      content: "NEW";
       padding: 0.2em 0.5em;
       margin-left: 0.66em;
       line-height: 1;
@@ -102,7 +105,7 @@ export default {
       font-weight: bold;
     }
   }
-  & /deep/ [data-badge] {
+  & ::v-deep [data-badge] {
     &::after {
       display: inline-block;
       content: attr(data-badge);
@@ -123,7 +126,7 @@ export default {
     padding: 5em 1em 2em 2em;
     margin-top: auto;
     width: 100%;
-    font-size: .8em;
+    font-size: 0.8em;
     color: #647d96;
 
     * {

@@ -5,7 +5,7 @@
     :data-block="block"
     :href="href"
   >
-    <img v-if="image" :src="image" :alt="imageAlt">
+    <img v-if="image" :src="image" :alt="imageAlt" />
     <div class="copy">
       <Badge v-if="badge">{{ badge }}</Badge>
       <h3>{{ headline }}</h3>
@@ -19,27 +19,27 @@ export default {
   props: {
     href: {
       type: String,
-      default: ''
+      default: ""
     },
     image: {
       type: String,
-      default: ''
+      default: ""
     },
     imageAlt: {
       type: String,
-      default: ''
+      default: ""
     },
     badge: {
       type: String,
-      default: ''
+      default: ""
     },
     headline: {
       type: String,
-      default: ''
+      default: ""
     },
     copy: {
       type: String,
-      default: ''
+      default: ""
     },
     sidebar: {
       type: Boolean,
@@ -50,7 +50,7 @@ export default {
       default: false
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -76,7 +76,7 @@ export default {
       margin-bottom: 0;
     }
 
-    @media(min-width: 600px) {
+    @media (min-width: 600px) {
       padding: 1.5em;
     }
   }
@@ -109,7 +109,7 @@ export default {
     }
   }
 
-  & /deep/ .badge {
+  & ::v-deep .badge {
     margin-bottom: 1em;
   }
 }
