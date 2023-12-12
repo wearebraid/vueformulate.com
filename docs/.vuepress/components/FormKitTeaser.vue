@@ -11,8 +11,8 @@
         <a
           :href="
             lang === 'zh'
-              ? 'https://www.formkit.com/zh'
-              : 'https://www.formkit.com/zh/pro'
+              ? 'https://www.formkit.com/zh/pro'
+              : 'https://www.formkit.com/pro'
           "
           class="fk-button"
         >
