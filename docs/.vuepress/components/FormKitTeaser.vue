@@ -2,7 +2,7 @@
   <div v-if="!dismissed" class="the-formkit-teaser" ref="banner">
     <div class="container">
       <div class="the-teaser-title">
-        <a href="https://www.formkit.com">
+        <a href="https://www.formkit.com/pro">
           <FormKitLogo />
         </a>
       </div>
@@ -12,7 +12,7 @@
           :href="
             lang === 'zh'
               ? 'https://www.formkit.com/zh'
-              : 'https://www.formkit.com'
+              : 'https://www.formkit.com/zh/pro'
           "
           class="fk-button"
         >
@@ -53,20 +53,22 @@ export default {
       lang: this.$route.path.includes("/zh/") ? "zh" : "en",
       content: {
         headline: {
-          en: `FormKit is the free & open-source successor to Vue Formulate.<br />
-          <strong>Vue 3 support, advanced schema, pro inputs, and more!</strong>`,
-          zh: `FormKit 是 Vue Formulate 的免费和开源继承者。<br />
-          <strong>支持 Vue 3, 高级架构, 专业输入, 等等！</strong>`,
+          en: `<strong style="font-size: 1.5em;">Pro <span style="color: #ff985d;">Unlimited</span> ∞ License</strong><br />
+          One-time purchase, unlimited projects, no telemetry.<br />
+          Limited time offer — ends December 31st.`,
+          zh: `<strong style="font-size: 1.5em;">专业 <span style="color: #ff985d;">无限</span> ∞ 授权</strong><br />
+               一次性购买，无限项目，无遥测。<br />
+               限时优惠 — 12月31日结束。`
         },
         cta: {
-          en: `Try FormKit!`,
-          zh: `尝试 FormKit!`,
+          en: `<span style="margin-right: 0.25em;">∞</span> Buy Now`,
+          zh: `<span style="margin-right: 0.25em;">∞</span> 立即购买`
         },
         dismiss: {
           en: `dismiss`,
-          zh: `关闭`,
-        },
-      },
+          zh: `关闭`
+        }
+      }
     };
   },
   watch: {
@@ -77,12 +79,12 @@ export default {
     },
     $route() {
       this.lang = this.$route.path.includes("/zh/") ? "zh" : "en";
-    },
+    }
   },
   methods: {
     handleDismiss() {
       this.hideBanner();
-      this.$cookies.set("vf_fk_public_notice_dismissed", true, "3d");
+      this.$cookies.set("vf_fk_unlimited_notice_dismissed", true, "1d");
     },
     hideBanner() {
       this.dismissed = true;
@@ -111,10 +113,10 @@ export default {
           this.setHeight();
         }, 100);
       }
-    },
+    }
   },
   mounted() {
-    this.dismissed = this.$cookies.get("vf_fk_public_notice_dismissed");
+    this.dismissed = this.$cookies.get("vf_fk_unlimited_notice_dismissed");
     if (this.dismissed) {
       this.hideBanner();
     } else {
@@ -124,13 +126,13 @@ export default {
   },
   beforeDestroy() {
     window.removeEventListener("resize", this.getBannerHeight);
-  },
+  }
 };
 </script>
 
 <style lang="scss" scoped>
 .the-formkit-teaser {
-  background: linear-gradient(-20deg, #141028 7.73%, #373741 93.88%);
+  background: linear-gradient(-20deg, #1f0c7d 7.73%, #04044e 93.88%);
   background-size: cover;
   background-repeat: no-repeat;
   color: #fff;
