@@ -2,7 +2,7 @@
   <div v-if="!dismissed" class="the-formkit-teaser" ref="banner">
     <div class="container">
       <div class="the-teaser-title">
-        <a href="https://www.formkit.com/pro">
+        <a href="https://www.formkit.com">
           <FormKitLogo />
         </a>
       </div>
@@ -11,8 +11,8 @@
         <a
           :href="
             lang === 'zh'
-              ? 'https://www.formkit.com/zh/pro'
-              : 'https://www.formkit.com/pro'
+              ? 'https://www.formkit.com/zh'
+              : 'https://www.formkit.com'
           "
           class="fk-button"
         >
@@ -53,22 +53,20 @@ export default {
       lang: this.$route.path.includes("/zh/") ? "zh" : "en",
       content: {
         headline: {
-          en: `<strong style="font-size: 1.5em;">Pro <span style="color: #ff985d;">Unlimited</span> ∞ License</strong><br />
-          One-time purchase, unlimited projects, no telemetry.<br />
-          Limited time offer — ends December 31st.`,
-          zh: `<strong style="font-size: 1.5em;">专业 <span style="color: #ff985d;">无限</span> ∞ 授权</strong><br />
-               一次性购买，无限项目，无遥测。<br />
-               限时优惠 — 12月31日结束。`
+          en: `<strong style="font-size: 1.5em;">Upgrade to FormKit — The <span style="color: #ff985d;">Open-Source</span> Form Framework for Vue 3.</strong><br />
+          FormKit equips developers to build their forms 10x faster by simplifying form structure, generation, validation, theming, submission, error handling, and more.`,
+          zh: `<strong style="font-size: 1.5em;">升级到 FormKit — Vue 3 的<span style="color: #ff985d;">开源</span>表单框架。</strong><br />
+               FormKit 使开发者能够通过简化表单结构、生成、验证、主题设计、提交、错误处理等，使表单构建速度提升10倍。`,
         },
         cta: {
-          en: `<span style="margin-right: 0.25em;">∞</span> Buy Now`,
-          zh: `<span style="margin-right: 0.25em;">∞</span> 立即购买`
+          en: `Get Started`,
+          zh: `开始使用`,
         },
         dismiss: {
           en: `dismiss`,
-          zh: `关闭`
-        }
-      }
+          zh: `关闭`,
+        },
+      },
     };
   },
   watch: {
@@ -79,12 +77,12 @@ export default {
     },
     $route() {
       this.lang = this.$route.path.includes("/zh/") ? "zh" : "en";
-    }
+    },
   },
   methods: {
     handleDismiss() {
       this.hideBanner();
-      this.$cookies.set("vf_fk_unlimited_notice_dismissed", true, "1d");
+      this.$cookies.set("vf_fk_notice_dismissed", true, "1d");
     },
     hideBanner() {
       this.dismissed = true;
@@ -113,10 +111,10 @@ export default {
           this.setHeight();
         }, 100);
       }
-    }
+    },
   },
   mounted() {
-    this.dismissed = this.$cookies.get("vf_fk_unlimited_notice_dismissed");
+    this.dismissed = this.$cookies.get("vf_fk_notice_dismissed");
     if (this.dismissed) {
       this.hideBanner();
     } else {
@@ -126,7 +124,7 @@ export default {
   },
   beforeDestroy() {
     window.removeEventListener("resize", this.getBannerHeight);
-  }
+  },
 };
 </script>
 
