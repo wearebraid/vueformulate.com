@@ -1,5 +1,5 @@
 ::: tip A note on Vue 3
-Vue Formulate is compatible with Vue 2. The next major version of Vue Formulate for Vue 3 is called FormKit — it is currently in public beta. You can learn more about it at [formkit.com](https://formkit.com).
+Vue Formulate is compatible with Vue 2. The next major version of Vue Formulate for Vue 3 is called FormKit. You can learn more about it at [formkit.com](https://formkit.com).
 :::
 
 # Introduction
@@ -41,18 +41,21 @@ With Vue Formulate developers are empowered to:
 ✓ And [so much more](/changelog)<br>
 
 ## Inputs
+
 Every type of input in Vue Formulate is an instance of the `FormulateInput`
 component. This component is used whether you need a text input, password,
 select list, checkbox, or date picker. It doesn't get much easier
 to remember than that.
 
 ### A simple example
+
 The simplest implementation of Vue Formulate is outputting a
 single `FormulateInput` with no additional configuration:
 
 ```vue
 <FormulateInput type="text" />
 ```
+
 **Output**:
 
 <demo-1-inputs />
@@ -60,10 +63,11 @@ single `FormulateInput` with no additional configuration:
 Familiar right? This is essentially equivalent to the native HTML:
 
 ```html
-<input type="text">
+<input type="text" />
 ```
 
 ### Outputting different input types
+
 **All Vue Formulate inputs share this same syntax.** Swap out the value of `type`
 to get the desired element, even if the internal HTML structure differs. For example
 a `<textarea>` is a completely different element than `<input>` in HTML, but in
@@ -88,11 +92,7 @@ remember a variety of component names to handle different input types.
 Input and form validation are a core feature and easy to add.
 
 ```vue
-<FormulateInput
-  type="email"
-  name="email"
-  validation="required|email"
-/>
+<FormulateInput type="email" name="email" validation="required|email" />
 ```
 
 <demo-2-validation />
@@ -105,27 +105,25 @@ Vue Formulate uses model binding (`v-model`) to read/write values in and out of
 inputs. You can bind data on a `<FormulateInput>`, `<FormulateForm>`, or both (read
 the [forms](/guide/forms) documentation for information on form binding).
 
-
 ```vue
 <template>
   <div>
-    <FormulateInput
-      type="text"
-      label="What is your name?"
-      v-model="value"
-    />
-    <strong>Hello <em>{{ value }}</em>!</strong>
+    <FormulateInput type="text" label="What is your name?" v-model="value" />
+    <strong
+      >Hello <em>{{ value }}</em
+      >!</strong
+    >
   </div>
 </template>
 
 <script>
 export default {
-  data () {
+  data() {
     return {
-      value: 'My initial value'
-    }
-  }
-}
+      value: "My initial value",
+    };
+  },
+};
 </script>
 ```
 
@@ -155,21 +153,22 @@ elements.
       v-model="brand"
       error-behavior="live"
       validation="in:Toyota,Honda"
-      :options="{Toyota: 'I like Toyota', Honda: 'I like Honda' }"
+      :options="{ Toyota: 'I like Toyota', Honda: 'I like Honda' }"
     />
   </div>
 </template>
 
 <script>
 export default {
-  data () {
+  data() {
     return {
-      brand: 'Honda'
-    }
-  }
-}
+      brand: "Honda",
+    };
+  },
+};
 </script>
 ```
+
 **Output:**
 <demo-2-binding />
 
@@ -182,14 +181,13 @@ Certain types of inputs set an `array` of values on their model.
   type="checkbox"
   label="Which animals make good pets?"
   v-model="pets"
-  :options="{dog: 'Dogs', alligators: 'Alligators', cat: 'Cats'}"
+  :options="{ dog: 'Dogs', alligators: 'Alligators', cat: 'Cats' }"
 />
 ```
+
 **Output:**
 
-
 <demo-3-binding />
-
 
 :::tip Read more...
 Model binding isn't all you can do with a `FormulateInput` element! There are
@@ -204,11 +202,8 @@ In addition to binding values to individual `FormulateInput` fields, you can
 also collect all the values from a collection of inputs by wrapping them in
 a `FormulateForm` and placing a `v-model` on that element.
 
-
 ```vue
-<FormulateForm
-  v-model="formValues"
->
+<FormulateForm v-model="formValues">
   <FormulateInput
     name="name"
     label="What is your name?"
@@ -235,18 +230,17 @@ valuable features like form submission, group validation, and file uploads.
 Read more about [using forms →](/guide/forms)
 :::
 
-
 ## What it isn’t
 
 While Vue Formulate is a powerful tool for building, validating, and handling errors
 on forms — there are some things this package does not aim to do:
 
-  1. This is not a UI framework or a _layout_ tool. Want inputs next to each
-    other? Cool! Wrap some inputs in a `<div>` and sprinkle on some `flexbox`.
-    This package assumes you'll still be responsible for your form layout.
-  2. This package is BYOB — bring your own backend. Vue Formulate doesn't care
-    a lick about the backend you choose (the closest it gets to caring is when
-    using [file inputs](/guide/inputs/types/file/))
+1. This is not a UI framework or a _layout_ tool. Want inputs next to each
+   other? Cool! Wrap some inputs in a `<div>` and sprinkle on some `flexbox`.
+   This package assumes you'll still be responsible for your form layout.
+2. This package is BYOB — bring your own backend. Vue Formulate doesn't care
+   a lick about the backend you choose (the closest it gets to caring is when
+   using [file inputs](/guide/inputs/types/file/))
 
 ## Why not...?
 
