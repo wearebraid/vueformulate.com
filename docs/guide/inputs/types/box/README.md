@@ -96,6 +96,17 @@ The syntax for radio inputs is identical to checkboxes.
 
 <demo-input-radio />
 
+
+:::warning Multiple radio buttons with the same name
+Radio buttons with the same name are considered one group in a `<form>`.
+If you are using radio inputs in repeatable blocks the name will be the same,
+and users will notice, that the current block input will "steal" the selection from the other.
+
+Possible mitigations:
+  - append the current index to the name of the input
+  - wrap the input group to a `<form>` tag where you supress the `submit` event and handle handle possible problems with embedded forms 
+:::
+
 ## Styling box inputs
 
 Checkboxes and radio boxes are notoriously frustrating to style. To assist,
